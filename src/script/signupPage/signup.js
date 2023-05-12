@@ -1,5 +1,5 @@
-import axios from 'axios'
-alert('hello world');
+const axios = require('axios');
+
 
 //주민번호 앞자리 6자리 채우면 자동 커서 이동
 function moveCursor(pidFront)
@@ -41,3 +41,12 @@ function pNoToString()
     alert(pno);
 }
 
+//네이버 open api 요청하기
+
+axios({
+   url:" https://sens.apigw.ntruss.com/sms/v2/services/{serviceId}/messages";
+   
+
+})
+
+console.log("jello0");
