@@ -21,9 +21,7 @@
 .ionide
 
 
-src\script\signupPage\test.js
-package-lock.json
-package.json
+application/
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 
