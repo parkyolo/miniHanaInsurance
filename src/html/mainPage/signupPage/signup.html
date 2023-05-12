@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signupMainPage</title>
+    <link rel="stylesheet" type="text/css" href="/src/css/signupPage/signupPage.css">
+    <script type="text/javascript" src="/src/script/signupPage/signup.js"></script>
+
+</head>
+
+<body>
+    <div id="head-contents" class="head-contents">
+        <h3 id="contents-title" class="contents-title">본인인증</h3>
+        <p class="contents-title-description" id="contents-title-description">
+            하나손해보험은 개인정보보호와 관련하여 전자금융거래 회원제만을 운영하고 있으며 고객님의 소중한 정보를 안전하게 보호하고
+            <br>익명 사용자의 부정가입으로 인한 피해를 방지하기 위하여
+            <strong class="fc_blue fw_4">휴대폰을 통해 본인인증을 시행하고 있습니다.</strong>
+        </p>
+        <div id="body-contents" class="body-contents">
+            <div id="body-contents-header" class="body-contents-header">
+                <div id="pid-title-name">
+                    <label for="input-pid-front">주민등록번호</label> <!--label 선택해도 주민번호에 커서 입력가능-->
+                </div>
+                <div class="pid-form-content" id="pid-form-content">
+                    <form name="pid-form" id="pid-form" class="pid-form">
+                        <input type="text" id="input-pid-front" placeholder="주민번호 앞자리" maxlength="6" required
+                            onkeyup="moveCursor(this)">
+                        -
+                        <input type="password" id="input-pid-back" placeholder="주민번호 뒷자리" maxlength="7" required>
+
+                    </form>
+                </div>
+
+                <div id="mouse-input-btn">
+                    <input type="button" class="mouse-input-btn" value="마우스입력">
+                </div>
+            </div>
+
+
+            <div class="phone-auth" id="phone-auth">
+                <div id="phone-auth-background">
+                    <div id="phone-auth-title">휴대폰 </div>
+                    <div id="phone-auth-img">폰이미지</div>
+                    <input type="button" value="휴대폰 인증 버튼">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--모달 창-->
+    <!--querySelector : element 반환-->
+    <div class="phone-auth-modal" id="phone-auth-modal">
+        <div class="modal-header" id="modal-header">
+            <span class="modal-header-title" id="modal-header-title">본인인증</span>
+            <div class="modal-close">
+                <input type="button" value="X" id="X">
+
+            </div>
+        </div>
+        <div class="modal-choice" id="modal-choice">
+            <span style="border: 1px;">휴대폰</span>
+        </div>
+        
+        <div class="modal-content" id="modal-content">
+            
+            <div class="modal-info" id="modal-info">
+                <div class="modal-info-pinfo" id="modal-info-pinfo">
+                    <ul class="pinfo" id="pinfo">
+                        <li>
+                            <div class="modal-info-name" id="modal-info-name">
+                                <ul class="input-area">
+                                    <li>
+                                        <label for="modal-info-name">이름</label>
+                                        <input type="text" id="modal-info-name" class="modal-info-name"
+                                            placeholder="성명을 입력">
+                                    </li>
+                                    <li>
+                                        <select name="modal-info-isKorean">
+                                            <option value="Korean" selected>내국인</option>
+                                            <option value="foreigner">외국인</option>
+                                        </select>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="modal-info-bday" id="modal-info-bday">
+                                <label for="modal-info-bday">생년월일</label>
+                                <input type="text" id="modal-info-bday" class="modal-info-bday"
+                                    placeholder="생년월일 디폴트 입력후 막기">
+                                <input type="radio" name="gender">남자
+                                <input type="radio" name="gender">여자
+                            </div>
+                        </li>
+                        <li>
+                            <div class="modal-info-pNo" id="modal-info-pNo">
+                                <label for="modal-info-name">통신사</label>
+                                <input type="radio" name="pComp" checked>SKT
+                                <input type="radio" name="pComp">KT
+                                <input type="radio" name="pComp">LG
+                                <select name="pNo-category">
+                                    <option value="default" selected>알뜰폰</option>
+                                    <option value="default-SKT">알뜰폰SKT</option>
+                                    <option value="default-KT">알뜰폰KT</option>
+                                    <option value="default-LGT">알뜰폰LGT</option>
+
+                                </select>
+
+                            </div>
+                            <div class="pNo" id="pNo">
+                                <select name="pnofront" id="pnofront">
+                                    <option value="default" selected>010</option>
+                                    <option value="011">011</option>
+                                    <option value="017">017</option>
+                                    <option value="018">018</option>
+                                    <option value="019">019</option>
+                                </select>
+                                -
+                                <input type="text" name="pNo-back" id="pNo-back">
+                            </div>
+                        </li>
+                </div>
+                </ul>
+
+                <div class="modal-info-agree" id="modal-info-agree">
+                    <span class="info-title-name" id="info-title-name">휴대폰 인증약관 동의</span>
+                    <div class="all-agree-btn" id="all-agree-btn">
+                        <input type="checkbox" name="all-agree" value="전체동의" onclick="selectAll(this)">전체동의</input>
+                    </div>
+                    <input type="checkbox" name="agree">개인정보 이용 및 제공에 동의</li>
+                    <input type="checkbox" name="agree">고유식별정보 처리에 동의</li>
+                    <input type="checkbox" name="agree">서비스 이용약관에 동의</li>
+                    <input type="checkbox" name="agree">통신사 이용약관에 동의</li>
+
+                    <div class="pNo-submit-btn">
+                        <!-- <form action='/test' method='post' id="btn"> -->
+                        <input type="button" value="인증번호 발송" id="pNo-submit" style="width:auto;" onclick="pNoToString(pNo-back)">
+                        <!-- </form> -->
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="modal-footer" id="modal-footer">
+                <ul>
+                    <li>본인인증은 고객님 본인 명의의 휴대폰 번호로만 가능합니다</li>
+                    <li>인증번호 입력 5회 오류 시 재전송이 제한됩니다. (익일 사용가능)</li>
+                    <li>인증번호 미도착시 1644-7725로 연락주시기 바랍니다.</li>
+                    <li>공동인증서로 계정잠김해제 하시면, 인증번호 오류가 해제됩니다.</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
