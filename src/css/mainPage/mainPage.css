@@ -1,0 +1,284 @@
+@import url('../reset.css');
+@import url('../common.css');
+
+#mcontents {width:100%;max-width:1250px;margin:auto;}
+#mcontents .mheading {width:100%;max-width:1250px;margin:0 auto;}
+#mcontents .mheading .mvisual {height: 1885px;}
+#mcontents .mheading .mbanner {margin-left:-335px;margin-right:-335px;width:1920px;}
+#mcontents .mheading .mbanner .item {width: 1920px;}
+
+#mcontents .mheading .mfloat {position:absolute;top:0;left:0;z-index:1;width:100%;height:627px;}
+#mcontents .mheading .mfloat .mtitle {width:100%;max-width:1250px;height:627px;margin:auto;color:#112d68;}
+
+/*메인할인내역 배너*/
+.main_mid_box {
+	position: absolute;
+	top: 480px;
+	width: 100%;
+	max-width: 1250px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	letter-spacing: -0.08em;
+	font-family: 'Roboto','Noto Sans KR';
+}
+.main_mid_box li {
+	width: calc((100% / 3) - 5px);
+	flex-direction: column;
+	background: #fff;
+	border-radius: 15px;
+	box-shadow: 5px 3px 20px 5px #00000012;
+	list-style: none;
+}
+.main_mid_box li section.visual_box {
+	position:relative;
+	padding: 23px 30px 44.4px;
+	margin: 10px;
+	background: #f9f9fb;
+	border-radius: 10px 10px 0 0;
+}
+.main_mid_box li section.visual_box:after {
+    content: "";
+    position:absolute;
+    bottom: 15px;
+    right: 20px;
+    display:block;
+    width:151px;
+    height:119px;
+    background: url("../../images/mainImg/icon_set_01.png") no-repeat;
+}
+.main_mid_box li:nth-child(2) section.visual_box:after {
+	background-position-x:-151px;
+}
+.main_mid_box li:nth-child(3) section.visual_box:after {
+	background-position-x:-302px;
+}
+
+section.visual_box .title {
+	font-size: 26px;
+	color: #555;
+	font-weight: 500;
+	line-height: 32px;
+	margin-top: 8px;
+}
+section.visual_box .title font {
+	color: #ef794b;
+	font-weight: 600;
+}
+section.visual_box .sub_title {
+	font-size: 20px;
+	color: #888888;
+	letter-spacing: -0.08em;
+}
+
+section.recom_box {
+	padding: 15px 40px 0;
+}
+section.recom_box p.label {
+	padding: 3px 25px;
+	display: inline-block;
+	background: #fff;
+	color: #ef794b;
+	border: 2px solid #ef794b;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 500;
+}
+section.recom_box .recom_detail {
+	color: #555;
+	font-size: 20px;
+	font-weight: 500;
+	margin-top: 20px;
+}
+section.sale_point {
+    padding: 30px 40px;
+}
+section.sale_point p.label {
+	padding: 3px 12px;
+	display: inline-block;
+	background: #fff;
+	color: #2cb26a;
+	border: 2px solid #2cb26a;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 500;
+}
+section.sale_point dl {
+    margin-top:15px;
+}
+section.sale_point dl dt {
+    position:relative;
+    padding-left:10px;
+    color: #555;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+section.sale_point dl dt:before {
+    content:"";
+    display:block;
+    position:absolute;
+    left:0;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    border-radius:50%;
+    background: #2cb26a;
+    transform: translateY(-50%);
+}
+section.sale_point dl dt span:first-child {
+	position:relative;
+	cursor: pointer;
+	text-decoration: none;
+	padding-bottom: 5px;
+}
+section.sale_point dl dt span:first-child:after {
+	background:none repeat scroll 0 0 transparent;
+	bottom:5px;
+	left: 50%;
+	content: "";
+	display: block;
+	width: 0;
+	height: 5px;
+	position: absolute;
+	background:#2cb26a40;
+	transition:width 0.3s ease 0s, left 0.3s ease 0s;
+}
+section.sale_point dl dt span:first-child:hover:after {
+	width: 100%;
+	left:0;
+}
+section.sale_point dl dt .point {
+    color:#ef794b;
+}
+section.sale_point dl dd {
+	padding-left: 10px;
+	font-size: 16px;
+	color: #888;
+}
+
+.eco_text {
+	position: absolute;
+	top: 1075px;
+	width: 100%;
+	max-width: 1250px;
+	margin: auto;
+	color: #555;
+	letter-spacing: -0.05em;
+	font-weight: 300;
+}
+.eco_sub_plan {
+	position: absolute;
+	top: 1134px;
+	width: 100%;
+	max-width: 1250px;
+	margin: auto;
+	color: #555;
+	font-size: 24px;
+	letter-spacing: -0.08em;
+}
+
+/*메인상품안내 배너*/
+.main_bottom_box {
+	position: absolute;
+	top: 1184px;
+	width: 100%;
+	max-width: 1250px;
+	margin: auto;
+	display: flex;
+	letter-spacing: -0.08em;
+	font-family: 'Roboto','Noto Sans KR';
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.main_bottom_box li {
+	position:relative;
+	width: calc((100% / 3) - 5px);
+	min-height:123px;
+	margin-bottom: 10px;
+	padding: 23px 20px 24px 104px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 5px 5px 15px 5px #00000012;
+	border: 2px solid #fff;
+	cursor: pointer;
+	list-style: none;
+}
+.main_bottom_box li:before{
+    content:'';
+    position:absolute;
+    display:block;
+    top: 50%;
+    left: 20px;
+    width:80px;
+    height:70px;
+    transform: translateY(-50%);
+    background: url("../../images/mainImg/icon_set_02.png") no-repeat;
+    background-position-x:0;
+}
+.main_bottom_box li:hover{
+    border-color: #2cb26a;
+}
+.main_bottom_box li:nth-child(2):before{
+    background-position-x:-80px;
+}
+.main_bottom_box li:nth-child(3):before{
+    background-position-x:-160px;
+}
+.main_bottom_box li:nth-child(4):before{
+    background-position-y:-70px;
+}
+.main_bottom_box li:nth-child(5):before{
+    background-position-x:-80px;
+    background-position-y:-70px;
+}
+.main_bottom_box li:nth-child(6):before{
+    background-position-x:-160px;
+    background-position-y:-70px;
+}
+.main_bottom_box li dl dt{
+	position:relative;
+	padding-left:10px;
+	color: #555;
+	font-size: 20px;
+	font-weight: 500;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.main_bottom_box li dl dt span{
+	position:relative;
+	cursor: pointer;
+	text-decoration: none;
+}
+.main_bottom_box li dl dt span:after{
+	background:none repeat scroll 0 0 transparent;
+	bottom:5px;
+	left: 50%;
+	content: "";
+	display: block;
+	width: 0;
+	height: 5px;
+	position: absolute;
+	background:#2cb26a40;
+	transition:width 0.3s ease 0s, left 0.3s ease 0s;
+}
+.main_bottom_box li:hover dl dt span:after{
+    width: 100%;
+	left:0;
+}
+.main_bottom_box li dl dt font{
+    color: #ef794b;
+}
+.main_bottom_box li dl dd{
+	padding-left: 10px;
+    font-size: 16px;
+    color: #888;
+    letter-spacing: -0.08em;
+    margin-top: 2px;
+}
+.new_banner{
+	margin-top: 110px;
+}

@@ -97,3 +97,20 @@ body {
 	letter-spacing:-0.5px;
 	word-break:break-all;
 }
+nav ul,li {
+	list-style:none;
+}
+a {
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+	text-decoration:none;
+	background:transparent;
+	box-sizing:border-box;
+	color:#555;
+}
+a:hover {text-decoration:underline;}
+img {
+	vertical-align:top;
+}
