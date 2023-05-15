@@ -26,7 +26,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #f0fefe inset;}
 
 /*보상처리절차*/
 .newstep_arr3 {display:block; overflow:hidden; width:100%; margin:38px 0 20px 0;}
-.newstep_arr3 > li {position:relative; float:left; width:22%; margin-right:4%; padding-top:23px; min-height:370px; border:solid 1px #ddd; text-align:center; font-size:15px; color:#656565;}
+.newstep_arr3 > li {position:relative; float:left; width:230px; margin-right:4%; padding-top:23px; min-height:370px; border:solid 1px #ddd; text-align:center; font-size:15px; color:#656565;}
 .newstep_arr3 .num{text-align:center; font-weight:500; font-size:24px; color:#009591; margin:0 auto; padding:8px 0; margin-bottom:15px;}
 .newstep_arr3 .num strong{font-size:24px; color:#323333;}
 .newstep_arr3 .txt{margin:145px 8% 0 8%; padding:15px 0 26px 0; border-top:1px dashed #ddd; text-align:left; letter-spacing:-1px}
