@@ -3,30 +3,61 @@
 @import url("../common.css");
 @import url("../reset.css");
 
-html, body{width:100%;height:100%;/*position:relative;*/}
+html, body{width:100%;height:100%;}
 input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #f0fefe inset;}
 
 /*Layout*/
-#wrap { position:relative;overflow-y:auto;overflow-x:hidden;height:100%;min-width:1024px;}
 #container{position:relative;width:100%;min-height:calc(100% - 240px);} 
-#contents{position:relative;width:100%;margin:0 auto; overflow-y:auto;overflow-x:hidden; max-width:1140px;padding:40px 20px 100px 20px;min-height:600px;}
 
-/*box type*/
-#contents > .section_box:first-child,
-#contents > .section_box0:first-child,
-#contents > .section_box1:first-child,
-#contents > .section_box2:first-child,
-#contents > .section_box3:first-child,
-#contents > .section_box4:first-child,
-#contents > .section_box5:first-child,
-#contents > .section_box6:first-child,
-#contents > .section_box7:first-child,
-#contents > .tab1_group:first-child,
-#contents > .section_box100:first-child{margin-top:0 !important;}
+/*head*/
+#visual_box.visual_txt{float:none;width:100%;height:130px;margin:0 auto;max-width:1140px;padding:40px 0 15px;}
+#visual_box.visual_txt:after{content:"";clear:both;display:table;}
+#visual_box.visual_txt h2{display:block;text-align:left;font-weight:500;font-size:32px;color:#000;margin-left:20px;width:auto;position:static;}
+#visual_box.visual_txt h2:before{content:"";width:100%;width:calc(100% - 40px);*height:2px;background:#000;position:absolute;bottom:0;left:0;}
+#visual_box.visual_txt p{display:block;text-align:left;font-weight:400;font-size:14px;color:#888;margin-top:0;margin-left:20px;width:auto;position:relative;}
+
+#contents{position:relative;width:100%;margin:0 auto; overflow-y:auto;overflow-x:hidden; max-width:1140px;padding:40px 20px 100px 20px;min-height:600px;}
+#contents > .tab1_group:first-child
+#contents.wide_area:before {padding-left:121px;}
+
+@media all and (max-width:1100px){
+    #contents{padding:20px 20px 100px 20px;}}
+
+
+    #contents{
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-width: 1140px;
+        padding: 40px 20px 100px 20px;
+        min-height: 600px;
+    }
+    #contents.lnb_contents{
+        float: right;
+        width: calc(100% - 230px);
+    }
+    #contents.wide_contents{
+        max-width: none;
+        padding: 0;
+    }
+    #contents.wide_contents1{
+        max-width: none;
+        padding: 0;
+    }
+    #contents.system_info {
+        border-top: 2px solid #d6d6d6;
+        border-bottom: 2px solid #d6d6d6;
+    }
+    #contents.system_info.noline {
+        border-top: none;
+        border-bottom: none
+    }
 
 /*보상처리절차*/
 .newstep_arr3 {display:block; overflow:hidden; width:100%; margin:38px 0 20px 0;}
-.newstep_arr3 > li {position:relative; float:left; width:230px; margin-right:4%; padding-top:23px; min-height:370px; border:solid 1px #ddd; text-align:center; font-size:15px; color:#656565;}
+.newstep_arr3 > li {position:relative; float:left; width:22%; margin-right:4%; padding-top:23px; min-height:370px; border:solid 1px #ddd; text-align:center; font-size:15px; color:#656565;}
 .newstep_arr3 .num{text-align:center; font-weight:500; font-size:24px; color:#009591; margin:0 auto; padding:8px 0; margin-bottom:15px;}
 .newstep_arr3 .num strong{font-size:24px; color:#323333;}
 .newstep_arr3 .txt{margin:145px 8% 0 8%; padding:15px 0 26px 0; border-top:1px dashed #ddd; text-align:left; letter-spacing:-1px}
@@ -41,13 +72,72 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #f0fefe inset;}
 .newstep_arr3.health li:nth-child(3){background:url("../../images/claimImg/icon_reward_03.png") no-repeat center 110px;}
 .newstep_arr3.health li:nth-child(4){background:url("../../images/claimImg/icon_reward_04.png") no-repeat center 110px;}
 
-.notice_list {overflow:hidden; margin:40px 0 0 0; padding:30px 28px; border:1px solid #dddddd; background:#f9f9f9;}
-.notice_list >  strong {display:block; padding:0 0 20px 23px; font-size:15px; color:#222222; background:url("../img/common/icon_point_mark.png") no-repeat 0 2px;}
-.notice_list >  div > strong {padding:0 0 0 10px;  font-weight:700;}
-.notice_list >  div > strong::before {position:absolute;content:"·";top: 1px;left:-1px;}
-.notice_list ul > li {margin:0 0 2px 10px}
+.mb57 {margin-bottom:57px !important;}
 
-/*전자 민원신청 */
+.mr0 {
+    margin-right: 0 !important;
+}
+
+.btn {
+    font-family: "Noto Sans KR";
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #d6d6d6;
+    color: #333;
+    background-color: #fff;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 6px 30px;
+}
+
+.btn_icon {
+    padding: 3px 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.btn_arrow {
+    padding: 3px 20px 4px;
+}
+.btn_arrow:after {
+    display: inline-block;
+    font-family: "FontAwesome";
+    content: "\f105";
+    padding-left: 8px;
+    font-size: 19px;
+    color: #009591;
+    vertical-align: -1px;
+}
+
+.btn_blue {
+    background-color: #009591;
+    border-color: #009591;
+    color: #fff;
+}
+
+.w180 {
+    width: 180px !important;
+}
+
+
+.f14 {
+    font-size: 14px !important;
+}
+.mt10 {
+    margin-top: 10px !important;
+}
+.lh18 {
+    line-height: 18px !important;
+}
+.c888 {
+    color: #888 !important;
+}
+
+
+/*사고 접수 방법 */
 .box_area_02 {overflow:hidden; padding:30px 0 15px 35px; background:#f9f9fb;}
 .box_area_02 .txt_01 em {margin:0 20px 0 0;color:#040000; font-size:24px;}
 .box_area_02 .txt_01 a {margin:0 10px 0 0; /*background:#009591; color:#fff;*/}
@@ -58,7 +148,6 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #f0fefe inset;}
 .box_area_02 ul li:first-child {margin:0 0 30px 0px;}
 .box_area_02.reward ul li {width:calc((100% - 90px) / 2 ) ; height:120px;  margin:0 35px 30px 0;}
 
-/*보상 처리절차*/
 .box_area_02.reward ul.txt_list_01 li{height:120px; margin-bottom:17px;}
 .box_area_02.reward ul.txt_list_01 li:nth-child(3),
 .box_area_02.reward ul.txt_list_01 li:nth-child(4){height:68px; margin-bottom:25px;}
@@ -68,20 +157,32 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #f0fefe inset;}
 .box_area_02.reward ul.txt_list_01 li>p.fax{display: block;font-size: 18px;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;padding-left: 22px;line-height: 1.5}
 .box_area_02.reward ul.txt_list_01 li>p.fax:before{content:"\f1ac";position: absolute;top: 6px;left: 0;font: normal normal normal 17px/1 FontAwesome;}
 
+em {
+    font-style: normal;
+}
+.txt_list_01 li:before, .txt_box_01:before {
+    position: absolute;
+    left: 0;
+}
+.icon4 li:before, .unit_icon4:before {
+    content: "•";
+    top: -2px;
+    font-weight: 700;
+}
 
-@media all and (max-width:1100px){
-    #contents{padding:20px 20px 100px 20px;}}
 
-@media all and (max-width:1389px){
-#contents.wide_area:before {padding-left:1px;}}
+/* 보험금 청구 시 유의사항*/
+.notice_list {overflow:hidden; margin:40px 0 0 0; padding:30px 28px; border:1px solid #dddddd; background:#f9f9f9;}
+.notice_list >  strong {display:block; padding:0 0 20px 23px; font-size:15px; color:#222222; background:url("../img/common/icon_point_mark.png") no-repeat 0 2px;}
+.notice_list >  div > strong {padding:0 0 0 10px;  font-weight:700;}
+.notice_list >  div > strong::before {position:absolute;content:"·";top: 1px;left:-1px;}
+.notice_list ul > li {margin:0 0 2px 10px}
 
-/*아래의 설정 1390px이상일때... (회색선라인) & (아이콘)*/
-#contents.wide_area:before {padding-left:121px;}
-
-/***** product *****/
-#contents.wide_area {max-width:none;padding:0;position:relative;}
-#contents.wide_area:before {content:'';display:block;max-width:1128px;width:100%;height:100%;position:absolute;left:50%;transform:translateX(-50%);border-left:1px solid #e3e4e8;}
-
-#contents.wide_area.car {max-width:none;padding:0;position:relative;}
-#contents.wide_area.car:before {content:'';display:block;max-width:1128px;width:100%;height:100%;position:absolute;left:50%;transform:translateX(-50%);border-left:1px solid #e3e4e8;}
-#contents.wide_area.car:before {padding-left:261px;}
+.txt_group {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.mt20 {
+    margin-top: 20px !important;
+}
