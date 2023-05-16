@@ -40,10 +40,10 @@ checkboxes.forEach((checkbox) => {
 //휴대폰 앞번호 가져오기
 function ChangeValue(){
   let value_str=document.getElementById('pnofront');
-  // if(typeof document!== "undefined")
-  // {
-  //   value_str=document.getElementById('pnofront');
-  // }
+  if(typeof document!== "undefined")
+  {
+    value_str=document.getElementById('pnofront');
+  }
     let frontNo=value_str.options[value_str.selectedIndex].text;
     return frontNo;
     }
@@ -85,7 +85,6 @@ function onLoggin()
     const url2 = `/sms/v2/services/${service_id}/messages`;
 
 
-    const finErrCode = 404;
     const axios = require('axios');
     const CryptoJS = require('crypto-js');
     const date = Date.now().toString();
@@ -135,7 +134,6 @@ function onLoggin()
       .catch(err => {
           console.log(err);
       })
-  return finErrCode;
 
 
     
