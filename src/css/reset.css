@@ -98,6 +98,10 @@ body {
 	letter-spacing:-0.5px;
 	word-break:break-all;
 }
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+	display:block;
+}
 nav ul,li {
 	list-style:none;
 }
@@ -115,3 +119,13 @@ a:hover {text-decoration:underline;}
 img {
 	vertical-align:top;
 }
+input, select {
+	vertical-align:middle;
+	box-sizing:border-box;
+	-webkit-appearance:none;
+	-webkit-border-radius:0;
+
+}
+h1, h2, h3, h4, h5, h6 {font-weight:500;}
+strong {font-weight:500;}
+em {font-style:normal;}
