@@ -1,5 +1,6 @@
 @import url('/src/css/reset.css');
 @import url('/src/css/common.css');
+@import url('/src/css/default.css');
 
 #visual_box.visual_txt {
     float: none;
@@ -94,7 +95,7 @@
 }
 
 .sort_field {
-    margin-top: 0px;
+    margin-top: 0px !important;
 }
 .sort_field > div div {
     float: left;
@@ -158,6 +159,13 @@
 }
 
 /*faq*/
+.fna_search_box{width:100%;float:left;padding:0 200px;}
+.fna_search_box a:hover{text-decoration:none;}
+.fna_search_box > div{width:100%;float:left;position:relative;}
+.fna_search_box .search_field input:focus {outline:none;}
+.fna_search_box .sort_field .faq_select_list {margin:0 auto;width:60%;}
+.fna_search_box .sort_field .faq_select_list > div > a {text-align:left;}
+
 .search_field input {
     border: none;
     border-bottom: 2px solid #28b2a5;
