@@ -1,37 +1,31 @@
-// import * as util from "./signup.js";
-// const code=util.generateRandomCode(6);
-// console.log(code);
+
 
 window.onload=function infoPage()
 {
-    const name = window
-    .localStorage
-    .getItem('name');
-
-    const bday=window.localStorage.getItem('bday');
+    const name = window.localStorage.getItem('name');
+    const birthday=window.localStorage.getItem('bday');
     const pnoFront=window.localStorage.getItem('phoneNum_front');
     const pnoBack=window.localStorage.getItem('phoneNum_back');
+
+
     const back1=pnoBack.substring(0,4);
     const back2=pnoBack.substring(4,8);
-    const byear=bday.substring(0,2);
-    const bmonth=bday.substring(2,4);
-    const bd=bday.substring(4,6);
+    const byear=birthday.substring(0,2);
+    const bmonth=birthday.substring(2,4);
+    const bd=birthday.substring(4,6);
 
 
-
-    console.log(name);
     console.log(pnoFront.text); //현재 undefined로 출력됨
 
     const infoname = document.getElementById('txtJoinMemberName');
-    infoname.value=name;
+    infoname.value=name; //이름
     const infopno1 = document.getElementById('selJoinMemberTel1');
-    infopno1.innerHTML=pnoFront;
-
+    infopno1.innerHTML=pnoFront; //휴대폰 앞번호
 
     const infopno2 = document.getElementById('txtJoinMemberTel2');
-    infopno2.value=back1;
+    infopno2.value=back1; //휴대폰 중간번호
     const infopno3 = document.getElementById('txtJoinMemberTel3');
-    infopno3.value=back2;
+    infopno3.value=back2; //휴대폰 뒷번호
 
     let newyear;
     let newbirthday;
@@ -45,8 +39,8 @@ window.onload=function infoPage()
     }
 
     newbirthday=newyear+"."+bmonth+"."+bd;
-    const birthday = document.getElementById('txtJoinMemberBirth');
-    birthday.value=newbirthday;
+    const birthdayform = document.getElementById('txtJoinMemberBirth');
+    birthdayform.value=newbirthday;
 
 }
 
@@ -57,3 +51,6 @@ function emailReturn(emailValue)
     const email=document.getElementById('txtJoinMemberEmail2');
     email.value=value_str.value;
 }
+
+
+

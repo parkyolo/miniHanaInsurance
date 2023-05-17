@@ -10,6 +10,8 @@
     #centerAddr {display:block;margin-top:2px;font-weight: normal;}
     .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 </style>
+<script src="/src/script/signupPage/accidentReport.js"></script>
+
 </head>
 <body>
 <div class="map_wrap">
@@ -18,6 +20,15 @@
         <span class="title">지도중심기준 행정동 주소정보</span>
         <span id="centerAddr"></span>
     </div>
+</div>
+<div>
+    <div class="address-from-map" >
+        주소 : <span id="mapaddress"></ㅇspan>
+    </div>
+</div>
+<div>
+
+    <input type="button" id="address" value="주소 저장하기" onclick="saveAddress()" >
 </div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eaa73b1272941e352c57d1c5779f6a90&libraries=services"></script>
@@ -48,7 +59,7 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
             detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
             
             var content = '<div class="bAddr">' +
-                            '<span class="title">법정동 주소정보</span>' + 
+                            '<span class="title" id="realaddress">법정동 주소정보</span>' + 
                             detailAddr + 
                         '</div>';
 
@@ -59,6 +70,9 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
             // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
             infowindow.setContent(content);
             infowindow.open(map, marker);
+
+            var infoDiv = document.getElementById('mapaddress');
+            infoDiv.innerHTML = result[0].road_address.address_name;
         }   
     });
 });
@@ -67,6 +81,16 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
 kakao.maps.event.addListener(map, 'idle', function() {
     searchAddrFromCoords(map.getCenter(), displayCenterInfo);
 });
+
+function saveAddress()
+{
+
+    const address=document.getElementById('mapaddress').innerHTML;
+    localStorage.setItem('address',address);
+    console.log(address);
+    location.href = 'step2.html';
+
+}
 
 function searchAddrFromCoords(coords, callback) {
     // 좌표로 행정동 주소 정보를 요청합니다
