@@ -1,13 +1,13 @@
-const tabList=
-document.querySelectorAll('.tab_menu .list li');
-for(var i=0; i<tabList.length; i++){
-    tabList[i].querySelector('.btn').addEventListener('click', 
-    function(e) {
-        e.preventDefault();
-        for(var j=0; j<tabList.length; j++){
-            tabList[j].classList.remove('is_on');
-        }
-            this.parentNode.classList.add('is_on');
-        
+
+$(document).ready(function(){
+    $(document).on("click", "ul.tabs li", function(){
+        var tab_id = $(this).attr('data-tab');
+
+        $('ul.tabs li').removeClass('current');
+        $('.tab-content').removeClass('current');
+
+        $(this).addClass('current');
+        $("#"+tab_id).addClass('current');
     });
-}
+
+});

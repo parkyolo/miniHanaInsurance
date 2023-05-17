@@ -5,77 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-	<link rel="stylesheet" href="../../css/claim/carTipCarManagement2.css">
-
+	<link rel="stylesheet" href="../../css/claim/carTipCarManagement.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="../../script/claim/carTipCarManagement.js"></script>
     <title>차량관리팁 | 하나손해보험 </title>
 </head>
 <body>
-    <div id="container">
-        <div id="visual_box">
-            <h2>차량관리팁</h2>
-			<p>운전자분들을 위한 차량 관리 팁!을 알려드립니다.</p>
-        </div>
-
-        <div id="contents">
-            <div class="section_box1">
-                <ul>
-                    <li><a href="carTipCarManagement2.html">자동차관리</a></li>
-                    <li><a href="carTipSafetyDriveTrick.html">안전운전 요령</a></li>
-                </ul>
+    <div class="all-content">
+        <div class="title">
+            <div>
+                <h2>차량관리팁</h2>
+                <p>운전자분들을 위한 차량 관리 팁!을 알려드립니다.</p>
             </div>
+    
+    
         </div>
-
-        
-        <div class="wrap">
-            <div class="tab_menu">
-              <ul class="list">
-                <li class="is_on">
-                  <a href="#tab1" class="btn">Tab Button1</a>
-                  <div id="tab1" class="cont">Tab Content1</div>
-                </li>
-                <li>
-                  <a href="#tab2" class="btn">Tab Button2</a>
-                  <div id="tab2" class="cont">Tab Content2</div>
-                </li>
-                <li>
-                  <a href="#tab3" class="btn">Tab Button3</a>
-                  <div id="tab3" class="cont">Tab Content3</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-        <!-- <div class="tab">
-            <div class="tab_menu"></div>
-            <ul class="tabnav">
-                <li><a href="#tab01"></a> 신차 길들이기</li>
-                <li><a href="#tab02"></a> 엔진오일</li>
-                <li><a href="#tab03"></a> 브레이크오일</li>
-                <li><a href="#tab04"></a> 자동변속기오일</li>
+        <div class="sub-sub-title">
+            <ul class="tabs">
+                <li class="tab-link current" data-tab="tab-1">신차 길들이기</li>
+                <li class="tab-link" data-tab="tab-2">엔진오일</li>
+                <li class="tab-link" data-tab="tab-3">브레이크오일</li>
             </ul>
-            <div class="tabcontent">
-                <div id="tab01">
+    
+            <div id="tab-1" class="tab-content current">
+                <div>
                     <h3>주행거리 2,000km까지가 중요!</h3>
-                    <ul>
-                        <li>주행거리가 2,000km가 될때 까지는 부품들이 제자리를 잡을 수 있도록 해야 합니다.</li>
-                        <li>출발은 웜-업을 한 후에 하십시요.</li>
-                        <li>시동직후 급출발은 피하고 웜-업후에 서서히 출발해야 엔진과 변속기에 무리를 주지 않습니다.</li>
-                    </ul>
-                    <h3>주행거리 2,000km까지가 중요!</h3>
-                    <ul>
-                        <li>주행거리가 2,000km가 될때 까지는 부품들이 제자리를 잡을 수 있도록 해야 합니다.</li>
-                        <li>출발은 웜-업을 한 후에 하십시요.</li>
-                        <li>시동직후 급출발은 피하고 웜-업후에 서서히 출발해야 엔진과 변속기에 무리를 주지 않습니다.</li>
-                    </ul>
-                    <h3>주행거리 2,000km까지가 중요!</h3>
-                    <ul>
-                        <li>주행거리가 2,000km가 될때 까지는 부품들이 제자리를 잡을 수 있도록 해야 합니다.</li>
-                        <li>출발은 웜-업을 한 후에 하십시요.</li>
-                        <li>시동직후 급출발은 피하고 웜-업후에 서서히 출발해야 엔진과 변속기에 무리를 주지 않습니다.</li>
-                    </ul>
+                        <ul>
+                            <li>주행거리가 2,000km가 될때 까지는 부품들이 제자리를 잡을 수 있도록 해야 합니다.</li>
+                            <li>출발은 웜-업을 한 후에 하십시요.</li>
+                            <li>시동직후 급출발은 피하고 웜-업후에 서서히 출발해야 엔진과 변속기에 무리를 주지 않습니다.</li>
+                        </ul>
+                        <h3>주행거리 2,000km까지가 중요!</h3>
+                        <ul>
+                            <li>주행거리가 2,000km가 될때 까지는 부품들이 제자리를 잡을 수 있도록 해야 합니다.</li>
+                            <li>출발은 웜-업을 한 후에 하십시요.</li>
+                            <li>시동직후 급출발은 피하고 웜-업후에 서서히 출발해야 엔진과 변속기에 무리를 주지 않습니다.</li>
+                        </ul>
+                        <h3>주행거리 2,000km까지가 중요!</h3>
+                        <ul>
+                            <li>주행거리가 2,000km가 될때 까지는 부품들이 제자리를 잡을 수 있도록 해야 합니다.</li>
+                            <li>출발은 웜-업을 한 후에 하십시요.</li>
+                            <li>시동직후 급출발은 피하고 웜-업후에 서서히 출발해야 엔진과 변속기에 무리를 주지 않습니다.</li>
+                        </ul>
                 </div>
             </div>
-        </div> -->
+            <div id="tab-2" class="tab-content"><p>tab2입니다.</p></div>
+            <div id="tab-3" class="tab-content"><p>tab3입니다.</p></div>
+        </div>
     </div>
 </body>
 </html>
