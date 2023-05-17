@@ -122,6 +122,20 @@ h1, h2, h3, h4, h5, h6 {font-weight:500;}
 strong {font-weight:500;}
 em {font-style:normal;}
 
+table {
+	border-spacing:0;
+	width:100%;
+}
+table caption, legend {visibility:hidden;overflow:hidden;position:absolute;left:-9999px;margin:0;padding:0;width:1px;height:0px;font-size:0;line-height:0;text-indent:-9999px;}
+hr {
+	display:block;
+	height:1px;
+	border:0;
+	border-top:1px solid #cccccc;
+	margin:1em 0;
+	padding:0;
+}
+
 input, select {
 	vertical-align:middle;
 	box-sizing:border-box;
