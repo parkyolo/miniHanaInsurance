@@ -1,68 +1,69 @@
-@charset "utf-8";
+/* 2019-03-13 */
+@charset "utf-8"; 
 /* reset */
 @font-face {
 	font-family:"Noto Sans KR";
 	font-style:normal;
 	font-weight:300;
-	src:url("../fonts/NotoSansKR-Light.eot?") format("eot"),
-		url("../fonts/NotoSansKR-Light.woff2") format("woff2"),
-		url("../fonts/NotoSansKR-Light.woff") format("woff"),
-		url("../fonts/NotoSansKR-Light.otf") format("opentype");
+	src:url("../../common/font/NotoSansKR-Light.eot?") format("eot"), 
+		url("../../common/font/NotoSansKR-Light.woff2") format("woff2"),
+		url("../../common/font/NotoSansKR-Light.woff") format("woff"),
+		url("../../common/font/NotoSansKR-Light.otf") format("opentype");
 }
 @font-face {
 	font-family:"Noto Sans KR";
 	font-style:normal;
 	font-weight:400;
-	src:url("../fonts/NotoSansKR-Regular.eot?") format("eot"),
-		url("../fonts/NotoSansKR-Regular.woff2") format("woff2"),
-		url("../fonts/NotoSansKR-Regular.woff") format("woff"),
-		url("../fonts/NotoSansKR-Regular.otf") format("opentype");
+	src:url("../../common/font/NotoSansKR-Regular.eot?") format("eot"), 
+		url("../../common/font/NotoSansKR-Regular.woff2") format("woff2"),
+		url("../../common/font/NotoSansKR-Regular.woff") format("woff"),
+		url("../../common/font/NotoSansKR-Regular.otf") format("opentype");
 }
 @font-face {
 	font-family:"Noto Sans KR";
 	font-style:normal;
 	font-weight:500;
-	src:url("../fonts/NotoSansKR-Medium.eot?") format("eot"),
-		url("../fonts/NotoSansKR-Medium.woff2") format("woff2"),
-		url("../fonts/NotoSansKR-Medium.woff") format("woff"),
-		url("../fonts/NotoSansKR-Medium.otf") format("opentype");
+	src:url("../../common/font/NotoSansKR-Medium.eot?") format("eot"), 
+		url("../../common/font/NotoSansKR-Medium.woff2") format("woff2"),
+		url("../../common/font/NotoSansKR-Medium.woff") format("woff"),
+		url("../../common/font/NotoSansKR-Medium.otf") format("opentype");
 }
 @font-face {
 	font-family:"Noto Sans KR";
 	font-style:normal;
 	font-weight:700;
-	src:url("../fonts/NotoSansKR-Bold.eot?") format("eot"),
-		url("../fonts/NotoSansKR-Bold.woff2") format("woff2"),
-		url("../fonts/NotoSansKR-Bold.woff") format("woff"),
-		url("../fonts/NotoSansKR-Bold.otf") format("opentype");
+	src:url("../../common/font/NotoSansKR-Bold.eot?") format("eot"), 
+		url("../../common/font/NotoSansKR-Bold.woff2") format("woff2"),
+		url("../../common/font/NotoSansKR-Bold.woff") format("woff"),
+		url("../../common/font/NotoSansKR-Bold.otf") format("opentype");
 }
 @font-face {
 	font-family:"Roboto";
-	src:url("../fonts/Roboto-Regular.eot");
-	src:url("../fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/Roboto-Regular.woff") format("woff"),
-		url("../fonts/Roboto-Regular.otf") format("opentype"),
-		url("../fonts/Roboto-Regular.svg#RobotoRegular") format("svg");
+	src:url("../../common/font/Roboto-Regular.eot");
+	src:url("../../common/font/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+		url("../../common/font/Roboto-Regular.woff") format("woff"),
+		url("../../common/font/Roboto-Regular.otf") format("opentype"),
+		url("../../common/font/Roboto-Regular.svg#RobotoRegular") format("svg");
 	font-weight:normal;
 	font-style:normal;
 }
 @font-face {
 	font-family:"Roboto";
-	src:url("../fonts/Roboto-Bold.eot");
-	src:url("../fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/Roboto-Bold.woff") format("woff"),
-		url("../fonts/Roboto-Bold.otf") format("opentype"),
-		url("../fonts/Roboto-Bold.svg#RobotoBold") format("svg");
+	src:url("../../common/font/Roboto-Bold.eot");
+	src:url("../../common/font/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
+		url("../../common/font/Roboto-Bold.woff") format("woff"),
+		url("../../common/font/Roboto-Bold.otf") format("opentype"),
+		url("../../common/font/Roboto-Bold.svg#RobotoBold") format("svg");
 	font-weight:700;
 	font-style:normal;
 }
 @font-face {
 	font-family:"Roboto";
-	src:url("../fonts/Roboto-Medium.eot");
-	src:url("../fonts/Roboto-Medium.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/Roboto-Medium.woff") format("woff"),
-		url("../fonts/Roboto-Medium.otf") format("opentype"),
-		url("../fonts/Roboto-Medium.svg#RobotoMedium") format("svg");
+	src:url("../../common/font/Roboto-Medium.eot");
+	src:url("../../common/font/Roboto-Medium.eot?#iefix") format("embedded-opentype"),
+		url("../../common/font/Roboto-Medium.woff") format("woff"),
+		url("../../common/font/Roboto-Medium.otf") format("opentype"),
+		url("../../common/font/Roboto-Medium.svg#RobotoMedium") format("svg");
 	font-weight:500;
 	font-style:normal;
 }
@@ -81,6 +82,7 @@ time, mark, audio, video {
 	margin:0;
 	padding:0;
 	border:0;
+/*outline:0;*/
 	font-size:100%;
 	vertical-align:baseline;
 	background:transparent;
@@ -90,19 +92,23 @@ body {
 	background:#fff;
 	width:100%;
 	height:100%;
+	overflow-y: hidden;
 }
-body {
-	font-family:"Noto Sans KR";
-	font-size:14px;color:#555;
-	letter-spacing:-0.5px;
-	word-break:break-all;
-}
+body {font-family:"Noto Sans KR";/*font-weight:400;*/font-size:14px;color:#555;letter-spacing:-0.5px;word-break:break-all;}
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
 	display:block;
 }
 nav ul,li {
 	list-style:none;
+}
+blockquote, q {
+	quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:"";
+	content:none;
 }
 a {
 	margin:0;
@@ -113,34 +119,111 @@ a {
 	background:transparent;
 	box-sizing:border-box;
 	color:#555;
+	/* ì´ìŠˆê°€ ë§Žì•„ ì£¼ì„ì²˜ë¦¬ë¨ - í™•ì¸í•„ìš” - 20190421 */
+	/*display:inline-block;*/
 }
-a:hover {text-decoration:underline;}
+a:hover {text-decoration:underline;} /*2019-02-15 underline ê³ ê°ìš”êµ¬ì‚¬í•­ë°˜ì˜*/
+
 img {
 	vertical-align:top;
 }
-h1, h2, h3, h4, h5, h6 {font-weight:500;}
-strong {font-weight:500;}
-em {font-style:normal;}
-
+ins {
+	background-color:#ff9;
+	color:#000;
+	text-decoration:none;
+}
+mark {
+	background-color:#ff9;
+	color:#000;
+	font-style:italic;
+	font-weight:500;
+}
+del {
+	text-decoration:line-through;
+}
+abbr[title], dfn[title] {
+	border-bottom:1px dotted;
+	cursor:help;
+}
+table {
+	border-spacing:0;
+	width:100%;
+}
+table caption, legend {visibility:hidden;overflow:hidden;position:absolute;left:-9999px;margin:0;padding:0;width:1px;height:0px;font-size:0;line-height:0;text-indent:-9999px;}
+hr {
+	display:block;
+	height:1px;
+	border:0;
+	border-top:1px solid #cccccc;
+	margin:1em 0;
+	padding:0;
+}
 input, select {
 	vertical-align:middle;
 	box-sizing:border-box;
 	-webkit-appearance:none;
 	-webkit-border-radius:0;
-
+	
 }
+h1, h2, h3, h4, h5, h6 {font-weight:500;}
+strong {font-weight:500;}
+em {font-style:normal;}
 input[type=text],input[type=password] {
-	border:1px solid #ddd;
-	height:34px;
-	font-family:"Noto Sans KR";
-	font-size:14px;
-	color:#555;
-	padding:0 10px;
-	max-width:100%;
+	 border:1px solid #ddd;
+	 height:34px;
+	 font-family:"Noto Sans KR";
+	 font-size:14px;
+	 color:#555;
+	 padding:0 10px;
+	 max-width:100%;
 }
 input[type=text]:focus,input[type=password]:focus, select:focus {border:1px solid #009591; outline:none;}
 input:read-only, input.readonly, input.disabled, input[readonly],input[type=text].readonly,input[type=password].readonly {color:#888 !important;border-color:#ddd;background:#e6e6e6!important;}
 input.xclear::-ms-clear {display:none;}
+select {
+	 position:relative;
+	 border:1px solid #ddd;
+	 height:34px;
+	 /*filter:alpha(opacity=0);*/
+	 font-family:"Noto Sans KR";
+	 font-size:14px;
+	 -webkit-appearance:button;
+	 -webkit-padding-end:30px;
+	 -webkit-padding-start:10px;
+	 -webkit-user-select:none;
+	 background:url("../img/icon_selectBg.gif") right center no-repeat #fff;
+	 background:none\0/IE9;
+	 background-size:22px auto;
+	 cursor:pointer;
+	 padding:0px 0px 0 10px;
+	 -webkit-appearance:none;
+	 -moz-appearance:none;
+	 -o-appearance:none;
+	 appearance:none;
+	 color:#555;
+	 max-width:100%;
+}
+select::-ms-expand {display:none;}
+select option{ border:1px solid #f00}
+select:focus::-ms-value{margin-left:-9px;padding-left:10px;}
+/*IE9 select í™”ì‚´í‘œ ëŒ€ì‘
+.select_wrap {display:block;position:relative;width:100%;}
+.select_wrap:before {display:inline-block;position:absolute;right:6px;top:-1px; height:18px;width:15px; margin:2px; content:url('../img/icon_selectBg.gif');z-index: 10;}
+.select_wrap select:focus::-ms-value{margin-left:-9px;padding-left:10px;}
+*/
+select.readonly, select.disabled, select:disabled {color:#9e9d9d !important;border-color:#ddd;background:url("../img/icon_selectBgOff.gif") right center no-repeat #e6e6e6;}
+textarea {
+	 font-family:"Noto Sans KR";
+	 min-height:120px;
+	 resize:none;
+	 width:100%;
+	 border:1px solid #ddd;
+	 border-radius:4px;
+	 color:#555;
+	 font-size:14px;
+	 padding:7px 10px;
+	 max-width:100%;
+}
 input:focus, select:focus, textarea:focus {border-color:#009591;}
 input[type=radio]{display:inline-block;position:absolute;left:-9999px}
 input[type=radio]+label{z-index:1;position:relative;display:inline-block;cursor:pointer;line-height: 26px;padding: 4px 6px 4px 26px;margin-right:10px;color:#555}
