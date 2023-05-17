@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="/src/script/signupPage/accidentReport.js"></script>
 </head>
 <body>
     <h1>STEP1 계약사항확인</h1>
@@ -14,7 +15,7 @@
             <tr>
                 <td>접수자명</td>
                 <td>
-                    <input type="text" placeholder="이름을 입력">
+                    <input type="text" placeholder="이름을 입력" id="name">
                 </td>
                 <td>연락처</td>
                 <td>
@@ -31,9 +32,9 @@
                         <option value="019">019</option>
                     </select>
                     -
-                    <input type="text" maxlength="4">
+                    <input type="text" maxlength="4" id="pnoMiddle"  onkeyup="moveCursor(this)">
                     -
-                    <input type="text" maxlength="4">
+                    <input type="text" maxlength="4" id="pnoBack">
                 </td>
             </tr>
             <tr>
@@ -44,7 +45,8 @@
                     <input type="radio" name="relation">영업가족
                     <input type="radio" name="relation">동료
                     <input type="radio" name="relation">기타
-                    <!--안보였다가 기타 선택하면 나타나도록-->
+                    <!--안보였다가 기타 선택하면 나타나도록
+                    css: 맨처음 display:none으로 주고 hover인가? focus인가? 이 항목을 줘서 클릭시 나타나도록-->
                     <input type="text" name="relation" placeholder="관계를 입력하세요">동료
                 </td>
             </tr>
@@ -59,22 +61,29 @@
             <tr>
                 <td>사고일시</td>
                 <td>
-                    <input type="datetime">
+                    <form>
+                        <p><input type="date" id="date"></p>
+                        <p><input type="submit" value="Submit"></p>
+                      </form>
                 </td>
             </tr>
             <Tr>
                 <td>차량번호</td>
                 <td>
-                    <input type="text">차량번호
+                    <input type="text">
                 </td>
             </Tr>
         </tbody>
     </table>
 
-    <div class="next-btn" id="next-btn">
-        <!--다음 step2.html로 넘어가기-->
-        <input type="button" id="next-btn-real" value="다음">
+    <div>
+        <input type="button" value="정보저장하기" onclick="saveStep1Info()">
+    </div>
 
+    <div class="next-btn" id="next-btn" >
+        <!--다음 step2.html로 넘어가기-->
+        <button type="button" id="next-btn-real" onclick="document.location.href='step2.html'">
+다음</button>
     </div>
 
 </body>

@@ -1,5 +1,50 @@
-var submit = document.getElementById('submitButton');
-submit.onclick = showImage;     //Submit 버튼 클릭시 이미지 보여주기
+window.onload=function infoPage()
+{
+    console.log("hello");
+    const address = window.localStorage.getItem('address');
+
+    const realaddress = document.getElementById('mapAddr');
+    realaddress.value=address;
+}
+
+
+function moveCursor(pnoMiddle) {
+    if (pnoMiddle.value.length == 4) {
+        document
+            .getElementById("pnoBack")
+            .focus();
+    }
+}
+
+function saveStep1Info(){
+    const name = document
+        .getElementById('name')
+        .value;
+
+    // const phoneNum_front = ChangeValue();
+    const phoneNum_middle = document
+        .getElementById('pnoMiddle')
+        .value;
+    const phoneNum_back = document
+        .getElementById('pnoBack')
+        .value;
+
+        const accident_date = document
+        .getElementById('date')
+        .value;
+
+    localStorage.setItem('name', name);
+    localStorage.setItem('pnoMiddle', phoneNum_middle);
+    localStorage.setItem('pnoBack', phoneNum_back);
+    localStorage.setItem('date', accident_date);
+
+
+
+    console.log(localStorage.getItem('date'));
+
+
+}
+
 
 function showImage() {
     var newImage = document.getElementById('image-show').lastElementChild;
