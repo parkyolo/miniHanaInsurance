@@ -1,12 +1,27 @@
-window.onload=function infoPage()
+
+function step2load()
 {
     console.log("hello");
     const address = window.localStorage.getItem('address');
 
+    console.log(address);
+
+    
     const realaddress = document.getElementById('mapAddr');
     realaddress.value=address;
+
 }
 
+function step4load()
+{
+    const address = window.localStorage.getItem('address');
+
+    console.log(address);
+    
+    const infoDiv = document.getElementById('location');
+    infoDiv.innerHTML=address;
+
+}
 
 function moveCursor(pnoMiddle) {
     if (pnoMiddle.value.length == 4) {

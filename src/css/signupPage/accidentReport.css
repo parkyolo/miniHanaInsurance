@@ -5,7 +5,9 @@ html {
 body {
     font-family: sans-serif;
     height: 100%;
+    width: 100%;
     margin: 0;
+    position: absolute;
 }
 
 .container {
@@ -81,3 +83,8 @@ label {
 .img {
     position: absolute;
 }
+
+
+.container{   position: relative;top: auto; margin:auto}
+
+
