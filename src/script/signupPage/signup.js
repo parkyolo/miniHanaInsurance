@@ -1,5 +1,7 @@
-const axios = require('axios'); 
+// import axios from 'axios';
+// import CryptoJS from 'crypto-js';
 const CryptoJS = require('crypto-js'); 
+const axios=require('axios');
 
 
 //난수 생성
@@ -86,9 +88,9 @@ function pNoToString() {
 }
 
 // 네이버 open api 요청하기 const access_key=process.env.NEXT_PUBLIC_ACCESS_KEY; const
-// secrete_key=process.env.NEXT_PUBLIC_SECRETE_KEY; const
-// service_id=process.env.NEXT_PUBLIC_SERVICE_ID; console.log(access_key);
-// console.log(secrete_key); console.log(service_id);
+secrete_key=process.env.NEXT_PUBLIC_SECRETE_KEY; const
+service_id=process.env.NEXT_PUBLIC_SERVICE_ID; console.log(access_key);
+console.log(secrete_key); console.log(service_id);
 
 function onLoggin() {
 
@@ -100,11 +102,11 @@ function onLoggin() {
     localStorage.setItem('code', code);
 }
 
-//API 호출 axios
+// API 호출 axios
 // function onLoggin() {
-//     const access_key = "9DEXTFVR8GfDIjwK4Gmj";
-//     const secrete_key = "FxJSD89P2ySc3xpT3dvrHaW5CjDGmEDfUxtdwx2o";
-//     const service_id = "ncp:sms:kr:307678834843:minihanasonbo";
+//     const code = generateRandomCode(6);
+
+
 //     const phoneNum = "01063685605";
 //     console.log(phoneNum);
 //     console.log(access_key);
@@ -136,8 +138,8 @@ function onLoggin() {
 //         method: method,
 //         url: url,
 //         headers: {
-//             "Contenc-type": "application/json;charset = utf - 8 ",
-//             " x - ncp - iam - access - key ": access_key,
+//             "Content-type": "application/json;charset=utf-8 ",
+//             "x-ncp-iam-access-key ": access_key,
 //             "x-ncp-apigw-timestamp": date,
 //             "x-ncp-apigw-signature-v2": signature
 //         },
@@ -157,6 +159,8 @@ function onLoggin() {
 //     })
 //         .then(res => {
 //             console.log(res.data);
+//             const $=cheerio.load(html.data);
+
 //         })
 //         .catch(err => {
 //             console.log(err);
@@ -164,8 +168,7 @@ function onLoggin() {
 //     }
 
 
-module.exports = onLoggin;
-console.log(onLoggin());
+// module.exports = onLoggin;
 
 function isSuccess(e) {
 
@@ -219,3 +222,4 @@ function returnPinfo() {
     이름 : 15글자로 제한
 
 */
+console.log(onLoggin());
