@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="/src/script/signupPage/accidentReport.js"></script>
+
 </head>
-<body>
+<body onload="step4load()">
     <h1>STEP4 사고접수완료</h1>
     <h6>사고접수 정보 확인</h6>
     <table border="1">
@@ -24,7 +26,7 @@
             </tr>
             <tr>
                 <td>사고장소</td>
-                <td>(도로명 주소 (건물이름))</td>
+                <td >주소 : <span id="location"></span></span></td>
 
             </tr>
             <tr>

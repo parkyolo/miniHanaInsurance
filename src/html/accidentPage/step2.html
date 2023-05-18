@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .map_wrap {position:relative;width:100%;height:350px;}
-        .title {font-weight:bold;display:block;}
-        .hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
-        #centerAddr {display:block;margin-top:2px;font-weight: normal;}
-        .bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
-    </style>
+
+    <link rel="stylesheet" href="/src/css/signupPage/accidentReport.css">
+
     <script src="/src/script/signupPage/accidentReport.js"></script>
 </head>
-<body>
+
+<body onload="step2load()">
     <h1>STEP2 사고사항입력</h1>
     <h6>운전하신 고객님의 정보를 알려주세요</h6>
-    
+
 
     <h6>사고유형을 알려주세요</h6>
     <div class="type-of-accident" id="type-of-accident">
-            <input type="radio" name="accident-type">차대차
-            <input type="radio" name="accident-type">차량단독
-            <input type="radio" name="accident-type">차대인
-            <input type="radio" name="accident-type">기타
-            <!--안보였다가 기타 선택하면 나타나도록-->
-            <input type="text" name="accident-type" placeholder="사고유형을 입력해주세요">
+        <input type="radio" name="accident-type">차대차
+        <input type="radio" name="accident-type">차량단독
+        <input type="radio" name="accident-type">차대인
+        <input type="radio" name="accident-type">기타
+        <!--안보였다가 기타 선택하면 나타나도록-->
+        <input type="text" name="accident-type" placeholder="사고유형을 입력해주세요">
     </div>
     <h6>사고관련 추가정보가 있으시면 등록해주세요.</h6>
     <table border="1">
@@ -35,7 +33,7 @@
                 <td>경찰서 신고여부</td>
                 <td>
                     <input type="radio" name="callPolice" default>신고
-                    <input type="radio"name="callPolice" >미신고
+                    <input type="radio" name="callPolice">미신고
                 </td>
                 <td>경찰서명</td>
                 <td>
@@ -60,22 +58,24 @@
         </tr>
         <tr>
             <td>
-               
-                <div class="address-from-map" >
+
+                <div class="address-from-map">
                     <input type="text" id="mapAddr"></input>
                 </div>
             </td>
-           
+
         </tr>
     </table>
 
 
-    
-    
-    <button type="button" id="next-btn-real" onclick="document.location.href='step3.html'">
+
+
+    <button type="button" id="next-btn-real" onclick="document.location.href='step3.html'" value="다음">다음</button>
 
 
 
-   
+
+
 </body>
+
 </html>
