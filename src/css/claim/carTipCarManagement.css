@@ -1,34 +1,11 @@
-
-.all-content{
-	width: 1000px;
-	margin: 0 auto;
-}
-
-/* 탭 */
-ul.tabs{
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-    background:#009591;
-}
-ul.tabs li{
-	background: none;
-	color: white;
-	display: inline-block;
-	padding: 10px 15px;
-	cursor: pointer;
-}
-
-ul.tabs li.current{
-	background: white;
-	color: #009591;
-}
-
-.tab-content{
-	display: none;
-	padding: 15px;
-}
-
-.tab-content.current{
-	display: inherit;
-}
+main {display: block}
+.tab > ul{display:flex; position:relative; }
+.tab > ul > li.on {z-index: 2;}
+.tab > ul > li ul {display: none;}
+.tab > ul > li ul button{position:relative;}
+.tab > ul > li.on ul {display: flex;}
+.tab > ul > li.on > button {position: relative; }
+.tab content {display: none;}
+.tab content.on {display: block;}
+.tab content.on > .on {display: block;}
+.tab content.on > div {display: none;}

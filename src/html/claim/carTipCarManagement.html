@@ -8,50 +8,61 @@
 	<link rel="stylesheet" href="../../css/claim/carTipCarManagement.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="../../script/claim/carTipCarManagement.js"></script>
-    <title>차량관리팁 | 하나손해보험 </title>
+    <title> 차량관리팁 | 하나손해보험 </title>
 </head>
 <body>
-    <div class="all-content">
-        <div class="title">
-            <div>
-                <h2>차량관리팁</h2>
-                <p>운전자분들을 위한 차량 관리 팁!을 알려드립니다.</p>
-            </div>
+    <main>
+    </head>        
+        <h2>차량관리팁</h2>
+        <p>운전자분들을 위한 차량 관리 팁!을 알려드립니다.</p> 
 
-            
-        </div>
-        <div class="sub-sub-title">
-            <ul class="tabs">
-                <li class="tab-link current" data-tab="tab-1">신차 길들이기</li>
-                <li class="tab-link" data-tab="tab-2">엔진오일</li>
-                <li class="tab-link" data-tab="tab-3">브레이크오일</li>
-            </ul>
-    
-            <div id="tab-1" class="tab-content current">
-                <div>
-                    <h3>주행거리 2,000km까지가 중요!</h3>
-                        <ul>
-                            <li>주행거리가 2,000km가 될때 까지는 부품들이 제자리를 잡을 수 있도록 해야 합니다.</li>
-                            <li>출발은 웜-업을 한 후에 하십시요.</li>
-                            <li>시동직후 급출발은 피하고 웜-업후에 서서히 출발해야 엔진과 변속기에 무리를 주지 않습니다.</li>
+        <div class="tap_group">
+            <!-- 맨 위 탭 -->
+            <nav class="tab">
+                <ul class="tab_nav">
+                    <li class="on">
+                        <button>자동차관리</button>
+                        <!-- 그 아래 탭 -->
+                        <ul class="tab_nav">
+                            <li class="on"><button>신차 길들이기</button></li>
+                            <li><button>엔진오일</button></li>
+                            <li><button>브레이크오일</button></li>                            
                         </ul>
-                        <h3>주행거리 2,000km까지가 중요!</h3>
-                        <ul>
-                            <li>주행거리가 2,000km가 될때 까지는 부품들이 제자리를 잡을 수 있도록 해야 합니다.</li>
-                            <li>출발은 웜-업을 한 후에 하십시요.</li>
-                            <li>시동직후 급출발은 피하고 웜-업후에 서서히 출발해야 엔진과 변속기에 무리를 주지 않습니다.</li>
+                    </li>
+                    <li>
+                        <button>안전운전 요령</button>
+                        <ul class="tab_nav">
+                            <li><button>보행자보호운전요령</button></li>
+                            <li><button>통행방법요령</button></li>                          
                         </ul>
-                        <h3>주행거리 2,000km까지가 중요!</h3>
-                        <ul>
-                            <li>주행거리가 2,000km가 될때 까지는 부품들이 제자리를 잡을 수 있도록 해야 합니다.</li>
-                            <li>출발은 웜-업을 한 후에 하십시요.</li>
-                            <li>시동직후 급출발은 피하고 웜-업후에 서서히 출발해야 엔진과 변속기에 무리를 주지 않습니다.</li>
+                    </li>
+                    <li>
+                        <button>안전운전 요령</button>
+                        <ul class="tab_nav">
+                            <li><button>스타터모터미회전시요령</button></li>
+                            <li><button>엔진과열시요령</button></li>    
+                            <li><button>주자브레이크해체불가시요령</button></li>    
+                            <li><button>주차브레이크미작동시요령</button></li>                          
                         </ul>
-                </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="tab_content on">
+                <div class="on">contents 1-1</div>
+                <div>contents 1-2</div>
+                <div>contents 1-3</div>
             </div>
-            <div id="tab-2" class="tab-content"><p>tab2입니다.</p></div>
-            <div id="tab-3" class="tab-content"><p>tab3입니다.</p></div>
+            <div class="tab_content">
+                <div class="on">contents 2-1</div>
+                <div >contents 2-2</div>
+            </div>
+            <div class="tab_content">
+                <div class="on">contents 3-1</div>
+                <div >contents 3-2</div>
+                <div >contents 3-3</div>
+            </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>
