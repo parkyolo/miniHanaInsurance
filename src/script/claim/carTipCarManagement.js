@@ -13,7 +13,8 @@ $(document).ready(function(){
         var $this = $(this).parents('.tab_group').children('.tab_content').eq(idx);
   
         $this.addClass('on').siblings().removeClass('on');
-      } else{
+      } 
+      else{
         var parent_idx = $(this).parent().parent().parent('li').index();
         var $this = $(this).parents('.tab_group').children('.tab_content').eq(parent_idx).children().eq(idx);
   
