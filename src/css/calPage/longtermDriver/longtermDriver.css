@@ -111,11 +111,11 @@
 .ria_box input.btn_char_men[type=radio] + label{border:solid 1.5px #b2d7d4;border-radius:0;padding:9px 36px 9px 74px;margin-right:2px;font-size:16px;line-height:normal;text-align:center;color:#82bfb9;}
 .ria_box input.btn_char_men[type=radio] + label:before{width:25px;height:25px;position:absolute;left:60px;background:url("/src/images/calImg/bg_sexM.png") no-repeat;background-size:25px;}
 .ria_box input.btn_char_men[type=radio]:checked + label{color:#28b2a5;border:1.5px solid #28b2a5;background:#fff;}
-.ria_box input.btn_char_men[type=radio]:checked + label:before{background:url("/static/resources/moria/img/common/bg_sexM_on.png") no-repeat;background-size:25px;}
+.ria_box input.btn_char_men[type=radio]:checked + label:before{background:url("/src/images/calImg/bg_sexM_on.png") no-repeat;background-size:25px;}
 .ria_box input.btn_char_women[type=radio] + label{border:solid 1.5px #b2d7d4;border-radius:0;padding:9px 36px 9px 74px;margin-right:0;font-size:16px;line-height:normal;text-align:center;color:#82bfb9;}
 .ria_box input.btn_char_women[type=radio] + label:before{width:25px;height:25px;position:absolute;left:60px;background:url("/src/images/calImg/bg_sexW.png") no-repeat;background-size:25px;}
 .ria_box input.btn_char_women[type=radio]:checked + label{color:#28b2a5;border:1.5px solid #28b2a5;background:#fff;}
-.ria_box input.btn_char_women[type=radio]:checked + label:before{background:url("/static/resources/moria/img/common/bg_sexW_on.png") no-repeat;background-size:25px;}
+.ria_box input.btn_char_women[type=radio]:checked + label:before{background:url("/src/images/calImg/bg_sexW_on.png") no-repeat;background-size:25px;}
 
 .ria_box input.ria_yesno[type=radio]:checked+label {width:calc(50% - 5px);}
 .ria_box input.ria_yesno[type=radio]+label {width:calc(50% - 5px);}
