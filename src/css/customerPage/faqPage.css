@@ -2,6 +2,16 @@
 @import url('/src/css/common.css');
 @import url('/src/css/default.css');
 
+#contents{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 1140px;
+    padding: 40px 20px 100px 20px;
+    min-height: 600px;
+}
 #visual_box.visual_txt {
     float: none;
     width: 100%;
@@ -165,7 +175,7 @@
 .fna_search_box .search_field .input_box:focus {outline:none;}
 .search_field .input_box{border:none;border-bottom:2px solid #28b2a5; width:100%;font-size:20px;padding:15px 57px 15px 15px;height:65px}
 
-.search_field a{display:block;position:absolute;right:0;bottom:10px;width:45px;height:45px;border-radius:50%;background:url('/src/images/customerImg/bg_search.png') no-repeat center center #28b2a5;}
+.search_field a{display:block;position:absolute;right:5px;bottom:10px;width:45px;height:45px;border-radius:50%;background:url('/src/images/customerImg/bg_search.png') no-repeat center center #28b2a5;}
 .search_field .input_box::-webkit-input-placeholder{font-weight:300}
 .search_field .input_box::-moz-placeholder{font-weight:300}
 .search_field .input_box:-ms-input-placeholder{font-weight:300}
@@ -245,7 +255,7 @@
     right: 15px;
     top: 50%;
     margin-top: -13px;
-    font-size: 26px;
+    font-size: 20px;
     color: #888;
 }
 .accodion_box li.open > a:before {
@@ -344,4 +354,7 @@
 .page_list li.next a:hover,.page_list li.next a:focus,
 .page_list li.active a:hover,.page_list li.active a:focus  {
     color: #009591;
+}
+.fa {
+    font: normal normal normal 14px/1 FontAwesome;
 }
