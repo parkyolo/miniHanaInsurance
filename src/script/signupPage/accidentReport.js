@@ -1,6 +1,5 @@
 
-
-
+//사고접수번호용 난수 생성
 function generateRandomCode(n) {
     let str = ''
     for (let i = 0; i < n; i++) {
@@ -9,6 +8,7 @@ function generateRandomCode(n) {
     return str
 }
 
+//step1 사용자 정보 저장하기
 function saveStep1Info(){
     const name = document
         .getElementById('name')
@@ -34,31 +34,26 @@ function saveStep1Info(){
         .getElementById('date')
         .value;
 
-
-
-
-
     const carNum=document.getElementById('carnum').value;
 
-    localStorage.setItem('name', name);
-    localStorage.setItem('pnoMiddle', phoneNum_middle);
-    localStorage.setItem('pnoBack', phoneNum_back);
-    localStorage.setItem('date', accident_date);
-    localStorage.setItem('carnum', carNum);
 
-    localStorage.setItem('pnoFront',frontNo);
+    const userInfo={
+        'name':name,
+        'pnoFront':frontNo,
+        'pnoMiddle':phoneNum_middle,
+        'pnoBack':phoneNum_back,
+        "date":accident_date,
+        'carnum':carNum
 
+    }
 
-
-
-    console.log(localStorage.getItem('date'));
-    console.log(localStorage.getItem('pnoFront'));
-
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
 }
 
-
+//step2 사용자 정보 불러오기
 function step2load()
 {
+
     console.log("hello");
     const address = window.localStorage.getItem('address');
 
@@ -70,28 +65,29 @@ function step2load()
 
 }
 
+//step4 접수 정보 불러오기
 function step4load()
 {
 
+
     /*json으로 리팩토링 하기*/
+
+    var obj=JSON.parse(localStorage.getItem('userInfo'));
+    
     const accident_num=generateRandomCode(7);
-    const accident_date=window.localStorage.getItem('date')
-    const address = window.localStorage.getItem('address');
-    const carNum=window.localStorage.getItem('carnum');
-    const name=window.localStorage.getItem('name');
-    const pnoFront=localStorage.getItem('pnoFront');
-    const pnoMiddle=localStorage.getItem('pnoMiddle');
-    const pnoBack=localStorage.getItem('pnoBack');
+    const accident_date=obj.date;
+    const address = obj.address;
+    const carNum=obj.carnum;
+    const name=obj.name;
+    const pnoFront=obj.pnoFront;
+    const pnoMiddle=obj.pnoMiddle;
+    const pnoBack=obj.pnoBack;
 
     const phoneNum=pnoFront+"-"+pnoMiddle+"-"+pnoBack;
 
-    console.log(address);
-    console.log(phoneNum);
-    if(phoneNum==null)
-        console.log("null임");
-    else
-        console.log("null 아님");
+   
     
+    /*코드 중복 줄이기*/
     const location = document.getElementById('location');
     location.innerHTML=address;
     const date = document.getElementById('date');
@@ -109,6 +105,7 @@ function step4load()
     localStorage.clear();
 }
 
+//휴대폰번호 입력 시 자동 커서 이동
 function moveCursor(pnoMiddle) {
     if (pnoMiddle.value.length == 4) {
         document
@@ -118,7 +115,7 @@ function moveCursor(pnoMiddle) {
 }
 
 
-
+//step2 업로드한 이미지 미리보기
 function showImage() {
     var newImage = document.getElementById('image-show').lastElementChild;
     newImage.style.visibility = "visible";
@@ -128,6 +125,7 @@ function showImage() {
     document.getElementById('fileName').textContent = null;     //기존 파일 이름 지우기
 }
 
+//step2 이미지 업로드하기
 function getImageFiles(e) {
     const uploadFiles = [];
     const files = e.currentTarget.files;
@@ -159,6 +157,8 @@ function getImageFiles(e) {
     });
   }
 
+
+//step2 이미지 생성하기
   function createElement(e, file) {
     const li = document.createElement('li');
     const img = document.createElement('img');
@@ -170,6 +170,7 @@ function getImageFiles(e) {
   }
 
 
+//step2 파일 업로드하기
 function loadFile(input) {
     var file = input.files[0];
 
