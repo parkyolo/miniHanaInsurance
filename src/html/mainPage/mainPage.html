@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>신생활보험 플랫폼 | 하나손해보험</title>
-    <link href="../../images/img_hana_symbol.png" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="../../css/mainPage/mainPage.css">
+    <link href="/src/images/img_hana_symbol.png" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/src/css/mainPage/mainPage.css">
 </head>
 <body>
     <div id="wrap">
-        <header></header>
+        <header data-include-path="/src/html/layout/header.html"></header>
         <!--container-->
         <div id="container" class="mcontainer">
             <div id="mcontents">
@@ -20,7 +20,7 @@
                     <div class="mvisual">
                         <div class="mbanner">
                             <div class="item" name="top_banner_item">
-                                <img src="../../images/mainImg/main_20230320.png" alt="PC메인_에코플러스">
+                                <img src="/src/images/mainImg/main_20230320.png" alt="PC메인_에코플러스">
                             </div>
                         </div>
                         <div class="mfloat">
@@ -33,7 +33,7 @@
                                                 <p class="title">
                                                     마이플랜
                                                     <br>
-                                                    <font>최대 50% 할인</font> <!--css ::after-->
+                                                    <font>최대 50% 할인</font>
                                                 </p>
                                             </section>
                                             <section class="recom_box">
@@ -47,22 +47,18 @@
                                             <section class="sale_point">
                                                 <p class="label">특약할인</p>
                                                 <dl>
-                                                    <dt> <!--flex-->
-                                                        <!--::before-->
+                                                    <dt>
                                                         <span onclick="location.href='#'">
                                                             마일리지 특약(
                                                             <font class="point">선할인</font>
                                                             )
-                                                            <!--::after-->
                                                         </span>
                                                         <span class="point">44%</span>
                                                     </dt>
                                                     <dd>연간주행거리 1천km이하 약정시할인</dd>
-                                                    <dt> <!--flex-->
-                                                        <!--::before-->
+                                                    <dt>
                                                         <span onclick="location.href='#'">
                                                             세컨카 추가 특약
-                                                            <!--::after-->
                                                         </span>
                                                         <span class="point">11%</span>
                                                     </dt>
@@ -80,13 +76,13 @@
                                                 <p class="title">
                                                     에코마일플랜
                                                     <br>
-                                                    <font>월정산형</font> <!--css ::after-->
+                                                    <font>월정산형</font>
                                                 </p>
                                             </section>
                                             <section class="recom_box">
                                                 <p class="label">추천</p>
                                                 <p class="recom_detail">
-                                                    현대차·기아·제네시스
+                                                    현대차 · 기아 · 제네시스
                                                     <br>
                                                     커넥티드 서비스 이용 고객님
                                                 </p>
@@ -94,11 +90,9 @@
                                             <section class="sale_point">
                                                 <p class="label">특약할인</p>
                                                 <dl>
-                                                    <dt> <!--flex-->
-                                                        <!--::before-->
+                                                    <dt>
                                                         <span onclick="location.href='#'">
                                                             에코마일 특약
-                                                            <!--::after-->
                                                         </span>
                                                         <span class="point">월정산형</span>
                                                     </dt>
@@ -112,7 +106,7 @@
                                                 <p class="title">
                                                     표준플랜
                                                     <br>
-                                                    <font>최대 45% 할인</font> <!--css ::after-->
+                                                    <font>최대 45% 할인</font>
                                                 </p>
                                             </section>
                                             <section class="recom_box">
@@ -126,13 +120,11 @@
                                             <section class="sale_point">
                                                 <p class="label">특약할인</p>
                                                 <dl>
-                                                    <dt> <!--flex-->
-                                                        <!--::before-->
+                                                    <dt>
                                                         <span onclick="location.href='#'">
                                                             마일리지 특약(
                                                             <font class="point">후할인</font>
                                                             )
-                                                            <!--::after-->
                                                         </span>
                                                         <span class="point">45%</span>
                                                     </dt>
@@ -236,9 +228,25 @@
                 </div>
             </div>
         </div>
-        <footer id="footer">
-
-        </footer>
+        <footer data-include-path="/src/html/layout/footer.html"></footer>
     </div>
+    <script>
+        window.addEventListener('load', function() {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function(el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
