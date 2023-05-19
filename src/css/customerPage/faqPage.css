@@ -162,40 +162,18 @@
 .fna_search_box{width:100%;float:left;padding:0 200px;}
 .fna_search_box a:hover{text-decoration:none;}
 .fna_search_box > div{width:100%;float:left;position:relative;}
-.fna_search_box .search_field input:focus {outline:none;}
+.fna_search_box .search_field .input_box:focus {outline:none;}
+.search_field .input_box{border:none;border-bottom:2px solid #28b2a5; width:100%;font-size:20px;padding:15px 57px 15px 15px;height:65px}
+
+.search_field a{display:block;position:absolute;right:0;bottom:10px;width:45px;height:45px;border-radius:50%;background:url('/src/images/customerImg/bg_search.png') no-repeat center center #28b2a5;}
+.search_field .input_box::-webkit-input-placeholder{font-weight:300}
+.search_field .input_box::-moz-placeholder{font-weight:300}
+.search_field .input_box:-ms-input-placeholder{font-weight:300}
+.search_field .input_box:-moz-placeholder{font-weight:300}
+.fna_result_box{min-height:230px;}
+
 .fna_search_box .sort_field .faq_select_list {margin:0 auto;width:60%;}
 .fna_search_box .sort_field .faq_select_list > div > a {text-align:left;}
-
-.search_field input {
-    border: none;
-    border-bottom: 2px solid #28b2a5;
-    width: 100%;
-    font-size: 20px;
-    padding: 15px 57px 15px 15px;
-    height: 65px;
-}
-.search_field a {
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 10px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: url('/src/images/customerImg/bg_search.png') no-repeat center center #28b2a5;
-}
-.search_field input::-webkit-input-placeholder {
-    font-weight: 300;
-}
-.search_field input::-moz-placeholder {
-    font-weight: 300;
-}
-.search_field input:-ms-input-placeholder {
-    font-weight: 300;
-}
-.search_field input:-moz-placeholder {
-    font-weight: 300;
-}
 
 .keyword_field {
     text-align: center;
