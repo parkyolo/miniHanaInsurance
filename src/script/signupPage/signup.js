@@ -1,5 +1,3 @@
-// import axios from 'axios';
-// import CryptoJS from 'crypto-js';
 const CryptoJS = require('crypto-js'); 
 const axios=require('axios');
 
@@ -42,6 +40,21 @@ function isPnoNull(e) {
         }
     }
 }
+
+//이름 유효성 검사-15자리
+function isName(e)
+{
+    const naemLength=documet.getElementById('name').length;
+    if(e.keyCode==13)
+    {
+        if(naemLength>15)
+        {
+            alert("이름은 15글자 이하로 입력해주세요");
+        }
+    }
+}
+
+
 
 //휴대폰 인증약관 동의 전체 선택
 function selectAll(all) {
@@ -87,11 +100,10 @@ function pNoToString() {
     return pno;
 }
 
-// 네이버 open api 요청하기 const access_key=process.env.NEXT_PUBLIC_ACCESS_KEY; const
-secrete_key=process.env.NEXT_PUBLIC_SECRETE_KEY; const
-service_id=process.env.NEXT_PUBLIC_SERVICE_ID; console.log(access_key);
-console.log(secrete_key); console.log(service_id);
-
+// 네이버 open api 요청하기 
+const access_key=process.env.NEXT_PUBLIC_ACCESS_KEY; 
+const secrete_key=process.env.NEXT_PUBLIC_SECRETE_KEY; 
+const service_id=process.env.NEXT_PUBLIC_SERVICE_ID; 
 function onLoggin() {
 
     if (isAllChecked() == false) 
@@ -102,73 +114,7 @@ function onLoggin() {
     localStorage.setItem('code', code);
 }
 
-// API 호출 axios
-// function onLoggin() {
-//     const code = generateRandomCode(6);
 
-
-//     const phoneNum = "01063685605";
-//     console.log(phoneNum);
-//     console.log(access_key);
-//     const method = "POST";
-//     const space = " ";
-//     const newLine = "\n";
-//     const url = `https://sens.apigw.ntruss.com/sms/v2/services/${service_id}/messages`;
-//     const url2 = `/sms/v2/services/${service_id}/messages`;
-//     const date = Date
-//         .now()
-//         .toString();
-//     const hmac = CryptoJS
-//         .algo
-//         .HMAC
-//         .create(CryptoJS.algo.SHA256, secrete_key);
-//     hmac.update(method);
-//     hmac.update(space);
-//     hmac.update(url2);
-//     hmac.update(newLine);
-//     hmac.update(date);
-//     hmac.update(newLine);
-//     hmac.update(access_key);
-//     const hash = hmac.finalize();
-//     const signature = hash.toString(CryptoJS.enc.Base64);
-
-//     console.log(signature);
-
-//     axios({
-//         method: method,
-//         url: url,
-//         headers: {
-//             "Content-type": "application/json;charset=utf-8 ",
-//             "x-ncp-iam-access-key ": access_key,
-//             "x-ncp-apigw-timestamp": date,
-//             "x-ncp-apigw-signature-v2": signature
-//         },
-//         data: {
-//             type: "SMS",
-//             countryCode: "82",
-//             from: "01063685605",
-//             content: `하나손해보험 인증번호입니다.`,
-//             messages: [
-
-//                 {
-//                     to: `${phoneNum}`,
-//                     content: '하나손해보험 인증번호는 ' + code + ' 입니다.'
-//                 }
-//             ]
-//         }
-//     })
-//         .then(res => {
-//             console.log(res.data);
-//             const $=cheerio.load(html.data);
-
-//         })
-//         .catch(err => {
-//             console.log(err);
-//         })
-//     }
-
-
-// module.exports = onLoggin;
 
 function isSuccess(e) {
 
@@ -207,19 +153,13 @@ function returnPinfo() {
         .getElementById('pNo-back')
         .value;
 
-    localStorage.setItem('name', name);
-    localStorage.setItem('bday', bday);
-    localStorage.setItem('phoneNum_front', phoneNum_front);
-    localStorage.setItem('phoneNum_back', phoneNum_back);
+    const userInfo={
+        'name':name,
+        'bday':bday,
+        'pnoFront':phoneNum_front,
+        'pnoBack':phoneNum_back
+    }
+    localStorage.setItem('userInfo',JSON.stringify(userInfo));
 
 }
 
-/*
-주민번호 제대로 입력 안하면 못넘어가게
-이름, 휴대폰번호, 생년월일 제대로 입력 안하면 못넘어가게
-    생년월일 : 6자리로 제한
-    휴대폰번호 : 8자리로 제한
-    이름 : 15글자로 제한
-
-*/
-console.log(onLoggin());

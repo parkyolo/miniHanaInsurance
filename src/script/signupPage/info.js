@@ -2,6 +2,7 @@
 
 window.onload=function infoPage()
 {
+   
     const name = window.localStorage.getItem('name');
     const birthday=window.localStorage.getItem('bday');
     const pnoFront=window.localStorage.getItem('phoneNum_front');
