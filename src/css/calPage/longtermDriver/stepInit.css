@@ -1,7 +1,6 @@
 @import url('/src/css/reset.css');
 @import url('/src/css/common.css');
 @import url('/src/css/default.css');
-@import url('/src/css/flipster.css');
 
 /*** ria_box ***/
 .ria_box .flipster {overflow:hidden;}
@@ -13,8 +12,8 @@
 
 .ria_box:after {content:"";width:100%;height:132px;background:linear-gradient(90deg, #009591 56.5%, #009591 0);background-color:#009591;position:absolute;top:0;z-index:1;}
 .ria_box.ria_change:after {content:"";width:100%;height:132px;background:linear-gradient(90deg, #3f4656 56.5%, #2b3349 0);background-color:#009591;position:absolute;top:0;z-index:1;}
-.ria_box .ria_container {width:1200px;position:absolute;top:0;left:50%;transform:translate(-50%,0);background:#fff;z-index:2;/*height:850px;*/}
-.ria_box .ria_header {height:50px;background-color:#009591;/*background-image:url("../img/bg_header.jpg"), linear-gradient(90deg, #009591 60%, #009591 0);background-position:60% top;background-repeat:no-repeat;*/}
+.ria_box .ria_container {width:1200px;position:absolute;top:0;left:50%;transform:translate(-50%,0);background:#fff;z-index:2;}
+.ria_box .ria_header {height:50px;background-color:#009591;}
 .ria_box.ria_change .ria_header {height:50px;background-color:#3f4656;background-image:url("../img/bg_header_change.jpg"), linear-gradient(90deg, #3f4656 60%, #2b3349 0);background-position:60% top;background-repeat:no-repeat;}
 .ria_box .ria_header:after {content:"";clear:both;display:table;}
 .ria_box .ria_header .ria_logo {float:left;}
@@ -31,7 +30,7 @@
 .ria_box .ria_header .ria_info .ria_bgroup .btn_ria1 {float:left;display:block;padding:4px 10px 5px;border:1px solid #b9e2e1;font-weight:400;font-size:13px;color:#fff;margin-left:5px;text-decoration:none;} /*2019-02-15 underline 고객요구사항반영*/
 .ria_box .ria_header .ria_info .ria_bgroup .btn_ria1.icon_door {position:relative;padding-right:32px;}
 .ria_box .ria_header .ria_info .ria_bgroup .btn_ria1.icon_door:after {content:"";width:11px;height:13px;background:url("/src/images/calImg/icon_door.png") no-repeat;position:absolute;top:8px;right:10px;}
-.ria_box .ria_body {background:#fff;padding:0 50px 60px;/*width:1100px;*/max-height:800px;border-bottom:10px solid #009591;/*position:relative;*/}
+.ria_box .ria_body {background:#fff;padding:0 50px 60px;max-height:800px;border-bottom:10px solid #009591;}
 
 .ria_box .ria_body .ria_title {}
 .ria_box .ria_body .ria_title:after {content:"";clear:both;display:table;}
@@ -39,13 +38,12 @@
 
 .dimmed{background:rgba(0,0,0,0.6);}
 
-/* step4 */
 .ria_box .result_box {overflow:hidden;}
 .ria_box .result_box:after {content:"";clear:both;display:table;}
 .ria_box .result_box .result_left {float:left;width:calc(100% - 316px);}
 
 .ria_box .result_box .result_right {float:right;width:296px;height:644px;margin-left:20px;position:relative;}
-.ria_box .result_box .result_sum_box {/*margin-top:77px;*/}
+.ria_box .result_box .result_sum_box {}
 .ria_box .result_box .result_sum_box .result_sum_title {text-align:right;}
 .ria_box .result_box .result_sum_box .result_sum_title h3 {background:#363a45;padding:20px 20px;font-weight:400;font-size:16px;color:#fff;}
 .ria_box .result_box .result_sum_box .result_sum_title h3 .r_box {display:block;}
@@ -79,7 +77,7 @@
 .ria_box .result_box .result_left.fixed {float:left;width:100%;margin-top: 20px;}
 .ria_box .result_box .msg_list.fixed {background: #363a45;width: 273px;margin-left: 432px;border-right: 1.5px solid #474c59;border-left: 1.5px solid #474c59;height: 100px;padding: 28px 0 0 34px;}
 .ria_box .result_box .result_layer_type.fixed {position:relative;padding: 50px 20px 48px 20px;border-top: 1px solid #2d303a;border-bottom: 1px solid #2d303a;background-color: #2d303a;color:#fff;width: 432px;margin-left: 0px;float: left;}
-.ria_box .result_box .result_sum_box .result_sum_title.fixed {text-align:right;width: 395px;/* float: left; */position: absolute;right: 0;top: 0;}
+.ria_box .result_box .result_sum_box .result_sum_title.fixed {text-align:right;width: 395px;position: absolute;right: 0;top: 0;}
 .ria_box .result_box .result_sum_box .result_sum_title.fixed h3 {background: #2d303a;padding:20px 20px;font-weight:400;font-size:16px;color:#fff;height:60px;}
 .ria_box .result_box .result_sum_box .result_sum_title .msg_price.fixed{background: #1b1d25;padding: 8px 20px 8px;border-top: 1px solid #474c59;text-align:left;font-weight:400;font-size:16px;color:#f0f9f8;}
 
@@ -187,10 +185,10 @@ max-width: 100%;
 .ria_box .select_board .select_list.size_change3 .item label {padding:20px 0;}
 .ria_box .select_board .select_list.size_change3 .item label.zero_data{top: 0px;padding: 24px 0px !important;}
 
-.ria_box .select_board .board_area1 {border:1px solid #afafaf;border-bottom:0;/* height: 474px;overflow-y: scroll; */margin-top: 72.6px;}
+.ria_box .select_board .board_area1 {border:1px solid #afafaf;border-bottom:0;margin-top: 72.6px;}
 .ria_box .select_board .board_area1 table {}
 .ria_box .select_board .board_area1 table th,
-.ria_box .select_board .board_area1 table td {/*height:60px;*/ font-weight:400;  vertical-align:middle;}
+.ria_box .select_board .board_area1 table td {font-weight:400;  vertical-align:middle;}
 .ria_box .select_board .board_area1 table th {padding-top:9px;  padding-bottom:9px;  border-bottom:1px solid #afafaf;color:#000;font-size:18px;}
 .ria_box .select_board .board_area1 table td {padding: 5px 15px !important;border-left:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;color:#656565;font-size:16px;text-align:right;}
 .ria_box .select_board .board_area1 table tr.bdColor td,
@@ -204,7 +202,7 @@ max-width: 100%;
 .ria_box .select_board .board_area1.size_change table th {padding: 7px 10px;font-size:16px;text-align:left;border-bottom:1px solid #e5e5e5;height: 55px;}
 .ria_box .select_board .board_area1.size_change table th label {font-size:16px;color:#000;}
 .ria_box .select_board .board_area1.size_change table tr.bdColor th {border-bottom:1px solid #afafaf;}
-.ria_box .select_board .board_area1.size_change table th.first {/* font-size:18px; */text-align:center;border-right:1px solid #e5e5e5;/* border-bottom:1px solid #afafaf; */}
+.ria_box .select_board .board_area1.size_change table th.first {text-align:center;border-right:1px solid #e5e5e5;}
 .ria_box .select_board .board_area1.size_change table td {padding:15px 35px;}
 .ria_box .select_board .board_area1.size_change table td:first-child {text-align:right;}
 
@@ -212,7 +210,7 @@ max-width: 100%;
 .ria_box .select_board .board_area1.size_change2 table th {font-size:16px;}
 .ria_box .select_board .board_area1.size_change2 table th.small {padding:6px 0;text-align:center;border-left:1px solid #e5e5e5;}
 
-.ria_box .select_board .board_area1.size_change table th.first {/* font-size:18px; */text-align:center;border-right:1px solid #e5e5e5; border-bottom:1px solid #afafaf;line-height: 20px;}
+.ria_box .select_board .board_area1.size_change table th.first {text-align:center;border-right:1px solid #e5e5e5; border-bottom:1px solid #afafaf;line-height: 20px;}
 .ria_box .select_board .board_area1.size_change3 table tr.bdColor th {border-bottom:1px solid #afafaf;}
 .ria_box .select_board .board_area1.size_change3 table td {padding:12px 20px;}
 .ria_box .select_board .board_area1.re_size table th {padding:12px 20px;font-size:16px;text-align:left;border-bottom:1px solid #e5e5e5;}
