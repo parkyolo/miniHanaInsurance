@@ -508,85 +508,7 @@ h5,
 h6 {
   font-weight: 500;
 }
-html,
-body,
-div,
-span,
-object,
-iframe,
-textarea,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-abbr,
-address,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-samp,
-small,
-strong,
-sub,
-sup,
-var,
-b,
-i,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  /* outline: 0; */
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  box-sizing: border-box;
-}
+
 user agent stylesheet h2 {
   display: block;
   font-size: 1.5em;
@@ -595,14 +517,6 @@ user agent stylesheet h2 {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
-}
-body {
-  font-family: "Noto Sans KR";
-  /* font-weight: 400; */
-  font-size: 14px;
-  color: #555;
-  letter-spacing: -0.5px;
-  word-break: break-all;
 }
 
 #new_banner a.point_btn {
@@ -719,7 +633,7 @@ body {
   border-bottom: 1px solid #2cb26a;
   text-decoration: none;
 }
-.eco_point_box li:first-child dl dd {
+.eco_point_box li dl dd {
   justify-content: space-between;
 }
 .eco_point_box li dl dd span::before {
@@ -2090,115 +2004,14 @@ button {
   border-color: buttonborder;
   border-image: initial;
 }
-nav ul,
-li {
-  list-style: none;
-}
-html,
-body,
-div,
-span,
-object,
-iframe,
-textarea,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-abbr,
-address,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-samp,
-small,
-strong,
-sub,
-sup,
-var,
-b,
-i,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  /* outline: 0; */
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  box-sizing: border-box;
-}
-textarea {
-  font-family: "Noto Sans KR";
-  min-height: 120px;
-  resize: none;
-  width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  color: #555;
-  font-size: 14px;
-  padding: 7px 10px;
-  max-width: 100%;
-}
+
 user agent stylesheet li {
   text-align: -webkit-match-parent;
 }
 user agent stylesheet ul {
   list-style-type: disc;
 }
-body {
-  font-family: "Noto Sans KR";
-  /* font-weight: 400; */
-  font-size: 14px;
-  color: #555;
-  letter-spacing: -0.5px;
-  word-break: break-all;
-}
+
 .btn_arrow:after {
   display: inline-block;
   font-family: "FontAwesome";
@@ -2220,11 +2033,11 @@ body {
   -webkit-tap-highlight-color: transparent;
   position: relative;
 }
-/* .owl-carousel {
+.owl-carousel {
   display: none;
   width: 100%;
   z-index: 1;
-} */
+}
 .owl-carousel .owl-stage {
   position: relative;
   -ms-touch-action: pan-Y;
@@ -2421,6 +2234,10 @@ body {
   top: 50%;
   margin-top: -13px;
 }
+table {
+  border-spacing: 0;
+  width: 100%;
+}
 .table_width_list {
   width: 100%;
   float: left;
@@ -2512,12 +2329,30 @@ body {
 .table_width_list .btn {
   float: left;
 }
+table caption,
+legend {
+  visibility: hidden;
+  overflow: hidden;
+  position: absolute;
+  left: -9999px;
+  margin: 0;
+  padding: 0;
+  width: 1px;
+  height: 0px;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
 .bd_radius0 {
   border-radius: 0 !important;
 }
 
 .h230 {
   height: 230px !important;
+}
+caption {
+  display: table-caption;
+  text-align: -webkit-center;
 }
 
 .page_wrap {
@@ -2563,7 +2398,6 @@ body {
   margin-top: 40px;
 }
 .inside .item {
-  padding: 10px;
   width: 360px;
   height: 150px;
   display: flex;
@@ -2581,4 +2415,32 @@ body {
   background-color: #fafafa;
   border: 1px solid #d8d8d8;
   border-radius: 7px;
+}
+.bohum .eco_point_box li dl dd {
+  padding: 22px 30px;
+  display: flex;
+  font-size: 20px;
+  color: #555;
+  background: #fff;
+  border-radius: 0 0 15px 15px;
+}
+
+.msg_box1 {
+  position: relative;
+  width: 100%;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  font-size: 13px;
+  padding-left: 10px;
+  line-height: 13px;
+}
+.msg_box1:before {
+  content: "*";
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+.msg_box1.tar:before {
+  content: "";
 }
