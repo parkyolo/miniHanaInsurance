@@ -5,6 +5,7 @@ main {display: block}
 .tab > ul > li ul button{position:relative;}
 .tab > ul > li.on ul {display: flex;}
 .tab > ul > li.on > button {position: relative; }
+
 .tab content {display: none;}
 .tab content.on {display: block;}
 .tab content.on > .on {display: block;}
