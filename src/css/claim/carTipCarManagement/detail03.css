@@ -1,0 +1,150 @@
+@charset "utf-8";
+/* 2019-03-09 */
+/* PL사마 */
+.h3_hide{position: absolute;display: inline-block;font-size: 1px;width: 1px;height: 1px;padding: 0;margin: -1px;text-indent: -9999px;visibility: hidden;overflow: hidden;border: 0;clip: rect(0, 0, 0, 0);}
+
+.base_box_top> .h3{width:auto;}
+.base_box_top> .txt_box_01.top{width:auto;margin:12px 0 0 10px; font-size:14px;}
+.base_box_top> .txt_box_01.top_btn{width:auto;margin:12px 0 16px 10px!important;}
+
+/* 2020-07-09 : 장기운전자보험 */
+ .visual_mtitle.fixed{margin-top: -10px !important;letter-spacing: -1.5px !important;}
+ .visual_btitle.fixed{/* padding-right: 425px; */line-height: 63px;margin-top: -2px !important;max-width: 685px;}
+ 
+.fix_btnL {width:160px !important;min-width:30px !important;background: #fff !important;border: 1px solid #9d9d9d;text-shadow: none !important; color:#333 !important}
+.fix_btnR {width:220px !important;min-width:30px !important}
+.ria_main .ria_mcontainer .rm_content .rm_info .rm_mlogo h2{font-size:20px;color:#009591;margin-top: 0px;}
+.fix_err{position: relative !important;bottom: 6px !important;margin-bottom: -20px;top: -4px !important;}
+
+/* 2020-08-03 : 해지환급금 안내팝업 신설*/
+.popup_box .popup_container.fixed{max-width:650px;}
+.popup_box .popup_header.fixed{background: #fff;margin: 0;}
+.popup_box .popup_body.fixed{max-height:660px;padding:15px 40px 0 40px}
+.popup_box .popup_footer.fixed{padding-top:5px;padding-bottom:15px}
+
+.header_tit{color:#333;letter-spacing:-0.5px;padding: 15px 40px 0px 40px;}
+.header_tit h2{padding: 5px 0 !important;font-size:24px !important;text-align:center !important;color:#000 !important;float: none !important;width: 100% !important;line-height: 30px !important;height: 42px !important;}
+.header_tit img{position: absolute;width: 80px;left: 65px;top: 65px;}
+.header_tit .hana_line{height:8px;background:linear-gradient(to right, #009591, #d6ffff)}
+.header_tit .tb td,th{padding:0 }
+
+.cont{font-size:14px;margin-bottom: 10px;}
+.cont h3{border: 1px solid #333;padding: 8px;font-size: 18px;margin: 0 0 5px;color: #333;}
+.cont ul.t1 li{padding-left:20px;position:relative;margin-top: 5px;}
+.cont ul.t1 li:first-child{margin-top:none !important}
+.cont ul.t1 li:before{content:"□";position:absolute;left:0px;line-height:20px;}
+
+.cont ul.t2 li{padding-left: 10px;position:relative;margin: 0px 0 0 18px;}
+.cont ul.t2 li:first-child{margin-top:none !important}
+.cont ul.t2 li:before{content:"-";position:absolute;left:0px;line-height:20px;}
+
+.cont ul.t3 li{padding-left: 20px;position:relative;margin: 0px 0 0 18px;}
+.cont ul.t3 li:first-child{margin-top:none !important}
+.cont ul.t3 li:before{content:"";position:absolute;left:0px;line-height:20px;}
+.cont ul.t3 > li:nth-child(1):before {content:'①';}
+.cont ul.t3 > li:nth-child(2):before {content:'②';}
+.cont ul.t3 > li:nth-child(3):before {content:'③';}
+.cont ul.t3 > li:nth-child(4):before {content:'④';}
+
+.fc_000{color:#000}
+
+/* 2020-10-13 자동차보험 특약슬라이더에 링크추가 BY 김명현D */
+.product_feature .owl-carousel .item_board.h220{background:#fff;height:210px;position:relative}
+.product_feature .owl-carousel .item_board.h220 a{color: #009591;right: 10px;position: absolute;top: 32px;cursor:pointer;padding: 3px 2px 3px 10px;background: #fff;border-radius: 34px;text-decoration: none;transition: all .35s;border: 1px solid #009591;font-size: 13px;}
+.product_feature .owl-carousel .item_board.h220 a:hover{color: #fff;background-color: #009591;border: 1px solid #fff;}
+.product_feature .owl-carousel .item_board.h220 a span{padding-left: 10px;}
+.red_point{padding: 0 3px 0 2px;color: #ed1651;background: linear-gradient(to top, transparent 10%, white 10%, white 85%, transparent 85%);}
+
+/* 2021-06-01 새로운 약관 양식  */
+.new_term{float: left;margin:0;padding:0;}
+.new_term .text_box{padding: 15px;line-height: 20px;float: left;border: 1px solid rgb(40 178 165 / 40%);}
+.new_term .status_bar_01{width: 300px;float: right;background: url('/static/resources/webria/img/temp/status_bar_03.png') no-repeat bottom left;background-size: 300px auto;height: 39px;}
+.new_term .status_bar_02{width: 300px;float: right;background: url('/static/resources/webria/img/temp/status_bar_02.png') no-repeat bottom left;background-size: 300px auto;height: 39px;}
+.new_term .status_bar_03{width: 300px;float: right;background: url('/static/resources/webria/img/temp/status_bar_01.png') no-repeat bottom left;background-size: 300px auto;height: 39px;}
+.new_term .status_bar_04{width: 300px;float: right;background: url('/static/resources/webria/img/temp/status_bar_04.png') no-repeat bottom left;background-size: 300px auto;height: 39px;}
+.new_term ul.list_status{margin: 0;}
+.new_term ul.list_status li{float: left;width: 20%;font-size: 11px;text-align: center;}
+.new_term .qr_box{float: left;padding: 5px 0 10px;}
+.new_term .qr_box p.kome{float: left;margin-left: 20px;word-break: keep-all;width: 85%;margin-top:7px ;}
+.new_term .qr_box p.kome:before{content: "※";position: absolute;left: -20px;}
+
+.new_term .qr_box .img_qr_311{width: 54px;height: 54px; float: right;background: url('/static/resources/webria/img/temp/term_qr_311.png?2023') no-repeat;background-size: 54px auto;}
+.new_term .qr_box .img_qr_312{width: 54px;height: 54px; float: right;background: url('/static/resources/webria/img/temp/term_qr_312.png?2023') no-repeat;background-size: 54px auto;}
+.new_term .qr_box .img_qr_313{width: 54px;height: 54px; float: right;background: url('/static/resources/webria/img/temp/term_qr_313.png') no-repeat;background-size: 54px auto;}
+.new_term .qr_box .img_qr_paymentInfoSave{width: 54px;height: 54px; float: right;background: url('/static/resources/webria/img/temp/img_qr_paymentInfoSave.png') no-repeat;background-size: 54px auto;}
+
+.new_term p a.link{text-decoration: underline;color:#009591;}
+.new_term p.kome{float: left;margin-left: 20px;position: relative;}
+.new_term p.kome:before{content: "※";position: absolute;left: -20px;}
+
+.new_term h2{margin-bottom: 10px;float: left;background: #28b2a5;padding: 3px 15px 5px 5px;color: #fff;font-size: 18px;border-radius: 40px;}
+.new_term h2:before {display:inline-block;width: 25px;height: 25px;background: #fff;border-radius: 50%;text-align:center;line-height: 26px;color: #28b2a5;font-family:"roboto";font-weight:bold;font-size: 16px;margin-right: 5px;}
+.new_term h2:before {content:'▼';}
+
+.new_term h3{margin-bottom: 10px;float: left;background: #28b2a5;padding: 3px 10px 5px 20px;color: #fff;font-size: 16px;position: relative;}
+.new_term h3:before {content:"";display: inline-block;width: 6px;height: 20px;background: #fff;position: absolute;top: 7px;left: 5px;}
+
+.new_term .term_tb{font-size:15px;border-top:2px solid #4d4d4d;border-bottom:1px solid #e5e5e5;}
+.new_term .term_tb th, .new_term .term_tb td{padding:10px;text-align:center;}
+.new_term .term_tb th:last-child, .new_term .term_tb td:last-child{border-right:0;}
+.new_term .term_tb thead tr:first-child th {border-top:none;}
+.new_term .term_tb thead tr th, .new_term .term_tb tbody tr th {background:#f9f9f9;}
+.new_term .term_tb thead th, .new_term .term_tb tbody th{color:#333;font-size:15px;font-weight:500;background:#f9f9f9;vertical-align:middle;border-top:1px solid #e5e5e5;word-break: keep-all;}
+.new_term .term_tb tbody td{color:#555;font-size:15px;font-weight:400;background:#fff;vertical-align:middle;border-top:1px solid #e5e5e5;text-align: left;}
+.new_term .term_tb tbody td.strong{font-size:16px;font-weight:500;color: #333;word-break: keep-all;}
+.new_term .term_tb tbody th.weak{font-weight:400;text-align: right;}
+.new_term .term_tb tbody td span.underline{text-decoration:underline !important;}
+.new_term .term_tb tbody td.flex_even{display: flex;justify-content: space-evenly;}
+.new_term .term_tb tbody td span.icon_normal{background: #fcdb19;padding: 2px 16px 3px;display: inline-block;margin-left: 10px;border-radius: 15px;line-height: 18px;}
+.new_term .term_tb tbody td span.icon_good{background: #4fb348;padding: 2px 16px 3px;display: inline-block;margin-left: 10px;border-radius: 15px;line-height: 18px;color: #fff;}
+.new_term .term_tb tbody td span.icon_veryGood{background: #25a7d3;padding: 2px 16px 3px;display: inline-block;margin-left: 10px;border-radius: 15px;line-height: 18px;color: #fff;}
+.new_term .term_tb tbody tr:first-child th, .new_term .term_tb tbody tr:first-child td {border-top:none;}
+
+.dash_list ul {font-size: 14px;color: #333;line-height: 21px;position: relative;}
+.dash_list li{list-style: none;position: relative;margin-left: 10px;margin-top: 5px;margin-bottom: 0;}
+.dash_list li:first-child{margin-top:0px ;}
+.dash_list li:before {content: "-";display: inline-block;height: 8px;width: 12px;position: absolute;left: -10px;top: 0;}
+
+.icon{content: "";}
+/* 2021-06-01 새로운 약관 양식  */
+.tab1_group .tab_header.tab6_2 li:nth-child(1) {width:33.3%;}
+.tab1_group .tab_header.tab6_2 li:nth-child(2) {width:33.3%;}
+.tab1_group .tab_header.tab6_2 li:nth-child(3) {width:33.3%;}
+.tab1_group .tab_header.tab6_2 li:nth-child(3) a{border-right: 1px solid #e5e5e5;}
+.tab1_group .tab_header.tab6_2 li:nth-child(4) {width:33.3%;}
+.tab1_group .tab_header.tab6_2 li:nth-child(4) a{border-top:none;}
+.tab1_group .tab_header.tab6_2 li:nth-child(5) {width:33.3%;}
+.tab1_group .tab_header.tab6_2 li:nth-child(5) a{border-top:none;}
+.tab1_group .tab_header.tab6_2 li:nth-child(6) {width:33.3%;}
+.tab1_group .tab_header.tab6_2 li:nth-child(6) a{border-top:none;}
+
+.newstep_arr2 li.last:nth-child(7):before{background:none;}
+
+.proc_step_box_2{width:100%;float:left;margin:20px 0;}
+.proc_step_box_2 > li{position:relative;width:100%;/* float:left; */border:1px solid #e5e5e5;border-radius:5px;padding: 30px 100px;padding-left: 40px;margin-bottom: 20px;/* background-repeat:no-repeat; *//* background-position:70px center; */}
+.proc_step_box_2 > li h4{position:relative;width:100%;font-size:20px;color:#333;padding-left:45px;letter-spacing:-1px;margin-bottom: 20px;}
+.proc_step_box_2 > li h4 span{position:absolute;font-size:36px;font-family:"roboto";color:#555;top:-9px;left:0;letter-spacing:-2.5px;}
+.proc_step_box_2 > li p{width:100%;margin-top:12px;word-break:keep-all;}
+.proc_step_box_2 > li:last-child:after{display:none;}
+
+
+.grayline ol.flex_line {display:flex;flex-wrap:wrap;border-left:1px solid #e5e5e5;padding-left:40px;}
+.grayline ol.flex_line li {float:left;font-weight:500;font-size:16px;color:#333;margin:10px 0 15px;position:relative;}
+.grayline ol.flex_line li:nth-child(3n+1) {width:35.33%;}
+.grayline ol.flex_line li:nth-child(3n+2) {width:32.33%;}
+.grayline ol.flex_line li:nth-child(3n) {width:32.33%;}
+.grayline ol.flex_line:after {content:'';clear:both;display:table;}
+.grayline ol.flex_line li:before {display:inline-block;width:35px;height:35px;background:#009591;border-radius:3px;text-align:center;line-height:35px;color:#fff;font-family:"roboto";font-weight:bold;font-size:16px;margin-right:12px;}
+.grayline ol.flex_line li:nth-child(1):before {content:'1';}
+.grayline ol.flex_line li:nth-child(2):before {content:'2';}
+.grayline ol.flex_line li:nth-child(3):before {content:'3';}
+.grayline ol.flex_line li:nth-child(4):before {content:'4';}
+.grayline ol.flex_line li:nth-child(5):before {content:'5';}
+.grayline o.flex_line li:nth-child(6):before {content:'6';}
+.grayline ol.flex_line li:nth-child(7){line-height: 1;}
+.grayline ol.flex_line li:nth-child(7):before {content:'7';}
+.grayline ol.flex_line li:nth-child(8):before {content:'8';}
+.grayline ol.flex_line li:nth-child(9):before {content:'9';}
+.grayline ol.flex_line li:nth-child(10):before {content:'0';}
+.grayline ol.flex_line li p {font-weight:400;font-size:13px;color:#555;margin-left:47px;position:absolute;top:40px;}
+

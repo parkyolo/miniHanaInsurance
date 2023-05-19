@@ -1,0 +1,280 @@
+@charset "utf-8"; 
+
+/* 협력업체 지급보험금 프로세스 
+ 
+	1.로그인
+*/
+.patners h3, .patners .wel_sub {text-align: left; letter-spacing: -1px;}
+.patners .loginBox {max-width: 1100px; margin: 0 auto; height: 300px; margin-top: 15px; padding: 90px 20px 50px; background: #f9f9fb; border-top: 2px solid #009591;}
+.patners .loginBox h4 {font-size: 30px;}
+.patners .loginBox ul {display: flex; flex-wrap: wrap;}
+.patners .loginBox ul li {margin-top: auto; margin-right: 5px;}
+.patners .loginBox ul li:last-child {margin-right: 0;}
+.patners .loginBox > ul > li:first-child {width: 40%; padding-right: 20px;}
+.patners .loginBox > ul > li > ul {flex-wrap: nowrap; margin-top: 10px;}
+.patners button:after {display: inline-block; font-family: 'FontAwesome'; content: "\f105"; padding-left: 8px; font-size: 19px; color: #fff; vertical-align: -1px;}
+
+/* 협력업체 지급보험금 프로세스 
+
+	1.로그인 - key
+*/
+.patnersK h3, .patnersK .wel_sub {text-align: left; letter-spacing: -1px;}
+.patnersK .loginBox {position: relative; max-width: 1100px; margin: 0 auto; height: 500px; margin-top: 15px; padding: 80px; background: #f9f9fb; border-top: 2px solid #009591;}
+.patnersK .loginBox > ul > li {float: left;}
+.patnersK .loginBox > ul > li:nth-child(2) {float: right;}
+.patnersK .loginBox > ul > li > ul > li.txt_detail2 {padding: 10px; background-color: #fff; margin-bottom: 10px; border: 1px solid #e2e2e2;}
+.patnersK .loginBox ul.ptL li {height: 60px;}
+.patnersK .loginBox ul li label {display: inline-block; width: 120px; font-size: 20px;}
+.patnersK .loginBox ul li:last-child {margin-right: 0;}
+.patnersK button {position:absolute; left: 280px; bottom: 140px;}
+.patnersK button:after {display: inline-block; font-family: 'FontAwesome'; content: "\f105"; padding-left: 8px; font-size: 19px; color: #fff; vertical-align: -1px;}
+
+/* 2.회원가입 */
+.patners_join h2 {font-size: 24px; color: #000;}
+.patners_join .line_box {max-width: 1100px; margin: 0 auto; height: 100%; margin-top: 10px; padding: 20px 20px 50px; background: #f9f9fb; border-top: 1px solid #009591;}
+.patners_join .line_box h3 {position: relative; padding: 0 0 10px 10px; font-size: 16px; color: #333; border-bottom: 1px solid #767676;}
+.patners_join .line_box h3:before {position: absolute; content: ""; width: 4px; height: 4px; border-radius: 50%; left: 0; top: 10px; background: #333;}
+.patners_join .line_box ul {display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 10px;}
+.patners_join .line_box ul li {width: 50%; height: 80px; border-bottom: 1px solid #ccc;}
+.patners_join .line_box ul li label {display: block; line-height: 1.4; padding: 5px 0;}
+.patners_join .line_box ul li input[type=text], .patners_join .line_box ul li input[type=password] {width: 70%;}
+.patners_join .line_box ul li select {width: 130px;}
+
+.patners_join .line_box ul li:first-child label {display: inline-block;line-height: 20px; padding: 7px 20px 8px 40px;}
+.patners_join .agree_chk {position: absolute; top: 50%; margin-top: -18.5px;}
+
+/* 	3.비밀번호 찾기 */
+.patners_find_pw h2 {font-size: 24px; color: #000;}
+.patners_find_pw .line_box {max-width: 1100px; margin: 0 auto; height: 100%; margin-top: 10px; padding: 20px 20px 50px; background: #f9f9fb; border-top: 1px solid #009591;}
+.patners_find_pw .line_box h3 {position: relative; padding: 0 0 10px 10px; font-size: 16px; color: #333; border-bottom: 1px solid #767676;}
+.patners_find_pw .line_box h3:before {position: absolute; content: ""; width: 4px; height: 4px; border-radius: 50%; left: 0; top: 10px; background: #333;}
+.patners_find_pw .line_box ul {display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 10px;}
+.patners_find_pw .line_box ul li {width: 50%; height: 80px; border-bottom: 1px solid #ccc;}
+.patners_find_pw .line_box ul li label {display: block; line-height: 1.4; padding: 5px 0;}
+.patners_find_pw .line_box ul li input[type=text], .patners_find_pw .line_box ul li input[type=password] {width: 70%;}
+.patners_find_pw .line_box ul li select {width: 130px;}
+
+.patners_find_pw .line_box ul li:first-child label {display: inline-block;line-height: 20px; padding: 7px 20px 8px 40px;}
+.patners_find_pw .agree_chk {position: absolute; top: 50%; margin-top: -18.5px;}
+
+/* 	4.지급보험금 조회(로그인 후) */
+.inqr_insr_pymn .h3 {float: none;}
+.inqr_insr_pymn .srcPymDt button {position: relative; margin-left: 10px; top: 2px; }
+.inqr_insr_pymn .line_box {font-size: 15px; padding: 15px; border-left: 0; border-right: 0;}
+
+/* 갱신보험료 조회 */
+.renewalIns #divStep01 .base_tb.sel_tb th:last-child {border-right: 1px solid #e5e5e5;} 
+.renewalIns #divStep02 .base_tb.col_tb th:last-child {border-right: 1px solid #e5e5e5;}
+.renewalIns #divStep02 .base_tb.col_tb tbody td {text-align: center;}
+.renewalIns #divStep02 .base_tb.col_tb tbody td:nth-child(4),
+.renewalIns #divStep02 .base_tb.col_tb tbody td:nth-child(5),
+.renewalIns #divStep02 .base_tb.col_tb tbody td:nth-child(6),
+.renewalIns #divStep02 .base_tb.col_tb tbody td:nth-child(7),
+.renewalIns #divStep02 .base_tb.col_tb tbody td:nth-child(8),
+.renewalIns #divStep02 .base_tb.col_tb tbody td:nth-child(9) {text-align: right;}
+.renewalIns > #divStep02 > h3 {margin-top: 50px;}
+.renewalIns > #divStep02 > .boxScr {overflow-x: scroll; margin-top: 0;}
+.renewalIns > #divStep02 > .boxScr table {width: 1240px;}
+
+/* 갱신보험료 상세 */
+.novation_box .accodion_cont {padding: 0 10px;}
+.novation_box .accodion_cont table th {width: 30%; vertical-align: middle; text-align: left;}
+.novation_box .accodion_cont table td {text-align: right;}
+.novation_box .accodion_cont table tr:last-child td {border-bottom: 0;}
+
+/* 당월 효력상실계약 보험료 납입 */
+.lossEffect .lossEffect_title h3 {font-size: 20px; margin-bottom: 30px;}
+.lossEffect .box_title4 {width: 100%; float: left; border: 2px solid #009591; border-top-left-radius: 20px; background: #009591; font-size: 16px; padding: 28px 0; text-align: center; color: #fff;}
+.lossEffect .box_title2 {border-radius: 0; padding: 37px 0; background: #f9f9f9;}
+
+.lossEffect #divStep03 .section_box1 .section_box5 .section_prvchk ul li {height: 40px; margin-bottom: 10px; clear: both; }
+.lossEffect #divStep03 .section_box1 .section_box5 .section_prvchk .title {float: left; line-height: 37px;}
+.lossEffect #divStep03 .section_box1 .section_box5 .section_prvchk .prvchk {float: right;}
+
+/* 동일증권 가입 여부 팝업 */
+#popIntegrateCert .sameStockPop {width: 840px !important; height: auto;}
+.sameStockPop .modal_off {position: absolute; top: 0; right: 0; width: 80px; height: 80px;}
+.sameStockPop .modal_off img {padding: 20px 0 0 15px;}
+.sameStockPop .popup_body {max-height: 850px; padding: 0 40px 0 40px;}
+.sameStockPop .popup_body .bg_01 {padding: 40px; margin-top: 0; border: 1px solid #e5e5e5;}
+.sameStockPop .text_cont_box ul li {padding-left: 20px;}
+.sameStockPop .text_cont_box .tcb_list1 li:before {content: ""; background: url('../../web/img/bg_icon15.png') no-repeat left center; position: absolute; width: 15px; height: 15px; left: 0; top: 4px;}
+.sameStockPop .contents {position: relative; text-align: center; margin-top: 40px; padding-top: 120px;}
+.sameStockPop .contents::before {content: ""; position: absolute; width: 120px; height: 120px; background: url('../../web/img/common/icon_pop_noti.png') no-repeat; left: 290px; top: 0;}
+.sameStockPop .contents h2 {font-size: 24px; color: #333; margin-top: 30px;}
+.sameStockPop .contents > p {font-size: 16px; color: #000; margin-bottom: 30px;}
+.sameStockPop .contents button {width: 230px; height: 42px; border: 1px solid #e5e5e5; border-radius: 4px; background: #fff; margin-bottom: 40px; font-size: 16px; cursor: pointer;}
+.sameStockPop .contents button.sameBtn.on {color: #fff; background: #009591;}
+
+.sameStockPop section {height: 295px; border-top: 1px solid #000; border-right: 1px solid #e5e5e5; border-left: 1px solid #e5e5e5; padding: 0 40px; margin: 0 auto;}
+.sameStockPop section h3 {font-size: 20px; font-weight: normal; color: #000; padding: 40px 0 20px 0; text-align: left;}
+.sameStockPop section ul {white-space: nowrap; overflow-x: auto; text-align: left; font-size: 0; margin: 0; padding: 0;}
+.sameStockPop section ul::-webkit-scrollbar {width: 10px; height: 10px; }
+.sameStockPop section ul::-webkit-scrollbar-thumb {width: 300px; height: 300px; border-radius: 10px; background: url('../../web/img/scrollbar_ico.gif') no-repeat #009591; background-position: center center;}
+.sameStockPop section ul::-webkit-scrollbar-track {background: url('../../web/img/scrollbar_line.jpg') repeat-x; background-position:center}
+.sameStockPop section ul li {display: inline-block; border: 1px solid #afafaf; border-radius: 10px; margin-right: 10px; margin-bottom: 20px; font-size: 12px;}
+.sameStockPop section ul li:last-child {margin-right: 0;}
+.sameStockPop section ul li input[type=radio] + label {display: block; cursor: pointer; width: 330px; height: 140px; margin: 4px; border: 1px solid #e5e5e5; border-radius: 7px; padding: 30px 20px;}
+.sameStockPop section ul li input[type=radio] + label p {font-size: 15px; color: #555; margin-bottom: 0;}
+.sameStockPop section ul li input[type=radio] + label h4 {font-size: 20px; color: #000; padding-bottom: 16px;}
+.sameStockPop section ul li input[type=radio]:checked + label {border: 2px solid #009591;}
+.sameStockPop section ul li input[type=radio]:checked + label h4 {color: #009591;}
+.sameStockPop section ul li input[type=radio]+label:before {content: none;}
+.sameStockPop section ul li input[type=radio]:checked+label:before {background: none;}
+
+/* 장기 연금예시 상세보기 */
+#popGetLongTermPay .popup_body.longTerExtb table tbody tr:nth-child(even) td {background: #fbfbfb;}
+#popGetLongTermPay .popup_body.longTerExtb table tbody tr:nth-child(odd) td {background: #fff;}
+
+#popGetLongTermPay .popup_body.longTerExtbf table {border-top: 1px solid;}
+#popGetLongTermPay .popup_body.longTerExtbf table td input {width: 120px; border: 0; text-align: center;}
+#popGetLongTermPay .popup_body.longTerExtbf table td a img {vertical-align: middle;}
+#popGetLongTermPay .popup_body.longTerExtbf table td input:-webkit-autofill{-webkit-box-shadow: none !important; background-color: #fff !important;}
+
+/* 마일리지 예상환급금 계산 */
+#popCalculateMlgAdjtPrem .popup_body.longTerExtb table tbody tr:nth-child(even) td {background: #fbfbfb;}
+#popCalculateMlgAdjtPrem .popup_body.longTerExtb table tbody tr:nth-child(odd) td {background: #fff;}
+
+#popCalculateMlgAdjtPrem .popup_body.longTerExtbf table {border-top: 1px solid;}
+#popCalculateMlgAdjtPrem .popup_body.longTerExtbf table td input {width: 120px; height: 52px; border: 0; text-align: center;}
+#popCalculateMlgAdjtPrem .popup_body.longTerExtbf table td a img {vertical-align: middle; padding: 16px 14px;}
+#popCalculateMlgAdjtPrem .popup_body.longTerExtbf table td input:-webkit-autofill{-webkit-box-shadow: none !important; background-color: #fff !important;}
+
+
+/* 장기 연금정보 변경 */
+.longTrmPen .base_tb {border-top: 2px solid #009591;}
+.longTrmPen #divStep02 table {border-top: 2px solid #28b2a5;}
+.longTrmPen #divStep02 .base_tb td, .longTrmPen #divStep03 .base_tb td, .longTrmPen #divStep04 .base_tb td {text-align: left;}
+.longTrmPen #divStep02 .base_tb th {width: 160px;}
+.longTrmPen #divStep02 .section_box1 select::before {content: "\f078"; font-family: "FontAwesome"; position: absolute; top: 0; right:10px;}
+ .longTrmPen #divStep02 .section_box1 select option {color: #333;}
+.longTrmPen #divStep03 .section_box1 p.txt_detail {border-top: 1px solid #e2e2e2;}
+.longTrmPen #divStep04 span {display: block; margin-top: 20px;}
+.longTrmPen #divStep04 .base_tb tbody tr:nth-child(1) th, .longTrmPen #divStep04 .base_tb tbody tr:nth-child(1) td {border-top: 0;}
+.longTrmPen #divStep04 button {padding: 10px 30px;}
+
+/* 장기 연금 납입유예 신청  */
+.longTrmDef #divStep02 .section_box1 input[type=checkbox] + label {padding: 4px 6px 4px 35px;}
+.longTrmDef #divStep02 .section_box1 input[type=checkbox] + label::before {content: ""; display: inline-block; width: 26px; height: 26px; position: absolute; left: 0; top: 4px; background: url(../../webria/img/common/bg_check03_m.png) -1px -1px no-repeat; background-size: 28px auto;}
+.longTrmDef #divStep02 .section_box1 input[type=checkbox]:checked + label::before {content: ""; display: inline-block; width: 26px; height: 26px; position: absolute; left: 0; top: 4px; text-align: center; line-height: 24px; background: url(../../webria/img/common/bg_check03_m.png) -1px -27px no-repeat; background-size: 28px auto;}
+
+/* 마일리지 정산 */
+.mileSett .chn_main_frame .main_list {width: 1040px;}
+.mileSett .chn_main_frame ul {background: url(../../webria/img/change/icon_none.jpg) 845px 234px no-repeat;}
+.mileSett .chn_main_frame ul li {width: 20%;}
+.mileSett .chn_main_frame ul li:nth-child(1) {background: url(../../webria/img/change/icon_main_carChange.png) center 30px no-repeat #fff;}
+.mileSett .chn_main_frame ul li:nth-child(5) {background: url(../../webria/img/change/icon_main_mileage.png) center 30px no-repeat #fff;}
+.mileSett .chn_main_frame ul li:nth-child(6) {background: url(../../webria/img/change/icon_main05.jpg) center 30px no-repeat #fff;}
+.mileSett .chn_main_frame ul li:nth-child(7) {background: url(../../webria/img/change/icon_main06.jpg) center 30px no-repeat #fff;}
+.mileSett .chn_main_frame ul li:nth-child(8) {background: url(../../webria/img/change/icon_main07.jpg) center 30px no-repeat #fff;}
+.mileSett .chn_main_frame ul li:nth-child(9) {background: url(../../webria/img/change/icon_main_wdDriving.png) center 30px no-repeat #fff;}
+
+/*계약변경 레이아웃css수정*/
+.mileSett .chn_main_frame ul#ulEndorseMenu {background: url(../../webria/img/change/icon_none.jpg) right 5px bottom 5px no-repeat;margin-left: 0;width: 100%;font-size: 0;}
+.mileSett .chn_main_frame ul#ulEndorseMenu li {width: calc(100% / 5);float: none;display: inline-block;}
+.mileSett .chn_main_frame ul#ulEndorseMenu li:nth-child(1) {background: url(../../webria/img/change/icon_main_carChange.png) center 30px no-repeat #fff;}
+.mileSett .chn_main_frame ul#ulEndorseMenu li:nth-child(5) {background: url(../../webria/img/change/icon_main_mileage.png) center 30px no-repeat #fff;}
+.mileSett .chn_main_frame ul#ulEndorseMenu li:nth-child(6) {background: url(../../webria/img/change/icon_main05.jpg) center 30px no-repeat #fff;}
+.mileSett .chn_main_frame ul#ulEndorseMenu li:nth-child(7) {background: url(../../webria/img/change/icon_main06.jpg) center 30px no-repeat #fff;}
+.mileSett .chn_main_frame ul#ulEndorseMenu li:nth-child(8) {background: url(../../webria/img/change/icon_main07.jpg) center 30px no-repeat #fff;}
+.mileSett .chn_main_frame ul#ulEndorseMenu li:nth-child(9) {background: url(../../webria/img/change/icon_main_wdDriving.png) center 30px no-repeat #fff;}
+.mileSett.ria_box .chn_main_frame ul#ulEndorseMenu li a:hover,
+.mileSett.ria_box .chn_main_frame ul#ulEndorseMenu li a:focus {margin:0;height:219px;}
+.mileSett.ria_box .chn_main_frame ul#ulEndorseMenu li a:hover:before, .mileSett.ria_box .chn_main_frame ul li a:focus:before{content:"";position: absolute;border-bottom:3px solid #e2e2e2;border-right:3px solid #e2e2e2;display:block;width:197px;height:217px;top:1px;left:0px;}
+
+.mileSett .mCSB_container ul.poto {display: flex;}
+.mileSett .mCSB_container ul.poto li {width: 520px; height: 316px; border-right: 1px solid #e5e5e5; text-align: center;}
+.mileSett .mCSB_container ul.poto li > p {height: 60px; margin-bottom: 30px; border-top: 2px solid #555; border-bottom: 1px solid #e5e5e5; background: #f9f9f9; color: #000; font-size: 16px; line-height: 3.4;}
+.mileSett .mCSB_container ul.poto li > img {display: inline-block; width: 234px; height: 130px;}
+.mileSett .mCSB_container ul.poto li:last-child {border-right: 0;}
+.mileSett .mCSB_container ul.poto li label {position: relative; display: inline-block; height: 44px; background: #009591; border: 1px solid #009591; color: #fff; padding: 9px 30px;}
+.mileSett .mCSB_container ul.poto li input[type=file] {position:absolute;width:0;height:0;overflow:hidden;border:0;clip:rect(0 0 0 0);margin:-1px;overflow:hidden;padding:0px;}
+.mileSett .mCSB_container ul.poto li a::before {content: ""; display: inline-block; width: 100%; height: 4px; background: #007e7b; position: absolute; top: auto; bottom: 0; left: 0;}
+.mileSett .mCSB_container .checWrap {height: 62px; margin-top: 30px; margin-bottom: 30px; background: #f9f9fb; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; line-height: 62px; padding-left: 20px;}
+
+.mileSett .ria_content .btn.btn_gray.on.racBtn {float: right; font-size: 14px; padding: 6px 10px;}
+
+.mileSett .ria_content .textMsg {height: 132px; background: #f9f9fb;}
+.mileSett .ria_content .textMsg a {position: relative; display: inline-block; width: 200px; height: 32px; border: 1px solid #9d9d9d; background: #fff; line-height: 2; text-decoration: none; margin-left: 130px; text-align: center;}
+.mileSett .ria_content .textMsg a:before {content: ""; display: inline-block; width: 100%; height: 4px; background: #f8f8f8; position: absolute; top: auto; bottom: 0; left: 0;}
+.mileSett .ria_content .textMsg .mbullet1 {padding: 26px 154px; text-align: left;}
+.mileSett .ria_content .textMsg .mbullet1 li {height: 40px;}
+.mileSett .ria_content .textMsg .mbullet1 li:first-child {border-bottom: 1px dashed #e5e5e5; margin-bottom: 10px;}
+
+.mileSett .ria_content  .tb_view_area .tb_view_01.trcChn th, .tb_view_area .tb_view_01.trcChn td {height: 60px; text-align: center;}
+.mileSett .ria_content .bg_de_btn {min-width: 170px;}
+
+.mileSett .ria_content  .tb_view_area .tb_view_01.kmChn th, .tb_view_area .tb_view_01.kmChn td {height: 60px; text-align: center;}
+.mileSett .ria_content  .tb_view_area .tb_view_01.kmChn tr:last-child td:last-child {border: 2px solid #009591;}
+.mileSett .ria_content  .tb_view_area .tb_view_01.kmChn input {border: 0; text-align: center; width: 60px; padding: 0;}
+.mileSett .ria_content  .tb_view_area .tb_view_01.kmChn input:read-only {color: #555 !important; background: #fff !important;}
+.mileSett .ria_content  .tb_view_area .tb_view_01.kmChn input[placeholder] {color: #555 !important; font-family: "Noto Sans KR";}
+
+.popup_box .popup_body .md_mlgPop {font-weight: 500; font-size: 20px; color: #333; line-height: 28px; text-align: center; letter-spacing: -1px; background: url(../../webria/img/change/popup_mileageIcon01.png) center top no-repeat; padding-top: 100px;}
+
+/* 장기보험 소재지 변경 */
+.location .section_box1 h4 {font-size: 16px; color: #333; margin-bottom: 10px;}
+.location .chgAdr table input[type=radio]+label {width: 445px; height: 56px; border: 1px solid #e2e2e2; border-radius: 7px; padding: 15px 0 15px 44px;}
+.location .chgAdr table input[type=radio]:checked+label {border: 2px solid #009591;}
+.location .chgAdr table input[type=radio]+label::before {content: ""; display: inline-block; width: 20px; height: 20px; position: absolute; left: 15px; top: 18px; background: url(../../webria/img/icon_radio_off.png) 0px 0px no-repeat; background-size: 20px auto;}
+.location .chgAdr table input[type=radio]:checked+label:before {text-align: center; line-height: 20px; background: url(../../webria/img/icon_radio_on.png) 0px 0px no-repeat; background-size: 20px auto;}
+
+.location .agree_box_new {background: #f9f9fb; border: 1px solid #ddd; margin-top: 30px;}
+
+/* 장기 환급금(만기/연금) 계좌 등록/변경 */
+.ltRefund #divStep01 table th {letter-spacing: -1px;}
+
+.ltRefund #divStep02 h4 {font-size: 15px; color: #333; margin-bottom: 20px;}
+.ltRefund #divStep02 .base_tb {border-top: 2px solid #009591;}
+.ltRefund #divStep02 .section_box2 .notice {color: #333; text-align: center; font-size: 15px; font-weight: 500;}
+
+/* 장기보험 소재지 변경 */ 
+.location .section_box1 h4 {font-size: 16px; color: #333; margin-bottom: 10px;}
+.location .chgAdr table input[type=radio]+label {width: 445px; height: 56px; border: 1px solid #e2e2e2; border-radius: 7px; padding: 15px 0 15px 44px;}
+.location .chgAdr table input[type=radio]:checked+label {border: 2px solid #009591;}
+.location .chgAdr table input[type=radio]+label::before {content: ""; display: inline-block; width: 20px; height: 20px; position: absolute; left: 15px; top: 18px; background: url(../../webria/img/icon_radio_off.png) 0px 0px no-repeat; background-size: 20px auto;}
+.location .chgAdr table input[type=radio]:checked+label:before {text-align: center; line-height: 20px; background: url(../../webria/img/icon_radio_on.png) 0px 0px no-repeat; background-size: 20px auto;}
+
+.location .agree_box_new {background: #f9f9fb; border: 1px solid #ddd; margin-top: 30px;}
+
+/* 장기 연금정보 변경 */
+.longTrmPrem .changeLP {top: 22px; right: 27px;}
+.longTrmPrem .agree_box_new {background: #f9f9fb; border: 1px solid #ddd; margin-top: 30px;}
+
+/* 보험계약대출 상환 */
+
+.iciRepay .base_tb {border-top: 2px solid #009591;}
+.iciRepay .request select {width: 100%;}
+.iciRepay .request input {width: 100%;}
+.iciRepay .request td span.total {padding-left:20px; font-size: 18px; font-weight: bold; color: #f23b42;}
+.iciRepay .request td.requestPay {position: relative; }
+.iciRepay .request td.requestPay input {text-align: right; padding-right: 36px;}
+.iciRepay .request td.requestPay input.active{border:solid 2px #009591;}
+.iciRepay .request td.requestPay label {position: absolute; margin-top: 6px; right: 30px;}
+.iciRepay .request td.requestPay p.msg_err {display:none;font-weight:400;font-size:14px;color:#ed1651;position:relative;padding:12px 0 12px 30px;}
+
+/* 마일리지 실시간 정산 OCR LOADING */
+.ria_wpopup {height:100%;width:100%;position:fixed;top:0;bottom:0;left:0;right:0;z-index:50000;}
+.ria_wpopup .ria_wcontainer {position:relative;min-width:400px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:10px;padding:32px 40px 74px;}
+.ria_wpopup .ria_wcontainer .wcontent {}
+.ria_wpopup .ria_wcontainer .wcontent .ria_loading_area {position:relative;background:#f9f9f9;border:1px solid #f0f0f0;border-radius:27px;padding:17px 20px;}
+.ria_wpopup .ria_wcontainer .wcontent .ria_wtext {text-align:center;padding-top:6px;}
+.ria_wpopup .ria_wcontainer .wcontent .ria_wtext h2 {font-weight:400;font-size:24px;color:#222;}
+.ria_wpopup .ria_wcontainer .wcontent .ria_wtext p {font-weight:400;font-size:15px;color:#555;margin-top:10px;}
+.ria_wpopup .ria_wcontainer .wcontent .ria_wtext strong {font-weight:400;font-size:15px;color:#009591;}
+
+.progress2 {border-radius: 30px;background: rgba(0, 0, 0, 0.25);box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);/*overflow:hidden;*/}
+.progress-bar2 {height: 14px;border-radius: 30px;background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));transition: 0.4s linear;transition-property: width, background-color;}
+.progress2 div {position:relative;}
+.progress2 div.ocr:before {content:"";width:72px;height:61px;background:url("../../webria/img/common/ria_loading_picture.png") no-repeat;position:absolute;bottom:-9px;right:-36px;z-index:1;}
+.progress2 div.ocr:after {content:"";width:72px;height:61px;background:url("../../webria/img/common/ria_loading_upload.gif") no-repeat;position:absolute;bottom:-9px;right:-36px;z-index:2;}
+.progress-moved .progress-bar2 {width: 70%;background-color: #a35bef;animation: progressAnimation1 3s;}
+.progress-moved .progress-bar2.finished {width: 95%;background-color: #a35bef;animation: progressAnimation2 1s;}
+@keyframes progressAnimation1 {
+	0% { width: 0%; background-color: #a35bef; }
+	100% { width: 70%; background-color: #a35bef; }
+}
+@keyframes progressAnimation2 {
+	0% { width: 70%; background-color: #a35bef; }
+	100% { width: 95%; background-color: #a35bef; }
+}
