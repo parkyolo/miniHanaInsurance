@@ -1,0 +1,18 @@
+main {display: block; width: 960px; margin: 134px auto 0;}
+.tab {padding: 47px 0 70px;}
+.tab > ul {display: flex; position: relative; list-style: none;}
+.tab > ul > li > button {width: 240px; height: 50px; border: 0.2px solid gray; border-radius: 8px 0 0 0; background: none; font-size: 13px; color: black; background-color: #F4F4F4; color:#555555; border: solid #F2F2F2 1px;}
+.tab > ul > li.on {z-index: 2;}
+.tab > ul > li.on > button {background-color: #009591; color: white}
+.tab > ul > li ul {padding: 10px; display: none; margin-left: 40px; position: absolute; left: 0; right: 0; background-color: #28B2A5; list-style: none;}
+.tab > ul > li ul button {padding: 2px 8px; position: relative; background: none; font-size: 12px; color: white; margin: 0px 10px;}
+.tab > ul > li ul .on button:after {content: ""; position: absolute; }
+.tab > ul > li.on ul {display: flex;}
+.tab > ul > li.on > button {position: relative; border-color: #464748; font-weight: bold;}
+.tab > ul > li ul li > button {border: none;}
+.tab > ul > li ul li.on > button {color: #009591; background-color: white; border-radius: 25px; font-weight: bold;}
+
+.tab_content {display: none; line-height: 261px; background: #e5e5e5; text-align: center; font-size: 40px; color: #000;}
+.tab_content.on {display: block;}
+.tab_content.on > .on {display: block;}
+.tab_content.on > div {display: none; font-size: 40px; color: #000;}

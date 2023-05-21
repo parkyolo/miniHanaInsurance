@@ -1,6 +1,7 @@
 @import url('../reset.css');
 @import url('../common.css');
 
+.mcontainer {background:#fff;overflow:hidden !important;}
 #mcontents {width:100%;max-width:1250px;margin:auto;}
 #mcontents .mheading {width:100%;max-width:1250px;margin:0 auto;}
 #mcontents .mheading .mvisual {height: 1885px;}
