@@ -28,21 +28,15 @@
       rel="stylesheet"
       href="../../css/productPage/travelLeisure/hanainsureCarDriver.css"
     />
-    <script src="jquery.js" charset="utf-8"></script>
-    <script src="car.js" charset="utf-8"></script>
-
-    <script type="text/javascript" src="/config/env?1684206000"></script>
     <script
       type="text/javascript"
-      src="/static/resources/common/js/jquery-1.12.0.min.js"
+      src="../../script/productPage/jquery.js"
+      charset="utf-8"
     ></script>
     <script
       type="text/javascript"
-      src="/static/resources/common/js/macro.js?1684206000"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/static/resources/web/js/accessbility.js?1684206000"
+      src="../../script/productPage/Car.js"
+      charset="utf-8"
     ></script>
 
     <title>하나 에코플러스(다이렉트) 자동차보험 | 하나손해보험</title>
@@ -395,7 +389,7 @@
                             >안전점수 61점이상:4%,<br />80점이상: 13% 추가
                             할인</span
                           >
-                          혜택 제공<br />(1인한정/부부,
+                          혜택 제공<br />1인한정/부부,
                           1인한정(지속형)/부부(지속형) 한정
                         </p>
                       </div>
@@ -655,18 +649,18 @@
                 <div class="tab1_group product_tab">
                   <ul class="tab_header tab2 active">
                     <li>
-                      <a href="javascript:void(0);" class="on"
+                      <a href="javascript:void(0);" class="on" id="link1"
                         >타인의 피해를 보상하는 담보</a
                       >
                     </li>
                     <li>
-                      <a href="javascript:void(0);"
+                      <a href="javascript:void(0);" id="link2"
                         >나의 피해를 보상하는 담보</a
                       >
                     </li>
                   </ul>
                   <div class="tab_content mb100">
-                    <div class="tab_cont open">
+                    <div class="tab_cont open" id="link1_content">
                       <div class="sure_list cf_all bg1">
                         <h3>대인배상Ⅰ(의무보험)</h3>
                         <div class="text_cont_box mt0">
@@ -715,7 +709,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="tab_cont">
+                    <div class="tab_cont" id="link2_content">
                       <div class="sure_list cf_all bg4">
                         <h3>자기신체사고</h3>
                         <div class="text_cont_box mt0">

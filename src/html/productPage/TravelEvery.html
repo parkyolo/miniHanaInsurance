@@ -22,6 +22,16 @@
 	<script type="text/javascript" src="/static/resources/common/js/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="/static/resources/common/js/macro.js?1683720000"></script>
 	<script type="text/javascript" src="/static/resources/web/js/accessbility.js?1683720000"></script>
+	<script
+	type="text/javascript"
+	src="../../script/productPage/jquery.js"
+	charset="utf-8"
+  ></script>
+  <script
+	type="text/javascript"
+	src="../../script/productPage/Car.js"
+	charset="utf-8"
+  ></script>
 	
 	<title>하나 국내여행보험(단체형) | 하나손해보험</title>
 	
@@ -34,8 +44,6 @@
     
 
 <div id="container">
-		
-
 
  			
 <div id="visual_box" class="visual_402">
@@ -383,6 +391,7 @@
 			</div>
 		</div>
 	</div>
+
     <div id="divCalcContainer" style="display:none;">
 
         <div class="sec_box_01 base_area800">
@@ -478,206 +487,6 @@
     </div>
 </div>
 
-			
-		
-	
-
-<div class="popup_box dimmed" id="popCounselRequest" style="display:none;">
-	<div class="popup_container">
-		<div class="popup_header">
-			<h1>상담신청</h1>
-		</div>
-				<div class="popup_body">
-			<div class="txt_group">
-				<ul class="table_width_list">
-					<li class="wPc40">
-						<div class="title w80"><label for="txtName">이름</label></div>
-						<div class="data calc80">
-							<div class="set_box sz_full">
-								<input type="text" 
-								title="이름 입력" 
-								id="txtName"
-								value="" 
-								placeholder="성명을 입력" />
-							</div>
-						</div>
-					</li>
-					<li class="wPc60">
-						<div class="title w80"><label for="selCellPhone1">휴대폰</label></div>
-						<div class="data calc80">
-							<div class="set_box tel_set no_maxwidth">
-								<select id="selCellPhone1" title="휴대폰번호 첫번째 번호" class="inputFocus">
-	<option value=""  selected>선택</option>
-	<option value="010" >010</option>
-	<option value="011" >011</option>
-	<option value="016" >016</option>
-	<option value="017" >017</option>
-	<option value="018" >018</option>
-	<option value="019" >019</option>
-</select>
-<span class="dash">-</span>
-<input type="text" title="휴대폰번호 두번째 번호" maxLength="4" class="inputNum inputFocus" id="txtCellPhone2" value=""/>
-<span class="dash">-</span>
-<input type="text" title="휴대폰번호 마지막 번호" maxLength="4" class="inputNum inputFocus" id="txtCellPhone3" value=""/>
-							</div>
-						</div>
-					</li>
-				</ul>
-				<p class="base_box_top top10 mb0">개인(신용)정보 수집/이용에 대한 동의</p>
-				<div class="gray_box_new overbox">
-					귀하는 개인(신용)정보의 수집 &middot; 이용에 관한 동의를 거부하실 수 있으며, 개인의 신용도 등을 평가하기 위한 목적 이외에 개인(신용)정보 제공 동의는 철회할 수 있습니다.<br />
-다만, 본 동의는 상담접수 &middot; 신고접수를 위한 필수 적인 사항이므로 동의를 거부하시는 경우 관련 업무수행이 불가능합니다.<br />
-<br />
-[개인(신용)정보 수집 &middot; 이용에 대한 동의]<br />
-<br />
-개인정보의 수집 &middot; 이용 목적 :&nbsp; 상담 &middot; 신청접수 내용&nbsp;&nbsp;확인 &middot; 처리 후 결과 회신<br />
-개인정보의 수집 항목 : 성명, 휴대폰번호, 생년월일, 성별, 이메일<br />
-개인정보의 보유 및 이용기간 : 동의일로부터 제공받은 이용목적을 달성시까지(최대 거래종료 후 5년까지)<br />
-&nbsp;<br />
-* 보험계약모집 수탁자 : 당사 홈페이지 개인정보처리방침 참조 
-				</div>
-				<div class="agree_box_new">
-					<p class="calc240 tar">위 내용에 동의합니다.</p>
-					<div class="agree_chk">
-						<input type="radio" class="agree_chk" name="rdoPrivacy" id="rdoPrivacyY" value="Y"><label for="rdoPrivacyY">동의</label>
-						<input type="radio" class="agree_chk" name="rdoPrivacy" id="rdoPrivacyN" value="N"><label for="rdoPrivacyN">미동의</label>
-					</div>
-				</div>
-			</div>
-		</div>
-				<div class="popup_footer">
-			<div class="btn_box tac mt0 mb0">
-				<button type="button" class="btn modal_off modalCounselReqClose">취소</button>
-				<button type="button" class="btn btn_blue modal_off" id="btnCounselReq">상담신청</button>
-			</div>
-			<a href="javascript:void(0);" class="modal_off modalCounselReqClose"><img src="../../images/prouductImg/travelLeisure/bg_popup_close.png" alt="닫기"></a>
-		</div>
-	</div>
-</div>
-<div class="popup_box dimmed" id="popCounselComplete" style="display:none;">
-	<div class="popup_container">
-		<div class="popup_header">
-			<h1>상담신청</h1>
-		</div>
-
-		<div class="popup_body">
-			<p class="wel_sub tac">
-				상담신청이 접수되었습니다.<br>
-				빠른 시간 내에 고객님에게 연락 드리겠습니다.
-			</p>
-		</div>
-
-		<div class="popup_footer">
-			<div class="btn_box tac mt0 mb0">
-				<button type="button" class="btn btn_blue modalCounselCompeteClose"><span>확인</span></button>
-			</div>
-			<a href="javascript:void(0);" class="modal_off modalCounselCompeteClose"><img src="../../images/prouductImg/travelLeisure/bg_popup_close.png" alt="닫기"></a>
-		</div>
-	</div>
-</div>
-<div class="popup_box dimmed" id="popProductInfo">
-	<div class="popup_container" style="min-width:886px">
-		<div class="popup_header">
-			<h1 style="font-size:20px"></h1>
-		</div>
-				<div class="popup_body" id="popProductInfoBody"> </div>
-		<div class="popup_footer">
-			<a href="javascript:void(0);" class="modal_off modalProductInfo""><img src="../../images/prouductImg/travelLeisure/bg_popup_close.png" alt="닫기"></a>
-		</div>
-	</div>
-</div>
-<div class="popup_box dimmed" id="popTerms">
-	<div class="popup_container w750">
-		<div class="popup_header">
-			<h1 class="popTermsTitle"></h1>
-		</div>
-		<div class="popup_body">
-
-			<div class="popTermsContent"></div>
-		</div>
-		<div class="popup_footer">
-			<a href="javascript:void(0)" class="modal_off btnCloseNextPop" rel="popTerms"><img src="../../images/prouductImg/travelLeisure/bg_popup_close.png" alt="닫기"></a>
-		</div>
-	</div>
-</div>
-	
-
-<div class="alert_box" id="popGetReady" style="display: none;">
-	<div class="alert_container" style="width:450px">
-		<div class="alert_header">
-			<h1 class="warning">알려드립니다</h1>
-		</div>
-		<div class="alert_body">
-			<p>서비스 준비중입니다.<br>고객센터 <b class="f18">1566-3000</b>으로 연락주십시오.</p>
-		</div>
-		<div class="alert_foot ">
-			<a class="alert_btn btnGetReadyCloseW" href="javascript:void(0)">확인</a>
-			<a class="alert_close_btn btnGetReadyCloseW" href="javascript:void(0)">
-				<span class="hidden">닫기</span>
-			</a>
-		</div>
-	</div>
-</div>
-
-
-<div class="alert_box" id="popGetReadyLoan" style="display: none;">
-	<div class="alert_container" style="width:450px">
-		<div class="alert_header">
-			<h1 class="warning">알려드립니다</h1>
-		</div>
-		<div class="alert_body">
-			<p>서비스 준비중입니다.<br>고객센터 <b class="f18">1670-0393</b>으로 연락주십시오.</p>
-		</div>
-		<div class="alert_foot ">
-			<a class="alert_btn btnGetReadyLoanCloseW" href="javascript:void(0)">확인</a>
-			<a class="alert_close_btn btnGetReadyLoanCloseW" href="javascript:void(0)">
-				<span class="hidden">닫기</span>
-			</a>
-		</div>
-	</div>
-</div>
-
-<div class="alert_box" id="popGetReadydomesticTravel" style="display: none;">
-	<div class="alert_container" style="max-width:600px">
-		<div class="alert_header">
-			<h1 class="warning">알려드립니다</h1>
-		</div>
-		<div class="alert_body">
-			<p class="f18 pb25 pt25" style="line-height: 30px;max-height: 350px">
-				<font class="f20 disib mb20" style="background: linear-gradient(to top, #daf0f4 35%, transparent 35%);">하나 국내여행보험(단체) 보험가입 신청</font><br>
-				<a href="https://imet.kr/hanatravel" target="_blank" class="fc_blue f48 fw_6 " style="text-decoration: underline;">imet.kr/hanatravel</a><br>
-				<font class="f16 disb mt10">(5인 이상의 학교, 법인등 단체가입 가능)</font>
-			</p>
-			<p class="pt0 tal" style="line-height: 13px">※ 불편을 드려 죄송합니다. 더 나은 서비스를 위해 준비중이며,<br>
-				<a href="https://imet.kr/hanatravel" target="_blank" class="fc_blue ml20">이투엘보험대리점</a>을 통해 가입 및 계약관리를 받아보실 수 있습니다. </p>
-		</div>
-		<div class="alert_foot ">
-			<a class="alert_btn btnGetReadydomesticTravelCloseW" href="javascript:void(0)">확인</a>
-			<a class="alert_close_btn btnGetReadydomesticTravelCloseW" href="javascript:void(0)">
-				<span class="hidden">닫기</span>
-			</a>
-		</div>
-	</div>
-</div>
-
-
-<div class="alert_box" id="popGetReadyPhoto" style="display: none;">
-	<div class="alert_container" style="width:450px">
-		<div class="alert_header">
-			<h1 class="warning">알려드립니다</h1>
-		</div>
-		<div class="alert_body">
-			<p class="pb5">등록하신 사진은</p>
-			<p class="pt0">정상적으로 접수되어 처리중입니다.</p>
-		</div>
-		<div class="alert_foot ">
-			<a class="alert_btn btnGetReadyPhotoCloseW" href="javascript:void(0)">확인</a>
-			<a class="alert_close_btn btnGetReadyPhotoCloseW" href="javascript:void(0)">
-				<span class="hidden">닫기</span>
-			</a>
-		</div>
-	</div>
-</div>
 </div>
 
 <footer data-include-path="/src/html/layout/footer.html"></footer>

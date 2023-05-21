@@ -2,11 +2,6 @@
 @import url("../../../css/common.css");
 @import url("../../../css/reset.css");
 @import url("../../../css/default.css");
-#container {
-  position: relative;
-  width: 100%;
-  min-height: calc(100% - 240px); /*overflow:auto;*/
-}
 
 .indicator_box {
   background: #009591;
@@ -1913,34 +1908,13 @@ user agent stylesheet h2 {
 .fc_red {
   color: #ed1651 !important;
 }
-.f24 {
-  font-size: 24px !important;
-}
-.f44 {
-  font-size: 44px !important;
-}
-.mb100 {
-  margin-bottom: 100px !important;
-}
+
 .btn_box {
   width: 100%;
   float: left;
   margin-top: 40px;
 }
-.btn {
-  font-family: "Noto Sans KR";
-  display: inline-block;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #d6d6d6;
-  color: #333;
-  background-color: #fff;
-  text-align: center;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 6px 30px;
-}
+
 button {
   appearance: auto;
   writing-mode: horizontal-tb !important;
@@ -1967,23 +1941,6 @@ button {
   padding: 3px 20px 4px;
 }
 
-.btn_arrow {
-  padding: 3px 20px 4px;
-}
-.btn {
-  font-family: "Noto Sans KR";
-  display: inline-block;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #d6d6d6;
-  color: #333;
-  background-color: #fff;
-  text-align: center;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 6px 30px;
-}
 .button {
   text-rendering: auto;
   letter-spacing: normal;
@@ -2235,10 +2192,6 @@ user agent stylesheet ul {
   top: 50%;
   margin-top: -13px;
 }
-table {
-  border-spacing: 0;
-  width: 100%;
-}
 .table_width_list {
   width: 100%;
   float: left;
@@ -2330,20 +2283,7 @@ table {
 .table_width_list .btn {
   float: left;
 }
-table caption,
-legend {
-  visibility: hidden;
-  overflow: hidden;
-  position: absolute;
-  left: -9999px;
-  margin: 0;
-  padding: 0;
-  width: 1px;
-  height: 0px;
-  font-size: 0;
-  line-height: 0;
-  text-indent: -9999px;
-}
+
 .bd_radius0 {
   border-radius: 0 !important;
 }
@@ -2444,4 +2384,13 @@ caption {
 }
 .msg_box1.tar:before {
   content: "";
+}
+
+#visual_box.visual_402 {
+  background: url("../../../images/prouductImg/travelLeisure/bg_visual_402.jpg")
+    no-repeat center top;
+}
+.feature_402 {
+  background: url("../../../images/prouductImg/travelLeisure/bg_feature_402.jpg")
+    no-repeat center top;
 }
