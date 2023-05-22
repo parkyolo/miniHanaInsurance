@@ -264,13 +264,15 @@
 }
 .accodion_box li > div {
     position: relative;
-    display: none;
+    /* display: none; */
     float: left;
     width: 100%;
     font-size: 14px;
-    padding: 25px;
+    /* padding: 25px; */
     border-bottom: 1px solid #555;
     background: #f7f7f7;
+    opacity: 0;
+    height: 0;
 }
 .accodion_box li > div > p {
     width: calc(100% - 65px);
