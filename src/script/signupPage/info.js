@@ -2,13 +2,16 @@
 
 window.onload=function infoPage()
 {
+    var obj=JSON.parse(localStorage.getItem('userInfo'));
    
-    const name = window.localStorage.getItem('name');
-    const birthday=window.localStorage.getItem('bday');
-    const pnoFront=window.localStorage.getItem('phoneNum_front');
-    const pnoBack=window.localStorage.getItem('phoneNum_back');
+    const name = obj.name;
+    console.log(name);
 
+    const birthday=localStorage.getItem('bday');
+    const pnoFront= obj.pnoFront;
+    const pnoBack= obj.pnoBack;
 
+    console.log(pnoBack);
     const back1=pnoBack.substring(0,4);
     const back2=pnoBack.substring(4,8);
     const byear=birthday.substring(0,2);
@@ -16,7 +19,8 @@ window.onload=function infoPage()
     const bd=birthday.substring(4,6);
 
 
-    console.log(pnoFront.text); //현재 undefined로 출력됨
+
+    // console.log(pnoFront.text); //현재 undefined로 출력됨
 
     const infoname = document.getElementById('txtJoinMemberName');
     infoname.value=name; //이름

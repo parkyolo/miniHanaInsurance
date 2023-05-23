@@ -7,6 +7,30 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="wrap">
+        <header data-include-path="/src/html/layout/header.html"></header>
+				<div class="container">
     <h1>회원가입 완료!<br>환영합니다</h1>
+</div>
+<footer data-include-path="/src/html/layout/footer.html"></footer>
+</div>
+<script>
+window.addEventListener('load', function() {
+var allElements = document.getElementsByTagName('*');
+Array.prototype.forEach.call(allElements, function(el) {
+var includePath = el.dataset.includePath;
+if (includePath) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            el.outerHTML = this.responseText;
+        }
+    };
+    xhttp.open('GET', includePath, true);
+    xhttp.send();
+}
+});
+});
+</script>
 </body>
 </html>

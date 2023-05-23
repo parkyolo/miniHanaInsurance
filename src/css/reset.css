@@ -1,4 +1,4 @@
-@charset "utf-8";
+/* @charset "utf-8";
 /* reset */
 /* font, tag, input label 초기화 */
 
@@ -143,10 +143,10 @@ hr {
 	padding:0;
 }
 
-input, select {
+/* input,select {
 	vertical-align:middle;
 	box-sizing:border-box;
-	-webkit-appearance:none;
+	-webkit-appearance:none; 
 	-webkit-border-radius:0;
 
 }
@@ -173,12 +173,20 @@ input.radio_chk[type=radio] + label{border:1px solid #d6d6d6;border-radius:4px;p
 input.radio_chk[type=radio] + label:before{width:25px;height:25px;position:absolute;left: 12px;top: 50%;margin-top: -12.5px;background:none;}
 input.radio_chk[type=radio]:checked + label{color:#fff;border-color:#009591;background:#009591;padding: 9px 12px 9px 30px;}
 input.radio_chk[type=radio]:checked + label:before{background:url("/src/images/radio_distanceOn.png?20211012") no-repeat;}
-input[type=checkbox]{display:inline-block; position:absolute;left:-9999px;}
+input[type=checkbox]{display:inline-block; position:absolute;left:500px;}
 input[type=checkbox] + label {z-index:1;position:relative;display:inline-block;cursor:pointer;line-height: 26px;padding: 4px 6px 4px 26px;margin-right: 10px;color: #555;}
-input[type=checkbox] + label:before {content:"";display:inline-block;width:20px;height:20px;position:absolute;left:0;top:8px;background:url("/src/images/form_checkOff.png") 0px 0px no-repeat;background-size: 20px auto;}
+input[type=checkbox] + label:before {
+	content:"";
+	display:inline-block;
+	width:20px;
+	height:20px;
+	position:absolute;
+	left:0;top:8px;
+	background:url("/src/images/form_checkOff.png") 0px 0px no-repeat;
+	background-size: 20px auto;}
 input[type=checkbox]:checked + label:before {text-align:center;line-height:20px;background:url("/src/images/form_checkOn.png") 0px 0px no-repeat;background-size: 20px auto;}
 input[type=checkbox]:disabled + label:before {text-align:center;line-height:20px;background:url("/src/images/form_checkLock.png") 0px 0px no-repeat;background-size: 20px auto;}
 input[type=checkbox].agree_chk + label {display:inline-block;border-width:1px;border-style:solid;border-color:#ddd;line-height:20px;padding:7px 20px 8px 40px;border-radius:20px;background:#fff;}
 input[type=checkbox].agree_chk.checked + label {border-color:#009591;background:#009591;color:#fff;}
 input[type=checkbox].agree_chk + label:before {display:inline-block;content:"\f00c";margin-top:0;font-family:"FontAwesome";width:20px;height:20px;font-size:20px;color:#555;position:absolute;left:12px;top:8px;background:none;}
-input[type=checkbox].agree_chk.checked + label:before, input[type=checkbox]:checked.agree_chk + label:before {color:#fff;}
+input[type=checkbox].agree_chk.checked + label:before, input[type=checkbox]:checked.agree_chk + label:before {color:#fff;}  */

@@ -1,4 +1,23 @@
-html {
+@import url("/src/css/common.css");
+@import url("/src/css/reset.css");
+@import url("/src/css/default.css");
+
+#mcontents{
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+#success{
+    font-size: 50px;
+}
+#header-title
+{
+    
+}
+
+
+
+/* html {
     height: 100%;
 }
 
@@ -85,6 +104,5 @@ label {
 }
 
 
-.container{   position: relative;top: auto; margin:auto}
 
-
+ */

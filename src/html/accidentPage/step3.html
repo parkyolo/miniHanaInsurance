@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/signupPage/accidentReport.css">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>STEP3 피해사항입력</h1>
+    <div id="wrap">
+        <header data-include-path="/src/html/layout/header.html"></header>
+        <div id="container">
+            <div id="mcontents">
+                <h1>STEP3 피해사항입력</h1>
     <h6>사고접수를 위해 피해사항을 입력해주세요
         <br>
         <ul>
@@ -130,7 +137,30 @@
         <!--다음 step2.html로 넘어가기-->
         <button type="button" id="next-btn-real" onclick="document.location.href='step4.html'" value="다음">다음</button>
 
-    </div>
+            </div>
 
+
+        </div>
+        <footer data-include-path="/src/html/layout/footer.html"></footer>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>

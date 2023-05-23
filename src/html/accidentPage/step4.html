@@ -1,46 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/src/css/signupPage/accidentReport.css">
+
     <script src="/src/script/signupPage/accidentReport.js"></script>
 
 </head>
+
 <body onload="step4load()">
-    <h1>STEP4 사고접수완료</h1>
-    <h6>사고접수 정보 확인</h6>
-    <table border="1">
-        <tbody>
-            <tr>
-                <td>사고접수번호</td>
-                <td>(사고접수번호)</td>
-                <td>당사가입차량번호</td>
-                <td>(당사가입차량번호)</td>
-            </tr>
-            <tr>
-                <td>사고일시</td>
-                <td>(사고일시 yyyy년 mm월 dd일 HH시 MM분)</td>
+    <div id="wrap">
+        <header data-include-path="/src/html/layout/header.html"></header>
+        <div id="container">
+            <div id="mcontents">
 
-            </tr>
-            <tr>
-                <td>사고장소</td>
-                <td >주소 : <span id="location"></span></span></td>
+                <div>
+                    <h1 id="success">STEP4 사고접수완료</h1>
+                    <h6>사고접수 정보 확인</h6>
+                </div>
 
-            </tr>
-            <tr>
-                <td>운전자</td>
-                <td>(이름 연락처)</td>
 
-            </tr>
-            <tr>
-                <td>접수내용</td>
-                <td>(피해물 N건, 피해자 N건)</td>
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td>사고접수번호</td>
+                            <td><span id='accidentNum'></td>
+                            <td>당사가입차량번호</td>
+                            <td><span id='carNum'></td>
+                        </tr>
+                        <tr>
+                            <td>사고일시</td>
+                            <td colspan="3" style="text-align: center;"><span id='date'></span></td>
 
-            </tr>
-        </tbody>
-    </table>
-    
+                        </tr>
+                        <tr>
+                            <td>사고장소</td>
+                            <td colspan="3" style="text-align: center;"><span id="location"></span></span></td>
+
+                        </tr>
+                        <tr>
+                            <td>운전자</td>
+                            <td colspan="3" style="text-align: center;"><span id="name"></span>&nbsp;&nbsp;<span
+                                    id='phonenum'></span></td>
+
+                        </tr>
+                        <tr>
+                            <td>접수내용</td>
+                            <td colspan="3" style="text-align: center;">(피해물 N건, 피해자 N건)</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <footer data-include-path="/src/html/layout/footer.html"></footer>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
