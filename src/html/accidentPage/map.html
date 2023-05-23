@@ -44,7 +44,13 @@
 
 </head>
 
+
 <body>
+    <div id="wrap">
+        <header data-include-path="/src/html/layout/header.html"></header>
+				<div class="container">
+				
+
     <div class="map_wrap">
         <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
         <div class="hAddr">
@@ -67,7 +73,7 @@
     <script>
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
             mapOption = {
-                center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+                center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표 -> 현재 내 위치로 가져오기
                 level: 1 // 지도의 확대 레벨
             };
 
@@ -102,9 +108,11 @@
                     // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
                     infowindow.setContent(content);
                     infowindow.open(map, marker);
+                    console.log(result[0].road_address.address_name);
 
                     var infoDiv = document.getElementById('mapaddress');
                     infoDiv.innerHTML = result[0].road_address.address_name;
+                
                 }
             });
         });
@@ -148,6 +156,27 @@
             }
         }
     </script>
+</div>
+<footer data-include-path="/src/html/layout/footer.html"></footer>
+</div>
+<script>
+window.addEventListener('load', function() {
+var allElements = document.getElementsByTagName('*');
+Array.prototype.forEach.call(allElements, function(el) {
+var includePath = el.dataset.includePath;
+if (includePath) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            el.outerHTML = this.responseText;
+        }
+    };
+    xhttp.open('GET', includePath, true);
+    xhttp.send();
+}
+});
+});
+</script>
 </body>
 
 </html>

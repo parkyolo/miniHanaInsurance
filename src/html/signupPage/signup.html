@@ -6,102 +6,270 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signupMainPage</title>
-    <link rel="stylesheet" type="application/css" href="/src/css/signupPage/signupPage.css">
-    
+    <link rel="stylesheet" href="/src/css/signupPage/signupPage.css">
+
 
 
 </head>
 
 <body>
-    <div id="head-contents" class="head-contents">
-        <h3 id="contents-title" class="contents-title">본인인증</h3>
-        <p class="contents-title-description" id="contents-title-description">
-            하나손해보험은 개인정보보호와 관련하여 전자금융거래 회원제만을 운영하고 있으며 고객님의 소중한 정보를 안전하게 보호하고
-            <br>익명 사용자의 부정가입으로 인한 피해를 방지하기 위하여
-            <strong class="fc_blue fw_4">휴대폰을 통해 본인인증을 시행하고 있습니다.</strong>
-        </p>
-        <div id="body-contents" class="body-contents">
-            <div id="body-contents-header" class="body-contents-header">
-                <div id="pid-title-name">
-                    <label for="input-pid-front">주민등록번호</label> <!--label 선택해도 주민번호에 커서 입력가능-->
+    <div id="wrap">
+        <header data-include-path="/src/html/layout/header.html"></header>
+        <div id="container">
+
+            <div id="contents">
+                <div id="head-contents" class="head-contents">
+                    <div class="head-title">
+                        <h3 id="contents-title" class="contents-title">본인인증</h3>
+                        <p class="contents-title-description" style="font-size: 15px;">
+                            하나손해보험은 개인정보보호와 관련하여 전자금융거래 회원제만을 운영하고 있습니다.<br>
+                            고객님의 소중한 정보를 안전하게 보호하고 익명 사용자의 부정가입으로 인한 피해를 방지하기 위해 본인인증이 필요합니다.
+                        </p>
+                    </div>
+    
+                    <div id="body-contents" class="body-contents" style="position: relative;">
+                        <div id="body-contents-header" class="body-contents-header" style="poistion:block">
+    
+    
+                            <div class="pid-title-name">
+                                <label class="pid-input" for="input-pid-front">주민등록번호</label> <!--label 선택해도 주민번호에 커서 입력가능-->
+                            </div>
+                            <div class="pid-form-content" id="pid-form-content">
+                                <input type="text" id="input-pid-front" placeholder="주민번호 앞자리" maxlength="6" required
+                                    onkeyup="moveCursor(this)">
+                                    &nbsp&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp&nbsp
+                                <input type="password" id="input-pid-back" placeholder="주민번호 뒷자리" maxlength="7" required
+                                    onkeypress="isPnoNull(event)">
+    
+                            </div>
+
+                        </div>
+                    </div>
+    
+    
+                    <div class="phone-auth" id="phone-auth">
+                        <div id="phone-auth-background">
+                            <div id="phone-auth-title">휴대폰 </div>
+                            <div id="phone-auth-img">
+                                <img src="/src/images/claimImg/icon_reward_04.png" id="phoneauthimg">
+                            </div>
+                            <input id="openmodal" type="button" value="휴대폰 인증 버튼" onclick="letsopen()">
+                        </div>
+                    </div>
                 </div>
-                <div class="pid-form-content" id="pid-form-content">
-                    <!-- <form name="pid-form" id="pid-form" class="pid-form"> -->
-                        <input type="text" id="input-pid-front" placeholder="주민번호 앞자리" maxlength="6" required
-                            onkeyup="moveCursor(this)">
-                        -
-                        <input type="password" id="input-pid-back" placeholder="주민번호 뒷자리" maxlength="7" required  onkeypress="isPnoNull(event)">
-
-                    <!-- </form> -->
-                </div>
-
-                <div id="mouse-input-btn">
-                    <input type="button" class="mouse-input-btn" value="마우스입력">
-                </div>
-            </div>
-
-
-            <div class="phone-auth" id="phone-auth">
-                <div id="phone-auth-background">
-                    <div id="phone-auth-title">휴대폰 </div>
-                    <div id="phone-auth-img">폰이미지</div>
-                    <input type="button" value="휴대폰 인증 버튼">
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <!--모달 창-->
-    <!--querySelector : element 반환-->
-    <div class="phone-auth-modal" id="phone-auth-modal">
-        <div class="modal-header" id="modal-header">
-            <span class="modal-header-title" id="modal-header-title">본인인증</span>
-            <div class="modal-close">
-                <input type="button" value="X" id="X">
-
-            </div>
-        </div>
-        <div class="modal-choice" id="modal-choice">
-            <span style="border: 1px;">휴대폰</span>
-        </div>
-
-        <div class="modal-content" id="modal-content">
-
-            <div class="modal-info" id="modal-info">
-                <div class="modal-info-pinfo" id="modal-info-pinfo">
-                    <ul class="pinfo" id="pinfo">
-                        <li>
-                            <div class="modal-info-name" id="modal-info-name">
-                                <ul class="input-area">
-                                    <li>
-                                        <label for="name">이름</label>
-                                        <input type="text" id="name" class="name"
-                                            placeholder="성명을 입력">
-                                    </li>
-                                    <li>
-                                        <select name="modal-info-isKorean">
-                                            <option value="Korean" selected>내국인</option>
-                                            <option value="foreigner">외국인</option>
-                                        </select>
-                                    </li>
+    
+    
+                <div class="popup_box dimmed" id="popIntegrateCert">
+    
+                    <div class="popup_container popup_confirm">
+                        <div class="popup_header">
+                            <h1 role="heaiing" aria-level="1">본인인증</h1>
+                            <input id="closebtn" type="button" value="X" onclick="letsclose()">
+                        </div>
+                        <div class="popup_body noscroll bg_f2f2f2"
+                            style="border-bottom: 1px solid rgb(255, 255, 255);">
+    
+    
+                            <div class="ria_cf_s1">
+                                <form id="frmMobileCert" name="frmMobileCert" class="mt10" role="form">
+                                    <fieldset>
+                                        <input type="hidden" name="sSendCount" id="sSendCount" title="재전송 순번" value="">
+                                        <label for="txtMobileCertName" class="ria_cf_tit">이름</label>
+                                        <div class="set_box pholder">
+                                            <input type="text" name="CertName" id="name" title="이름 입력" placeholder="성명을 입력"
+                                                class="long w214" role="textbox" tk_security="true">
+                                            <select title="내국인 또는 외국인 선택" class="short fr w143" id="selMobileCertForeigner"
+                                                role="listbox">
+                                                <option value="1" selected="" role="option" aria-label="option0">내국인
+                                                </option>
+                                                <option value="2" role="option" aria-label="option1">외국인</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="mt10">
+                                        <label for="txtMobileCertBirthDay" class="ria_cf_tit">생년월일</label>
+                                        <div class="set_box pholder">
+    
+                                            <input type="text" name="CertBirthDay" id="bday" title="생년월일 입력"
+                                                placeholder="생년월일 6자리 입력" class="long w214 inputNum" maxlength="6"
+                                                role="textbox" tk_security="true" disabled="" >
+                                            <div class="w143 fr">
+                                                <input style="display: none;" type="radio" name="rdoMobileCertGender"
+                                                    id="rdoMobileCertGender1" value="1" class="btn_radio btr_f"
+                                                    role="radio"><label for="rdoMobileCertGender1">남</label>
+                                                <input style="display: none;" type="radio" name="rdoMobileCertGender"
+                                                    id="rdoMobileCertGender2" value="2" class="btn_radio btr_l"
+                                                    role="radio"><label for="rdoMobileCertGender2">여</label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="mt10">
+                                        <label for="rdoMobileCertCarrierSkt" class="ria_cf_tit">휴대폰번호</label>
+                                        <div class="set_box">
+                                            <div class="w214">
+                                                <input style="display: none;" type="radio" name="rdoMobileCertCarrier"
+                                                    id="rdoMobileCertCarrierSkt" class="btn_radio btr_f" data-value="SKT"
+                                                    checked="" role="radio"><label for="rdoMobileCertCarrierSkt"
+                                                    class="btr3">SKT</label>
+                                                <input style="display: none;" type="radio" name="rdoMobileCertCarrier"
+                                                    id="rdoMobileCertCarrierKtf" class="btn_radio btr_c" data-value="KTF"
+                                                    role="radio"><label for="rdoMobileCertCarrierKtf"
+                                                    class="btr3">KT</label>
+                                                <input style="display: none;" type="radio" name="rdoMobileCertCarrier"
+                                                    id="rdoMobileCertCarrierLgt" class="btn_radio btr_l" data-value="LGT"
+                                                    role="radio"><label for="rdoMobileCertCarrierLgt"
+                                                    class="btr3">LGT</label>
+                                            </div>
+                                            <select title="알뜰폰 선택" class="short w143 fr" id="selFrugalType" role="listbox">
+                                                <option value="" selected="" role="option" aria-label="option0">알뜰폰
+                                                </option>
+                                                <option value="SKM" role="option" aria-label="option1">알뜰폰 SKT</option>
+                                                <option value="KTM" role="option" aria-label="option2">알뜰폰 KT</option>
+                                                <option value="LGM" role="option" aria-label="option3">알뜰폰 LG U+
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="set_box fr mt6">
+                                            <div class="long tel_set2 wPc100 no_maxwidth">
+                                                <select id="pnofront" title="휴대폰번호 첫번째 번호" class="pnofront" role="listbox">
+                                                    <option value="" selected="" role="option" aria-label="option0">선택
+                                                    </option>
+                                                    <option value="010" role="option" aria-label="option1">010</option>
+                                                    <option value="011" role="option" aria-label="option2">011</option>
+                                                    <option value="016" role="option" aria-label="option3">016</option>
+                                                    <option value="017" role="option" aria-label="option4">017</option>
+                                                    <option value="018" role="option" aria-label="option5">018</option>
+                                                    <option value="019" role="option" aria-label="option6">019</option>
+                                                </select>
+                                                <span class="dash">-</span>
+                                                <input type="text" title="휴대폰번호 두번째 번호" class="pNo-back" id="pNo-back"
+                                                    value="" role="textbox" tk_security="true">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <input type="hidden" name="hid_key_data" id="hid_key_data" value=""><input type="hidden"
+                                        name="hid_enc_data" id="hid_enc_data" value="">
+                                </form>
+                            </div>
+                            <div class="ria_cf_s2 mt10">
+                                <div class="ria_ag_box">
+                                    <div class="ag_btn">
+                                        <span class="potit">휴대폰 인증약관 동의</span>
+                                        <!-- 체크시 - 클래스 btn_on 추가 -->
+                                        <div class="fr">
+                                            <input type="checkbox" name="agree" id="btnMobileCertAllCheck"
+                                                class="ria_bluecheck allCheck" role="checkbox"
+                                                onclick="selectAll(this)"><label for="btnMobileCertAllCheck"
+                                                class="mr0 pr0">전체동의</label>
+                                        </div>
+                                    </div>
+                                    <ul class="ag_list mt10" role="list">
+                                        <li>
+                                            <input type="checkbox" name="agree" id="chkMobileCertCheck1" class="ria_base"
+                                                role="checkbox">
+                                            <label for="chkMobileCertCheck1" class="lsp12">개인정보 이용 및 제공에 동의</label>
+    
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="agree" id="chkMobileCertCheck2" class="ria_base"
+                                                role="checkbox">
+                                            <label for="chkMobileCertCheck2">고유식별정보 처리에 동의</label>
+    
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="agree" id="chkMobileCertCheck3" class="ria_base"
+                                                role="checkbox">
+                                            <label for="chkMobileCertCheck3">서비스 이용약관에 동의</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="agree" id="chkMobileCertCheck4" class="ria_base"
+                                                role="checkbox">
+                                            <label for="chkMobileCertCheck4">통신사 이용약관에 동의</label>
+    
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button type="button" class="btn_gray btn wPc100 mt10" id="btnMobileCertNumRequest"
+                                role="button" onclick="onLoggin()">인증번호 발송</button>
+    
+                            <div class="ria_cf_s3" id="fdSMSVldNo" style="display:none">
+                                <div class="ria_btn_box">
+                                    <div class="confirm_box">
+                                        <form id="frmSmsVldNo" name="frmSmsVldNo"
+                                            onsubmit="$('#btnMobileCertConfirm').trigger('click'); return false;"
+                                            role="form">
+                                            <fieldset>
+                                                <label for="txtSMSVldNo" class="lh44">인증번호</label>
+                                                <div class="set_box">
+                                                    <div class="long po_r w240">
+                                                        <input type="text" id="no" title="인증번호 입력" class="wPc100 h44"
+                                                            maxlength="6" role="textbox" tk_security="true">
+                                                        <strong class="msg fc_red lh44 icon_clock"
+                                                            id="spnTimer">03:00</strong>
+                                                    </div>
+                                                    <button type="button" class="btn btn_darkgray fr w122 h44"
+                                                        id="btnMobileCertNumRequestResend" role="button">재전송</button>
+                                                </div>
+                                            </fieldset>
+                                            <input type="hidden" name="hid_key_data" id="hid_key_data" value=""><input
+                                                type="hidden" name="hid_enc_data" id="hid_enc_data" value="">
+                                        </form>
+                                    </div>
+                                    <button type="button" class="btn_blue btn wPc100 mt10" id="btnMobileCertConfirm"
+                                        role="button" onclick="isSuccess()">본인인증 확인</button>
+                                </div>
+                            </div>
+                            <div class="text_cont_box bg_01 mt10 pb10">
+                                <ul class="tcb_list1" role="list">
+                                    <li class="mt0">본인인증은 고객님 본인 명의의 휴대폰 번호로만 가능합니다.</li>
+                                    <li class="mt0">인증번호 입력 5회 오류 시 재전송이 제한됩니다. (익일 사용가능)</li>
+                                    <li class="mt0">인증번호 미도착시 1644-7725로 연락주시기 바랍니다.</li>
+                                    <li class="mt0">공동인증서로 계정잠김해제 하시면, 인증번호 오류가 해제됩니다.</li>
                                 </ul>
+                            </div>
+                        </div>
+    
+    
+                    </div>
+    
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!--모달 창-->
+        <!--querySelector : element 반환-->
+        <!-- <div class="phone-auth-modal" id="phone-auth-modal">
+
+                    <div div class="modal-info" id="modal-info"> -->
+        <!-- <div class="modal-info-pinfo" id="modal-info-pinfo">
+
+
+                            <div class="modal-info-name" id="modal-info-name">
+
+                                <label for="name">이름</label>
+                                <input type="text" id="name" class="name" placeholder="성명을 입력">
+
+                                <select name="modal-info-isKorean">
+                                    <option value="Korean" selected>내국인</option>
+                                    <option value="foreigner">외국인</option>
+                                </select>
+
 
                             </div>
-                        </li>
 
-                        <li>
+
+
                             <div class="modal-info-bday" id="modal-info-bday">
                                 <label for="bday">생년월일</label>
-                                <input type="text" id="bday" class="bday"
-                                    placeholder="생년월일 디폴트 입력후 막기">
+                                <input type="text" id="bday" class="bday" placeholder="생년월일 디폴트 입력후 막기">
                                 <input type="radio" name="gender">남자
                                 <input type="radio" name="gender">여자
                             </div>
-                        </li>
-                        <li>
+
+
                             <div class="modal-info-pNo" id="modal-info-pNo">
                                 <label for="modal-info-name">통신사</label>
                                 <input type="radio" name="pComp" checked>SKT
@@ -126,51 +294,47 @@
                                 </select>
                                 -
                                 <input type="text" name="pNo-back" id="pNo-back">
-                            </div>
-                        </li>
-                </div>
-                </ul>
-
-                <div class="modal-info-agree" id="modal-info-agree">
-                    <span class="info-title-name" id="info-title-name">휴대폰 인증약관 동의</span>
-                    <div class="all-agree-btn" id="all-agree-btn">
-                        <input type="checkbox" name="all-agree" value="전체동의" onclick="selectAll(this)">전체동의</input>
-                    </div>
-                    <input type="checkbox" name="agree">개인정보 이용 및 제공에 동의</li>
-                    <input type="checkbox" name="agree">고유식별정보 처리에 동의</li>
-                    <input type="checkbox" name="agree">서비스 이용약관에 동의</li>
-                    <input type="checkbox" name="agree">통신사 이용약관에 동의</li>
-
-                    <div class="pNo-submit-btn">
-                        <!-- <form action='/test' method='post' id="btn"> -->
-                        <input type="button" value="인증번호 발송" id="pNo-submit" style="width:auto;" onclick="onLoggin();">
-                        <!-- </form> -->
-                    </div>
-
-                    <input type="button" value="정보 확인하기" onclick="returnPinfo()">
-                    <input type="button" value="다음 페이지에 넘길 정보 확인하기" onclick="infoPage()">
-
-
-                    <div class="input-no">
-                        <input type="text" placeholder="인증번호를 입력하세요" id="no" onkeypress="isSuccess(event)">
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal-footer" id="modal-footer">
-                <ul>
-                    <li>본인인증은 고객님 본인 명의의 휴대폰 번호로만 가능합니다</li>
-                    <li>인증번호 입력 5회 오류 시 재전송이 제한됩니다. (익일 사용가능)</li>
-                    <li>인증번호 미도착시 1644-7725로 연락주시기 바랍니다.</li>
-                    <li>공동인증서로 계정잠김해제 하시면, 인증번호 오류가 해제됩니다.</li>
-
-                </ul>
-            </div>
-        </div>
+                            </div> -->
     </div>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="/src/script/signupPage/signup.js"></script>
+    <script>
+        $(document).ready(function () {
+            // text로 시작하는 모든 id를 숨김
+            $(".input-no").hide();
 
+            //     // index가 클릭한 것과 일치하는 요소를 찾음
+            $('#pNo-submit').click(function () {
+
+                $(".input-no").show();
+
+                // goodsBtn을 클릭하면 goodsDiv를 보여줘라
+
+            })
+        });
+
+    </script>
+    </div>
+    <footer data-include-path="/src/html/layout/footer.html"></footer>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

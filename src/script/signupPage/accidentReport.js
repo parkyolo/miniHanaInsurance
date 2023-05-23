@@ -48,6 +48,7 @@ function saveStep1Info(){
     }
 
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    location.href = 'step2.html';
 }
 
 //step2 사용자 정보 불러오기

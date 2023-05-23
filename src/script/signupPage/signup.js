@@ -1,5 +1,8 @@
-const CryptoJS = require('crypto-js'); 
-const axios=require('axios');
+// const CryptoJS = require('crypto-js'); 
+// const axios=require('axios');
+
+console.log('hello');
+
 
 
 //난수 생성
@@ -55,12 +58,14 @@ function isName(e)
 }
 
 
-
 //휴대폰 인증약관 동의 전체 선택
 function selectAll(all) {
+    console.log('all agree');
+
     const checkboxes = document.getElementsByName('agree');
 
     checkboxes.forEach((checkbox) => {
+        
         checkbox.checked = all.checked;
     })
 }
@@ -70,8 +75,9 @@ function isAllChecked() {
     const checkboxLength = document
         .querySelectorAll('input[name="agree"]:checked')
         .length;
+    console.log(checkboxLength);
 
-    if (checkboxLength != 4) {
+    if (checkboxLength <4) {
         console.log("전체동의 하셔야합니다.");
         return false;
     } else 
@@ -101,9 +107,9 @@ function pNoToString() {
 }
 
 // 네이버 open api 요청하기 
-const access_key=process.env.NEXT_PUBLIC_ACCESS_KEY; 
-const secrete_key=process.env.NEXT_PUBLIC_SECRETE_KEY; 
-const service_id=process.env.NEXT_PUBLIC_SERVICE_ID; 
+// const access_key=process.env.NEXT_PUBLIC_ACCESS_KEY; 
+// const secrete_key=process.env.NEXT_PUBLIC_SECRETE_KEY; 
+// const service_id=process.env.NEXT_PUBLIC_SERVICE_ID; 
 function onLoggin() {
 
     if (isAllChecked() == false) 
@@ -112,11 +118,28 @@ function onLoggin() {
     const code = generateRandomCode(6);
     console.log(code);
     localStorage.setItem('code', code);
+
+    document.getElementById('fdSMSVldNo').style.display='block';
 }
 
 
+function letsopen(){
+    const bday=document.getElementById('input-pid-front').value;
+    localStorage.setItem('bday',bday);
+    console.log(bday);
+    document.getElementById('popIntegrateCert').style.display='block';
+    const bdayinput=document.getElementById('bday');
+    const realbday=localStorage.getItem('bday');
+    bdayinput.value=realbday;
+}
+function letsclose(){
+    console.log('lets close');
+    document.getElementById('popIntegrateCert').style.display='none';
 
-function isSuccess(e) {
+}
+
+
+function isSuccess() {
 
     const code = window
         .localStorage
@@ -124,9 +147,10 @@ function isSuccess(e) {
     const sendedCode = document
         .getElementById('no')
         .value;
-    if (e.keyCode == 13) {
+    
         if (sendedCode == code) {
             alert("인증성공! 정보입력 페이지로 넘어갑니다.");
+            returnPinfo();
             location.href = 'info.html';
 
         } else {
@@ -135,8 +159,9 @@ function isSuccess(e) {
         }
         localStorage.removeItem('code'); //코드 발급 후 반드시 삭제
 
-    }
+    
     console.log(localStorage.getItem('code')); //삭제 여부 확인
+
 
 }
 
@@ -145,9 +170,7 @@ function returnPinfo() {
     const name = document
         .getElementById('name')
         .value;
-    const bday = document
-        .getElementById('bday')
-        .value;
+
     const phoneNum_front = ChangeValue();
     const phoneNum_back = document
         .getElementById('pNo-back')
@@ -155,7 +178,6 @@ function returnPinfo() {
 
     const userInfo={
         'name':name,
-        'bday':bday,
         'pnoFront':phoneNum_front,
         'pnoBack':phoneNum_back
     }
@@ -163,3 +185,14 @@ function returnPinfo() {
 
 }
 
+
+function timer()
+{
+    const timer=document.getElementById('spnTimer');
+    let time=180000;
+    let min=3;
+    let sec=60;
+
+
+
+}
