@@ -61,30 +61,7 @@
                     </ul>
                     <!-- paging -->
                     <div class="page_list_box paging_box">
-                        <ul class="page_list">
-                            <li class="arrow prev first">
-                                <a>
-                                    <i class="fa fa-angle-double-left"></i>
-                                    <span class="hidden">처음 페이지로 이동</span>
-                                </a>
-                            </li>
-                            <li class="arrow prev">
-                                <a>
-                                    <i class="fa fa-angle-left"></i>
-                                    <span class="hidden">이전 10 페이지 이동</span>
-                                </a>
-                            </li>
-                            <span class="page_numbering">
-                            </span>
-                            <li class="arrow next"> <a>
-                                <i class="fa fa-angle-right"></i>
-                                <span class="hidden">다음 10 페이지 이동</span>
-                            </a></li>
-                            <li class="arrow next last">
-                                <a>
-                                    <i class="fa fa-angle-double-right"></i>   <span class="hidden">마지막 페이지로 이동</span>
-                                </a>
-                            </li>
+                        <ul class="page_list" id="pagination_container">
                         </ul>
                     </div>
                 </div>
@@ -93,6 +70,7 @@
         <footer data-include-path="/src/html/layout/footer.html"></footer>
     </div>
     <script src="/src/script/customerPage/faqPage.js" charset="utf-8"></script>
+    <script src="/src/script/customerPage/chatGPT.js" charset="utf-8"></script>
     <script>
         window.addEventListener('load', function() {
             var allElements = document.getElementsByTagName('*');

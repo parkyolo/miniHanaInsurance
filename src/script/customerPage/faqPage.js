@@ -1,65 +1,3 @@
-/* 자주묻는 질문 아코디언 */
-document.querySelectorAll('.accodion_box li.active').forEach((element) => {
-    element.classList.add('open');
-    Array.from(element.children).forEach((child) => {
-        if (child.tagName === 'DIV') {
-            child.style.transition = "all 0.2s";
-            child.style.padding = "25px";
-            child.style.opacity = "1";
-            child.style.height = "100%";
-        }
-    });
-});
-
-document.querySelector('.accodion_box').addEventListener('click', (event) => {
-    if (event.target.parentNode.classList.contains('openbox')) {
-        event.preventDefault();
-        var element = event.target.parentNode;
-        if (element.classList.contains('open')) {
-            element.classList.remove('open');
-            element.querySelectorAll('li').forEach((li) => {
-                li.classList.remove('open');
-            });
-            element.querySelectorAll('div').forEach((div) => {
-                div.style.transition = "all 0.2s";
-                div.style.padding = "0";
-                div.style.opacity = "0";
-                div.style.height = "0";
-            });
-        } else {
-            element.classList.add('open');
-            Array.from(element.children).forEach((child) => {
-                if (child.tagName === 'DIV') {
-                    child.style.transition = "all 0.2s";
-                    child.style.padding = "25px";
-                    child.style.opacity = "1";
-                    child.style.height = "100%";
-                }
-            });
-            Array.from(element.parentNode.children).forEach((sibling) => {
-            if (sibling !== element) {
-                Array.from(sibling.querySelectorAll('ul')).forEach((ul) => {
-                    ul.style.transition = "all 0.2s";
-                    ul.style.padding = "0";
-                    ul.style.opacity = "0";
-                    ul.style.height = "0";
-                });
-                sibling.classList.remove('open');
-                sibling.querySelectorAll('li').forEach((li) => {
-                    li.classList.remove('open');
-                });
-                sibling.querySelectorAll('div').forEach((div) => {
-                    div.style.transition = "all 0.2s";
-                    div.style.padding = "0";
-                    div.style.opacity = "0";
-                    div.style.height = "0";
-                });
-            }
-            });
-        }
-    }
-});
-
 /* main category별 sub category */
 let sub_cate_list = {
     "전체": [],
@@ -316,155 +254,269 @@ let faq_list = [
     {"mCate": "생활보험(원데이)", "sCate": "보험상품", "TITLE": "원데이자동차보험은 무엇인가요?", "CONTENTS": "<p>일반적인 자동차보험의 경우 차량등록증상의 소유주가 기명피보험자로서 자동차보험 계약시 운전연령 및 범위를 한정적으로 설정하여 보험가입을 합니다.<br>만약 단기간 가족, 지인에게 차량을 빌려줄 경우에는 자동차보험계약이 유지되어 있는 보험회사로 연락을 취해 운전연령 및 범위를 변경 추가보험료를 납부해야하며, 보험료 납부 직후 운전이 불가하고 해당일 24시 이후부터 운전을 할 수 있습니다. <br> 반면, 원데이자동차보험은 타인의 차량을 빌리는 운전자 기준으로 보험을 가입하여 영수시점부터 보험효력이 발생되어 즉시 운전이 가능할뿐만 아니라, 사고로 인해 자동차 소유자의 보험료 할증 부담을 덜어주는 운전자 중심의 자동차보험입니다.</p>"},
 ]
 
-const showContent = 10;
-const showButton = 10;
+/* 자주묻는 질문 아코디언 */
+document.querySelectorAll('.accodion_box li.active').forEach((element) => {
+    element.classList.add('open');
+    Array.from(element.children).forEach((child) => {
+        if (child.tagName === 'DIV') {
+            child.style.transition = "all 0.2s";
+            child.style.padding = "25px";
+            child.style.opacity = "1";
+            child.style.height = "100%";
+        }
+    });
+});
 
-let active_list = faq_list;
+document.querySelector('.accodion_box').addEventListener('click', (event) => {
+    if (event.target.parentNode.classList.contains('openbox')) {
+        event.preventDefault();
+        var element = event.target.parentNode;
+        if (element.classList.contains('open')) {
+            element.classList.remove('open');
+            element.querySelectorAll('li').forEach((li) => {
+                li.classList.remove('open');
+            });
+            element.querySelectorAll('div').forEach((div) => {
+                div.style.transition = "all 0.2s";
+                div.style.padding = "0";
+                div.style.opacity = "0";
+                div.style.height = "0";
+            });
+        } else {
+            element.classList.add('open');
+            Array.from(element.children).forEach((child) => {
+                if (child.tagName === 'DIV') {
+                    child.style.transition = "all 0.2s";
+                    child.style.padding = "25px";
+                    child.style.opacity = "1";
+                    child.style.height = "100%";
+                }
+            });
+            Array.from(element.parentNode.children).forEach((sibling) => {
+            if (sibling !== element) {
+                Array.from(sibling.querySelectorAll('ul')).forEach((ul) => {
+                    ul.style.transition = "all 0.2s";
+                    ul.style.padding = "0";
+                    ul.style.opacity = "0";
+                    ul.style.height = "0";
+                });
+                sibling.classList.remove('open');
+                sibling.querySelectorAll('li').forEach((li) => {
+                    li.classList.remove('open');
+                });
+                sibling.querySelectorAll('div').forEach((div) => {
+                    div.style.transition = "all 0.2s";
+                    div.style.padding = "0";
+                    div.style.opacity = "0";
+                    div.style.height = "0";
+                });
+            }
+            });
+        }
+    }
+});
+
+const itemsPerPage = 10; // 페이지 당 아이템 수
+
 let main_cate = "전체";
 let sub_cate = "전체";
+let cur_data = faq_list; // 페이지네이션을 위한 데이터 배열
+let currentPage = 1; // 현재 페이지 번호
 
-let totalContent = active_list.length;
-let totalPage = Math.ceil(totalContent / showContent);
-let curPageNum = 1; // 현재 페이지 번호
+// 페이지를 렌더링하는 함수
+function renderPage(page) {
+    // 현재 페이지에 해당하는 아이템 범위 계산
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
 
-/* 검색결과 제공 */
-const setList = () => {
-    document.querySelector('#targetFaqList').innerHTML = "";
-    totalContent = active_list.length;
-    totalPage = Math.ceil(totalContent / showContent);
-    for (let i=10*(curPageNum-1); i<Math.min(10*curPageNum, totalContent); i++) {
-        element = active_list[i];
-        document.querySelector('#targetFaqList').innerHTML +=
+    // 페이지에 해당하는 아이템 추출
+    const pageItems = cur_data.slice(startIndex, endIndex);
+
+    // 예시: 페이지 아이템을 리스트 형태로 보여줌
+    const listContainer = document.getElementById('targetFaqList');
+    listContainer.innerHTML = ''; // 이전에 보여준 아이템 제거
+
+    pageItems.forEach(item => {
+        listContainer.innerHTML +=
             `<li class="openbox">
                 <a href="javascript:void(0);">
                     <span class="icon">Q</span>
-                    ${element["TITLE"]}
+                    ${item["TITLE"]}
                 </a>
                 <div>
                     <span class="icon">A</span>
-                    ${element["CONTENTS"]}
+                    ${item["CONTENTS"]}
                 </div>
             </li>`;
-    }
-    document.querySelector('#total_row_cnt').innerText = `${totalContent}`;
+    });
 }
-/* Pagination */
-const setArrow = () => {
-    let arrow_prev = document.querySelectorAll('.prev');
-    let arrow_next = document.querySelectorAll('.next');
-    arrow_prev.forEach((element) => {
-        if (parseInt(curPageNum/10) > 0) {
-            element.classList.add("active");
-        } else {
-            element.classList.remove("active");
+
+// 페이지네이션 링크를 생성하는 함수
+function renderPagination() {
+    // 전체 페이지 수 계산
+    const totalPages = Math.ceil(cur_data.length / itemsPerPage);
+
+    // 페이지네이션 요소를 담을 컨테이너
+    const paginationContainer = document.getElementById('pagination_container');
+    
+    // 페이지네이션 컨테이너 초기화
+    paginationContainer.innerHTML = '';
+
+    // 처음 페이지 링크 생성
+    const firstLink = document.createElement('li');
+    firstLink.classList.add('arrow', 'prev', 'first');
+    firstLink.innerHTML += 
+                        `<a>
+                            <i class="fa fa-angle-double-left"></i>
+                            <span class="hidden">처음 페이지로 이동</span>
+                        </a>`;
+    firstLink.addEventListener('click', () => {
+        if (Math.floor((currentPage-1)/10) > 0) {
+            currentPage = 1;
+            renderPage(currentPage);
+            renderPagination();
         }
     });
-    arrow_next.forEach((element) => {
-        if (parseInt(totalPage/10) > parseInt(curPageNum/10)) {
-            element.classList.add("active");
-        } else {
-            element.classList.remove("active");
+    paginationContainer.appendChild(firstLink);
+
+    // 이전 페이지 링크 생성
+    const prevLink = document.createElement('li');
+    prevLink.classList.add('arrow', 'prev');
+    prevLink.innerHTML +=
+                        `<a>
+                            <i class="fa fa-angle-left"></i>
+                            <span class="hidden">이전 10 페이지 이동</span>
+                        </a>`;
+    prevLink.addEventListener('click', () => {
+        if (Math.floor((currentPage-1)/10) > 0) {
+            currentPage = (Math.floor((currentPage-1)/10)-1)*10+1;
+            renderPage(currentPage);
+            renderPagination();
         }
-    })
-    document.querySelectorAll('.arrow').forEach((element) => {
-        if (element.classList.contains('active')) {
-            element.addEventListener('click', function() {
-                if (element.classList.contains('first')) {
-                    curPageNum = 1;
-                } else if (element.classList.contains('prev')) {
-                    curPageNum = Math.max(1, (parseInt(curPageNum/10)-1)*10+1);
-                } else if (element.classList.contains('last')) {
-                    curPageNum = totalPage;
-                } else {
-                    curPageNum = Math.min(parseInt(totalPage/10)*10+1, (parseInt(curPageNum/10)+1)*10+1);
-                }
-                document.querySelector('.page_numbering .active').classList.remove("active");
-                // console.log("pagination in setArrow");
-                pagination();
-                document.querySelector(`.page_numbering .page${curPageNum}`).classList.add("active");
-                setList();
-                element.removeEventListener('click', arguments.callee);
-            });
+    });
+
+    paginationContainer.appendChild(prevLink);
+
+    // 페이지 번호 링크 생성
+    for (let i = Math.floor((currentPage-1)/10)*10+1; i <= Math.min(totalPages, Math.floor((currentPage-1)/10)*10+10); i++) {
+        const pageLink = document.createElement('li');
+        pageLink.class = `page page${i}`;
+        pageLink.innerHTML += `<a>${i}</a>`
+        if (i === currentPage) {
+            pageLink.classList.add('active'); // 현재 페이지 표시
         }
-    })
+        pageLink.addEventListener('click', () => {
+            currentPage = i;
+            renderPage(currentPage);
+            renderPagination();
+        });
+        paginationContainer.appendChild(pageLink);
+    }
+
+    // 다음 페이지 링크 생성
+    const nextLink = document.createElement('li');
+    nextLink.classList.add('arrow', 'next');
+    nextLink.innerHTML += 
+                        `<a>
+                            <i class="fa fa-angle-right"></i>
+                            <span class="hidden">다음 10 페이지 이동</span>
+                        </a>`;
+    nextLink.addEventListener('click', () => {
+        if (Math.ceil((currentPage-1)/10)*10 < totalPages) {
+            currentPage = Math.ceil((currentPage-1)/10)*10+1;
+            renderPage(currentPage);
+            renderPagination();
+        }
+    });
+    paginationContainer.appendChild(nextLink);
+
+    // 마지막 페이지 링크 생성
+    const lastLink = document.createElement('li');
+    lastLink.classList.add('arrow', 'next', 'last');
+    lastLink.innerHTML += 
+                        `<a>
+                        <i class="fa fa-angle-double-right"></i>
+                        <span class="hidden">마지막 페이지로 이동</span>
+                    </a>`;
+    lastLink.addEventListener('click', () => {
+        if (Math.ceil((currentPage-1)/10)*10 < totalPages) {
+            currentPage = totalPages;
+            renderPage(currentPage);
+            renderPagination();
+        }
+    });
+    paginationContainer.appendChild(lastLink);
 }
 
-const pagination = () => {
-    document.querySelector(".page_numbering").innerHTML = "";
-    for (let i=Math.min(totalPage, parseInt(curPageNum/10)*10+10); i>=parseInt(curPageNum/10)*10+1; i--) {
-        document.querySelector(".page_numbering").insertAdjacentHTML("afterbegin", `<li class="page page${i}"><a>${i}</a></li>`);
-        let element = document.querySelector(`.page${i}`);
-        if (i === 1) element.classList.add("active");
-        element.addEventListener('click', function() {
-            document.querySelector('.page_numbering .active').classList.remove("active");
-            document.querySelector(`.page_numbering .page${i}`).classList.add("active");
-            curPageNum = i;
-            setList();
-            element.removeEventListener('click', arguments.callee);
-        })
-    }
-    setArrow();
-}
-/* 전체 결과 리스트 */
-const changeList = () => {
-    active_list = [];
-    curPageNum = 1;
+// 검색 결과에 해당하는 데이터 리스트를 생성하는 함수
+function renderData() {
+    cur_data = [];
+    currentPage = 1;
 
     if (main_cate === "전체" && sub_cate === "전체") {
-        active_list = faq_list;
+        cur_data = faq_list;
     } else {
         faq_list.forEach((element) => {
             if (sub_cate === "전체") {
                 if (element["mCate"] === main_cate) {
-                    active_list.push(element);
+                    cur_data.push(element);
                 }
             } else {
                 if (element["mCate"] === main_cate && element["sCate"] === sub_cate) {
-                    active_list.push(element);
+                    cur_data.push(element);
                 }
             }
         })
     }
+    document.querySelector('#total_row_cnt').innerText = `${cur_data.length}`;
 }
-/* sub category 선택 */
-const select_sub_cate = () => {
-    document.querySelectorAll('#sub_cate_list > li').forEach((sub_ele) => {
-        Array.from(sub_ele.children).forEach((_child) => {
-            _child.addEventListener('click', (event) => {
+
+// 서브 카테고리를 변경했을 때 실행되는 함수
+function renderSubCate() {
+    document.querySelectorAll('#sub_cate_list > li').forEach(element => {
+        Array.from(element.children).forEach((_child) => {
+            _child.addEventListener('click', () => {
                 let _sub_cate = _child.innerText;
                 sub_cate = _sub_cate
                 document.querySelector('#link_sub_cate').innerText = _sub_cate;
-                changeList();
-                setList();
-                pagination();
+                renderData();
+                renderPage(currentPage);
+                renderPagination();
             });
         });
     })
 }
 
-changeList();
-pagination();
-setList();
-
-/* main category 선택 */
-document.querySelectorAll('#main_cate_list').forEach((element) => {
-    Array.from(element.children).forEach((child) => {
-        child.addEventListener('click', (event) => {
-            let _main_cate = child.innerText;
-            let origin_list = document.querySelector('#sub_cate_list');
-            document.querySelector('#link_main_cate').innerText = _main_cate;
-            origin_list.innerHTML = '<li data-category=""><a href="javascript:void(0)" role="link">전체</a></li>';
-            sub_cate_list[_main_cate].forEach((_sub_cate) => {
-                origin_list.innerHTML += `<li data-category=""><a href="javascript:void(0)" role="link">${_sub_cate}</a></li>`
+// 메인 카테고리를 변경했을 때 실행되는 함수
+function renderMainCate() {
+    document.querySelectorAll('#main_cate_list').forEach(element => {
+        Array.from(element.children).forEach(child => {
+            child.addEventListener('click', () => {
+                let _main_cate = child.innerText;
+                let origin_list = document.querySelector('#sub_cate_list');
+                document.querySelector('#link_main_cate').innerText = _main_cate;
+                origin_list.innerHTML = '<li data-category=""><a href="javascript:void(0)" role="link">전체</a></li>';
+                sub_cate_list[_main_cate].forEach((_sub_cate) => {
+                    origin_list.innerHTML += `<li data-category=""><a href="javascript:void(0)" role="link">${_sub_cate}</a></li>`
+                });
+                main_cate = _main_cate;
+                sub_cate = "전체";
+                document.querySelector('#link_sub_cate').innerText = sub_cate;
+                renderSubCate();
+                renderData();
+                renderPage(currentPage);
+                renderPagination();
             });
-            main_cate = _main_cate;
-            sub_cate = "전체";
-            document.querySelector('#link_sub_cate').innerText = sub_cate;
-            changeList();
-            setList();
-            pagination();
-            select_sub_cate();
-        });
-    })
-});
+        })
+    });
+}
 
+// 초기 페이지 로드 시 호출할 함수
+function initialize() {
+    renderData();
+    renderPage(currentPage);
+    renderPagination();
+    renderMainCate();
+}
+
+initialize();
