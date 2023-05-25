@@ -7,7 +7,6 @@
     
     <link rel="stylesheet" href="../../css/claim/rewardDocCarGuide.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script type="text/javascript" src="../../script/claim/rewardDocCarGuide.js"></script>
     
     <title>Document</title>
 </head>
@@ -17,25 +16,72 @@
         <header data-include-path="/src/html/layout/header.html"></header>
 			<div id="container">
         	<!-- 페이지별 코드 -->
-                <div class="title">
-                    <h2>보상서류안내</h2>
-                    <p>보상 접수시 구비 서류에 대해 안내해드립니다.</p>
-                </div>
 
-                <div class="contents">                    
+                <div id="contents">     
+                        
+                    <div class="title">
+                        <h2>보상서류안내</h2>
+                        <p>보상 접수시 구비 서류에 대해 안내해드립니다.</p>
+                    </div>               
                     <div class="tab_container">
                         <h3>보상시 구비서류</h3>
 
                         <ul class="tabs">
-                        <li class="tab-link current" data-tab="tab-1">교통</li>
-                        <li class="tab-link" data-tab="tab-2">상해</li>
-                        <li class="tab-link" data-tab="tab-3">질병</li>
+                            <li class="tab-link current" data-tab="tab-1">교통</li>
+                            <li class="tab-link" data-tab="tab-2">상해</li>
+                            <li class="tab-link" data-tab="tab-3">질병</li>
                         </ul>
                     
-                        <div id="tab-1" class="tab-content current">tab content1</div>
+                        <div id="tab-1" class="tab-content current">
+                            <div class="table">
+                                <div class="table_title">
+                                    <ul>
+                                        <li>보험처리</li>
+                                        <li>손해내용</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="processing">
+                                        <li>건강보험</li>
+                                        <li>일반</li>
+                                        <li>산재보험</li>
+                                        <li>공상</li>
+                                        <li>기타</li>
+                                    </ul>   
+                                    
+                                    <label>
+                                        <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                        <input type="checkbox" class="demageCheckbox">
+                                        체크박스 1
+                                    </label>
+                                    <label>
+                                        <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                        <input type="checkbox" class="demageCheckbox">
+                                        체크박스 2
+                                    </label>
+                                    <label>
+                                        <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                        <input type="checkbox" class="demageCheckbox">
+                                        체크박스 3
+                                    </label>
+                                    <label>                                        
+                                        <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                        <input type="checkbox" class="demageCheckbox">
+                                        체크박스 4
+                                    </label>
+                                    <label>                                        
+                                        <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                        <input type="checkbox" class="demageCheckbox">
+                                        체크박스 5
+                                    </label>
+                                </div>
+                            </div>                            
+                        </div>
+                        
                         <div id="tab-2" class="tab-content">tab content2</div>
                         <div id="tab-3" class="tab-content">tab content3</div>
                     </div>
+
 			    </div>
 
             </div>
@@ -59,6 +105,7 @@
             });
         });
     </script>
-
+    
+    <script type="text/javascript" src="../../script/claim/rewardDocCarGuide.js"></script>
 </body>
 </html>

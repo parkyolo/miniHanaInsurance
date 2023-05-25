@@ -3,50 +3,104 @@
 @import url("../common.css");
 @import url("../reset.css");
 
-.title {padding:40px 0 15px; background-image: url(../../images/claimImg/visual_healthReward_bg.jpg);}
-.title > h2 {font-size: 32px; margin: 0 0 0 20px;}
-.title > p {font-size: 14px; margin: 0 0 0 20px;}
+.contents{
+  width:75%;
+  margin: 0 auto;
+}
+.title {
+  padding: 40px 0 15px;
+  background-image: url(../../images/claimImg/visual_healthReward_bg.jpg);
+}
 
-.contents {padding: 40px 20px 100px;}
-.tab_container{
-    margin: 0 auto;
-  }
+.title>h2 {
+  font-size: 32px;
+}
 
-.tab_container > h3 {font-size: 24px;}
-  
-  /* tabs */
-  ul.tabs{
-    margin: 0px;
-    padding: 0px;
-    margin-top: 40px;
-    display: flex;
-  }
+.title>p {
+  font-size: 14px;
+}
 
-  ul.tabs li{
-    background: none;
-    color: #555;
-    background-color: #f2f2f2;
-    display: inline-block;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 15px;
-    flex-grow: 1;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  ul.tabs li.current{
-    background: #009591;
-    color: #fff;
-  }
-  
-  /* tab contents */
-  .tab-content{
-    display: none;
-    background: #ededed;
-    padding: 15px;
-  }
-  
-  .tab-content.current{
-    display: inherit;
-  }
+.tab_container {
+  margin: 0 auto;
+}
+
+.tab_container>h3 {
+  font-size: 24px;
+}
+
+/* tabs */
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 40px;
+  display: flex;
+}
+
+ul.tabs li {
+  background: none;
+  color: #555;
+  background-color: #f2f2f2;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 15px;
+  flex-grow: 1;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+ul.tabs li.current {
+  background: #009591;
+  color: #fff;
+}
+
+/* tab contents */
+.tab-content {
+  display: none;
+  padding-top: 15px;
+}
+
+.tab-content.current {
+  display: inherit;
+}
+
+.tab_container .table .table_title ul {
+  list-style: none;
+  display: flex;
+  background: #ededed;
+  padding: 15px 0;
+}
+
+.tab_container .table .table_title li {
+  float: left;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.processing{
+  margin-top: 5px;
+}
+
+.processing li {
+  padding: 2px 12px;
+  cursor:pointer;
+  color: #555;
+  font-size: 14px;
+  height: auto;
+  line-height: 30px;
+  display: block;
+  overflow: hidden;
+  width: 50%;;
+}
+
+.processing li.clicked{
+  background-color: #28B2A5;
+  color: #fff;
+  font-weight: bold;
+}
+
+.table .chekcboxImage {
+  width: 10px; 
+  height: 10px;
+  margin-right: 4px;
+}
