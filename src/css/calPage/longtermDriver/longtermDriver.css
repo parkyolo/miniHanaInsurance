@@ -65,7 +65,10 @@
 .ria_box .mbullet1 > li {padding-left: 9px;position:relative;}
 .ria_box .mbullet1 > li:before {content: "";display: block;background-color: #009591;position:absolute;width: 3px;height: 3px;border-radius: 50%;top: 9px;left: 1px;}
 .ria_box .msg_err {font-weight:400;font-size:14px;color:#ed1651;position:relative;padding:12px 0 12px 30px;}
-.ria_box dd:nth-of-type(3) .msg_err:before {content:"";width:17px;height:17px;background:url("/src/images/calImg/icon_msgerr2.png") no-repeat;position:absolute;top:14px;left:7px;}
+.ria_box .msg_err:before {content:"";width:17px;height:17px;background:url("/src/images/calImg/icon_msgerr2.png") no-repeat;position:absolute;top:14px;left:7px;}
+.ria_box dd:nth-of-type(3) .msg_err {padding:0 0 12px 30px;margin-top: -7px;}
+.ria_box dd:nth-of-type(3) .msg_err:before {content:"";width:17px;height:17px;background:url("/src/images/calImg/icon_msgerr2.png") no-repeat;position:absolute;top:4px;left:7px;}
+.ria_box .fix_err {display: none;}
 
 /*Form size %*/
 .set_box input, .set_box select, .set_box button{float:left;}
@@ -119,3 +122,18 @@
 
 .ria_box input.ria_yesno[type=radio]:checked+label {width:calc(50% - 5px);}
 .ria_box input.ria_yesno[type=radio]+label {width:calc(50% - 5px);}
+
+/*alert box*/
+.alert_box {display:none;background-color:rgba(0, 0, 0, 0.6);position:fixed;top:0;width:100%;height:100%;left:0px;z-index:60000;}
+.alert_container {position:absolute;max-width:500px;min-width:400px;border-radius:10px;top:50%;left:50%;transform:translate(-50%, -50%);}
+.alert_header{width:100%;float:left;background:#28b2a5;border-top-left-radius:10px;border-top-right-radius:10px;}
+.alert_header h1 {color:#fff;padding:20px;padding-left:54px;font-size:18px;font-weight:400;line-height:18px;}
+.alert_header h1.warning{background:url("/src/images/calImg/icon_alert01.png") no-repeat center left;background-position-x:20px;background-size:20px auto;}
+.alert_header h1.notice{background:url("/src/images/calImg/icon_alert02.png") no-repeat center left;background-position-x:20px;}
+.alert_body{width:100%;float:left;background:#fff;}
+.alert_body p {text-align:center;padding:50px 25px;color:#333;font-size:16px;max-height:250px;overflow-y:auto;white-space:pre-line;}
+.alert_foot{width:100%;float:left;}
+.alert_foot a{display:block;}
+.alert_btn{width:100%;float:left;text-align:center;padding:11.5px;background:#e8e8e8;border-top:1px solid #dcdcdc;font-size:16px;border-bottom-right-radius:10px;border-bottom-left-radius:10px;}
+.alert_btn:hover{color:#28b2a5;text-decoration:none}
+.alert_close_btn{position:absolute;width:30px;height:30px;background:url("/src/images/calImg/icon_alertClose.png") no-repeat center center;top:13px;right:15px;z-index:1000;padding:15px;}
