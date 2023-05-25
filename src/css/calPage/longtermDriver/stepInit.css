@@ -94,20 +94,6 @@
 .p_price{font-size:20px;color:#666;font-family: 'Roboto';}
 .p_txt{font-size:15px;color:#666}
 
-
-/* 스크롤바 스타일 */
-.mCustomScrollBox {position:relative;overflow:hidden;height:100%;max-width:100%;outline:none;direction:ltr;}
-.mCSB_container {overflow:hidden;width:auto;height:auto;}
-.mCSB_scrollTools {position:absolute;left:auto;top:0;right:0;bottom:0;z-index:50;width:16px;height:auto;margin:10px 0;opacity:0;transition:opacity .2s ease-in-out, background-color .2s ease-in-out;}
-.popup_container .mCSB_scrollTools {right:0px;}
-.mCustomScrollbar:hover .mCSB_scrollTools {opacity:0.2;}
-.mCSB_scrollTools .mCSB_draggerContainer {position:absolute;top:0;left:0;bottom:0;right:0;height:auto;}
-.mCSB_scrollTools .mCSB_dragger {cursor:pointer;width:100%;height:30px;z-index:1;}
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {position:relative;width:5px;height:100%;margin:0 auto;-webkit-border-radius:16px;-moz-border-radius:16px;border-radius:16px;text-align:center;background-color:rgba(0,0,0,.2);}
-.mCustomScrollbar.visible .mCSB_container {padding-right:15px;}
-.mCustomScrollbar.visible .mCSB_scrollTools {opacity:0.6;}
-.mCustomScrollbar.visible:hover .mCSB_scrollTools {opacity:0.6;}
-
 .ria_box .ria_qmark {display:inline-block;width:18px;height:18px;background:url("/src/images/calImg/icon_qmark.png") no-repeat;margin-left:3px;vertical-align:-3px;cursor:pointer;position:relative;border:0;}
 .ria_box .ria_qmark:hover .ria_tooltip {display:block;}
 .ria_box .ria_qmark.alink {cursor:pointer;}
@@ -185,7 +171,7 @@ max-width: 100%;
 .ria_box .select_board .select_list.size_change3 .item label {padding:20px 0;}
 .ria_box .select_board .select_list.size_change3 .item label.zero_data{top: 0px;padding: 24px 0px !important;}
 
-.ria_box .select_board .board_area1 {border:1px solid #afafaf;border-bottom:0;margin-top: 72.6px;}
+.ria_box .select_board .board_area1 {border:1px solid #afafaf;border-bottom:0;margin-top: 72.6px;overflow: auto; height: 475px;}
 .ria_box .select_board .board_area1 table {}
 .ria_box .select_board .board_area1 table th,
 .ria_box .select_board .board_area1 table td {font-weight:400;  vertical-align:middle;}
@@ -194,6 +180,7 @@ max-width: 100%;
 .ria_box .select_board .board_area1 table tr.bdColor td,
 .ria_box .select_board .board_area1 table tr:last-child td {border-bottom:1px solid #afafaf !important;}
 .ria_box .select_board .board_area1 table .price {font-size:14px;}
+.ria_box .select_board .board_area1::-webkit-scrollbar {width: 0;background: transparent;}
 
 /* on */
 .ria_box .select_board .board_area1 table td.on {color:#010101;background:#f9f9f9;}
