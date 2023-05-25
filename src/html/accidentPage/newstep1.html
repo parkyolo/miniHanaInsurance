@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/css/signupPage/accidentReport.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header data-include-path="/src/html/layout/header.html"></header>
+        <div id="container">
+            <div id="contents">
+                <div class="step" id="step1">
+                    <div class="step-title" id="step1-title">
+                        <span class="step1-name">STEP1</span>
+                        <div class="step1-contents">
+                            접수자 정보 확인
+                        </div>
+                    </div>
+
+                    <div class="step-contents" id="step1-contents">
+                        <div class="contents-input">
+                            <div class="input" id="name-input">
+                                <div class="title" id="name-input-title">
+                                    <h3>접수자명</h3>
+                                </div>
+                                <div class="contents" id="name-input-contents">
+                                    <input placeholder="이름을 입력" type="text" class="name" name="name">
+                                </div>
+
+                            </div>
+
+                            <div class="input" id="phone-input">
+                                <div class="title" id="phone-input-title">
+                                    <h3>연락처</h3>
+                                </div>
+                                <div class="contents" id="phonenum-input-contents">
+                                    <select name="contact-type" id="contact-type">
+                                        <option value="default" selected>휴대전화</option>
+                                        <option value="company">회사전화</option>
+                                        <option value="home">자택전화</option>
+                                    </select>
+                                    <select name="contact-type" id="contact-type">
+                                        <option value="default" selected>010</option>
+                                        <option value="011">011</option>
+                                        <option value="017">017</option>
+                                        <option value="018">018</option>
+                                        <option value="019">019</option>
+                                    </select>
+                                    <input type="text" class="phonenum" maxlength="4" id="pnoMiddle"
+                                        onkeyup="moveCursor(this)">
+                                    -
+                                    <input type="text" class="phonenum" maxlength="4" id="pnoBack">
+                                </div>
+                            </div>
+                            <div class="input" id="date-input">
+                                <div class="title" id="date-input-title">
+                                    <h3>사고일시</h3>
+                                </div>
+                                <div class="contents" id="date-input-contents">
+                                    <input class="date-input-text" type="date" id="date">
+                                </div>
+                            </div>
+
+                            <div class="input" id="carnum-input">
+                                <div class="title" id="carnum-input-title">
+                                    <h3>차량번호</h3>
+                                </div>
+                                <div class="contents" id="carnum-input-contents">
+                                    <input placeholder="예)12가 3456" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="step" id="step2">
+                    <div class="step-title" id="step2-title">
+                        <span class="step1-name">STEP2</span>
+                        <div class="step1-contents">
+                            사고 현황 확인
+                        </div>
+                    </div>
+
+                    <div class="step-contents" id="step2-contents">
+                        <div class="contents-input">
+                            <div class="input" id="accidenttype-input">
+                                <div class="title" id="accidenttype-input-title">
+                                    <h3>사고유형</h3>
+                                </div>
+                                <div class="contents" id="accidenttype-input-contents">
+                                    <div class="type-of-accident" id="type-of-accident">
+                                        <input type="radio" name="accident-type">차대차
+                                        <input type="radio" name="accident-type">차량단독
+                                        <input type="radio" name="accident-type">차대인
+                                        <input type="radio" name="accident-type">기타
+                                        <!--안보였다가 기타 선택하면 나타나도록-->
+                                        <input type="text" name="accident-type" placeholder="사고유형을 입력해주세요" style="display:none;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input" id="accidentcontent-input">
+                                <div class="title" id="accidentcontent-input-title">
+                                    <h3>사고 경위</h3>
+                                </div>
+                                <div class="contents" id="accidentcontent-input-contents">
+                                    <input placeholder="자세한 사고 경위를 작성해주세요" type="text" class="accidentcontent" name="accidentcontent">
+                                </div>
+                            </div>
+                            <div class="input" id="accidentplace-input">
+                                <div class="title" id="accidentplace-input-title">
+                                    <h3>사고 발생 위치</h3>
+                                </div>
+                                <div class="contents" id="accidentplace-input-contents">
+                                    <input type="button" value="지도에서 찾기" onclick="document.location.href='map.html'" style="width:500px;">
+                                    <input type="text" id="mapAddr"></input>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+        <script>
+        //     window.addEventListener('DOMContentLoaded', function() {
+        //     var step1 = document.getElementById('step1');
+        //     var step2 = document.getElementById('step2');
+        //     var step1Title = document.getElementById('step1-title');
+        //     var step2Title = document.getElementById('step2-title');
+
+        //     step1Title.addEventListener('click', function() {
+        //         toggleStep(step1);
+        //     });
+
+        //     step2Title.addEventListener('click', function() {
+        //         toggleStep(step2);
+        //     });
+
+        //     function toggleStep(step) {
+        //         if (step.classList.contains('active')) {
+        //             step.classList.remove('active');
+        //         } else {
+        //             step.classList.add('active');
+        //         }
+        //     }
+        // });
+        </script>
+    </div>
+    <footer data-include-path="/src/html/layout/footer.html"></footer>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
+    <script src="/src/script/signupPage/accidentReport.js"></script>
+
+</body>
+
+</html>
