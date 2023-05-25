@@ -2,7 +2,7 @@ const itemsPerPage = 10; // 페이지 당 아이템 수
 
 let main_cate = "전체";
 let sub_cate = "전체";
-let cur_data = faq_list; // 페이지네이션을 위한 데이터 배열
+let cur_data = []; // 페이지네이션을 위한 데이터 배열
 let currentPage = 1; // 현재 페이지 번호
 
 /* 메인 카테고리 별 서브 카테고리 */
@@ -545,6 +545,7 @@ function renderAccodion() {
 
 // 초기 페이지 로드 시 호출할 함수
 function initialize() {
+    cur_data = faq_list;
     renderData();
     renderPage(currentPage);
     renderPagination();
