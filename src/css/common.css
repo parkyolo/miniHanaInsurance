@@ -13,7 +13,6 @@ input:-webkit-autofill{
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 100%;
     min-width: 1024px;
 }
 #container{
