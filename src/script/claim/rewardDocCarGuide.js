@@ -12,7 +12,7 @@ $(document).ready(function(){
   
   })
 
-var lis = document.querySelectorAll('ul.processing li');
+var lis = document.querySelectorAll('ul.processing_contents li');
 var previousLi = lis[[0]];
 
 lis[0].classList.add('clicked');
