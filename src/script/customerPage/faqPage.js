@@ -1,5 +1,12 @@
-/* main category별 sub category */
-let sub_cate_list = {
+const itemsPerPage = 10; // 페이지 당 아이템 수
+
+let main_cate = "전체";
+let sub_cate = "전체";
+let cur_data = faq_list; // 페이지네이션을 위한 데이터 배열
+let currentPage = 1; // 현재 페이지 번호
+
+/* 메인 카테고리 별 서브 카테고리 */
+let sub_cate_by_main_cate = {
     "전체": [],
     "상품안내": ["자동차보험", "운전자보험", "원데이보험", "해외여행보험"],
     "홈페이지": ["회원/로그인", "채용", "본인인증", "이벤트/이메일", "보안서비스"],
@@ -10,7 +17,7 @@ let sub_cate_list = {
     "제휴/할인서비스": ["멤버쉽서비스"],
     "생활보험(원데이)": ["이용문의", "계약관리", "보험상품"],
 }
-/* faq list */
+/* 자주묻는 질문 리스트 */
 let faq_list = [
     {"mCate": "상품안내", "sCate": "자동차보험", "TITLE": "내가 자동차사고로 피해 입을 경우를 대비하려면 어떤보험을 가입하면 좋을까요?", "CONTENTS": "‘자기신체사고(또는 자동차상해 특별약관)’, ‘자기차량손해’에 가입하시면 내가 낸 자동차사고에서 나와 동승자(직계가족인 부모, 배우자 및 자녀인 경우의 동승자)의 신체피해, 내 차량의 피해를 보상받을 수 있습니다. </p>"},{"mCate": "상품안내", "sCate": "자동차보험", "TITLE": "이번에 제가 차를 새로 구입해서 보험가입을 했는데 차량을 바로 운행해도 되나요?", "CONTENTS": "고객님 앞으로 처음 등록하신 신차(또는 중고차)인 경우에는 영수시점부터 차량운행 가능합니다. </p>"},
     {"mCate": "상품안내", "sCate": "자동차보험", "TITLE": "차량 만기를 놓쳐서 오늘 다시 가입했는데 보험 효력은 어떻게 되나요?", "CONTENTS": "만기를 놓쳐서 재가입을 하신경우, 의무보험(대인1,대물천만원)은 영수 시점부터 효력발생되지만 <br> 임의담보는 24시부터 효력 발생됩니다. </p>"},
@@ -254,74 +261,38 @@ let faq_list = [
     {"mCate": "생활보험(원데이)", "sCate": "보험상품", "TITLE": "원데이자동차보험은 무엇인가요?", "CONTENTS": "<p>일반적인 자동차보험의 경우 차량등록증상의 소유주가 기명피보험자로서 자동차보험 계약시 운전연령 및 범위를 한정적으로 설정하여 보험가입을 합니다.<br>만약 단기간 가족, 지인에게 차량을 빌려줄 경우에는 자동차보험계약이 유지되어 있는 보험회사로 연락을 취해 운전연령 및 범위를 변경 추가보험료를 납부해야하며, 보험료 납부 직후 운전이 불가하고 해당일 24시 이후부터 운전을 할 수 있습니다. <br> 반면, 원데이자동차보험은 타인의 차량을 빌리는 운전자 기준으로 보험을 가입하여 영수시점부터 보험효력이 발생되어 즉시 운전이 가능할뿐만 아니라, 사고로 인해 자동차 소유자의 보험료 할증 부담을 덜어주는 운전자 중심의 자동차보험입니다.</p>"},
 ]
 
-/* 자주묻는 질문 아코디언 */
-document.querySelectorAll('.accodion_box li.active').forEach((element) => {
-    element.classList.add('open');
-    Array.from(element.children).forEach((child) => {
-        if (child.tagName === 'DIV') {
-            child.style.transition = "all 0.2s";
-            child.style.padding = "25px";
-            child.style.opacity = "1";
-            child.style.height = "100%";
-        }
-    });
-});
+// 검색 결과에 해당하는 데이터 리스트를 생성하는 함수
+function renderData() {
+    cur_data = [];      // 선택된 카테고리에 해당하는 데이터 리스트
+    currentPage = 1;    // 현재 페이지 번호 1로 초기화
 
-document.querySelector('.accodion_box').addEventListener('click', (event) => {
-    if (event.target.parentNode.classList.contains('openbox')) {
-        event.preventDefault();
-        var element = event.target.parentNode;
-        if (element.classList.contains('open')) {
-            element.classList.remove('open');
-            element.querySelectorAll('li').forEach((li) => {
-                li.classList.remove('open');
-            });
-            element.querySelectorAll('div').forEach((div) => {
-                div.style.transition = "all 0.2s";
-                div.style.padding = "0";
-                div.style.opacity = "0";
-                div.style.height = "0";
-            });
-        } else {
-            element.classList.add('open');
-            Array.from(element.children).forEach((child) => {
-                if (child.tagName === 'DIV') {
-                    child.style.transition = "all 0.2s";
-                    child.style.padding = "25px";
-                    child.style.opacity = "1";
-                    child.style.height = "100%";
+    if (main_cate === "전체" && sub_cate === "전체") {  // 모든 데이터 로드
+        cur_data = faq_list;
+    } else {    // 카테고리를 선택했을 때 데이터 필터링
+        faq_list.forEach((element) => {
+            if (sub_cate === "전체") {
+                // 서브 카테고리가 선택되지 않았을 때, 메인 카테고리에 해당하는 element 추가
+                if (element["mCate"] === main_cate) {
+                    cur_data.push(element);
                 }
-            });
-            Array.from(element.parentNode.children).forEach((sibling) => {
-            if (sibling !== element) {
-                Array.from(sibling.querySelectorAll('ul')).forEach((ul) => {
-                    ul.style.transition = "all 0.2s";
-                    ul.style.padding = "0";
-                    ul.style.opacity = "0";
-                    ul.style.height = "0";
-                });
-                sibling.classList.remove('open');
-                sibling.querySelectorAll('li').forEach((li) => {
-                    li.classList.remove('open');
-                });
-                sibling.querySelectorAll('div').forEach((div) => {
-                    div.style.transition = "all 0.2s";
-                    div.style.padding = "0";
-                    div.style.opacity = "0";
-                    div.style.height = "0";
-                });
+            } else {
+                // 서브 카테고리까지 선택되었을 때,
+                // 메인 카테고리와 서브 카테고리가 모두 일치하는 element 추가
+                if (element["mCate"] === main_cate && element["sCate"] === sub_cate) {
+                    cur_data.push(element);
+                }
             }
-            });
-        }
+        })
     }
-});
+    // 보여지는 검색결과 수 변경
+    document.querySelector('#total_row_cnt').innerText = `${cur_data.length}`;
+}
 
-const itemsPerPage = 10; // 페이지 당 아이템 수
-
-let main_cate = "전체";
-let sub_cate = "전체";
-let cur_data = faq_list; // 페이지네이션을 위한 데이터 배열
-let currentPage = 1; // 현재 페이지 번호
+// 현재 페이지 리스트의 번호를 구하는 함수
+// 1~10페이지: 0, 11~20페이지: 1, 21~30페이지: 2, ...
+function getPageNum(currentPage) {
+    return Math.floor((currentPage-1)/10);
+}
 
 // 페이지를 렌더링하는 함수
 function renderPage(page) {
@@ -332,7 +303,7 @@ function renderPage(page) {
     // 페이지에 해당하는 아이템 추출
     const pageItems = cur_data.slice(startIndex, endIndex);
 
-    // 예시: 페이지 아이템을 리스트 형태로 보여줌
+    // 페이지 아이템을 리스트 형태로 보여줌
     const listContainer = document.getElementById('targetFaqList');
     listContainer.innerHTML = ''; // 이전에 보여준 아이템 제거
 
@@ -358,20 +329,23 @@ function renderPagination() {
 
     // 페이지네이션 요소를 담을 컨테이너
     const paginationContainer = document.getElementById('pagination_container');
-    
+
     // 페이지네이션 컨테이너 초기화
     paginationContainer.innerHTML = '';
 
     // 처음 페이지 링크 생성
     const firstLink = document.createElement('li');
-    firstLink.classList.add('arrow', 'prev', 'first');
-    firstLink.innerHTML += 
-                        `<a>
+    firstLink.classList.add('arrow', 'prev');
+    firstLink.innerHTML +=
+                        `<a href="javascript:void(0)">
                             <i class="fa fa-angle-double-left"></i>
                             <span class="hidden">처음 페이지로 이동</span>
                         </a>`;
+    if (getPageNum(currentPage) > 0) {
+        firstLink.classList.add('active');
+    }
     firstLink.addEventListener('click', () => {
-        if (Math.floor((currentPage-1)/10) > 0) {
+        if (getPageNum(currentPage) > 0) {
             currentPage = 1;
             renderPage(currentPage);
             renderPagination();
@@ -383,22 +357,24 @@ function renderPagination() {
     const prevLink = document.createElement('li');
     prevLink.classList.add('arrow', 'prev');
     prevLink.innerHTML +=
-                        `<a>
+                        `<a href="javascript:void(0)">
                             <i class="fa fa-angle-left"></i>
                             <span class="hidden">이전 10 페이지 이동</span>
                         </a>`;
+    if (getPageNum(currentPage) > 0) {
+        prevLink.classList.add('active');
+    }
     prevLink.addEventListener('click', () => {
-        if (Math.floor((currentPage-1)/10) > 0) {
-            currentPage = (Math.floor((currentPage-1)/10)-1)*10+1;
+        if (getPageNum(currentPage) > 0) {
+            currentPage = (getPageNum(currentPage)-1)*10+1;
             renderPage(currentPage);
             renderPagination();
         }
     });
-
     paginationContainer.appendChild(prevLink);
 
     // 페이지 번호 링크 생성
-    for (let i = Math.floor((currentPage-1)/10)*10+1; i <= Math.min(totalPages, Math.floor((currentPage-1)/10)*10+10); i++) {
+    for (let i = getPageNum(currentPage)*10+1; i <= Math.min(totalPages, getPageNum(currentPage)*10+10); i++) {
         const pageLink = document.createElement('li');
         pageLink.class = `page page${i}`;
         pageLink.innerHTML += `<a>${i}</a>`
@@ -416,14 +392,17 @@ function renderPagination() {
     // 다음 페이지 링크 생성
     const nextLink = document.createElement('li');
     nextLink.classList.add('arrow', 'next');
-    nextLink.innerHTML += 
-                        `<a>
+    nextLink.innerHTML +=
+                        `<a href="javascript:void(0)">
                             <i class="fa fa-angle-right"></i>
                             <span class="hidden">다음 10 페이지 이동</span>
                         </a>`;
+    if (getPageNum(currentPage) < getPageNum(totalPages)) {
+        nextLink.classList.add('active');
+    }
     nextLink.addEventListener('click', () => {
-        if (Math.ceil((currentPage-1)/10)*10 < totalPages) {
-            currentPage = Math.ceil((currentPage-1)/10)*10+1;
+        if (getPageNum(currentPage) < getPageNum(totalPages)) {
+            currentPage = (getPageNum(currentPage)+1)*10+1;
             renderPage(currentPage);
             renderPagination();
         }
@@ -432,14 +411,17 @@ function renderPagination() {
 
     // 마지막 페이지 링크 생성
     const lastLink = document.createElement('li');
-    lastLink.classList.add('arrow', 'next', 'last');
-    lastLink.innerHTML += 
-                        `<a>
-                        <i class="fa fa-angle-double-right"></i>
-                        <span class="hidden">마지막 페이지로 이동</span>
-                    </a>`;
+    lastLink.classList.add('arrow', 'next');
+    lastLink.innerHTML +=
+                        `<a href="javascript:void(0)">
+                            <i class="fa fa-angle-double-right"></i>
+                            <span class="hidden">마지막 페이지로 이동</span>
+                        </a>`;
+    if (getPageNum(currentPage) < getPageNum(totalPages)) {
+        lastLink.classList.add('active');
+    }
     lastLink.addEventListener('click', () => {
-        if (Math.ceil((currentPage-1)/10)*10 < totalPages) {
+        if (getPageNum(currentPage) < getPageNum(totalPages)) {
             currentPage = totalPages;
             renderPage(currentPage);
             renderPagination();
@@ -448,37 +430,18 @@ function renderPagination() {
     paginationContainer.appendChild(lastLink);
 }
 
-// 검색 결과에 해당하는 데이터 리스트를 생성하는 함수
-function renderData() {
-    cur_data = [];
-    currentPage = 1;
 
-    if (main_cate === "전체" && sub_cate === "전체") {
-        cur_data = faq_list;
-    } else {
-        faq_list.forEach((element) => {
-            if (sub_cate === "전체") {
-                if (element["mCate"] === main_cate) {
-                    cur_data.push(element);
-                }
-            } else {
-                if (element["mCate"] === main_cate && element["sCate"] === sub_cate) {
-                    cur_data.push(element);
-                }
-            }
-        })
-    }
-    document.querySelector('#total_row_cnt').innerText = `${cur_data.length}`;
-}
 
-// 서브 카테고리를 변경했을 때 실행되는 함수
+// 서브 카테고리가 반영된 데이터를 렌더링하는 함수
 function renderSubCate() {
     document.querySelectorAll('#sub_cate_list > li').forEach(element => {
         Array.from(element.children).forEach((_child) => {
             _child.addEventListener('click', () => {
+                // 선택된 서브 카테고리로 변경
                 let _sub_cate = _child.innerText;
                 sub_cate = _sub_cate
-                document.querySelector('#link_sub_cate').innerText = _sub_cate;
+                document.querySelector('#link_sub_cate').innerText = sub_cate;
+                // 서브 카테고리가 반영된 데이터 렌더
                 renderData();
                 renderPage(currentPage);
                 renderPagination();
@@ -487,21 +450,26 @@ function renderSubCate() {
     })
 }
 
-// 메인 카테고리를 변경했을 때 실행되는 함수
+// 메인 카테고리가 반영된 데이터를 렌더링하는 함수
 function renderMainCate() {
     document.querySelectorAll('#main_cate_list').forEach(element => {
         Array.from(element.children).forEach(child => {
             child.addEventListener('click', () => {
+                // 선택된 메인 카테고리로 변경
                 let _main_cate = child.innerText;
-                let origin_list = document.querySelector('#sub_cate_list');
-                document.querySelector('#link_main_cate').innerText = _main_cate;
-                origin_list.innerHTML = '<li data-category=""><a href="javascript:void(0)" role="link">전체</a></li>';
-                sub_cate_list[_main_cate].forEach((_sub_cate) => {
-                    origin_list.innerHTML += `<li data-category=""><a href="javascript:void(0)" role="link">${_sub_cate}</a></li>`
-                });
                 main_cate = _main_cate;
+                document.querySelector('#link_main_cate').innerText = main_cate;
+
+                // 메인 카테고리에 해당하는 서브 카테고리로 변경
+                let sub_cate_list = document.querySelector('#sub_cate_list');
+                sub_cate_list.innerHTML = '<li data-category=""><a href="javascript:void(0)" role="link">전체</a></li>';
+                sub_cate_by_main_cate[_main_cate].forEach((_sub_cate) => {
+                    sub_cate_list.innerHTML += `<li data-category=""><a href="javascript:void(0)" role="link">${_sub_cate}</a></li>`
+                });
                 sub_cate = "전체";
                 document.querySelector('#link_sub_cate').innerText = sub_cate;
+                
+                // 메인 카테고리가 반영된 데이터 렌더
                 renderSubCate();
                 renderData();
                 renderPage(currentPage);
@@ -511,12 +479,77 @@ function renderMainCate() {
     });
 }
 
+// 자주묻는 질문 아코디언 애니메이션 함수
+function renderAccodion() {
+    document.querySelectorAll('.accodion_box li.active').forEach((element) => {
+        element.classList.add('open');
+        Array.from(element.children).forEach((child) => {
+            if (child.tagName === 'DIV') {
+                child.style.transition = "all 0.2s";
+                child.style.padding = "25px";
+                child.style.opacity = "1";
+                child.style.height = "100%";
+            }
+        });
+    });
+
+    document.querySelector('.accodion_box').addEventListener('click', (event) => {
+        if (event.target.parentNode.classList.contains('openbox')) {
+            event.preventDefault();
+            var element = event.target.parentNode;
+            if (element.classList.contains('open')) {
+                element.classList.remove('open');
+                element.querySelectorAll('li').forEach((li) => {
+                    li.classList.remove('open');
+                });
+                element.querySelectorAll('div').forEach((div) => {
+                    div.style.transition = "all 0.2s";
+                    div.style.padding = "0";
+                    div.style.opacity = "0";
+                    div.style.height = "0";
+                });
+            } else {
+                element.classList.add('open');
+                Array.from(element.children).forEach((child) => {
+                    if (child.tagName === 'DIV') {
+                        child.style.transition = "all 0.2s";
+                        child.style.padding = "25px";
+                        child.style.opacity = "1";
+                        child.style.height = "100%";
+                    }
+                });
+                Array.from(element.parentNode.children).forEach((sibling) => {
+                if (sibling !== element) {
+                    Array.from(sibling.querySelectorAll('ul')).forEach((ul) => {
+                        ul.style.transition = "all 0.2s";
+                        ul.style.padding = "0";
+                        ul.style.opacity = "0";
+                        ul.style.height = "0";
+                    });
+                    sibling.classList.remove('open');
+                    sibling.querySelectorAll('li').forEach((li) => {
+                        li.classList.remove('open');
+                    });
+                    sibling.querySelectorAll('div').forEach((div) => {
+                        div.style.transition = "all 0.2s";
+                        div.style.padding = "0";
+                        div.style.opacity = "0";
+                        div.style.height = "0";
+                    });
+                }
+                });
+            }
+        }
+    });
+}
+
 // 초기 페이지 로드 시 호출할 함수
 function initialize() {
     renderData();
     renderPage(currentPage);
     renderPagination();
     renderMainCate();
+    renderAccodion();
 }
 
 initialize();
