@@ -117,82 +117,19 @@ function moveCursor(pnoMiddle) {
     }
 }
 
-
-//step2 업로드한 이미지 미리보기
-function showImage() {
-    var newImage = document.getElementById('image-show').lastElementChild;
-    newImage.style.visibility = "visible";
-    
-    document.getElementById('image-upload').style.visibility = 'hidden';
-
-    document.getElementById('fileName').textContent = null;     //기존 파일 이름 지우기
-}
-
-//step2 이미지 업로드하기
-function getImageFiles(e) {
-    const uploadFiles = [];
-    const files = e.currentTarget.files;
-    const imagePreview = document.querySelector('.images');
-    const docFrag = new DocumentFragment();
-
-    if ([...files].length >= 2) {
-      alert('이미지는 최대 2개 까지 업로드가 가능합니다.');
-      return;
-    }
-
-    // 파일 타입 검사
-    [...files].forEach(file => {
-      if (!file.type.match("image/.*")) {
-        alert('이미지 파일만 업로드가 가능합니다.');
-        return
-      }
-
-      // 파일 갯수 검사
-      if ([...files].length < 2) {
-        uploadFiles.push(file);
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const preview = createElement(e, file);
-          imagePreview.appendChild(preview);
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-  }
-
-
-//step2 이미지 생성하기
-  function createElement(e, file) {
-    const li = document.createElement('li');
-    const img = document.createElement('img');
-    img.setAttribute('src', e.target.result);
-    img.setAttribute('data-file', file.name);
-    li.appendChild(img);
-
-    return li;
-  }
-
-
-//step2 파일 업로드하기
-function loadFile(input) {
-    var file = input.files[0];
-
-    var name = document.getElementById('fileName');
-    name.textContent = file.name;
-
-    var newImage = document.createElement("img");
-    newImage.setAttribute("class", 'img');
-
-    newImage.src = URL.createObjectURL(file);   
-
-    newImage.style.width = "70%";
-    newImage.style.height = "70%";
-    newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지 숨기기
-    newImage.style.objectFit = "contain";
-
-    var container = document.getElementById('image-show');
-    container.appendChild(newImage);
+var reader = new FileReader();
+reader.onload = function (e) {
+  var img = new Image;
+  img.onload = function() {
+    var thumbFile = getThumbFile(img); //여기서 이미지 객체 img를 활용하여 썸네일 처리를 할 수 있음
+  };
+  img.onerror = function() {
+    //에러가 나는 경우 처리를 할 수 있음
+  };
+  img.src = reader.result;
 };
+reader.readAsDataURL(tmpFile); //파일객체를 넣어줌
+
 
 
 //지도 열기

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+  font-family: helvetica neue, helvetica, arial, sans-serif;
+}
+
+.content {
+  min-height: 100%;
+  height: 100%;
+  background: #fff;
+  position: relative;
+  z-index: 0;
+}
+.content h1 {
+  padding: 75px 0 30px 0;
+  text-align: center;
+  font-size: 30px;
+  line-height: 30px;
+}
+.content .buttons {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.content .buttons .button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background: #efefef;
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+  color: #333;
+  font-weight: bold;
+}
+.content .buttons .button:hover {
+  color: #fff;
+  background: #009bd5;
+}
+
+/* modal style */
+html.modal-active,
+body.modal-active {
+  overflow: hidden;
+}
+#modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: table;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  /* hidden 처리 */
+  transform: scale(0);
+}
+#modal-container .modal-background {
+  display: table-cell;
+  background: rgba(0, 0, 0, .8);
+  text-align: center;
+  vertical-align: middle;
+}
+#modal-container .modal-background .modal {
+  padding: 50px;
+  display: inline-block;
+  border-radius: 3px;
+  position: relative;
+}
+#modal-container .modal-background .modal h2 {
+  font-size: 25px;
+  line-height: 25px;
+  margin-bottom: 15px;
+  
+}
+#modal-container .modal-background .modal p {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+
+
+/*
+ * ------------------------------
+ * Revealing Animation
+ * ------------------------------
+ */
+#modal-container.two {
+  transform: scale(1);
+}
+#modal-container.two .modal-background {
+  background: transparent;
+  animation: fadeIn .5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.two .modal-background .modal {
+  /* 콘텐츠를 초기에 보여주지 않음 */
+  opacity: 0;
+  animation: scaleUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.content.two {
+  /* 콘텐츠 크기를 줄임 */
+  animation: scaleBack 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.two.out {
+  /* 전체 모달 컨테이너를 숨김 처리(다른 애니메이션이 모두 끝난 0.5초 후에 처리하기 위해 0.5초 지연시킴 */
+  animation: quickScaleDown 0s .5s linear forwards;
+}
+#modal-container.two.out .modal-background {
+  animation: fadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.two.out .modal-background .modal {
+  animation: scaleDown 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.content.two.out {
+  animation: scaleForward 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+/* Dimmed showing */
+@keyframes fadeIn {
+  0% {
+    background: transparent;
+  }
+  100% {
+    background: rgba(0, 0, 0, .7);
+  }
+}
+/* Show modal content from bottom to top */
+@keyframes scaleUp {
+  0% {
+    /* 모달 콘텐츠를 하단에 위치시킴 */
+    transform: scale(.8) translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    /* 모달 콘텐츠를 본래 위치로 돌려놓음 */
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+/* Shrink content */
+@keyframes scaleBack {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(.8);
+  }
+}
+/* Hide modal container*/
+@keyframes quickScaleDown {
+  0% {
+    transform: scale(1);
+  }
+  99.9% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+/* Dimmed hiding */
+@keyframes fadeOut {
+  0% {
+    background: rgba(0, 0, 0, .7);
+  }
+  100% {
+    background: transparent;
+  }
+}
+/* modal content from top to bottom */
+@keyframes scaleDown {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(.8) translateY(1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes scaleBack {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(.85);
+  }
+}
+@keyframes scaleForward {
+  0% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Modal Animations</h1>
+        <div class="buttons">
+          <!-- <a href="#none" id="one" class="button">Unfolding</a> -->
+          <a href="#none" id="two" class="button">Revealing</a>
+
+        </div>
+      </div>
+      
+      
+      <div id="modal-container">
+        <div class="modal-background">
+          <div class="modal">
+            <h2>I'm a Modal</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, similique!</p>
+          </div>
+        </div>
+      </div>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+      <script>
+        var $button         = $('.button'), //누르면 나오게하는 버튼
+    $modalContainer = $('#modal-container'), //모달 전체 감싸는 컨테이너
+    $body           = $('body'),
+    $content        = $('.content'), //전체를 감싸는 content
+    btnId;
+
+$button.on('click', function () {
+  btnId = $(this).attr('id');
+  
+  $modalContainer
+      .removeAttr('class')
+      .addClass(btnId);
+  $content
+      .removeAttr('class')
+      .addClass('content');
+  
+  $body.addClass('modal-active');
+  
+  if (btnId == 'two' || btnId == 'three'|| btnId == 'four') {
+    $content.addClass(btnId);
+  }
+  
+});
+
+$modalContainer.on('click', function () {
+  $(this).addClass('out');
+  $body.removeClass('modal-active');
+  if ($(this).hasClass(btnId)) {
+    
+    $content.addClass('out');
+    
+  }
+});
+      </script>
+</body>
+</html>

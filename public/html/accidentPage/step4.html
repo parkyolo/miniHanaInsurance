@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/css/signupPage/accidentReport.css">
+
+    <script src="/src/script/signupPage/accidentReport.js"></script>
+
+</head>
+
+<body onload="step4load()">
+    <div id="wrap">
+        <header data-include-path="/src/html/layout/header.html"></header>
+        <div id="container">
+            <div id="contents">
+
+                <div class="contents-title">
+                    <h3>사고접수</h3>
+                    <p> <!-- class="wPc100 f16 tac mt30"-->
+                        하나손해보험은 회원의 개인정보를 신중히 취급합니다.<br>
+                        가입하신 정보는 회원님의 동의 없이 공개되지 않으며, 개인정보 보호정책에 의해 보호를 받습니다.<br>
+                        편리한 서비스와 보다 유용한 정보제공을 위해 고객님의 정확한 정보를 입력하여 주시기 바랍니다.
+                    </p>
+                </div>
+
+                <div class="content-title">
+                    <div class="final-title" id="accident-num">
+                        <h3>사고접수번호</h3>
+                    </div>
+                    <div class="final-content">
+                        <span id='accidentNum'></span>
+                    </div>
+                </div>
+                <div class="content-title">
+                    <div class="final-title" id="car-num">
+                        <h3>사고차량번호</h3>
+    
+                    </div>
+                    <div class="final-content">
+                        <span id='carNum'>></span>
+    
+                    </div>
+                </div>
+    
+                <div class="content-title">
+                    <div class="final-title" id="accident-date">
+                        <h3>사고 일시</h3>
+                    </div>
+                    <div class="final-content">
+                        <span id='date'></span>
+                    </div>
+                </div>
+    
+                <div class="content-title">
+                    <div class="final-title" id="accident-place">
+                        <h3>사고 발생 장소</h3>
+                    </div>
+                    <div class="final-content">
+                        <span id="location"></span>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="content-title">
+                    <div class="final-title" id="driver">
+                        <h3>운전자</h3>
+                    </div>
+                    <div class="final-content">
+                        <span id="name"></span>
+    
+                    </div>
+                </div>
+    
+                <div class="content-title">
+                    <div class="final-title" id="accident-content">
+                        <h3>접수내용</h3>
+                    </div>
+                    <div class="final-content">
+                        <span>피해자</span>
+                        <span id="broke-person"></span>명
+                        <span>피해물</span>
+                        <span id="broke-product"></span>건
+                    </div>
+    
+    
+    
+    
+                </div>
+            </div>
+
+           
+            
+        </div>
+
+    </div>
+    </div>
+    <footer data-include-path="/src/html/layout/footer.html"></footer>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
