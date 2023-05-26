@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신생활보험 플랫폼 | 하나손해보험</title>
+    <link href="/src/images/img_hana_symbol.png" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/src/css/mainPage/mainPage2.css">
+</head>
+<body>
+    <div id="wrap">
+        <header data-include-path="/src/html/layout/header.html"></header>
+        <div id="container">
+            <div class="carousel">
+                <div class="carousel-slide">
+                <img src="/src/images/mainImg/sonata-23fl-w.png" alt="Image 1">
+                </div>
+                <div class="carousel-slide">
+                <img src="/src/images/mainImg/KONA-Electric-23fc-w.png" alt="Image 2">
+                </div>
+                <div class="carousel-slide">
+                <img src="/src/images/mainImg/main_kv_CASPER_car_w.png" alt="Image 3">
+                </div>
+            </div>
+        </div>
+        <footer data-include-path="/src/html/layout/footer.html"></footer>
+    </div>
+    <!-- <script src="/src/script/mainPage/mainPage2.js" charset="utf-8"></script> -->
+    <script>
+    window.addEventListener('load', function() {
+        var allElements = document.getElementsByTagName('*');
+        Array.prototype.forEach.call(allElements, function(el) {
+            var includePath = el.dataset.includePath;
+            if (includePath) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        el.outerHTML = this.responseText;
+                    }
+                };
+                xhttp.open('GET', includePath, true);
+                xhttp.send();
+            }
+        });
+    });
+    </script>
+</body>
+</html>
