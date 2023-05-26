@@ -20,6 +20,10 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #f0fefe inset;}
 #visual_box.visual_txt h2:before{content:"";width:100%;width:calc(100% - 40px);*height:2px;background:#000;position:absolute;bottom:0;left:0;}
 #visual_box.visual_txt p{display:block;text-align:left;font-weight:400;font-size:14px;color:#888;margin-top:0;margin-left:20px;width:auto;position:relative;}
 
+#visual_box.visual_healthReward{   
+  background-image: url(../../images/claimImg/visual_healthReward_bg.jpg);
+
+}
 #contents{position:relative;width:100%;margin:0 auto; overflow-y:auto;overflow-x:hidden; max-width:1140px;padding:40px 20px 100px 20px;min-height:600px;}
 #contents > .tab1_group:first-child
 #contents.wide_area:before {padding-left:121px;}
