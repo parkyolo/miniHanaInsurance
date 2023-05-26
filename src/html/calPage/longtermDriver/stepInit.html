@@ -81,9 +81,8 @@
                                 <div class="select_board fixed mCustomScrollbar _mCS_1">
                                     <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside">
                                         <div id="mCSB_1_container" class="mCSB_container">
-                                            <div class="select_raund"></div>    <!--선택된 item에 따라 위치 변경-->
                                             <label class="new_tit">보장내용</label>
-                                            <ul id="ulPlncodWrapper" class="select_list size_change3">
+                                            <ul id="ulPlncodWrapper" class="select_plan size_change3">
                                                 <li class="item">
                                                     <input type="radio" name="rdoPlnCod" id="rdoPlnCodA" class="ria_base1 kwidget kwidget-btn01Next kwidget-btn01Next-pri" value="E">
                                                     <label for="rdoPlnCodA" class="pr10">
@@ -94,7 +93,7 @@
                                                     </label>
                                                 </li>
                                                 <li class="item">
-                                                    <input type="radio" name="rdoPlnCod" id="rdoPlnCodB" class="ria_base1 kwidget kwidget-btn01Next" value="C" checked="">
+                                                    <input type="radio" name="rdoPlnCod" id="rdoPlnCodB" class="ria_base1 kwidget kwidget-btn01Next" value="C" checked>
                                                     <label for="rdoPlnCodB" class="pr10 on">
                                                         <span class="planTitle">표준플랜</span>
                                                         <br>
@@ -113,6 +112,7 @@
                                                 </li>
                                             </ul>
                                             <div class="board_area1 size_change">
+                                                <div class="select_area"></div>
                                                 <table>
                                                     <colgroup>
                                                         <col>
@@ -272,4 +272,5 @@
             </div>
         </div>
     </div>
+    <script src="/src/script/longtermDriver/stepInit.js" charset="utf-8"></script>
 </body>

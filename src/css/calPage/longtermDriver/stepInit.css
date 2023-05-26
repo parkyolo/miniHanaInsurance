@@ -152,24 +152,24 @@ max-width: 100%;
 
 /*운전자 보험*/
 .ria_box .select_board {position:relative;  margin:4px 0;}
-.ria_box .select_board .select_raund {content:'';  position:absolute;  left:0;  top:0px;  bottom:0px;  width:172px;  margin-left:-1px;  border:3px solid #009591;  opacity:0;  transition:all .2s;}
-.ria_box .select_board .select_raund:before,
-.ria_box .select_board .select_raund:after {content:'';  position:absolute;  left:0;  right:0;  height:4px;}
-.ria_box .select_board .select_raund:before {top:0;background-color:#fbfbfb;}
-.ria_box .select_board .select_raund:after {bottom:0;}
-.ria_box .select_board .select_raund {width: 180.5px;left: 740px;opacity: 1;}
-.ria_box .select_board .select_list {position: fixed;top: 257px;padding-left: 557px;background-color:#fbfbfb;border-top: 1px solid #555;border-left: 1px solid #afafaf;border-right: 1px solid #afafaf;border-bottom: 1px solid #555;z-index: 10;}
-.ria_box .select_board .select_list:after{display:block;content:"";clear:both;}
-.ria_box .select_board .select_list .item {display:inline-block;width:180px;float: left;border-left: 1px solid rgb(229, 229, 229); border-right: 1px solid rgb(229, 229, 229);}
-.ria_box .select_board .select_list .item label {display:block;  margin:0;  padding:10px 0;  color:#000;  font-size:20px;  text-align:center;width: 180px;}
-.ria_box .select_board .select_list .item:nth-child(2) >label,
-.ria_box .select_board .select_list .item:last-child >label{width:181px}
-.ria_box .select_board .select_list .item input[type=radio] + label:before {position:inherit;  vertical-align:top;  margin:-5px 10px 0 0;}
-.ria_box .select_board .select_list .item input[type=radio] + label.zero_data:before {margin-top: -5px;}
-.ria_box .select_board .select_list.size_change .item label {padding:24px 0;}
-.ria_box .select_board .select_list.size_change2 .item label {padding:15.5px 0;}
-.ria_box .select_board .select_list.size_change3 .item label {padding:20px 0;}
-.ria_box .select_board .select_list.size_change3 .item label.zero_data{top: 0px;padding: 24px 0px !important;}
+.ria_box .select_board .select_area {content:'';  position:absolute;  left:0;  top:0px;  bottom:0px;  width:172px;  margin-left:-1px;  border:3px solid #009591;  opacity:0;  transition:all .2s;}
+.ria_box .select_board .select_area:before,
+.ria_box .select_board .select_area:after {content:'';  position:absolute;  left:0;  right:0;  height:4px;}
+.ria_box .select_board .select_area:before {top:0;background-color:#fbfbfb;}
+.ria_box .select_board .select_area:after {bottom:0;}
+.ria_box .select_board .select_area {width: 180.5px;left: 740px;opacity: 1;}
+.ria_box .select_board .select_plan {position: fixed;top: 257px;padding-left: 557px;background-color:#fbfbfb;border-top: 1px solid #555;border-left: 1px solid #afafaf;border-right: 1px solid #afafaf;border-bottom: 1px solid #555;z-index: 10;}
+.ria_box .select_board .select_plan:after{display:block;content:"";clear:both;}
+.ria_box .select_board .select_plan .item {display:inline-block;width:180px;float: left;border-left: 1px solid rgb(229, 229, 229); border-right: 1px solid rgb(229, 229, 229);}
+.ria_box .select_board .select_plan .item label {display:block;  margin:0;  padding:10px 0;  color:#000;  font-size:20px;  text-align:center;width: 180px;}
+.ria_box .select_board .select_plan .item:nth-child(2) >label,
+.ria_box .select_board .select_plan .item:last-child >label{width:181px}
+.ria_box .select_board .select_plan .item input[type=radio] + label:before {position:inherit;  vertical-align:top;  margin:-5px 10px 0 0;}
+.ria_box .select_board .select_plan .item input[type=radio] + label.zero_data:before {margin-top: -5px;}
+.ria_box .select_board .select_plan.size_change .item label {padding:24px 0;}
+.ria_box .select_board .select_plan.size_change2 .item label {padding:15.5px 0;}
+.ria_box .select_board .select_plan.size_change3 .item label {padding:20px 0;}
+.ria_box .select_board .select_plan.size_change3 .item label.zero_data{top: 0px;padding: 24px 0px !important;}
 
 .ria_box .select_board .board_area1 {border:1px solid #afafaf;border-bottom:0;margin-top: 72.6px;overflow: auto; height: 475px;}
 .ria_box .select_board .board_area1 table {}
@@ -215,4 +215,3 @@ max-width: 100%;
 .ria_box input[type=radio].ria_base1 + label.on .p_txt{font-size:15px;color: #d1f5f3;} 
 .ria_box input[type=radio].ria_base1 + label:before {content:"";display:inline-block;width:24px;height:24px;position:absolute;left:0;top:6px;background:url("/src/images/calImg/icon_radio_off.png") 0px 0px no-repeat;background-size:24px auto;position: absolute !important;top: 30px;left: 20px;}
 .ria_box input[type=radio].ria_base1:checked + label:before {text-align:center;line-height:24px;background:url("/src/images/calImg/icon_radio_on_w.png") 0px 0px no-repeat;background-size:24px auto;position: absolute !important;top: 30px;left: 20px;}
-.ria_box input[type=radio].ria_base1:disabled + label:before {text-align:center;line-height:20px;background:url("../img/icon_radio_disabled.png") 0px 0px no-repeat;background-size:24px auto;position: absolute !important;top: 40px;left: 35px;}
