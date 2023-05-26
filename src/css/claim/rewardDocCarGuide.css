@@ -3,20 +3,27 @@
 @import url("../common.css");
 @import url("../reset.css");
 
-.contents{
+#contents{
   width:75%;
   margin: 0 auto;
 }
+
+#contents h3 {
+  font-size: 24px;
+}
+
 .title {
   padding: 40px 0 15px;
   background-image: url(../../images/claimImg/visual_healthReward_bg.jpg);
+  margin-bottom: 25px;
 }
 
-.title>h2 {
+.title h2 {
   font-size: 32px;
+  color: #000;
 }
 
-.title>p {
+.title > p {
   font-size: 14px;
 }
 
@@ -24,8 +31,8 @@
   margin: 0 auto;
 }
 
-.tab_container h3 {
-  font-size: 24px;
+.tab_container > h3{
+  color: #000;
 }
 
 /* tabs */
@@ -58,6 +65,7 @@ ul.tabs li.current {
 .tab-content {
   display: none;
   padding-top: 15px;
+  margin-bottom: 70px;
 }
 
 .tab-content.current {
@@ -69,17 +77,23 @@ ul.tabs li.current {
   display: flex;
   background: #f0f0f0;
   padding: 15px 0;
+  border-top: #555 2px solid;
 }
 
 .tab_container .table .table_title li {
   float: left;
   flex-grow: 1;
   text-align: center;
+  color:#333;
+  font-weight: 500;
+  font-size: 15px;
 }
 
 .table .table_contents {
   display: flex;
   flex-direction: row;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
 }
 
 .table .table_contents .processing{
@@ -101,7 +115,6 @@ ul.tabs li.current {
 .processing_contents li.clicked{
   background-color: #28B2A5;
   color: #fff;
-  font-weight: bold;
 }
 
 .table .demage_contents {
@@ -127,4 +140,29 @@ ul.tabs li.current {
   height: auto;
   margin-right: 10px;
   margin-top: 4px;
+}
+
+.document h3 {
+  color: #333;
+}
+
+.document .commonDocument table {
+  border-top: 1px solid #009591;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 70px;
+}
+
+.document .commonDocument th {
+  border: 1px solid #e5e5e5;
+  color: #333333;
+  padding: 15px;
+  background-color: #f9f9fb;
+}
+
+.document .commonDocument td{
+  border: 1px solid #e5e5e5;
+  color: #555555;
+  padding: 15px;
 }
