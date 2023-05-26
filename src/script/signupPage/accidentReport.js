@@ -9,11 +9,12 @@ function generateRandomCode(n) {
 }
 
 //step1 사용자 정보 저장하기
-function saveStep1Info(){
+function submitAll(){
     const name = document
         .getElementById('name')
         .value;
 
+        console.log(name);
 
         let value_str = document.getElementById('contact-front');
         // if(typeof document!== "undefined") {
@@ -48,7 +49,7 @@ function saveStep1Info(){
     }
 
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
-    location.href = 'step2.html';
+    location.href = 'step4.html';
 }
 
 //step2 사용자 정보 불러오기
@@ -77,7 +78,6 @@ function step4load()
     
     const accident_num=generateRandomCode(7);
     const accident_date=obj.date;
-    const address = obj.address;
     const carNum=obj.carnum;
     const name=obj.name;
     const pnoFront=obj.pnoFront;
@@ -86,7 +86,7 @@ function step4load()
 
     const phoneNum=pnoFront+"-"+pnoMiddle+"-"+pnoBack;
 
-   
+    const address=localStorage.getItem('address');
     
     /*코드 중복 줄이기*/
     const location = document.getElementById('location');
@@ -97,12 +97,14 @@ function step4load()
     carnum.innerHTML=carNum;
     const accidentnum = document.getElementById('accidentNum');
     accidentnum.innerHTML=accident_num;
+    console.log(accident_num);
     const drivername = document.getElementById('name');
     drivername.innerHTML=name;
     const pno = document.getElementById('phonenum');
     pno.innerHTML=phoneNum;
     
 
+    console.log(accident_date);
     localStorage.clear();
 }
 
@@ -191,3 +193,15 @@ function loadFile(input) {
     var container = document.getElementById('image-show');
     container.appendChild(newImage);
 };
+
+
+//지도 열기
+function showmap()
+{
+  var modal = document.getElementById('map-area');
+  modal.style.display = 'block';
+
+  map.relayout(); 
+  //지도를 담는 div 영역이 바뀔경우 map.relayouot()을 해야 깨지지 않고 정상적으로 로드됨
+
+}
