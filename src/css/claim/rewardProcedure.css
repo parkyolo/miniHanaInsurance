@@ -108,7 +108,7 @@ input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #f0fefe inset;}
 .btn_arrow:after {
     display: inline-block;
     font-family: "FontAwesome";
-    content: "\f105";
+    content: '\f105';
     padding-left: 8px;
     font-size: 19px;
     color: #009591;
@@ -164,7 +164,7 @@ em {
     font-style: normal;
 }
 .txt_list_01 li:before, .txt_box_01:before {
-    position: absolute;
+    /* position: absolute; */
     left: 0;
 }
 .icon4 li:before, .unit_icon4:before {
@@ -184,10 +184,9 @@ em {
 
 /* 보험금 청구 시 유의사항*/
 .notice_list {overflow:hidden; margin:40px 0 0 0; padding:30px 28px; border:1px solid #dddddd; background:#f9f9f9;}
-.notice_list >  strong {display:block; padding:0 0 20px 23px; font-size:15px; color:#222222; background:url("../img/common/icon_point_mark.png") no-repeat 0 2px;}
+.notice_list >  strong {display:block; padding:0 0 20px 23px; font-size:15px; color:#222222; background:url("../../images/claimImg/icon_point_mark.png") no-repeat 0 2px;}
 .notice_list >  div > strong {padding:0 0 0 10px;  font-weight:700;}
 .notice_list >  div > strong::before {position:absolute;content:"·";top: 1px;left:-1px;}
-.notice_list ul > li {margin:0 0 2px 10px}
 
 .txt_group {
     width: 100%;
