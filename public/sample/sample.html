@@ -6,95 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/public/css/signupPage/accidentReport.css">
+    <link rel="stylesheet" href="/public/sample/sample.css">
+
+
     <style>
-        header{
+        /* 세로형 메뉴 스타일 */
+        #sample_header .nav_menu {
             display: none;
         }
 
-        ul>img {
-            width: 200px;
-            height: 200px;
-        }
-
-        .real-upload {
-            display: none;
-        }
-
-        .upload {
-            width: 200px;
-            height: 200px;
-            background-color: antiquewhite;
-        }
-
-        .image-preview {
-            width: 1300px;
-            height: 200px;
-            background-color: aquamarine;
-            display: flex;
-            gap: 20px;
-        }
-
-        .thumbnail {
-            width: 100px;
-            height: 100px;
-            background-color: #f2f2f2;
-            background-size: cover;
-            background-position: center;
-            display: inline-block;
-            /* margin-right: 10px; */
-            padding: 10px;
-            margin: 10px;
-            border-radius: 10px;
-        }
-
-        #chooseimg {
-            width: 100px;
-            height: 100px;
-            background-color: tomato;
-        }
-
-
-        .map_wrap {
-            position: relative;
-            width: 100%;
-            height: 350px;
-        }
-
-        .title {
-            font-weight: bold;
+        #sample_header.show_menu .nav_menu {
             display: block;
         }
 
-        .hAddr {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            border-radius: 2px;
-            background: #fff;
-            background: rgba(255, 255, 255, 0.8);
-            z-index: 1;
-            padding: 5px;
-        }
 
-        #centerAddr {
+header{
             display: block;
-            margin-top: 2px;
-            font-weight: normal;
         }
+.map_wrap {
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
 
-        .bAddr {
-            padding: 5px;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-    </style>
+.title {
+    font-weight: bold;
+    display: block;
+}
+
+.hAddr {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    border-radius: 2px;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+    padding: 5px;
+}
+
+#centerAddr {
+    display: block;
+    margin-top: 2px;
+    font-weight: normal;
+}
+
+.bAddr {
+    padding: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+      
+   </style>
 </head>
 
 <body onload="step2load()">
     <div id="wrap">
-        <header data-include-path="/public/html/layout/header.html"></header>
+        <header data-include-path="/public/sample/sampleheader.html"></header>
         <div id="container">
             <div id="contents">
                 <div class="contents-title">
@@ -209,7 +179,6 @@
                                         name="accidentcontent">
                                 </div>
                             </div>
-
                             <div class="input" id="accidentcontent-input">
                                 <div class="title" id="accidentcontent-input-title">
                                     <h3>사고 사진</h3>
@@ -220,7 +189,6 @@
 
                                 </div>
                             </div>
-
                             <div class="input" id="accidentplace-input">
                                 <div class="title" id="accidentplace-input-title">
                                     <h3>사고 발생 위치</h3>
@@ -287,26 +255,40 @@
                                 </div>
                             </div>
 
-
-
+                            <div class="input" id="accidenttype-input">
+                                <div class="title" id="accidenttype-input-title">
+                                    <h3>다친 사람</h3>
+                                </div>
+                                <div class="contents" id="accidenttype-input-contents">
+                                    <div class="type-of-accident" id="type-of-accident">
+                                        <input type="radio" name="fragile-type" default>자기차량
+                                        <input type="radio" name="fragile-type">상대차량
+                                        <input type="radio" name="fragile-type">기타피해물
+                                        <!--안보였다가 기타 선택하면 나타나도록-->
+                                        <input type="text" name="accident-type" placeholder="사고유형을 입력해주세요"
+                                            style="display:none;">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
 
-
                 </div>
-
                 <div class="submit" id="submit">
                     <input type="button" value="사고접수하기" id="submitbtn" onclick="submitAll()">
                 </div>
 
 
 
-
-
             </div>
 
+
+
+
+
         </div>
+
+    </div>
 
 
 
@@ -329,6 +311,8 @@
             if (stepContents.classList.contains("open")) {
                 stepContents.classList.remove("open");
                 stepContents.classList.add("close");
+                map.relayout(); 
+
             } else {
                 stepContents.classList.remove("close");
                 stepContents.classList.add("open");
@@ -460,7 +444,7 @@
             if (status === kakao.maps.services.Status.OK) {
                 var infoDiv = document.getElementById('centerAddr');
 
-                for (var i = 0; i < result.length; i++) {
+                for (var i = 0; i < script result.length; i++) {
                     // 행정동의 region_type 값은 'H' 이므로
                     if (result[i].region_type === 'H') {
                         infoDiv.innerHTML = result[i].address_name;
@@ -470,6 +454,7 @@
             }
         }
     </script>
+
     <script>
         window.addEventListener('DOMContentLoaded', function () {
             var step1 = document.getElementById('step1');
@@ -486,6 +471,8 @@
 
             step2Title.addEventListener('click', function () {
                 toggleStep(step2);
+                map.relayout(); 
+
             });
             step3Title.addEventListener('click', function () {
                 toggleStep(step3);
@@ -501,7 +488,7 @@
         });
     </script>
     </div>
-    <footer data-include-path="/src/html/layout/footer.html"></footer>
+    <footer data-include-path="/public/html/layout/footer.html" style="white-space: nowrap;"></footer>
     </div>
     <script>
         window.addEventListener('load', function () {

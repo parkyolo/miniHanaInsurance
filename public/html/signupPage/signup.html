@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signupMainPage</title>
-    <link rel="stylesheet" href="localhost:3000/css/signupPage/signupPage.css">
+    <link rel="stylesheet" href="../../../css/signupPage/signupPage.css">
 
 
 
@@ -14,7 +14,7 @@
 
 <body>
     <div id="wrap">
-        <header data-include-path="/public/html/layout/header.html"></header>
+        <header data-include-path="../../../html/layout/header.html"></header>
         <div id="container">
 
             <div id="contents">
@@ -52,7 +52,7 @@
                         <div id="phone-auth-background">
                             <div id="phone-auth-title">휴대폰 </div>
                             <div id="phone-auth-img">
-                                <img src="/public/images/claimImg/icon_reward_04.png" id="phoneauthimg">
+                                <img src="../../../images/claimImg/icon_reward_04.png" id="phoneauthimg">
                             </div>
                             <input id="openmodal" type="button" value="휴대폰 인증 버튼" onclick="showModal()">
                         </div>
@@ -242,65 +242,9 @@
         </div>
 
 
-        <!--모달 창-->
-        <!--querySelector : element 반환-->
-        <!-- <div class="phone-auth-modal" id="phone-auth-modal">
-
-                    <div div class="modal-info" id="modal-info"> -->
-        <!-- <div class="modal-info-pinfo" id="modal-info-pinfo">
-
-
-                            <div class="modal-info-name" id="modal-info-name">
-
-                                <label for="name">이름</label>
-                                <input type="text" id="name" class="name" placeholder="성명을 입력">
-
-                                <select name="modal-info-isKorean">
-                                    <option value="Korean" selected>내국인</option>
-                                    <option value="foreigner">외국인</option>
-                                </select>
-
-
-                            </div>
-
-
-
-                            <div class="modal-info-bday" id="modal-info-bday">
-                                <label for="bday">생년월일</label>
-                                <input type="text" id="bday" class="bday" placeholder="생년월일 디폴트 입력후 막기">
-                                <input type="radio" name="gender">남자
-                                <input type="radio" name="gender">여자
-                            </div>
-
-
-                            <div class="modal-info-pNo" id="modal-info-pNo">
-                                <label for="modal-info-name">통신사</label>
-                                <input type="radio" name="pComp" checked>SKT
-                                <input type="radio" name="pComp">KT
-                                <input type="radio" name="pComp">LG
-                                <select name="pNo-category">
-                                    <option value="default" selected>알뜰폰</option>
-                                    <option value="default-SKT">알뜰폰SKT</option>
-                                    <option value="default-KT">알뜰폰KT</option>
-                                    <option value="default-LGT">알뜰폰LGT</option>
-
-                                </select>
-
-                            </div>
-                            <div class="pNo" id="pNo">
-                                <select name="pnofront" id="pnofront">
-                                    <option value="default" selected>010</option>
-                                    <option value="011">011</option>
-                                    <option value="017">017</option>
-                                    <option value="018">018</option>
-                                    <option value="019">019</option>
-                                </select>
-                                -
-                                <input type="text" name="pNo-back" id="pNo-back">
-                            </div> -->
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="/public/html/signupPage/signup.js"></script>
+    <script src="../../../script/signup.js"></script>
     <script>
         $(document).ready(function () {
             // text로 시작하는 모든 id를 숨김
@@ -363,7 +307,7 @@
         }
     </script>
     </div>
-    <footer data-include-path="/public/html/layout/footer.html"></footer>
+    <footer data-include-path="../../../html/layout/footer.html"></footer>
     </div>
     <script>
         window.addEventListener('load', function () {

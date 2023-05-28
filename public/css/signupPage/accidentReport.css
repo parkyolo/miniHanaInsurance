@@ -1,6 +1,58 @@
-@import url("/src/css/common.css");
-@import url("/src/css/reset.css");
-@import url("/src/css/default.css");
+@import url("../../../css/common.css");
+@import url("../../../css/reset.css");
+@import url("../../../css/default.css");
+/* 화면 내 글자 줄바꿈 방지 CSS 코드 */
+body {
+    white-space: nowrap;
+  }
+  
+
+/*------------------토글 애니메이션 CSS----------------*/
+
+@keyframes slideToggle {
+    0% {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    100% {
+        max-height: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes slideCollapse {
+    0% {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    100% {
+        max-height: 0;
+        opacity: 0;
+    }
+}
+
+.step-contents {
+    overflow: hidden;
+    /* 콘텐츠를 숨김 */
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    /* 트랜지션 효과를 추가 */
+}
+
+.step-contents.open {
+    animation: slideToggle 0.3s ease forwards;
+    /* 열릴 때 애니메이션 효과 적용 */
+}
+
+.step-contents.close {
+    animation: slideCollapse 0.3s ease forwards;
+    /* 닫힐 때 애니메이션 효과 적용 */
+}
+
+
+
+/*------------------기본 CSS----------------*/
 
 #contents {
     position: relative;

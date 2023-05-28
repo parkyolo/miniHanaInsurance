@@ -2,7 +2,12 @@
 @import url('/public/css/common.css');
 @import url('/public/css/default.css');
 
+/* 추가한 CSS */
 
+  
+  /* 기존 CSS 코드 */
+  /* 나머지 CSS 코드는 기존과 동일하게 유지 */
+  
 
 #header {
     width: 100%;
