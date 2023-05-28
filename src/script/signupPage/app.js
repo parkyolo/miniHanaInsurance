@@ -1,37 +1,35 @@
-// const express = require("express");
-// const server = express();
+const express = require('express');
+const app = express();
+const path = require('path');
+const port = 3000;
+const axios = require('axios');
+const CryptoJS = require('crypto-js');
+require("dotenv").config();
 
-// server.use(express.static(__dirname + "/script"));
+const publicPath = path.join(__dirname, '../../../public');
 
-// server.use((req, res, next) => {
-//   //config
-//   res.setHeader('Content-Type', 'text/javascript');
-//   next();
-// });
+app.use(express.static(publicPath));
 
-// server.get("/", (req, res) => {
-//   res.status(200).sendFile(__dirname + "/signup.html");
-// });
-
-// server.listen(3000, () => {
-//   console.log("The server is running on Port 3000");
-// });
-
-
-// var fs=require('fs');
-// var express=require('express');
-// var app=express();
-// var http=require('http');
-
-// app.use('/miniHanaInsurance/src/script/signupPage',express.static(__dirname+'/miniHanaInsurance/src/script/signupPage'))
-// var server=http.createServer(app).listen(3000,function(){
-//   console.log("server is running")
-// });
+// 루트 엔드포인트 처리
+app.get('/', (req, res) => {
+  res.sendFile(path.join(publicPath, 'html/signupPage/signup.html'));
+});
+  
+  app.get('/info', (req, res) => {
+    res.sendFile(path.join(publicPath, 'html/signupPage/info.html'));
+  });
 
 
-// app.get('/', function(req,res){
-//  fs.read
-//   fs.readFile('signup.html',function(error,data){
-//   res.end(data)
-//   })
-// })
+  app.post('/increment', (req, res) => {
+    const number = parseInt(req.body.number);
+    if (isNaN(number)) {
+        res.status(400).send('Invalid number');
+    } else {
+        const result = onLoggin(number);
+        res.send(result.toString());
+    }
+});
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+console.log('hello');
