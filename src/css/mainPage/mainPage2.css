@@ -1,35 +1,98 @@
 @import url('../reset.css');
 @import url('../common.css');
 
-.carousel {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .carousel-slide.active {
-    opacity: 1;
-    transform: translateX(0%);
-    z-index: 1;
-  }
-  
-  .carousel-slide.previous {
-    transform: translateX(-100%);
-    z-index: 0;
-  }
-  
-  .carousel-slide.next {
-    transform: translateX(100%);
-    z-index: 0;
-  }
-  
+html {line-height: 1.15;-webkit-text-size-adjust: 100%;/*모든 디바이스에서 동일한 텍스트 크기를 주기*/}
+button {text-rendering: auto; writing-mode: horizontal-tb !important; letter-spacing: normal; word-spacing: normal; line-height: normal; text-transform: none; text-indent: 0px; text-shadow: none; display: inline-block; text-align: center; cursor: default; box-sizing: border-box; margin: 0em; padding: 1px 6px; border: none; overflow: visible; -webkit-appearance: button;}
+ul {list-style: none; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; padding-inline-start: 40px; padding: 0;}
+li {display: list-item; text-align: -webkit-match-parent;}
+p {display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px;}
+.keyvisual-wrap {background-color: rgb(246, 243, 242); position: relative; margin: 0 auto; display: block; width: 100%; overflow: visible;}
+.keyvisual-wrap .el-carousel {width: 100%; margin: 0 auto; overflow: hidden;}
+.el-carousel {position: relative;}
+.keyvisual-wrap .el-carousel__container {height: 950px!important; overflow: visible;}
+.el-carousel__container {position: relative;}
+.el-carousel__layer {width: 100%; height: 100%;}
+.el-carousel__item {position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: inline-block; overflow: hidden; z-index: 0; text-align: center;}
+.el-carousel__item.is-animating {-webkit-transition: -webkit-transform .4s ease-in-out; transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;}
+.el-carousel__item.is-active {z-index: 2;}
+.el-carousel__groups {display: -webkit-box; display: flex; flex-wrap: nowrap;}
+.keyvisual-wrap .el-carousel__groups, .keyvisual-wrap .el-carousel__groups .fluid-container {height: 100%; -webkit-box-pack: center; justify-content: center;}
+.el-carousel__unit {-webkit-box-flex: 1; flex: 1 1 1;}
+.keyvisual-wrap .el-carousel__unit {position: relative; width: 100%;}
+.keyvisual-wrap .el-carousel__groups .fluid-container {display: -webkit-box; display: flex; -webkit-box-align: center; align-items: center; max-width: 2560px; margin: 0 auto;}
+.fluid-container {background: radial-gradient(circle, rgba(231,251,232,0) 0%, rgba(231,251,232,0) 70%, rgba(255,255,255,1) 100%), linear-gradient(to bottom, #e7fbe8 68%, #bbffbf 32%);}
+.keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap {position: absolute; left: 7vw; top: 152px; right: 0; z-index: 1; width: 1260px; height: auto; margin: 0 auto; text-align: left;}
+.keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt {width: auto; height: auto; background: transparent;}
+.keyvisual-wrap .el-carousel__unit img {position: relative; max-width: 100%;}
+.keyvisual-wrap .el-carousel .is-animating img {animation: car_animation 1.5s alternate;} /* animation 종류를 만들 수 있는 듯? */
+.keyvisual-wrap .el-carousel__groups .fluid-container .banner-img-wrap img {max-width: 100%; height: 380px!important; object-fit: cover; margin-top: 6vw;}
+.keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .car-name {font-size: 86px; line-height: 82px; letter-spacing: "-.25px"; color: #000; text-align: left; font-weight: 600;}
+.keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .sub-txt {margin-top: 14px; font-size: 26px; color: #000; line-height: 38px; letter-spacing: -.25px; text-align: left;}
+
+
+.el-carousel__arrow {border: none; padding: 0; margin: 0; height: 44px; width: 44px; cursor: pointer; -webkit-transform: .3s; transition: .3s; border-radius: 0; background-color: rgba(31, 45, 61, 4); color: #fff; position: absolute; top: 50%; z-index: 10; -webkit-transform: translateY((-50%)); transform: translateY(-50%); text-align: center; font-size: 18px; outline: none; line-height: 1.8;}
+.el-carousel__arrow i {cursor: pointer;}
+.el-carousel__arrow--right {right: 0;}
+.el-carousel--v2 .el-carousel__arrow {display: none;}
+.el-carousel--v2 .el-carousel__arrow.el-carousel__arrow--custom {display: inline-block;}
+.keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow {width: 40px; height: 70px; background: transparent; color: #393838;}
+.keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow .el-icon-arrow-left {-webkit-transform: rotate( -45deg ); transform: rotate( -45deg );}
+.keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow .el-icon-arrow-right {-webkit-transform: rotate( 135deg ); transform: rotate( 135deg );}
+.keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow .el-icon-arrow-left::before {left: -4px; top: -13px;} 
+.keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow .el-icon-arrow-right::before {left: -13px; top: -4px;} 
+.keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow span {display: inline-block;}
+.keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow span::before {position: absolute; content: ""; width: 34px; height: 34px; border: 1px solid #000; border-right: 0; border-bottom: 0;}
+.keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow--left {left: 60px;}
+.keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow--right {right: 60px;}
+.sr-only {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;}
+.control-wrap {display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; opacity: 1;}
+.control-wrap__indicator {position: absolute; left: 0; right: 0; bottom: 180px; display: -webkit-box; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; flex-direction: row; -webkit-box-pack: center; justify-content: center; z-index: 10;}
+.slideinfo-list {display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; flex-direction: row; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center;}
+.slideinfo-list__item {font-size: 0; padding: 6px;}
+.slideinfo-list__link {-webkit-box-orient: vertical; -webkit-box-direction: normal; overflow: hidden; width: 100%; height: 100%; text-align: left; -webkit-transform: all .2s ease; transition: all .2s ease; outline: none; cursor: pointer; text-indent: -9999em; font-size: 14px; letter-spacing: -.4px; color: inherit; line-height: 100%; padding: 0; position: relative; display: inline-block; width: 12px; height: 12px;border-radius: 60%; background: rgba(0, 0, 0, .1);}
+.slideinfo-list__link::after {content: ""; display: inline-block; width: 12px; height: 12px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+.slideinfo-list__link.is-active {background: #009591;}
+.control-wrap__btns {display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; position: static; margin: 6px;}
+.btn-control--toggle::before {content: ""; position: absolute; left: calc(50% - 3px); top: calc(50% - 4px); display: inline-block; width: 2px; height: 8px; border: 2px solid #fff; border-top: 0; border-bottom: 0;}
+.btn-control--toggle.pause::before {left: calc(50% - 2px); display: block; width: 0; height: 0; border: 0; border-left: 6px solid #fff; border-top: 4px solid transparent; border-bottom: 4px solid transparent;}
+[type=button], button {-webkit-appearance: button;}
+.btn-control--toggle {position: relative; width: 18px; height: 18px; background-color: #575757; border-radius: 10px; vertical-align: middle;}
+
+
+@media screen and (max-width: 1024px) {
+  .keyvisual-wrap .el-carousel .kv-main .el-carousel__container {height: 640px!important;}
+  .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap {left: 5vw; top: 90px;}
+  .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .car-name {font-size: 50px;}
+  .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .sub-txt {margin-top: 0; font-size: 20px;}
+
+  .keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow--right {right: 20px;}
+  .keyvisual-wrap .control-wrap__indicator {bottom: 140px;}
+ 
+}
+
+@media screen and (max-width: 767px) {
+  button {cursor: pointer; background-color: transparent; border: none;}
+  .btn, a.btn {text-align: center; display: inline-block; vertical-align: middle; width: 280px; height: 40px; border: 0; background: #002c5f; font-size: 15px; font-weight: 500; letter-spacing: -.4px; color: #fff; cursor: pointer;}
+  .btn, a.btn, a.btn::before, a.btn span {display: inline-block; vertical-align: middle;}
+  a.btn::before {content: ""; height: 100%;}
+  .keyvisual-wrap .el-carousel {height: 162.5vw;}
+  .keyvisual-wrap .el-carousel .kv-main .el-carousel__container {height: 162.5vw!important;}
+  .keyvisual-wrap .el-carousel__groups .fluid-container {background-size: cover!important;}
+  .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap {top: 26vw; width: auto;}
+  .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt {width: 100%; text-align: left;}
+  .keyvisual-wrap .el-carousel__unit img {width: 100%; margin: 0;}
+  .keyvisual-wrap .el-carousel__groups .fluid-container .banner-img-wrap img {height: auto!important;}
+  .keyvisual-wrap .el-carousel__groups .fluid-container .banner-img-wrap img, .keyvisual-wrap .el-carousel__groups .fluid-container a img {margin-top: -19px;}
+  .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .car-name {letter-spacing: -.25px; word-break: keep-all;}
+  .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .car-name.title {font-size: 12.25vw; line-height: .9em;}
+  .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .sub-txt {margin-top: 2.5vw; font-size: 5vw; letter-spacing: -.25px;}
+
+  .keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow--right {display: none;}
+  .control-wrap {position: relative; z-index: 99;}
+  .control-wrap__indicator {position: absolute; top: auto; bottom: 203px!important;}
+  .control-wrap__indicator .slideinfo-list__item {padding: 4px;}
+}
+
+@media screen and (min-width: 767px) and (max-width:1200px) {
+  .keyvisual-wrap .el-carousel__groups .fluid-container .banner-img-wrap img {width: 90%; height: auto!important;}
+}

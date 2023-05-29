@@ -1,39 +1,103 @@
-const slides = document.querySelectorAll('.carousel-slide');
-let currentSlide = 0;
+let carouselItems = document.querySelectorAll(".el-carousel__item");
+let slideListLinks = document.querySelectorAll(".slideinfo-list__link");
+let itemWidth;
+let carouselInterval;
 
-function showSlide(n) {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (n + slides.length) % slides.length;
-  slides[currentSlide].classList.add('active');
+let activeIdx = 0;  // 현재 active 상태인 카로셀의 index
+let carouselCnt = 3;
+  
+
+// 카로셀 업데이트하는 함수
+function updateCarouselDisplay() {
+  itemWidth = carouselItems[0].offsetWidth;
+  let translateValue = [0, itemWidth, -itemWidth];
+  for (let i=0; i<carouselCnt; i++) {
+    let item = carouselItems[i];
+    item.style.transform = `translateX(${translateValue[(i-activeIdx+carouselCnt)%carouselCnt]}px) scale(1)`;
+  }
+
+  for (let i=0; i<carouselCnt; i++) {
+    if (i === activeIdx) {
+      if (!slideListLinks[i].classList.contains('is-active')) {
+        slideListLinks[i].classList.add('is-active');
+      }
+    } else {
+      if (slideListLinks[i].classList.contains('is-active')) {
+        slideListLinks[i].classList.remove('is-active');
+      }
+    }
+  }
 }
 
-function nextSlide() {
-  showSlide(currentSlide + 1);
+function startCarousel() {
+  carouselInterval = setInterval(function() {
+    nextIdx = (activeIdx + 1) % carouselCnt;
+    carouselItems[activeIdx].classList.remove("is-active");
+    carouselItems[nextIdx].classList.add("is-active");
+    activeIdx = nextIdx;
+
+    updateCarouselDisplay();
+  }, 5000);
 }
 
-function previousSlide() {
-  showSlide(currentSlide - 1);
+// 화살표 버튼 클릭이벤트 렌더 함수
+function renderArrowBtns() {
+  let arrowRight = document.querySelector(".el-carousel__arrow--right");
+  arrowRight.addEventListener('click', () => {
+      activeIdx = (activeIdx + 1) % carouselCnt;
+      updateCarouselDisplay();
+  });
+
+  let arrowLeft = document.querySelector(".el-carousel__arrow--left");
+  arrowLeft.addEventListener('click', () => {
+      activeIdx = (activeIdx - 1 + carouselCnt) % carouselCnt;
+      updateCarouselDisplay();
+  });
 }
 
-// 자동 슬라이드 전환 설정
-const interval = setInterval(nextSlide, 3000);
+function pauseCarousel() {
+  clearInterval(carouselInterval);
+}
 
-// 마우스 hover시 자동 슬라이드 멈추도록 설정
-const carousel = document.querySelector('.carousel');
-carousel.addEventListener('mouseenter', () => {
-  clearInterval(interval);
-});
+function renderToggleButton () {
+  let toggleButton = document.querySelector('.btn-control--toggle');
+  toggleButton.addEventListener('click', function() {
+    if (toggleButton.classList.contains('pause')) {
+      toggleButton.classList.remove('pause');
+      startCarousel();
+    } else {
+      toggleButton.classList.add('pause');
+      pauseCarousel();
+    }
+  });
+}
 
-carousel.addEventListener('mouseleave', () => {
-  interval = setInterval(nextSlide, 3000);
-});
+function renderSlideLink() {
+  slideListLinks.forEach((slideLink) => {
+    slideLink.addEventListener('click', () => {
+      let curIdx = Array.from(slideListLinks).indexOf(slideLink);
+      activeIdx = curIdx;
+      updateCarouselDisplay();
+    })
+  });
+}
 
-// 좌우 화살표 클릭 이벤트 설정
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
 
-prevButton.addEventListener('click', previousSlide);
-nextButton.addEventListener('click', nextSlide);
+function init() {
+  
+  for (let i = 0; i < carouselCnt; i++) {
+    let item = carouselItems[i];
+    if (item.classList.contains("is-active")) {
+      activeIdx = i;
+      break;
+    }
+  }
 
-// 초기 슬라이드 표시
-showSlide(currentSlide);
+  updateCarouselDisplay();
+  startCarousel();
+  renderArrowBtns();
+  renderToggleButton();
+  renderSlideLink();
+}
+
+init();
