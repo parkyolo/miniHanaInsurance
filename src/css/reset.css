@@ -347,7 +347,7 @@ input.radio_chk[type="radio"]:checked + label:before {
 input[type="checkbox"] {
   display: inline-block;
   position: absolute;
-  left: -9999px;
+  /* left: -9999px; */
 }
 input[type="checkbox"] + label {
   z-index: 1;
@@ -424,7 +424,7 @@ textarea:focus {
 input[type="radio"] {
   display: inline-block;
   position: absolute;
-  left: -9999px;
+  /* left: -9999px; */
 }
 input[type="radio"] + label {
   z-index: 1;
