@@ -1,5 +1,4 @@
 @import url('/src/css/reset.css');
-@import url('/src/css/common.css');
 
 /* 퀵메뉴 */
 .quick_menu {position:absolute; left:50%; top:311px; margin-left:706px; z-index:10000;}
