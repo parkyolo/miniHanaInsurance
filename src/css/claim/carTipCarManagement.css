@@ -3,7 +3,31 @@
 @import url("../common.css");
 @import url("../reset.css");
 
-main {display: block; width: 960px; margin: 134px auto 0;}
+#contents{
+    width:75%;
+    margin: 0 auto;
+  }
+  
+  .title {
+    padding: 40px 0 15px;
+    background-image: url(../../images/claimImg/visual_healthReward_bg.jpg);
+    margin-bottom: 25px;
+  }
+  
+  .title h2 {
+    font-size: 32px;
+    color: #000;
+  }
+  
+  .title > p {
+    font-size: 14px;
+  }
+  
+  .tab_container {
+    margin: 0 auto;
+    display: block;
+  }
+
 .tab {padding: 47px 0 70px;}
 .tab > ul {display: flex; position: relative; list-style: none; padding-inline-start: 0}
 .tab > ul > li > button {width: 240px; height: 50px; border: 0.2px solid gray; border-radius: 8px 0 0 0; background: none; font-size: 13px; color: black; background-color: #F4F4F4; color:#555555; border: solid #F2F2F2 1px;}
@@ -26,6 +50,5 @@ main {display: block; width: 960px; margin: 134px auto 0;}
 .tab_content .box .icon {
     position:absolute; content: ''; display: block; width: 70px; height: 70px;flex:auto; margin-top: 30px;margin-left: 30px; background-repeat: no-repeat;} 
 .tab_content .box .box_description { width:80%; height: 100%;font-size: 15px; position:absolute; left:15%;}
-.tab_content .box .box_description .sentence {}
 
 .tab_content .on .description > h2{ margin-top: 50px;}

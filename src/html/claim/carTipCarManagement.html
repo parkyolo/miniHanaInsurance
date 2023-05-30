@@ -14,113 +14,140 @@
 </head>
 
 <body>
-
-    <main>
-        <h2 class="h2">필요서류안내 
-            <span>보험업무 처리 시 필요한 서류 안내입니다.</span></h2>
-
-        <div class="tab_group">
-            <nav class="tab">
-                <ul class="tab_nav">
-                    <li class="on">
-                        <button>자동차관리</button>
-                        <ul class="tab_nav">
-                            <li class="on"><button>신차 길들이기</button></li>
-                            <li><button>엔진오일</button></li>
-                            <li><button>브레이크오일</button></li>
-                        </ul>
-                    </li>
-                    <li><button>안전운전 요령</button>
-                        <ul class="tab_nav">
-                            <li class="on"><button>보행자보호운전요령</button></li>
-                            <li><button>통행방법요령</button></li>
-                        </ul></li>
-                    <li>
-                        <button>응급처리요령</button>
-                        <ul class="tab_nav">
-                            <li><button>스타터모터미회전시요령</button></li>
-                            <li><button>엔진과열시요령</button></li>
-                            <li><button>주자브레이크해체불가시요령</button></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="tab_content on">
-                <div class="on">
-                    <div class = "box">                         
-                        <div class="icon"><img src="../../images/claimImg/icon_tab_car01.png"></div>
-                        <div class="box_description">
-                            <div class="sentence">차량의 성능을 최상상태로 발휘하도록 유지하고 내구성 향상과 연비향상, 배기가스로 인한 환경오염등을 줄이기 위하여 신차길들이기를 하여야 합니다. 보통 오너 운전자들은 신차길들이기라면 엔진만 생각하는데 실제로는 모든 기능성 부품들이 이에 해당합니다. 신차길들이기에는 마음을 비우며 인내를 가지고 운전을 해야만 차량 성능을 최상상태로 유지하고, 차량의 수명을 연장시킬 수 있으며 연비 향상에도 도움이 됩니다.</div>
-                        </div>
-                    </div>
-                    <div class ="description">
-                        <h2>주행거리가 2,000km까지가 중요!</h2>
-                        <ul>
-                            <li>주행거리가 2,000km가 될때 까지는 부품들이 제자리를 잡을 수 있도록 해야 합니다. </li>
-                            <li>출발은 웜-업을 한 후에 하십시요.</li>
-                            <li>시동직후 급출발은 피하고 웜-업후에 서서히 출발해야 엔진과 변속기에 무리를 주지 않습니다.</li>
-                        </ul>
-                        <h2>급과속, 과속, 급제동 NO!</h2>
-                        <ul>
-                            <li>급가속은 많은 연료를 필요로 하고 엔진부하가 커져 불완전 연소가 일어나게 됩니다. 또한,엔진오일의
-                                열화로 인한 유해가스의 배출량도 많아 집니다. </li>
-                            <li>과속은 엔진회전수가 과도하게 올라가며 이로 인해 기계적인 마모가 심하게 일어나 엔진의 수명을 단축시킵니다.</li>
-                            <li>급제동은 현가장치나 하체부품 등이 제자리를 잡도록 하는데 전혀 도움이 되지 않습니다.</li>
-                        </ul>
-                        <h2>변속은 변속시점에 맞게!</h2>
-                        <ul>
-                            <li>수동변속기<br>
-                                엔진의 회전수가 2,000~3,000 RPM 정도를 유지하면서 변속을 해야 엔진과 변속기에 무리를 주지 않습니다. </li>
-                            <li>자동변속기<br>
-                                자동변속기는 자동으로 변속이 이루어지지만 변속기에 무리를 주지 않기 위해서 가속페달을 급하게 밟거나 놓지 않는 것이 좋습니다.</li>
-                        </ul>
-                    </div>
+    <div id="wrap">
+        <header data-include-path="/src/html/layout/header.html"></header>
+				<div id="container">
+				<!-- 페이지별 코드 -->
                     
-                </div>
-                <div>
-                    <div class = "box">                         
-                        <div class="icon"><img src="../../images/claimImg/icon_tab_car02.png"></div>
-                        <div class="box_description">
-                            <div class="sentence">엔진오일은 엔진의 성능에 주요한 영향을 미치며 또한 염화되며 공기와 접촉으로 산화됩니다. 따라서 매일오일량 점검을 하여야 하며 주행거리나 사용기간을 고려하여 엔진 오일필터와 함께 정기적으로 교환해 주어야 합니다.</div>
+                    <div id="contents">                            
+                        <div class="title">
+                            <h2>차량관리팁</h2>
+                            <p>운전자분들을 위한 차량 관리 팁!을 알려드립니다.</p>
                         </div>
-                    </div>
-                    <div class ="description">
-                        <h2>엔진오일량 점검</h2>
-                        <p><b>평탄한 곳에 주차 후 정상 작동 온도까지 엔진을 웜업시키십시오.</b></p>
-                        <ul>
-                            <li>엔진시동을 끄고 5분정도 기다렸다가 오일 게이지를 뽑아 깨끗이 닦은 후 다시 끼웠다가 빼내서 게이지에 오일이 묻어 있는 상태를 확인합니다. </li>
-                            <li>오일량은 'F'와 'L'사이에 있어야 합니다.</li>
-                        </ul>
+                        
+                        <div class="tab_container">
+                            <nav class="tab">
+                                <ul class="tab_nav">
+                                    <li class="on">
+                                        <button>자동차관리</button>
+                                        <ul class="tab_nav">
+                                            <li class="on"><button>신차 길들이기</button></li>
+                                            <li><button>엔진오일</button></li>
+                                            <li><button>브레이크오일</button></li>
+                                        </ul>
+                                    </li>
+                                    <li><button>안전운전 요령</button>
+                                        <ul class="tab_nav">
+                                            <li class="on"><button>보행자보호운전요령</button></li>
+                                            <li><button>통행방법요령</button></li>
+                                        </ul></li>
+                                    <li>
+                                        <button>응급처리요령</button>
+                                        <ul class="tab_nav">
+                                            <li><button>스타터모터미회전시요령</button></li>
+                                            <li><button>엔진과열시요령</button></li>
+                                            <li><button>주자브레이크해체불가시요령</button></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="tab_content on">
+                                <div class="on">
+                                    <div class = "box">                         
+                                        <div class="icon"><img src="../../images/claimImg/icon_tab_car01.png"></div>
+                                        <div class="box_description">
+                                            <div class="sentence">차량의 성능을 최상상태로 발휘하도록 유지하고 내구성 향상과 연비향상, 배기가스로 인한 환경오염등을 줄이기 위하여 신차길들이기를 하여야 합니다. 보통 오너 운전자들은 신차길들이기라면 엔진만 생각하는데 실제로는 모든 기능성 부품들이 이에 해당합니다. 신차길들이기에는 마음을 비우며 인내를 가지고 운전을 해야만 차량 성능을 최상상태로 유지하고, 차량의 수명을 연장시킬 수 있으며 연비 향상에도 도움이 됩니다.</div>
+                                        </div>
+                                    </div>
+                                    <div class ="description">
+                                        <h2>주행거리가 2,000km까지가 중요!</h2>
+                                        <ul>
+                                            <li>주행거리가 2,000km가 될때 까지는 부품들이 제자리를 잡을 수 있도록 해야 합니다. </li>
+                                            <li>출발은 웜-업을 한 후에 하십시요.</li>
+                                            <li>시동직후 급출발은 피하고 웜-업후에 서서히 출발해야 엔진과 변속기에 무리를 주지 않습니다.</li>
+                                        </ul>
+                                        <h2>급과속, 과속, 급제동 NO!</h2>
+                                        <ul>
+                                            <li>급가속은 많은 연료를 필요로 하고 엔진부하가 커져 불완전 연소가 일어나게 됩니다. 또한,엔진오일의
+                                                열화로 인한 유해가스의 배출량도 많아 집니다. </li>
+                                            <li>과속은 엔진회전수가 과도하게 올라가며 이로 인해 기계적인 마모가 심하게 일어나 엔진의 수명을 단축시킵니다.</li>
+                                            <li>급제동은 현가장치나 하체부품 등이 제자리를 잡도록 하는데 전혀 도움이 되지 않습니다.</li>
+                                        </ul>
+                                        <h2>변속은 변속시점에 맞게!</h2>
+                                        <ul>
+                                            <li>수동변속기<br>
+                                                엔진의 회전수가 2,000~3,000 RPM 정도를 유지하면서 변속을 해야 엔진과 변속기에 무리를 주지 않습니다. </li>
+                                            <li>자동변속기<br>
+                                                자동변속기는 자동으로 변속이 이루어지지만 변속기에 무리를 주지 않기 위해서 가속페달을 급하게 밟거나 놓지 않는 것이 좋습니다.</li>
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                                <div>
+                                    <div class = "box">                         
+                                        <div class="icon"><img src="../../images/claimImg/icon_tab_car02.png"></div>
+                                        <div class="box_description">
+                                            <div class="sentence">엔진오일은 엔진의 성능에 주요한 영향을 미치며 또한 염화되며 공기와 접촉으로 산화됩니다. 따라서 매일오일량 점검을 하여야 하며 주행거리나 사용기간을 고려하여 엔진 오일필터와 함께 정기적으로 교환해 주어야 합니다.</div>
+                                        </div>
+                                    </div>
+                                    <div class ="description">
+                                        <h2>엔진오일량 점검</h2>
+                                        <p><b>평탄한 곳에 주차 후 정상 작동 온도까지 엔진을 웜업시키십시오.</b></p>
+                                        <ul>
+                                            <li>엔진시동을 끄고 5분정도 기다렸다가 오일 게이지를 뽑아 깨끗이 닦은 후 다시 끼웠다가 빼내서 게이지에 오일이 묻어 있는 상태를 확인합니다. </li>
+                                            <li>오일량은 'F'와 'L'사이에 있어야 합니다.</li>
+                                        </ul>
 
-                        <h2>엔진오일 보충</h2>
-                        <p><b>평탄한 곳에 주차 후 정상 작동 온도까지 엔진을 웜업시키십시오.</b></p>
-                        <ul>
-                            <li>오일필터 캡을 반시계 방향으로 돌려서 탈거합니다.</li>
-                            <li>당사 추천 엔진오일을 보충하고 엔진 오일량을 다시 점검합니다.</li>
-                            <li>오일필터 캡을 시계방향으로 돌려서 장착합니다.</li>
-                        </ul>
+                                        <h2>엔진오일 보충</h2>
+                                        <p><b>평탄한 곳에 주차 후 정상 작동 온도까지 엔진을 웜업시키십시오.</b></p>
+                                        <ul>
+                                            <li>오일필터 캡을 반시계 방향으로 돌려서 탈거합니다.</li>
+                                            <li>당사 추천 엔진오일을 보충하고 엔진 오일량을 다시 점검합니다.</li>
+                                            <li>오일필터 캡을 시계방향으로 돌려서 장착합니다.</li>
+                                        </ul>
 
-                        <h2>엔진오일 및 필터 교환주기</h2>
-                        <p><b>
-                            엔진오일 및 필터는 반드시 당사 추천품으로 교환주기에 따라 동시에 교환합니다.</b></p>
-                        <ul>
-                            <li>교환주기: 매 10,000Km 주행시 마다 (가혹조건시 매 5,000Km 마다)</li>
-                        </ul>
-                    </div>
+                                        <h2>엔진오일 및 필터 교환주기</h2>
+                                        <p><b>
+                                            엔진오일 및 필터는 반드시 당사 추천품으로 교환주기에 따라 동시에 교환합니다.</b></p>
+                                        <ul>
+                                            <li>교환주기: 매 10,000Km 주행시 마다 (가혹조건시 매 5,000Km 마다)</li>
+                                        </ul>
+                                    </div>
 
-                </div>
-                <div>contents1-3</div>
-            </div>
-            <div class="tab_content">
-                <div class="on">contents2-1</div>
-                <div>contents2-2</div>
-            </div>
-            <div class="tab_content">
-                <div class="on">contents3-1</div>
-                <div>contents3-2</div>
-                <div>contents3-3</div>
-            </div>
-        </div>
-    </main>
+                                </div>
+                                <div>contents1-3</div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="on">contents2-1</div>
+                                <div>contents2-2</div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="on">contents3-1</div>
+                                <div>contents3-2</div>
+                                <div>contents3-3</div>
+                            </div>
+                        </div>
+                    </main>
+				</div>
+				<footer data-include-path="/src/html/layout/footer.html"></footer>
+    </div>
+		<script>
+        window.addEventListener('load', function() {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function(el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

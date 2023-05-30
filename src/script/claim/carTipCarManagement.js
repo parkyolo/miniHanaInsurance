@@ -10,13 +10,13 @@ $(document).ready(function(){
       $(this).parent().siblings().removeClass('on');
   
       if(depth2.hasClass('tab_nav') || $(this).parent().parent().parent().hasClass('tab')){
-        var $this = $(this).parents('.tab_group').children('.tab_content').eq(idx);
+        var $this = $(this).parents('.tab_container').children('.tab_content').eq(idx);
   
         $this.addClass('on').siblings().removeClass('on');
-      } 
+      }
       else{
         var parent_idx = $(this).parent().parent().parent('li').index();
-        var $this = $(this).parents('.tab_group').children('.tab_content').eq(parent_idx).children().eq(idx);
+        var $this = $(this).parents('.tab_container').children('.tab_content').eq(parent_idx).children().eq(idx);
   
         $this.addClass('on').siblings().removeClass('on');
       }
