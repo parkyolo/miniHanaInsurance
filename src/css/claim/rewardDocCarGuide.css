@@ -146,22 +146,22 @@ ul.tabs li.current {
   color: #333;
 }
 
-.document .commonDocument table {
+.document .commonDocument table, .document .selectDocument table{
   border-top: 1px solid #009591;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; 
   font-size: 14px;
   margin-top: 15px;
   margin-bottom: 70px;
 }
 
-.document .commonDocument th {
+.document .commonDocument th, .document .selectDocument th {
   border: 1px solid #e5e5e5;
   color: #333333;
   padding: 15px;
   background-color: #f9f9fb;
 }
 
-.document .commonDocument td{
+.document .commonDocument td, .document .selectDocument td{
   border: 1px solid #e5e5e5;
   color: #555555;
   padding: 15px;

@@ -54,23 +54,23 @@
                                     <div class="demage_contents">
                                         <label>
                                             <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
-                                            <input type="checkbox" class="demageCheckbox">사망
+                                            <input type="checkbox" class="demageCheckbox" id ='death' value="deathCheckbox" >사망
                                         </label>
                                         <label>
                                             <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
-                                            <input type="checkbox" class="demageCheckbox"> 후유장해
+                                            <input type="checkbox" class="demageCheckbox" id="aftereffect" value="aftereffectCheckbox"> 후유장해
                                         </label>
                                         <label>
                                             <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
-                                            <input type="checkbox" class="demageCheckbox">골절
+                                            <input type="checkbox" class="demageCheckbox" id="fracture" value='fractureCheckbox' >골절
                                         </label>
                                         <label>                                        
                                             <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
-                                            <input type="checkbox" class="demageCheckbox">수술
+                                            <input type="checkbox" class="demageCheckbox" id="operation" value='operationCheckbox'>수술
                                         </label>
                                         <label>                                        
                                             <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
-                                            <input type="checkbox" class="demageCheckbox">입원
+                                            <input type="checkbox" class="demageCheckbox" id="hospitalization" value='hospitalizationCheckbox' >입원
                                         </label>
                                     </div>                                    
                                 </div>
@@ -108,13 +108,24 @@
                         </div>    
                         <div class="selectDocument">
                             <h3>선택한 손해내용에 대한 구비서류</h3>
-                        </div>
-        
+                            <table id="selectTable">
+                                <tr>
+                                    <th>보험처리</th>
+                                    <th>손해내용</th>
+                                    <th>서류명</th>
+                                    <th>발급처</th>
+                                </tr>
+                                <tr>
+                                    <td>건강보험</td>
+                                    <td>건강보험</td>
+                                    <td>건강보험</td>
+                                    <td>건강보험</td>
+                                </tr>
+                               
+                            </table>
+                        </div>        
                     </div>
-                    
-
 			    </div>
-
             </div>
 		<footer data-include-path="/src/html/layout/footer.html"></footer>
     </div>
