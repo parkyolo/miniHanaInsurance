@@ -5,7 +5,7 @@ let carouselInterval;
 
 let activeIdx = 0;  // 현재 active 상태인 카로셀의 index
 let carouselCnt = 3;
-  
+
 
 // 카로셀 업데이트하는 함수
 function updateCarouselDisplay() {
@@ -82,9 +82,33 @@ function renderSlideLink() {
   });
 }
 
+function renderTab() {
+  document.addEventListener('DOMContentLoaded', function() {
+    let tabs = document.querySelectorAll('ul.tabs li');
+
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', function() {
+            let tab_id = this.getAttribute('data-tab');
+            let tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach((tab) => {
+                tab.classList.remove('current');
+            });
+
+            tabContents.forEach((content) => {
+                content.classList.remove('current');
+            });
+
+            this.classList.add('current');
+            document.getElementById(tab_id).classList.add('current');
+        });
+    });
+  });
+}
+
 
 function init() {
-  
+
   for (let i = 0; i < carouselCnt; i++) {
     let item = carouselItems[i];
     if (item.classList.contains("is-active")) {
@@ -98,6 +122,7 @@ function init() {
   renderArrowBtns();
   renderToggleButton();
   renderSlideLink();
+  renderTab();
 }
 
 init();
