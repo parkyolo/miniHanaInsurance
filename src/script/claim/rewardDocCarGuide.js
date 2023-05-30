@@ -143,8 +143,11 @@ function handleCheckbox(checkbox){
       newCell2.innerHTML = content2;
       var newCell3 = newRow.insertCell();
       newCell3.innerHTML = content3;
+      newCell3.style.textAlign = "left";
       var newCell4 = newRow.insertCell();
       newCell4.innerHTML = content4;
+      newCell4.style.textAlign = "left";
+      newCell4.style.borderRight = "none";
     
       checkbox.dataset.rowId = newRow.rowIndex;   
     }

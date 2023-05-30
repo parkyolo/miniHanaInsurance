@@ -166,3 +166,39 @@ ul.tabs li.current {
   color: #555555;
   padding: 15px;
 }
+
+.document .selectDocument #selectTable {
+  width: 100%;
+  table-layout: fixed;
+}
+.document .selectDocument #selectTable th:nth-child(1) {
+  width: 15%;
+  border-left: none;
+}
+.document .selectDocument #selectTable th:nth-child(2) {
+  width: 25%;
+}
+.document .selectDocument #selectTable th:nth-child(3) {
+  width: 45%;
+}
+.document .selectDocument #selectTable th:nth-child(4) {
+  width: 15%;
+  border-right: none;
+}
+.document .selectDocument #selectTable td {
+  vertical-align: middle;
+}
+.document .selectDocument #selectTable td:nth-child(1){
+  text-align: center;
+  border-left: none;
+}
+.document .selectDocument #selectTable td:nth-child(2) {
+  text-align: center;
+}
+.document .selectDocument #selectTable td:nth-child(3){
+  text-align: left; 
+}
+.document .selectDocument #selectTable td:nth-child(4) {
+  text-align: left; 
+  border-right: none;
+}
