@@ -6,89 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/public/css/signupPage/accidentReport.css">
+    <link rel="stylesheet" href="/public/css/accidentPage/accidentReport.css">
     <style>
-        header{
-            display: none;
-        }
 
-        ul>img {
-            width: 200px;
-            height: 200px;
-        }
-
-        .real-upload {
-            display: none;
-        }
-
-        .upload {
-            width: 200px;
-            height: 200px;
-            background-color: antiquewhite;
-        }
-
-        .image-preview {
-            width: 1300px;
-            height: 200px;
-            background-color: aquamarine;
-            display: flex;
-            gap: 20px;
-        }
-
-        .thumbnail {
-            width: 100px;
-            height: 100px;
-            background-color: #f2f2f2;
-            background-size: cover;
-            background-position: center;
-            display: inline-block;
-            /* margin-right: 10px; */
-            padding: 10px;
-            margin: 10px;
-            border-radius: 10px;
-        }
-
-        #chooseimg {
-            width: 100px;
-            height: 100px;
-            background-color: tomato;
-        }
-
-
-        .map_wrap {
-            position: relative;
-            width: 100%;
-            height: 350px;
-        }
-
-        .title {
-            font-weight: bold;
-            display: block;
-        }
-
-        .hAddr {
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            border-radius: 2px;
-            background: #fff;
-            background: rgba(255, 255, 255, 0.8);
-            z-index: 1;
-            padding: 5px;
-        }
-
-        #centerAddr {
-            display: block;
-            margin-top: 2px;
-            font-weight: normal;
-        }
-
-        .bAddr {
-            padding: 5px;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-        }
     </style>
 </head>
 
@@ -226,7 +146,7 @@
                                     <h3>사고 발생 위치</h3>
                                 </div>
                                 <div class="contents" id="accidentplace-input-contents">
-                                    <input type="button" value="지도에서 찾기" onclick="showmap()" style="width:500px;">
+                                    <input type="button" value="지도에서 찾기" onclick="showmap()" style="width:500px;" id="findmap">
                                     <input type="text" id="mapAddr"></input>
 
 
@@ -287,7 +207,16 @@
                                 </div>
                             </div>
 
-
+                            <div class="input" id="injuredpeople-input">
+                                <div class="title" id="injuredpeople-input-title">
+                                    <h3>다친 사람</h3>
+                                </div>
+                                <div class="contents" id="injuredpeople-input-contents">
+                                    <div class="injuredpeople" id="injuredpeople">
+                                        <input type=text id="injuredpoepl-num" placeholder="다친사람의 수를 입력해주세요">
+                                        </div>
+                                </div>
+                            </div>
 
                         </div>
 

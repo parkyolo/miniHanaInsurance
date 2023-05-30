@@ -36,6 +36,8 @@ function submitAll(){
         .value;
 
     const carNum=document.getElementById('carnum').value;
+    const people=document.getElementById('injuredpoepl-num').value;
+
 
 
     const userInfo={
@@ -44,7 +46,8 @@ function submitAll(){
         'pnoMiddle':phoneNum_middle,
         'pnoBack':phoneNum_back,
         "date":accident_date,
-        'carnum':carNum
+        'carnum':carNum,
+        'people':people
 
     }
 
@@ -83,6 +86,8 @@ function step4load()
     const pnoFront=obj.pnoFront;
     const pnoMiddle=obj.pnoMiddle;
     const pnoBack=obj.pnoBack;
+    const hurtpeople=obj.people;
+    console.log(hurtpeople+"명");
 
     const phoneNum=pnoFront+"-"+pnoMiddle+"-"+pnoBack;
 
@@ -102,10 +107,13 @@ function step4load()
     drivername.innerHTML=name;
     const pno = document.getElementById('phonenum');
     pno.innerHTML=phoneNum;
+
     
+    const people=document.getElementById('people');
+    people.innerHTML=hurtpeople;
 
     console.log(accident_date);
-    localStorage.clear();
+    // localStorage.clear();
 }
 
 //휴대폰번호 입력 시 자동 커서 이동
