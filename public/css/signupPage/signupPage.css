@@ -406,7 +406,7 @@ input[type="checkbox"] {
     position: relative;
     left: 0;
     top: 8px;
-    background: url("/src/images/form_checkOff.png") 0px 0px no-repeat;
+    background: url("../../../images/form_checkOff.png") 0px 0px no-repeat;
     background-size: 20px auto;
 
 }
@@ -438,7 +438,7 @@ input[type="checkbox"]:checked {
     position: relative;
     left: 0;
     top: 8px;
-    background: url("/src/images/form_checkOn.png") 0px 0px no-repeat;
+    background: url("../../../images/form_checkOn.png") 0px 0px no-repeat;
     background-size: 20px auto;
 }
 
@@ -451,7 +451,7 @@ input[type="radio"]+label:before {
     position: absolute;
     left: 0;
     top: 8px;
-    background: url("/src/images/form_radioOff.png") 0px 0px no-repeat;
+    background: url("../../../images/form_radioOff.png") 0px 0px no-repeat;
     background-size: 20px auto;
     appearance: none;
 
@@ -460,7 +460,7 @@ input[type="radio"]+label:before {
 input[type="radio"]:checked+label:before {
     text-align: center;
     line-height: 20px;
-    background: url("/src/images/form_radioOn.png") 0px 0px no-repeat;
+    background: url("../../../images/form_radioOn.png") 0px 0px no-repeat;
     background-size: 20px auto;
     appearance: none;
     content: "";

@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/public/css/signupPage/info.css">
-    <script src="/public/script/signupPage/info.js"></script>
+    <link rel="stylesheet" href="../../../css/signupPage/info.css">
+    <script src="../../../script/info.js"></script>
 
 
 </head>
 
 <body>
     <div id="wrap">
-        <header data-include-path="/public/html/layout/header.html"></header>
+        <header data-include-path="../../../html/layout/header.html"></header>
         <div class="container">
             <div id="contents">
 
@@ -29,15 +29,14 @@
                             편리한 서비스와 보다 유용한 정보제공을 위해 고객님의 정확한 정보를 입력하여 주시기 바랍니다.
                         </p>
                     </div>
-
+                    
                     <div class="input-section">
-                        <div class="list-title">
-                            <h4 id="list-title-name"role="heading">정보입력*는 필수입력 사항입니다.</h4>
-                        </div>
+                        
 
                         <div class="list">
-
-
+                            <div class="list-title">
+                                <h4 id="list-title-name"role="heading">정보입력<span id="star">*</span>는 필수입력 사항입니다.</h4>
+                            </div>
                             <ul class="table_width_list" role="list">
                                 <li style="border-top: 1px solid black;">
                                     <div class="title">
@@ -108,7 +107,7 @@
                                                     role="textbox" disabled="">
                                             </div>
                                             <div class="auth-success">인증완료<img
-                                                    src="/public/images/calImg/icon_radio_on_w.png"></div>
+                                                    src="../../../images/calImg/icon_radio_on_w.png"></div>
                                         </div>
                                     </div>
                                 </li>
@@ -165,18 +164,19 @@
 
                             </ul>
                         </div>
+                        <div class="btn_box tac">
+                            <button type="button" class="btn" id="btnStep3Prev" role="button"
+                                onclick="document.location.href='signup.html'">이전</button>
+                            <button type="button" class="btn btn_blue" id="btnStep3Next" role="button"
+                                onclick="document.location.href='../../../html/signupSuccess.html'">다음</button>
+                        </div>
                     </div>
-                    <div class="btn_box tac">
-                        <button type="button" class="btn" id="btnStep3Prev" role="button"
-                            onclick="document.location.href='signup.html'">이전</button>
-                        <button type="button" class="btn btn_blue" id="btnStep3Next" role="button"
-                            onclick="document.location.href='signupSuccess.html'">다음</button>
-                    </div>
+                    
                 </div>
 
             </div>
         </div>
-        <footer data-include-path="/public/html/layout/footer.html"></footer>
+        <footer data-include-path="../../../html/layout/footer.html"></footer>
     </div>
     <script>
         window.addEventListener('load', function () {

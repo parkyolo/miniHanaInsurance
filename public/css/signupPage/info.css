@@ -1,7 +1,11 @@
-@import url("/src/css/common.css");
-@import url("/src/css/reset.css");
-@import url("/src/css/default.css");
+@import url("../../../css/common.css");
+@import url("../../../css/reset.css");
+@import url("../../../css/default.css");
 
+input,select{
+    border-radius: 5px;
+    border: 1px solid rgb(212, 212, 212);
+}
 #wrap {
     position: relative;
     overflow-y: auto;
@@ -12,9 +16,7 @@
 li{
     display: flex;
 }
-label{
-    background-color: aqua;
-}
+
 #contents {
     position: relative;
     width: 100%;
@@ -51,17 +53,16 @@ input{
     display:flex;
     width:20%;
     flex-direction: row;
-    border-bottom: 1px  solid #bbebea ;
+    border-bottom: 1px  solid rgb(212, 212, 212);
     
     font-weight:bold;
     align-items: center;
     padding:20px;
     /* justify-content: center; */
-    background-color: #e7fbe8;
+    background-color: rgb(228, 228, 228)
 
 }
 .contents-title{
-    font-size: 50px;
     text-align:center;
 }
 
@@ -71,7 +72,11 @@ input{
     color:#009591;
 }
 
+#divInputCellPhoneMCert
+{
 
+    padding-bottom: 10px;
+}
 #phoneNum{
     display: flex;
     align-items: center;
@@ -99,17 +104,41 @@ input{
 .data{
     padding:20px;
     width:80%;
-    border-bottom:1px  solid rgb(173, 173, 173) ;
+    border-bottom:1px  solid rgb(212, 212, 212);
     display:flex;
     flex-direction: column;
 }
 
 .list-title
 {
-    padding:20px;
-    justify-content: end;
+    /* padding:20px; */
+    /* justify-content: end; */
+    text-align: center;
 
 }
+
+#star{
+    color: tomato;
+    padding: 5px;
+}
 #list-title-name{
+    color: #009591;
     text-align: end;
+    padding: 20px;
+    font-weight: 700;
+}
+
+button{
+
+    color:black;
+    width:100px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid rgb(212, 212, 212);
+    margin:10px;
+}
+
+.btn_box tac
+{
+    padding:20px;
 }
