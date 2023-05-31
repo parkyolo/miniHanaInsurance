@@ -25,7 +25,7 @@ input:-webkit-autofill{-webkit-box-shadow: 0 0 0 1000px #f0fefe inset;}
 .keyvisual-wrap .el-carousel__groups,
 .keyvisual-wrap .el-carousel__groups .fluid-container {height: 100%; -webkit-box-pack: center; justify-content: center;}
 .keyvisual-wrap .el-carousel__groups .fluid-container {display: -webkit-box; display: flex; -webkit-box-align: center; align-items: center; max-width: 2560px; margin: 0 auto;}
-.fluid-container {background: radial-gradient(circle, rgba(231,251,232,0) 0%, rgba(231,251,232,0) 70%, rgba(255,255,255,1) 100%), linear-gradient(to bottom, #fff 68%, #bbffbf 32%);}
+.fluid-container {background: radial-gradient(circle, rgba(231,251,232,0) 0%, rgba(231,251,232,0) 70%, rgba(255,255,255,1) 100%), linear-gradient(to bottom, #fff 68%, #E7FBE8 32%);}
 .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap {position: absolute; left: 12vw; top: 72px; right: 0; z-index: 1; /*width: 1260px;*/ height: auto; margin: 0 auto; text-align: left;}
 .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt {width: auto; height: auto; background: transparent;}
 
@@ -33,7 +33,7 @@ input:-webkit-autofill{-webkit-box-shadow: 0 0 0 1000px #f0fefe inset;}
 .keyvisual-wrap .el-carousel .is-animating img {animation: car_animation 1.5s alternate;} /* animation 종류를 만들 수 있는 듯? */
 .keyvisual-wrap .el-carousel__unit img {position: relative; max-width: 100%;}
 
-.keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .car-name {font-size: 86px; line-height: 82px; letter-spacing: -.25px; color: #000; text-align: left; font-weight: 500;}
+.keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .car-name {font-family: "Noto Sans KR"; font-weight: 700; font-size: 86px; line-height: 82px; letter-spacing: -.25px; color: #000; text-align: left; }
 .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .car-name.long {font-size: 72px;}
 .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .sub-txt {margin-top: 14px; font-size: 26px; color: #000; line-height: 38px; letter-spacing: -.25px; text-align: left;}
 
@@ -67,15 +67,12 @@ input:-webkit-autofill{-webkit-box-shadow: 0 0 0 1000px #f0fefe inset;}
 [type=button], button {-webkit-appearance: button;}
 
 /*메인할인내역 배너*/
-.section_wrap {padding: 140px 0 0; margin: 0 auto; max-width: 1400px; text-align: center;}
-.section_wrap .title {display: block; font-size: 44px; font-weight: 500; line-height: 58px; letter-spacing: -.4px;}
+.section_wrap {padding: 140px 0 100px; margin: 0 auto; max-width: 1400px; text-align: center;}
+.section_wrap .title {display: block; font-size: 54px; font-weight: 500; line-height: 58px; letter-spacing: -.4px;}
 .main_mid_box {display: flex; justify-content: space-evenly; flex-wrap: wrap; letter-spacing: -0.08em; font-family: 'Roboto','Noto Sans KR'; text-align: left; margin: 50px 20px 0 20px;}
 .main_mid_box li {flex-basis: calc(33.33% - 10px); background: #fff; border-radius: 15px; box-shadow: 5px 3px 20px 5px #00000012; list-style: none; margin-bottom: 20px;}
 .main_mid_box li section.visual_box {position:relative;	padding: 30px;margin: 10px;	background: #f9f9fb;	border-radius: 10px 10px 0 0;}
-.main_mid_box li section.visual_box .visual_icon {content: ""; /*position:absolute; bottom: 15px; right: 20px;*/ display:block; /*width:151px; height:119px;*/ width: 55%; margin: 0 auto 30px;}
-/* .main_mid_box li:nth-child(1) section.visual_box .visual_icon {background: url("../../images/mainImg/icon_set_01_1.png") no-repeat;}
-.main_mid_box li:nth-child(2) section.visual_box .visual_icon {background: url("../../images/mainImg/icon_set_01_2.png") no-repeat;}
-.main_mid_box li:nth-child(3) section.visual_box .visual_icon {background: url("../../images/mainImg/icon_set_01_3.png") no-repeat;} */
+.main_mid_box li section.visual_box .visual_icon {content: "";display:block; width: 55%; margin: 0 auto 30px;}
 section.visual_box .title { font-size: 35px; color: #555; font-weight: 500; line-height: 48px; margin-top: 8px;}
 section.visual_box .title span {position:relative; cursor: pointer; text-decoration: none; padding-bottom: 5px;}
 section.visual_box .title span::after {background:none repeat scroll 0 0 transparent; bottom:5px; left: 50%; content: ""; display: block; width: 0; height: 5px;position: absolute;background:#2cb26a40;transition:width 0.3s ease 0s, left 0.3s ease 0s;}
@@ -97,22 +94,26 @@ section.sale_point dl dt .point {color:#ef794b;}
 section.sale_point dl dd {padding-left: 10px; font-size: 16px; color: #888;}
 
 /* 보험상품 탭 */
-.tab_banner {height: 75vw; background: linear-gradient(3deg, rgb(241, 239, 239) 90%, #fff 10%);}
-.tab_banner .section_wrap {text-align: left; width: 90%;}
+.tab_banner {}
+.tab_banner .section_wrap {width: 90%;}
 .main_bottom_box {margin: 50px 0;}
 /* 탭 메뉴 스타일 */
 ul.tabs {list-style-type: none; margin: 0; padding: 0; display: flex; justify-content: left;}
-ul.tabs li {cursor: pointer; padding: 10px 20px; font-size: 18px; font-weight: 500; position: relative; overflow: hidden; margin: 0 20px;}
+ul.tabs li {cursor: pointer; padding: 10px 20px; font-size: 24px; font-weight: 500; position: relative; overflow: hidden; margin: 0 20px;}
 ul.tabs li::after {content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #009591; transition: width 0.3s ease-in;}
 ul.tabs li.current::after {width: 100%;}
 .tab-content {display: none;}
 .tab-content.current {display: block;}
-.tab-content .content_wrap {position: relative;}
-.main_bottom_box .img_wrap {position: absolute; top: 0; left: 0; width: 38%; height: auto;}
-.main_bottom_box img {border-radius: 100%; width: 100%;}
-.content_wrap {display: flex; align-items: center; justify-content: center; margin: 50px 0;}
-.content_wrap .right {display: flex; flex-direction: column; align-items: flex-start; justify-content: center;}
+.tab-content .content_wrap {justify-content: space-between;}
+.main_bottom_box .img_wrap {width: 40vw; height: auto;}
+.main_bottom_box img {width: 60%;}
+.content_wrap {display: flex; align-items: center; justify-content: center; margin: 80px 0;}
+.content_wrap .right {display: flex; flex-direction: column; align-items: flex-start; justify-content: center;width: 60vw;}
 .insurance_info {display: block; text-align: center;}
+.right .insurance_title {font-family: "Noto Sans KR"; font-weight: 700; font-size: 44px; line-height: 1.25; color: #222; margin: 15px 0 25px;}
+.right .insurance_name {font-family: "Noto Sans KR"; font-weight: 400; display: block; margin: 0 0 15px; font-size: 24px; color: #555555; line-height: 1.4; font-weight: 500;}
+.right .insurance_info {font-family: "Noto Sans KR"; font-weight: 400; margin: 0 0 30px; font-size: 20px; line-height: 1.4; color: #555555;}
+.right > p {text-align: left;}
 
 @media screen and (min-width: 768px) {
   #container {width: 100%;}
