@@ -346,6 +346,15 @@ input:focus{
     
 }
 
+#submitbtn
+{
+    margin-top: 20px;
+    height: 60px;
+    background-color: #009591;
+    color:white;
+    font-weight:900;
+
+}
 
 .content-title
 {
@@ -388,6 +397,8 @@ input:focus{
     border-radius: 5px;
     border: 1px solid rgb(212, 212, 212);
 }
+
+
 /* html {
     height: 100%;
 }

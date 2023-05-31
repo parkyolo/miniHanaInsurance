@@ -38,6 +38,8 @@ function submitAll(){
     const carNum=document.getElementById('carnum').value;
     const people=document.getElementById('injuredpoepl-num').value;
 
+    const accident_content=document.getElementById('accidentcontent').value;
+
 
 
     const userInfo={
@@ -47,7 +49,8 @@ function submitAll(){
         'pnoBack':phoneNum_back,
         "date":accident_date,
         'carnum':carNum,
-        'people':people
+        'people':people,
+        'accidentcontent':accident_content
 
     }
 
