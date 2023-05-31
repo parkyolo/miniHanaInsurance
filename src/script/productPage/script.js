@@ -188,7 +188,7 @@ function showSummary() {
   var summaryElement = document.getElementById("summary");
   summaryElement.innerHTML = `
   <div class="base_box sel_tb">
-  <h3>입력하신 정보</h3>
+  <h3 style="padding-bottom:20px;">입력하신 정보</h3>
   <table class="fl base_tb sel_tb product_tb small_tb">
     <colgroup>
       <col width="15%" />
@@ -226,7 +226,12 @@ function showSummary() {
   `;
 }
 function submitt() {
-  alert = "제출되었습니다";
+  alert("상담이 신청되었습니다.");
+  window.location.href = "https://www.hanainsure.co.kr/";
+}
+
+function gomainPage() {
+  window.location.href = "https://www.hanainsure.co.kr/";
 }
 
 //카카오 api

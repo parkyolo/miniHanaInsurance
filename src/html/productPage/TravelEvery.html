@@ -12,17 +12,18 @@
 	<meta property="og:description" content="하나손해보험/에듀카/국내여행보험/여행/수학여행/학교/법인단체/교직원보험">
 
 	<meta property="og:url" content="https://www.hanainsure.co.kr/w/product/travelLeisure/domesticTravelIntro">
+
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
-	<link rel="shortcut icon" href="./이미지/" type="image/x-icon">
-	<link rel="icon" href="./이미지/" type="image/x-icon">
+
 	<link
 	rel="stylesheet"
 	href="../../css/productPage/travelLeisure/hanainsureCarDriver.css">
-	<script type="text/javascript" src="/config/env?1683720000"></script>
-	<script type="text/javascript" src="/static/resources/common/js/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="/static/resources/common/js/macro.js?1683720000"></script>
-	<script type="text/javascript" src="/static/resources/web/js/accessbility.js?1683720000"></script>
+
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script
 	type="text/javascript"
 	src="../../script/productPage/jquery.js"
@@ -30,7 +31,7 @@
   ></script>
   <script
 	type="text/javascript"
-	src="../../script/productPage/vanilaCar.js"
+	src="../../script/productPage/Car.js"
 	charset="utf-8"
   ></script>
 	
@@ -108,6 +109,8 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
 				<div class="sec_box_02 base_area">
 			<div class="section_box100" id="go_p2">
 				<div class="quick_left_02 big_h2 product_icon200">
@@ -393,9 +396,7 @@
     <div id="divCalcContainer" style="display:none;">
         <div class="sec_box_01 base_area800">
             <div class="section_box100" id="go_pc1">
-                <div class="quick_left_01 big_h2 product_icon001">
-                    <a href="#go_pc1"><h2>보험료 알아보기</h2></a>
-                </div>
+                
                 <div class="cal_box1">
                     <h3 class="mb8">간단한 정보 입력만으로<br>
                         <font class="fc_blue">보험료</font>와 <font class="fc_blue">보장내용</font>을 확인하실 수 있습니다!
@@ -426,7 +427,50 @@
                     
                     <div class="base_box mt15" >
                     
-                        <div id="divDataContent"></div>
+                        <div id="divDataContent">
+							<table class="base_tb" id="tblBase">
+								<caption>기본테이블</caption>
+								<colgroup>
+									<col width="*">
+									<col width="15%">
+									<col width="15%">
+									<col width="22%">
+									<col width="22%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">가입대상</th>
+										<th scope="col">남자(인원)</th>
+										<th scope="col">여자(인원)</th>
+										<th scope="col">남자 인당 보험료</th>
+										<th scope="col">여자 인당 보험료</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr name="sInputData">
+										<td>
+											<div class="set_box sz_100">
+												<div id="divTarget_0">
+													<input title="" class="wPc100 tac" type="text" value=""  id="sInsGrpAge_0" name="sInsGrpAge" maxlength="4" placeholder="생년 4자리입력">
+												</div>
+											</div>
+										</td>
+										<td>
+											<input title="남자인원" class="wPc100 tar" type="text" value="" id="nManNum_0" name="nManNum" maxlength="3" onkeyup="sDomesticTravelFunc.numberChk(this, 0)">
+										</td>
+										<td>
+											<input title="여자인원" class="wPc100 tar" type="text" value="" id="nWomanNum_0" name="nWomanNum" maxlength="3" onkeyup="sDomesticTravelFunc.numberChk(this,0)">
+										</td>
+										<td>
+											<input title="남자인당보험료" class="wPc100 tar" type="text" value="" id="nManPrem_0" name="nManPrem" disabled="disabled">
+										</td>
+										<td>
+											<input title="여자인당보험료" class="wPc100 tar" type="text" value="" id="nWomanPrem_0" name="nWomanPrem" disabled="disabled">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
                         
                         <div class="flex_bs">
                             <ul class="txt_list_01 icon3 whauto" role="list">
@@ -438,10 +482,61 @@
                                 <button class="btn btn_plus">+ 행추가</button>
                                 <button class="btn btn_minus">- 행삭제</button>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div id="divCalc"></div>
+							
+							
+        
+                    </div> 
+                    <!--
+
+
+					<div class="blue_box3" style="display: none;">
+						<div>
+						  <p class="last_txt">여행기간<span id="totTravelPeriod"><strong></strong>일</span></p>
+						  <p class="last_txt">총 인원수<span id="totPerson"><strong></strong>명</span></p>					
+						<p class="mon_txt">총 보험료<span id="totPrem"><strong></strong>원</span></p>
+						</div>
+						<div class="fl wPc100 tac mt60">
+							<button type="reset" class="btn btn_big_blueover mr6" id="btnReset">초기화</button>
+							<button type="button" class="btn btn_big_redover mr6" id="btnReCalc">재계산</button>
+							<button type="button" class="btn btn_big_joinover" onclick="pop.open('popGetReadydomesticTravel')">보험가입 신청</button>
+						</div> 
+					</div>
+					 
+					  
+					  <div class="firstCalc" style="display: block;">
+						<p class="fl wPc100 blue_box lh42 mt30">간단하게 <strong>총 보험료</strong>를 확인해 보세요.</p>
+						<div class="fl wPc100 tac mt60">
+						  <button type="button" class="btn btn_big_redover" id="btnInsCalc" style="width:170px;">보험료계산하기</button>
+						</div>
+						
+					  </div>
+					</div>
+				-->
+                     <div id="divCalc"> 
+						<div class="Calccc" style="display: none";>
+						              <div class="blue_box3" >
+										<div>
+								
+    <p class="last_txt">여행기간<span id="totTravelPeriod"><strong></strong>일</span></p>
+    <p class="last_txt">총 인원수<span id="totPerson"><strong>  </strong>명</span></p>
+  </div>
+							  <p class="mon_txt">총 보험료<span id="totPrem"><strong></strong>원</span></p>
+
+							</div>
+							<div class="fl wPc100 tac mt60">
+								<button type="reset" class="btn btn_big_blueover mr6" id="btnReset">초기화</button>
+								<button type="button" class="btn btn_big_redover mr6" id="btnReCalc">재계산</button>
+								<button type="button" class="btn btn_big_joinover" onclick="pop.open('popGetReadydomesticTravel')">보험가입 신청</button>
+							</div> 
+							</div>
+						 	<div class="firstCalc" display="block">
+						<p class="fl wPc100 blue_box lh42 mt30">간단하게 <strong>총 보험료</strong>를 확인해 보세요.</p>
+<div class="fl wPc100 tac mt60">
+	<button type="button" class="btn btn_big_redover" id="btnInsCalc" style="width:170px;">보험료계산하기</button>
+</div>
+</div> 
+</div>
+					</div>
                 </div>
             </div>
         </div>		
@@ -505,6 +600,54 @@
 			}
 		});
 	});
+
+	/* document.addEventListener("DOMContentLoaded", function () {
+		// 간편 산출 버튼 클릭 시 해당 내용 표시
+		var btnSimpleCalcView = document.getElementById("btnSimpleCalcView");
+		btnSimpleCalcView.addEventListener("click", function () {
+		  var divCalcContainer = document.getElementById("divCalcContainer");
+		  var contents = document.getElementById("contents");
+		  divCalcContainer.style.display = "block";
+		  contents.style.display = "none";
+		});
+	  
+		// 상품특징 버튼 클릭 시 해당 내용 표시
+		var btnContentView = document.getElementById("btnContentView");
+		btnContentView.addEventListener("click", function () {
+		  var divCalcContainer = document.getElementById("divCalcContainer");
+		  var contents = document.getElementById("contents");
+		  divCalcContainer.style.display = "none";
+		  contents.style.display = "block";
+		});
+	  }); */
+	  document.addEventListener("DOMContentLoaded", function () {
+		// 간편 산출 버튼 클릭 시 해당 내용 표시
+		var btnSimpleCalcView = document.getElementById("btnSimpleCalcView");
+		btnSimpleCalcView.addEventListener("click", function () {
+		  var divCalcContainer = document.getElementById("divCalcContainer");
+		  var contents = document.getElementById("contents");
+		  divCalcContainer.style.display = "block";
+		  contents.style.display = "none";
+		  btnSimpleCalcView.classList.add("on");
+		  btnContentView.classList.remove("on");
+		});
+	  
+		// 상품특징 버튼 클릭 시 해당 내용 표시
+		var btnContentView = document.getElementById("btnContentView");
+		btnContentView.addEventListener("click", function () {
+		  var divCalcContainer = document.getElementById("divCalcContainer");
+		  var contents = document.getElementById("contents");
+		  divCalcContainer.style.display = "none";
+		  contents.style.display = "block";
+		  btnContentView.classList.add("on");
+		  btnSimpleCalcView.classList.remove("on");
+		});
+	  });
+
+	  $(document).ready(function () {
+		$(".cal_btn").datepicker();
+	  });
+	  
 </script>
     </div>
 </div>

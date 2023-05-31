@@ -1096,8 +1096,8 @@ user agent stylesheet h2 {
 }
 .product_feature .owl-carousel .item {
   background: #fff;
-  position: absolute;
-  margin: 10px;
+  /* position: absolute; */
+  margin: 3px;
   left: 0;
   top: 0;
 }
@@ -2069,10 +2069,7 @@ user agent stylesheet ul {
 .owl-carousel .owl-nav.disabled {
   display: none;
 }
-.no-js .owl-carousel,
-.owl-carousel.owl-loaded {
-  display: block;
-}
+
 .owl-carousel .owl-dot,
 .owl-carousel .owl-nav .owl-next,
 .owl-carousel .owl-nav .owl-prev {
@@ -2082,6 +2079,31 @@ user agent stylesheet ul {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.product_feature .owl-carousel .owl-nav {
+  text-align: center;
+  margin-top: 40px;
+}
+.product_feature .owl-carousel .owl-nav button.owl-prev {
+  background: url(../../../images/prouductImg/car/btn_prev.png) no-repeat !important;
+  color: transparent;
+  position: absolute;
+  top: 37%;
+  left: -60px;
+}
+.product_feature .owl-carousel .owl-nav button.owl-next {
+  background: url(../../../images/prouductImg/car/btn_next.png) no-repeat !important;
+  color: transparent;
+  position: absolute;
+  top: 37%;
+  right: -60px;
+}
+.product_feature .owl-carousel .owl-nav button.owl-next,
+.product_feature .owl-carousel .owl-nav button.owl-prev {
+  width: 36px;
+  height: 36px;
+  background: red;
+  margin: 0 10px;
 }
 .owl-carousel .owl-nav button.owl-next,
 .owl-carousel .owl-nav button.owl-prev,
@@ -2205,6 +2227,7 @@ user agent stylesheet ul {
   background-color: #f9f9fb;
   min-height: 112px;
   padding: 30px 42px 30px 52px;
+  margin-bottom: 100px;
 }
 .top_gray_box .txt_list_01 {
   min-height: 50px;
@@ -2497,13 +2520,6 @@ caption {
   margin-bottom: 100px;
   margin-top: 100px;
 }
-.owl-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  text-align: center;
-}
 
 .owl-prev,
 .owl-next {
@@ -2630,11 +2646,7 @@ caption {
   background: #f2f2f2;
   border: 1px solid #ddd;
 }
-.gray_box_new.overbox {
-  height: 130px;
-  overflow-y: auto;
-  padding: 15px;
-}
+
 .gray_box_new p {
   width: 100%;
 }
@@ -2652,7 +2664,7 @@ caption {
   width: calc(100% - 150px);
 }
 .gray_box_new.overbox {
-  height: 130px;
+  height: 260px;
   overflow-y: auto;
   padding: 15px;
 }
@@ -2700,9 +2712,298 @@ caption {
 .btn.acrobat_btn:after {
   content: "";
   width: 25px;
-  height: 20px px;
+  height: 20px;
   text-align: right;
   background: url(../../../images/prouductImg/car/btn_acrobat.gif) no-repeat
     right center;
   vertical-align: -4px;
+}
+
+.cal_box1 h3 {
+  font-size: 36px;
+  font-weight: 300;
+  color: #333;
+  width: 100%;
+  float: left;
+  text-align: center;
+  letter-spacing: -2px;
+  line-height: 45px;
+}
+.fc_blue {
+  color: #009591 !important;
+}
+
+.neon_red {
+  background: linear-gradient(to top, #ee175066, transparent 25%);
+}
+.search_box1.light_l {
+  border-width: 1px;
+  padding: 12px 15%;
+  margin-bottom: 20px;
+}
+
+.search_box1 {
+  overflow: hidden;
+  float: left;
+  width: 100%;
+  border: none;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 30px 15% 30px;
+  background: #eeeeee;
+}
+.field_set {
+  float: left;
+  width: 100%;
+  position: relative;
+  margin: 5px 0;
+}
+.set_box {
+  width: 100%;
+  float: left;
+  position: relative;
+}
+.fsz_70 label {
+  width: 70px;
+}
+
+.field_set label {
+  float: left;
+  text-align: right;
+  padding: 2px 10px 0 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 34px;
+  color: #333;
+}
+
+.field_set .cal_set div {
+  width: calc(50% - 55px);
+}
+
+.cal_set div {
+  width: calc(50% - 10px);
+  float: left;
+  position: relative;
+}
+.cal_set .cal_btn {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  padding: 7px 0;
+  right: 0;
+  top: 0;
+  display: inline-block;
+  text-align: center;
+  border-left: 1px solid #ddd;
+}
+
+.dash {
+  display: inline-block;
+  float: left;
+  width: 20px;
+  text-align: center;
+  line-height: 32px;
+}
+
+select {
+  position: relative;
+  border: 1px solid #ddd;
+  height: 34px;
+  font-family: "Noto Sans KR";
+  font-size: 14px;
+  -webkit-appearance: button;
+  -webkit-padding-end: 30px;
+  -webkit-padding-start: 10px;
+  -webkit-user-select: none;
+  background: url(../../../images/prouductImg/car/icon_selectBg.gif) right
+    center no-repeat #fff;
+  background: none\0 / IE9;
+  background-size: 22px auto;
+  cursor: pointer;
+  padding: 0px 0px 0 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  color: #555;
+  max-width: 100%;
+}
+input,
+select {
+  vertical-align: middle;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+.cal_box3 .icon_box {
+  margin-left: 30px;
+  position: relative;
+  padding-left: 44px;
+  padding-bottom: 20px;
+  font-weight: 400;
+  font-size: 22px;
+  color: #783eaf;
+}
+.cal_box3 .icon_box:before {
+  content: "";
+  width: 34px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: url(../../../images/prouductImg/car/bg_icon1.gif) no-repeat left
+    center;
+  padding-left: 44px;
+  font-size: 22px;
+  color: #009591;
+}
+.flex_bs {
+  display: flex;
+  justify-content: space-between;
+}
+.btn_group {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn_group .btn_plus {
+  width: 100px;
+  height: 45px;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  padding: 14px 13px;
+  border: 1px solid #20b7a4;
+  background: #20b7a4;
+  margin-right: 10px;
+}
+.btn_group .btn_minus {
+  width: 100px;
+  height: 45px;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  padding: 14px 13px;
+  border: 1px solid #b9b9b9;
+  background: #b9b9b9;
+}
+.cal_box1 .blue_box {
+  border: 1px solid #009591;
+  padding: 10px 10px;
+  background: #009591;
+  font-weight: 400;
+  font-size: 18px;
+  color: #dddee4;
+  line-height: 130px;
+  text-align: center;
+}
+.lh42,
+.lh42:before {
+  line-height: 42px !important;
+}
+.strong {
+  font-weight: 500;
+}
+.cal_box1 .blue_box strong {
+  color: #fff;
+}
+.btn_big_redover {
+  width: 145px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  padding: 14px 13px;
+  border: 1px solid #009591;
+  background: #009591;
+}
+.text_cont_box.line_box {
+  padding: 10px 20px 25px 10px;
+}
+
+.text_cont_box {
+  margin-top: 50px;
+  width: 100%;
+  float: left;
+}
+.line_box {
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ddd;
+  margin-top: 16px;
+  background: #f9f9f9;
+}
+.cal_box1 .blue_box3 {
+  width: 100%;
+  margin-top: 30px;
+  float: left;
+  display: flex;
+  border: 1px solid #009591;
+  padding: 20px 60px;
+  background: #009591;
+  border-top-left-radius: 30px;
+}
+.cal_box1 .blue_box3 > div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.cal_box1 .blue_box3 > div p.last_txt {
+  border-right: 1px solid #fff;
+  font-weight: 400;
+  font-size: 17px;
+  color: #fff;
+  padding-right: 60px;
+}
+.cal_box1 .blue_box3 p.mon_txt {
+  width: 50%;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  padding-left: 86px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cal_box1 .blue_box3 p.mon_txt:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: url(../../../images/prouductImg/car/icon_won.png) no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 35px;
+  transform: translateY(-50%);
+}
+.btn_big_blueover {
+  width: 145px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #333;
+  padding: 14px 13px;
+  border: 1px solid #d6d6d6;
+}
+.btn_big_redover {
+  width: 145px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  padding: 14px 13px;
+  border: 1px solid #009591;
+  background: #009591;
+}
+.btn_big_joinover {
+  width: 145px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  padding: 14px 13px;
+  border: 1px solid #ed1651;
+  background: #ed1651;
 }

@@ -31,11 +31,12 @@
     } 
         #mailCoun{
             text-align: center;
+            margin: 0 16rem;
         }
 
         #mailCoun h2{
             font-size: 20px;
-            padding-bottom: 20px;
+            padding-bottom: 2.5rem;
         }
         #mailCoun #page1 > input{
             background-color: #fff;
@@ -43,7 +44,7 @@
             border: 0.1rem solid #ededed;
             display: inline-block;
             padding-left: 1.4rem;
-            margin-bottom: 3.5rem;
+            margin-bottom: 8rem;
             padding-right: 1.4rem;
             font-size: 1.2rem;
             height: 5rem;
@@ -61,7 +62,7 @@
             border: 0.1rem solid #ededed;
             display: inline-block;
             padding-left: 1.4rem;
-            margin-bottom: 3.5rem;
+            margin-bottom: 6rem;
             padding-right: 1.4rem;
             font-size: 1.2rem;
             height: 5rem;
@@ -73,7 +74,68 @@
             width: 200px;
             height: 50px;
         }
+        #mailCoun #page1  input{
+          background-color: #fff;
+          border-radius: 0.8rem;
+          border: 0.1rem solid #ededed;
+          display: inline-block;
+          padding-left: 1.4rem;
+          margin-bottom: 3.5rem;
+          padding-right: 1.4rem;
+          font-size: 1.2rem;
+          height: 5rem;
+          color: #141414;
+          box-shadow: none;
+          transition: border 0.1s ease-in;
+          word-break: normal;
+          word-wrap: normal;
+          width: 200px;
+          height: 50px;
+      }
+      #mailCoun #page3  input{
+        background-color: #fff;
+        border-radius: 0.8rem;
+        border: 0.1rem solid #ededed;
+        display: inline-block;
+        padding-left: 1.4rem;
+        margin-bottom: 3.5rem;
+        padding-right: 1.4rem;
+        font-size: 1.2rem;
+        height: 5rem;
+        color: #141414;
+        box-shadow: none;
+        transition: border 0.1s ease-in;
+        word-break: normal;
+        word-wrap: normal;
+        width: 200px;
+        height: 50px;
+    }
+    #mailCoun #page4 input{
+      background-color: #fff;
+      border-radius: 0.8rem;
+      border: 0.1rem solid #ededed;
+      display: inline-block;
+      padding-left: 1.4rem;
+      margin-bottom: 3.5rem;
+      padding-right: 1.4rem;
+      font-size: 1.2rem;
+      height: 5rem;
+      color: #141414;
+      box-shadow: none;
+      transition: border 0.1s ease-in;
+      word-break: normal;
+      word-wrap: normal;
+      width: 300px;
+      height: 50px;
+  }
+    #mailCoun #page3  input #sample6_address{
+        width: 400px;
 
+    }
+        #hello {
+          animation: fadeIn 1s;
+          margin-bottom: 90px;
+        }
         #mailCoun #page1 input:hover {
           text-decoration: none;
           border-width: 1px;
@@ -86,8 +148,20 @@
           border-style: solid;
           border-color: #007e7b;
         }
+        #mailCoun #page3 input:hover {
+          text-decoration: none;
+          border-width: 1px;
+          border-style: solid;
+          border-color: #007e7b;
+        }
+        #mailCoun #page4 input:hover {
+          text-decoration: none;
+          border-width: 1px;
+          border-style: solid;
+          border-color: #007e7b;
+        }
         #progressBar{
-          margin-bottom: 50px;
+          margin-bottom: 90px;
         }
         #page3{
           text-align: center;
@@ -113,7 +187,7 @@
         }
 
         #phoneNumberInput, #emailInput{
-          margin: 50px;
+          margin: 30px;
         }
 
         #goMainpage{
@@ -121,6 +195,23 @@
           color: #fff;
         }
 
+        .agree_chk{
+          margin: 0 20px;
+        }
+        .BarPass{
+          width: 100%;
+          background: lightgray;
+          margin-bottom: 150px;
+          
+        }
+        .product_tb.base_tb{
+          margin-bottom: 30px;
+        }
+        .base_tb.sel_tb td:last-child{
+          width: 100%;
+        }
+       
+     
     </style>
   </head>
   <body>
@@ -148,17 +239,22 @@
                     </div>
                 </div>
                      </div>
-                     <div id="progressBar"></div>
+                     
             <div id="mailCoun">
+              <div class="BarPass">
+                <div id="progressBar"></div>
+              </div>
           
 
           
           <div id="page1" class="page">
+            <div id="hello">
             <h2>
-              안녕하세요! 상담 신청을 해볼까요? 먼저, 이름과 생년월일을 입력해주세요.
+              안녕하세요! 상담 신청을 해볼까요?    먼저, 이름과 생년월일을 입력해주세요.
             </h2>
             <input type="text" id="userName" placeholder="홍길동" />
             <input type="text" id="birthdateInput" placeholder="YYYY-MM-DD" />
+          </div>
             <p id="birthdateError" class="error"></p> 
             <p class="base_box_top top10 mb0">개인(신용)정보 수집/이용에 대한 동의</p>
 				<div class="gray_box_new overbox">
@@ -208,7 +304,10 @@
               onclick="sample6_execDaumPostcode()"
               value="우편번호 찾기"
             /><br />
-            <input type="text" id="sample6_address" placeholder="주소" /><br />
+            
+              <input type="text" id="sample6_address" placeholder="주소" /><br />
+            
+            
             <input
               type="text"
               id="sample6_detailAddress"
@@ -244,8 +343,9 @@
           <div id="page5" class="page">
             <h2>감사합니다. 모든 입력이 완료되었습니다!</h2>
             <div id="summary"></div>
-            <button onclick="alert('제출되었습니다!');return false;" id="nextButton" type="button" class="btn btn_blue btnRegister">등록</button>
-            <button id="goMainpage" type="button" class="btn btn_blue btnRegister">메인페이지로</button>
+            <button onclick="gomainPage()" id="goMainpage" type="button" class="btn btn_blue btnRegister">메인페이지로</button>
+            <button onclick="submitt()" id="nextButton" type="button" class="btn btn_blue btnRegister">상담 신청</button>
+            
           </div>
           <div id="progressBar"></div>
 
@@ -262,8 +362,8 @@
                 <h4 class="txt_title">소비자 권익보호에 관한 사항</h4>
                 <div class="txt_detail">본 동의를 거부하시는 경우에는 접수 및 처리가 불가능 할 수 있으며, 본 동의서에 의한 개인(신용)정보 조회는 귀하의 신용등급에 영향을 주지 않습니다.</div>
             </div>
-        </div> -->
-        
+        </div>
+         -->
           
         </div>
     </div>
