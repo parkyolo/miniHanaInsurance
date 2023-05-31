@@ -88,6 +88,7 @@
 .tab > ul > li ul li > button {
     border: none;
 }
+/* 클릭한 하단 버튼 */
 .tab > ul > li ul li.on > button {
     color: #009591; 
     background-color: white; 
@@ -125,7 +126,7 @@
     height: 70px;
     flex:auto; 
     margin-top: 30px;
-    margin-left: 30px; 
+    margin-left: 40px; 
     background-repeat: no-repeat;
 } 
 .tab_content .box .box_description { 
@@ -157,4 +158,31 @@
     color: #555;  
     padding-bottom: 7px;
     list-style: none;  
+}
+
+.tab_content .on .description ul.order_list_number > li:nth-child(1):before {
+    content: '1.';
+}
+.tab_content .on .description ul.order_list_number > li:nth-child(2):before {
+    content: '2.';
+}
+.tab_content .on .description ul.order_list_number > li:nth-child(3):before {
+    content: '3.';
+}
+.tab_content .on .description ul.order_list_number > li:nth-child(4):before {
+    content: '4.';
+}
+
+.tab_content .on .description ul.order_list_dash {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.tab_content .on .description ul.order_list_dash > li::before {
+    content: '-';
+}
+
+
+.tab_content .on .description img  {
+    width: auto;
+    height: auto;
 }
