@@ -167,6 +167,19 @@ ul.tabs li.current {
   padding: 15px;
 }
 
+.document .commonDocument td.download_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.document .commonDocument td a.download {
+  border: #e5e5e5 1px solid;
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #f9f9fb;
+}
+
 .document .selectDocument #selectTable {
   width: 100%;
   table-layout: fixed;
