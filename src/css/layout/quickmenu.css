@@ -1,7 +1,9 @@
 @import url('/src/css/reset.css');
 
 /* 퀵메뉴 */
-.quick_menu {position:absolute; left:50%; top:311px; margin-left:706px; z-index:10000;}
+html {overflow-y: scroll; scroll-behavior: smooth;}
+
+.quick_menu {position:fixed; left:50%; top:311px; margin-left:706px; z-index:10000;}
 .quick_menu dl {text-align: right; display:inline-block; position:absolute; right:0; top:0;}
 .quick_menu dl dt {display:none; text-align:right;}
 .quick_menu dl dt a {position:absolute;top:120px;left:-20px;vertical-align: top; display:inline-block; width:20px; height:114px;}
@@ -32,8 +34,8 @@
 .ico_quick_02 .menu_txt{}
 .ico_quick_02 .menu_txt:before {background-position: -172px -55px;}
 .ico_quick_02 .menu_txt:hover:before {background-position: -224px -82px;}
-
-/* @media all and (max-width:1440px){
+/* 
+@media all and (max-width:1440px){
 	.quick_menu {position:fixed; right:25px; top:313px; margin-left:0; z-index:1000;}
 }
 @media all and (max-width:1024px){
