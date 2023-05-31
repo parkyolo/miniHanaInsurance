@@ -12,16 +12,28 @@
 	<meta property="og:description" content="하나손해보험/에듀카/국내여행보험/여행/수학여행/학교/법인단체/교직원보험">
 
 	<meta property="og:url" content="https://www.hanainsure.co.kr/w/product/travelLeisure/domesticTravelIntro">
+
 	
-	<link rel="shortcut icon" href="./이미지/" type="image/x-icon">
-	<link rel="icon" href="./이미지/" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+
 	<link
 	rel="stylesheet"
 	href="../../css/productPage/travelLeisure/hanainsureCarDriver.css">
-	<script type="text/javascript" src="/config/env?1683720000"></script>
-	<script type="text/javascript" src="/static/resources/common/js/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="/static/resources/common/js/macro.js?1683720000"></script>
-	<script type="text/javascript" src="/static/resources/web/js/accessbility.js?1683720000"></script>
+
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script
+	type="text/javascript"
+	src="../../script/productPage/jquery.js"
+	charset="utf-8"
+  ></script>
+  <script
+	type="text/javascript"
+	src="../../script/productPage/Car.js"
+	charset="utf-8"
+  ></script>
 	
 	<title>하나 국내여행보험(단체형) | 하나손해보험</title>
 	
@@ -34,8 +46,6 @@
     
 
 <div id="container">
-		
-
 
  			
 <div id="visual_box" class="visual_402">
@@ -59,8 +69,9 @@
 		</div>
 	</div>
 </div>
+
 <div id="contents" class="wide_area">
-	<div id="divCotentsInfo">
+	<div id="divContentsInfo">
 		<!-- content_templete -->
 		<div class="base_area">
 			<p class="law_confirm">준법감시인 확인필 제202212-077호(2022.12.28 ~ 2023.12.28)</p>
@@ -69,9 +80,7 @@
 				<div class="feature_402 sec_box_01">
 			<div class="base_area">
 				<div class="section_box100" id="go_p1">
-					<div class="quick_left_01 big_h2 product_icon103">
-						<a href="#go_p1"><h2>상품특징</h2></a>
-					</div>
+				
 					<div class="product_title">
 						<h2>
 							하나 국내여행보험<br>
@@ -100,6 +109,8 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
 				<div class="sec_box_02 base_area">
 			<div class="section_box100" id="go_p2">
 				<div class="quick_left_02 big_h2 product_icon200">
@@ -203,9 +214,7 @@
 	
 				<div class="sec_box_03 base_area">
 			<div class="section_box100" id="go_p3">
-				<div class="quick_left_03 big_h2 product_icon400">
-					<a href="#go_p3"><h2>알아두실사항</h2></a>
-				</div>
+				
 				<div class="product_title">
 					<h2>
 						<strong>알아두실 사항</strong>
@@ -383,13 +392,11 @@
 			</div>
 		</div>
 	</div>
-    <div id="divCalcContainer" style="display:none;">
 
+    <div id="divCalcContainer" style="display:none;">
         <div class="sec_box_01 base_area800">
             <div class="section_box100" id="go_pc1">
-                <div class="quick_left_01 big_h2 product_icon001">
-                    <a href="#go_pc1"><h2>보험료 알아보기</h2></a>
-                </div>
+                
                 <div class="cal_box1">
                     <h3 class="mb8">간단한 정보 입력만으로<br>
                         <font class="fc_blue">보험료</font>와 <font class="fc_blue">보장내용</font>을 확인하실 수 있습니다!
@@ -420,7 +427,50 @@
                     
                     <div class="base_box mt15" >
                     
-                        <div id="divDataContent"></div>
+                        <div id="divDataContent">
+							<table class="base_tb" id="tblBase">
+								<caption>기본테이블</caption>
+								<colgroup>
+									<col width="*">
+									<col width="15%">
+									<col width="15%">
+									<col width="22%">
+									<col width="22%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">가입대상</th>
+										<th scope="col">남자(인원)</th>
+										<th scope="col">여자(인원)</th>
+										<th scope="col">남자 인당 보험료</th>
+										<th scope="col">여자 인당 보험료</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr name="sInputData">
+										<td>
+											<div class="set_box sz_100">
+												<div id="divTarget_0">
+													<input title="" class="wPc100 tac" type="text" value=""  id="sInsGrpAge_0" name="sInsGrpAge" maxlength="4" placeholder="생년 4자리입력">
+												</div>
+											</div>
+										</td>
+										<td>
+											<input title="남자인원" class="wPc100 tar" type="text" value="" id="nManNum_0" name="nManNum" maxlength="3" onkeyup="sDomesticTravelFunc.numberChk(this, 0)">
+										</td>
+										<td>
+											<input title="여자인원" class="wPc100 tar" type="text" value="" id="nWomanNum_0" name="nWomanNum" maxlength="3" onkeyup="sDomesticTravelFunc.numberChk(this,0)">
+										</td>
+										<td>
+											<input title="남자인당보험료" class="wPc100 tar" type="text" value="" id="nManPrem_0" name="nManPrem" disabled="disabled">
+										</td>
+										<td>
+											<input title="여자인당보험료" class="wPc100 tar" type="text" value="" id="nWomanPrem_0" name="nWomanPrem" disabled="disabled">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
                         
                         <div class="flex_bs">
                             <ul class="txt_list_01 icon3 whauto" role="list">
@@ -432,10 +482,61 @@
                                 <button class="btn btn_plus">+ 행추가</button>
                                 <button class="btn btn_minus">- 행삭제</button>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div id="divCalc"></div>
+							
+							
+        
+                    </div> 
+                    <!--
+
+
+					<div class="blue_box3" style="display: none;">
+						<div>
+						  <p class="last_txt">여행기간<span id="totTravelPeriod"><strong></strong>일</span></p>
+						  <p class="last_txt">총 인원수<span id="totPerson"><strong></strong>명</span></p>					
+						<p class="mon_txt">총 보험료<span id="totPrem"><strong></strong>원</span></p>
+						</div>
+						<div class="fl wPc100 tac mt60">
+							<button type="reset" class="btn btn_big_blueover mr6" id="btnReset">초기화</button>
+							<button type="button" class="btn btn_big_redover mr6" id="btnReCalc">재계산</button>
+							<button type="button" class="btn btn_big_joinover" onclick="pop.open('popGetReadydomesticTravel')">보험가입 신청</button>
+						</div> 
+					</div>
+					 
+					  
+					  <div class="firstCalc" style="display: block;">
+						<p class="fl wPc100 blue_box lh42 mt30">간단하게 <strong>총 보험료</strong>를 확인해 보세요.</p>
+						<div class="fl wPc100 tac mt60">
+						  <button type="button" class="btn btn_big_redover" id="btnInsCalc" style="width:170px;">보험료계산하기</button>
+						</div>
+						
+					  </div>
+					</div>
+				-->
+                     <div id="divCalc"> 
+						<div class="Calccc" style="display: none";>
+						              <div class="blue_box3" >
+										<div>
+								
+    <p class="last_txt">여행기간<span id="totTravelPeriod"><strong></strong>일</span></p>
+    <p class="last_txt">총 인원수<span id="totPerson"><strong>  </strong>명</span></p>
+  </div>
+							  <p class="mon_txt">총 보험료<span id="totPrem"><strong></strong>원</span></p>
+
+							</div>
+							<div class="fl wPc100 tac mt60">
+								<button type="reset" class="btn btn_big_blueover mr6" id="btnReset">초기화</button>
+								<button type="button" class="btn btn_big_redover mr6" id="btnReCalc">재계산</button>
+								<button type="button" class="btn btn_big_joinover" onclick="pop.open('popGetReadydomesticTravel')">보험가입 신청</button>
+							</div> 
+							</div>
+						 	<div class="firstCalc" display="block">
+						<p class="fl wPc100 blue_box lh42 mt30">간단하게 <strong>총 보험료</strong>를 확인해 보세요.</p>
+<div class="fl wPc100 tac mt60">
+	<button type="button" class="btn btn_big_redover" id="btnInsCalc" style="width:170px;">보험료계산하기</button>
+</div>
+</div> 
+</div>
+					</div>
                 </div>
             </div>
         </div>		
@@ -478,210 +579,10 @@
     </div>
 </div>
 
-			
-		
-	
-
-<div class="popup_box dimmed" id="popCounselRequest" style="display:none;">
-	<div class="popup_container">
-		<div class="popup_header">
-			<h1>상담신청</h1>
-		</div>
-				<div class="popup_body">
-			<div class="txt_group">
-				<ul class="table_width_list">
-					<li class="wPc40">
-						<div class="title w80"><label for="txtName">이름</label></div>
-						<div class="data calc80">
-							<div class="set_box sz_full">
-								<input type="text" 
-								title="이름 입력" 
-								id="txtName"
-								value="" 
-								placeholder="성명을 입력" />
-							</div>
-						</div>
-					</li>
-					<li class="wPc60">
-						<div class="title w80"><label for="selCellPhone1">휴대폰</label></div>
-						<div class="data calc80">
-							<div class="set_box tel_set no_maxwidth">
-								<select id="selCellPhone1" title="휴대폰번호 첫번째 번호" class="inputFocus">
-	<option value=""  selected>선택</option>
-	<option value="010" >010</option>
-	<option value="011" >011</option>
-	<option value="016" >016</option>
-	<option value="017" >017</option>
-	<option value="018" >018</option>
-	<option value="019" >019</option>
-</select>
-<span class="dash">-</span>
-<input type="text" title="휴대폰번호 두번째 번호" maxLength="4" class="inputNum inputFocus" id="txtCellPhone2" value=""/>
-<span class="dash">-</span>
-<input type="text" title="휴대폰번호 마지막 번호" maxLength="4" class="inputNum inputFocus" id="txtCellPhone3" value=""/>
-							</div>
-						</div>
-					</li>
-				</ul>
-				<p class="base_box_top top10 mb0">개인(신용)정보 수집/이용에 대한 동의</p>
-				<div class="gray_box_new overbox">
-					귀하는 개인(신용)정보의 수집 &middot; 이용에 관한 동의를 거부하실 수 있으며, 개인의 신용도 등을 평가하기 위한 목적 이외에 개인(신용)정보 제공 동의는 철회할 수 있습니다.<br />
-다만, 본 동의는 상담접수 &middot; 신고접수를 위한 필수 적인 사항이므로 동의를 거부하시는 경우 관련 업무수행이 불가능합니다.<br />
-<br />
-[개인(신용)정보 수집 &middot; 이용에 대한 동의]<br />
-<br />
-개인정보의 수집 &middot; 이용 목적 :&nbsp; 상담 &middot; 신청접수 내용&nbsp;&nbsp;확인 &middot; 처리 후 결과 회신<br />
-개인정보의 수집 항목 : 성명, 휴대폰번호, 생년월일, 성별, 이메일<br />
-개인정보의 보유 및 이용기간 : 동의일로부터 제공받은 이용목적을 달성시까지(최대 거래종료 후 5년까지)<br />
-&nbsp;<br />
-* 보험계약모집 수탁자 : 당사 홈페이지 개인정보처리방침 참조 
-				</div>
-				<div class="agree_box_new">
-					<p class="calc240 tar">위 내용에 동의합니다.</p>
-					<div class="agree_chk">
-						<input type="radio" class="agree_chk" name="rdoPrivacy" id="rdoPrivacyY" value="Y"><label for="rdoPrivacyY">동의</label>
-						<input type="radio" class="agree_chk" name="rdoPrivacy" id="rdoPrivacyN" value="N"><label for="rdoPrivacyN">미동의</label>
-					</div>
-				</div>
-			</div>
-		</div>
-				<div class="popup_footer">
-			<div class="btn_box tac mt0 mb0">
-				<button type="button" class="btn modal_off modalCounselReqClose">취소</button>
-				<button type="button" class="btn btn_blue modal_off" id="btnCounselReq">상담신청</button>
-			</div>
-			<a href="javascript:void(0);" class="modal_off modalCounselReqClose"><img src="../../images/prouductImg/travelLeisure/bg_popup_close.png" alt="닫기"></a>
-		</div>
-	</div>
-</div>
-<div class="popup_box dimmed" id="popCounselComplete" style="display:none;">
-	<div class="popup_container">
-		<div class="popup_header">
-			<h1>상담신청</h1>
-		</div>
-
-		<div class="popup_body">
-			<p class="wel_sub tac">
-				상담신청이 접수되었습니다.<br>
-				빠른 시간 내에 고객님에게 연락 드리겠습니다.
-			</p>
-		</div>
-
-		<div class="popup_footer">
-			<div class="btn_box tac mt0 mb0">
-				<button type="button" class="btn btn_blue modalCounselCompeteClose"><span>확인</span></button>
-			</div>
-			<a href="javascript:void(0);" class="modal_off modalCounselCompeteClose"><img src="../../images/prouductImg/travelLeisure/bg_popup_close.png" alt="닫기"></a>
-		</div>
-	</div>
-</div>
-<div class="popup_box dimmed" id="popProductInfo">
-	<div class="popup_container" style="min-width:886px">
-		<div class="popup_header">
-			<h1 style="font-size:20px"></h1>
-		</div>
-				<div class="popup_body" id="popProductInfoBody"> </div>
-		<div class="popup_footer">
-			<a href="javascript:void(0);" class="modal_off modalProductInfo""><img src="../../images/prouductImg/travelLeisure/bg_popup_close.png" alt="닫기"></a>
-		</div>
-	</div>
-</div>
-<div class="popup_box dimmed" id="popTerms">
-	<div class="popup_container w750">
-		<div class="popup_header">
-			<h1 class="popTermsTitle"></h1>
-		</div>
-		<div class="popup_body">
-
-			<div class="popTermsContent"></div>
-		</div>
-		<div class="popup_footer">
-			<a href="javascript:void(0)" class="modal_off btnCloseNextPop" rel="popTerms"><img src="../../images/prouductImg/travelLeisure/bg_popup_close.png" alt="닫기"></a>
-		</div>
-	</div>
-</div>
-	
-
-<div class="alert_box" id="popGetReady" style="display: none;">
-	<div class="alert_container" style="width:450px">
-		<div class="alert_header">
-			<h1 class="warning">알려드립니다</h1>
-		</div>
-		<div class="alert_body">
-			<p>서비스 준비중입니다.<br>고객센터 <b class="f18">1566-3000</b>으로 연락주십시오.</p>
-		</div>
-		<div class="alert_foot ">
-			<a class="alert_btn btnGetReadyCloseW" href="javascript:void(0)">확인</a>
-			<a class="alert_close_btn btnGetReadyCloseW" href="javascript:void(0)">
-				<span class="hidden">닫기</span>
-			</a>
-		</div>
-	</div>
-</div>
-
-
-<div class="alert_box" id="popGetReadyLoan" style="display: none;">
-	<div class="alert_container" style="width:450px">
-		<div class="alert_header">
-			<h1 class="warning">알려드립니다</h1>
-		</div>
-		<div class="alert_body">
-			<p>서비스 준비중입니다.<br>고객센터 <b class="f18">1670-0393</b>으로 연락주십시오.</p>
-		</div>
-		<div class="alert_foot ">
-			<a class="alert_btn btnGetReadyLoanCloseW" href="javascript:void(0)">확인</a>
-			<a class="alert_close_btn btnGetReadyLoanCloseW" href="javascript:void(0)">
-				<span class="hidden">닫기</span>
-			</a>
-		</div>
-	</div>
-</div>
-
-<div class="alert_box" id="popGetReadydomesticTravel" style="display: none;">
-	<div class="alert_container" style="max-width:600px">
-		<div class="alert_header">
-			<h1 class="warning">알려드립니다</h1>
-		</div>
-		<div class="alert_body">
-			<p class="f18 pb25 pt25" style="line-height: 30px;max-height: 350px">
-				<font class="f20 disib mb20" style="background: linear-gradient(to top, #daf0f4 35%, transparent 35%);">하나 국내여행보험(단체) 보험가입 신청</font><br>
-				<a href="https://imet.kr/hanatravel" target="_blank" class="fc_blue f48 fw_6 " style="text-decoration: underline;">imet.kr/hanatravel</a><br>
-				<font class="f16 disb mt10">(5인 이상의 학교, 법인등 단체가입 가능)</font>
-			</p>
-			<p class="pt0 tal" style="line-height: 13px">※ 불편을 드려 죄송합니다. 더 나은 서비스를 위해 준비중이며,<br>
-				<a href="https://imet.kr/hanatravel" target="_blank" class="fc_blue ml20">이투엘보험대리점</a>을 통해 가입 및 계약관리를 받아보실 수 있습니다. </p>
-		</div>
-		<div class="alert_foot ">
-			<a class="alert_btn btnGetReadydomesticTravelCloseW" href="javascript:void(0)">확인</a>
-			<a class="alert_close_btn btnGetReadydomesticTravelCloseW" href="javascript:void(0)">
-				<span class="hidden">닫기</span>
-			</a>
-		</div>
-	</div>
-</div>
-
-
-<div class="alert_box" id="popGetReadyPhoto" style="display: none;">
-	<div class="alert_container" style="width:450px">
-		<div class="alert_header">
-			<h1 class="warning">알려드립니다</h1>
-		</div>
-		<div class="alert_body">
-			<p class="pb5">등록하신 사진은</p>
-			<p class="pt0">정상적으로 접수되어 처리중입니다.</p>
-		</div>
-		<div class="alert_foot ">
-			<a class="alert_btn btnGetReadyPhotoCloseW" href="javascript:void(0)">확인</a>
-			<a class="alert_close_btn btnGetReadyPhotoCloseW" href="javascript:void(0)">
-				<span class="hidden">닫기</span>
-			</a>
-		</div>
-	</div>
-</div>
 </div>
 
 <footer data-include-path="/src/html/layout/footer.html"></footer>
-</script>
+
 <script>
 	window.addEventListener('load', function() {
 		var allElements = document.getElementsByTagName('*');
@@ -699,6 +600,54 @@
 			}
 		});
 	});
+
+	/* document.addEventListener("DOMContentLoaded", function () {
+		// 간편 산출 버튼 클릭 시 해당 내용 표시
+		var btnSimpleCalcView = document.getElementById("btnSimpleCalcView");
+		btnSimpleCalcView.addEventListener("click", function () {
+		  var divCalcContainer = document.getElementById("divCalcContainer");
+		  var contents = document.getElementById("contents");
+		  divCalcContainer.style.display = "block";
+		  contents.style.display = "none";
+		});
+	  
+		// 상품특징 버튼 클릭 시 해당 내용 표시
+		var btnContentView = document.getElementById("btnContentView");
+		btnContentView.addEventListener("click", function () {
+		  var divCalcContainer = document.getElementById("divCalcContainer");
+		  var contents = document.getElementById("contents");
+		  divCalcContainer.style.display = "none";
+		  contents.style.display = "block";
+		});
+	  }); */
+	  document.addEventListener("DOMContentLoaded", function () {
+		// 간편 산출 버튼 클릭 시 해당 내용 표시
+		var btnSimpleCalcView = document.getElementById("btnSimpleCalcView");
+		btnSimpleCalcView.addEventListener("click", function () {
+		  var divCalcContainer = document.getElementById("divCalcContainer");
+		  var contents = document.getElementById("contents");
+		  divCalcContainer.style.display = "block";
+		  contents.style.display = "none";
+		  btnSimpleCalcView.classList.add("on");
+		  btnContentView.classList.remove("on");
+		});
+	  
+		// 상품특징 버튼 클릭 시 해당 내용 표시
+		var btnContentView = document.getElementById("btnContentView");
+		btnContentView.addEventListener("click", function () {
+		  var divCalcContainer = document.getElementById("divCalcContainer");
+		  var contents = document.getElementById("contents");
+		  divCalcContainer.style.display = "none";
+		  contents.style.display = "block";
+		  btnContentView.classList.add("on");
+		  btnSimpleCalcView.classList.remove("on");
+		});
+	  });
+
+	  $(document).ready(function () {
+		$(".cal_btn").datepicker();
+	  });
+	  
 </script>
     </div>
 </div>
