@@ -87,6 +87,26 @@ function checkSexClick() {
     return false;
 }
 
+// Alert Box 생성 함수
+function renderAlertBox(alert_wrap) {
+    alert_wrap.innerHTML = `
+    <div class="alert_box" tabindex="0">
+        <div class="alert_container">
+            <div class="alert_header">
+                <h1 class="warning">알려드립니다</h1>
+            </div><div class="alert_body">
+                <p>생년월일을 입력하십시오.</p>
+            </div>
+            <div class="alert_foot ">
+                <a class="alert_btn alert_btn_ok" href="javascript:void(0)">확인</a>
+                <a class="alert_close_btn" href="javascript:void(0)">
+                    <span class="hidden">닫기</span>
+                </a>
+            </div>
+        </div>
+    </div>`;
+}
+
 function init(){
 
     // 생년월일 입력란을 focusout하면 생년월일이 정확히 입력되었는지 검증 후 알맞는 안내문 출력
@@ -101,21 +121,25 @@ function init(){
         rdoSex[i].addEventListener("click", checkSexClick);
     }
 
-    // '보험료 계산하기' 버튼 클릭 이벤트
-    let alert_box = document.querySelector('.alert_box');
-    let alert_body = document.querySelector('.alert_body');
-
     // '보험료 계산하기' 버튼을 클릭하면 생년월일과 성별이 잘 입력되었는지 확인 후 모달창 띄우기
     document.getElementById('btnCalcInsurance').addEventListener('click', (event) => {
+        // alert_box 생성
+        let alert_wrap = document.querySelector('.alert_wrap');
+        renderAlertBox(alert_wrap);
+
+        // '보험료 계산하기' 버튼 클릭 이벤트
+        let alert_box = document.querySelector('.alert_box');
+        let alert_body = document.querySelector('.alert_body');
+
         // 생년월일과 성별이 잘 입력됨
-        if (birthValid && sexClicked) { 
+        if (birthValid && sexClicked) {
             return true;
         }
 
         // 생년월일이 입력되지 않음
         if (!birthValid) {
             event.preventDefault();
-            alert_box.style.display = "block";
+            alert_box.classList.add('fadeIn');
             if (birthErrMsg.length === 0) alert_body.innerHTML = `<p>생년월일을 입력하십시오.</p>`;
             else alert_body.innerHTML = `<p>${birthErrMsg}</p>`;
         }
@@ -123,25 +147,33 @@ function init(){
         // 성별이 선택되지 않음
         else if (!sexClicked) {
             event.preventDefault();
-            alert_box.style.display = "block";
+            alert_box.classList.add('fadeIn');
             alert_body.innerHTML = `<p>성별을 선택하십시오.</p>`;
         }
-    })
 
-    // 닫는 버튼 클릭시 모달창 끄기
-    document.querySelector('.alert_close_btn').addEventListener('click', () => {
-        alert_box.style.display = "none";
-    })
+        // 닫는 버튼 클릭시 모달창 끄기
+        document.querySelector('.alert_close_btn').addEventListener('click', (event) => {
+            alert_box.classList.add('fadeOut');
+            setTimeout(() => {
+                alert_wrap.innerHTML = "";
+            }, 500);
+        })
 
-    // 확인 버튼 클릭시 모달창 끄고 성별이 선택되지 않았을 시 안내문 출력
-    document.querySelector('.alert_btn_ok').addEventListener('click', () => {
-        alert_box.style.display = "none";
-        if (!birthValid && birthErrMsg.length === 0) {
-            document.getElementById('txtBirthError').innerText = "생년월일을 입력하십시오.";
-            document.getElementById('txtBirthError').style.display = 'block';
-        }
-        if (!sexClicked) document.getElementById('rdosSexError').style.display = "block";
-    })
+        // 확인 버튼 클릭시 모달창 끄고 성별이 선택되지 않았을 시 안내문 출력
+        document.querySelector('.alert_btn_ok').addEventListener('click', () => {
+            alert_box.classList.add('fadeOut');
+            setTimeout(() => {
+                alert_wrap.innerHTML = "";
+            }, 500);
+            if (!birthValid && birthErrMsg.length === 0) {
+                document.getElementById('txtBirthError').innerText = "생년월일을 입력하십시오.";
+                document.getElementById('txtBirthError').style.display = 'block';
+            }
+            if (!sexClicked) document.getElementById('rdosSexError').style.display = "block";
+        })
+    });
+
+
 }
 
 init();

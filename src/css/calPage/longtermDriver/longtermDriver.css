@@ -137,3 +137,13 @@
 .alert_btn{width:100%;float:left;text-align:center;padding:11.5px;background:#e8e8e8;border-top:1px solid #dcdcdc;font-size:16px;border-bottom-right-radius:10px;border-bottom-left-radius:10px;}
 .alert_btn:hover{color:#28b2a5;text-decoration:none}
 .alert_close_btn{position:absolute;width:30px;height:30px;background:url("/src/images/calImg/icon_alertClose.png") no-repeat center center;top:13px;right:15px;z-index:1000;padding:15px;}
+
+.fadeIn {display: block; animation: fadeIn .3s forwards;}
+.fadeOut {animation: fadeOut .3s forwards;}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes fadeOut {
+    100% {opacity: 0;}
+}
