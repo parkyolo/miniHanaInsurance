@@ -61,7 +61,9 @@ ul.tabs li.current {
   color: #fff;
 }
 
-/* tab contents */
+
+
+/* 전체 contents */
 .tab-content {
   display: none;
   padding-top: 15px;
@@ -96,6 +98,9 @@ ul.tabs li.current {
   padding-bottom: 10px;
 }
 
+
+
+/* 보험 처리 */
 .table .table_contents .processing{
   width: 50%;
   margin-top: 8px;
@@ -117,6 +122,9 @@ ul.tabs li.current {
   color: #fff;
 }
 
+
+
+/* 손해 내용 */
 .table .demage_contents {
   display: flex;
   flex-direction: column;
@@ -146,6 +154,9 @@ ul.tabs li.current {
   color: #333;
 }
 
+
+
+/* table 공통 속성 */
 .document .commonDocument table, .document .selectDocument table{
   border-top: 1px solid #009591;
   border-bottom: 1px solid #ddd; 
@@ -167,10 +178,36 @@ ul.tabs li.current {
   padding: 15px;
 }
 
-.document .commonDocument td.download_button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+
+/* 공통 서류 table */
+.document .commonDocument table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.document .commonDocument th,
+.document .commonDocument td {
+  border: 1px solid #e5e5e5;
+  padding: 15px;
+}
+
+.document .commonDocument th:nth-child(1),
+.document .commonDocument td:nth-child(1) {
+  width: 30%;
+  border-left: none;
+}
+
+.document .commonDocument th:nth-child(2),
+.document .commonDocument td:nth-child(2) {
+  width: 50%;
+}
+
+.document .commonDocument th:nth-child(3),
+.document .commonDocument td:nth-child(3) {
+  width: 20%;
+  border-right: none;
 }
 
 .document .commonDocument td a.download {
@@ -180,6 +217,10 @@ ul.tabs li.current {
   background-color: #f9f9fb;
 }
 
+
+
+
+/* 선택한 손해내용 table */
 .document .selectDocument #selectTable {
   width: 100%;
   table-layout: fixed;
