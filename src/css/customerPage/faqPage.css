@@ -262,17 +262,17 @@
     content: "\f106";
     color: #009591;
 }
+
+.accodion_box li.open > div {padding: 25px; border-bottom: 1px solid #555;}
 .accodion_box li > div {
     position: relative;
-    /* display: none; */
     float: left;
     width: 100%;
     font-size: 14px;
-    /* padding: 25px; */
-    border-bottom: 1px solid #555;
     background: #f7f7f7;
-    opacity: 0;
-    height: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
 }
 .accodion_box li > div > p {
     width: calc(100% - 65px);
