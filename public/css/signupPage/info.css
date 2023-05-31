@@ -1,0 +1,144 @@
+@import url("../../../css/common.css");
+@import url("../../../css/reset.css");
+@import url("../../../css/default.css");
+
+input,select{
+    border-radius: 5px;
+    border: 1px solid rgb(212, 212, 212);
+}
+#wrap {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* height: 100%; */
+    min-width: 1024px;
+}
+li{
+    display: flex;
+}
+
+#contents {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 1140px;
+    padding: 40px 20px 100px 20px;
+    min-height: 600px;
+}
+.pilsu{
+    color:red;
+}
+.input-section {
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    border-radius: 5px;
+    flex-direction: column;
+
+}
+.list{
+    width:900px;
+    justify-content: center;
+    float:left;
+    /* border: 1px solid black; */
+}
+input{
+    height: 44px;
+}
+.title{
+    display:flex;
+    width:20%;
+    flex-direction: row;
+    border-bottom: 1px  solid rgb(212, 212, 212);
+    
+    font-weight:bold;
+    align-items: center;
+    padding:20px;
+    /* justify-content: center; */
+    background-color: rgb(228, 228, 228)
+
+}
+.contents-title{
+    text-align:center;
+}
+
+.auth-success
+{
+    align-items: center;
+    color:#009591;
+}
+
+#divInputCellPhoneMCert
+{
+
+    padding-bottom: 10px;
+}
+#phoneNum{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+
+}
+
+#email-input{
+    display:flex;
+    padding:20px;
+    flex-direction: row;
+
+}
+#email-input>div{
+    padding-right: 20px;;
+}
+
+#selJoinMemberEmail2{
+    height: 44px;
+    padding-left:20px;
+}
+.email-selct{
+    display:flex;
+}
+.data{
+    padding:20px;
+    width:80%;
+    border-bottom:1px  solid rgb(212, 212, 212);
+    display:flex;
+    flex-direction: column;
+}
+
+.list-title
+{
+    /* padding:20px; */
+    /* justify-content: end; */
+    text-align: center;
+
+}
+
+#star{
+    color: tomato;
+    padding: 5px;
+}
+#list-title-name{
+    color: #009591;
+    text-align: end;
+    padding: 20px;
+    font-weight: 700;
+}
+
+button{
+
+    color:black;
+    width:100px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid rgb(212, 212, 212);
+    margin:10px;
+}
+
+.btn_box tac
+{
+    padding:20px;
+}
