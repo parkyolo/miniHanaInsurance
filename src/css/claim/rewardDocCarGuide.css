@@ -209,15 +209,20 @@ ul.tabs li.current {
   width: 20%;
   border-right: none;
 }
+.document .commonDocument td {
+  position: relative;
+}
 
 .document .commonDocument td a.download {
+  position: absolute; /* 절대적으로 위치 설정 */
+  left: 50%; /* 왼쪽 여백을 50%로 설정하여 가운데 정렬 */
+  transform: translateX(-50%); /* 왼쪽 여백을 요소의 반만큼 이동하여 가운데 정렬 */
+
   border: #e5e5e5 1px solid;
   display: inline-block;
   padding: 5px 10px;
   background-color: #f9f9fb;
 }
-
-
 
 
 /* 선택한 손해내용 table */
