@@ -3,45 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"  -->
     <meta
-      name="format-detection"
-      content="telephone=no, address=no, email=no"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
     />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
 
-    <meta
-      name="Description"
-      content="하나손해보험/에듀카/운전자보험/다이렉트보험/형사합의/중상해/배상책임/교직원"
-    />
-    <meta property="og:title" content="하나 에코플러스(다이렉트) 자동차보험" />
-    <meta
-      property="og:description"
-      content="하나손해보험/에듀카/운전자보험/다이렉트보험/형사합의/중상해/배상책임/교직원"
-    />
-
-    <meta
-      property="og:url"
-      content="https://www.hanainsure.co.kr/w/product/carDriver/educarCMIntro"
-    />
     <link
       rel="stylesheet"
       href="../../css/productPage/travelLeisure/hanainsureCarDriver.css"
     />
+    <script
+      type="text/javascript"
+      src="../../script/productPage/jquery.js"
+      charset="utf-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../../script/productPage/Car.js"
+      charset="utf-8"
+    ></script>
+    <script
+    type="text/javascript"
+    src="../../script/productPage/owl.carousel.min.js"
+    charset="utf-8"
+  ></script>
+  <link
+  rel="stylesheet"
+  href="../../css/productPage/animate.css"
+/>
+<link
+  rel="stylesheet"
+  href="../../css/productPage/owl.carousel.min.css"
+/>
+    <style>
+   
+      .slide_wrapper{
+        position: relative;
+        width: 960px;
+        margin: 0 auto;
+        height: 300px;
+        overflow: hidden;
+      }
+      .slides{
+        position: absolute;
+        left: 0; top: 0;
+        transition: left 0.5s ease-out;
+      }
+      .slides li:not(:last-child){
+        float: left;
+        margin-right: 30px;
+      }
+      .controls {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .controls span{       
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        margin: 0 10px;
+      }
 
-    <script type="text/javascript" src="/config/env?1684206000"></script>
-    <script
-      type="text/javascript"
-      src="/static/resources/common/js/jquery-1.12.0.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/static/resources/common/js/macro.js?1684206000"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/static/resources/web/js/accessbility.js?1684206000"
-    ></script>
+      .img_btn{
+        display: flex;
+        flex-flow: column;
+      }
+      .img_btn_detail{
+        background: #fff;
+      }
+      .owl-item{
+        width: 311.333px;
+        margin-right: 25px;
+      }
+    </style>
 
     <title>하나 에코플러스(다이렉트) 자동차보험 | 하나손해보험</title>
   </head>
@@ -50,6 +85,10 @@
       <header data-include-path="/src/html/layout/header.html"></header>
 
       <div id="container">
+       <!--  <div id="load">
+          <img src="../../images/prouductImg/car/Moving car.gif" alt="loading">
+
+        </div> -->
         <div id="visual_box" class="visual_icar">
           <div class="base_area">
             <div class="visual_sns">
@@ -77,8 +116,8 @@
                 >다이렉트 보험료 계산</a
               >
               <a
-                href="javascript:void(0);"
-                class="btn btn_icar_green aCounselReq"
+                href="./mailCounsel.html"
+                class="btn btn_icar_green aCounselReq" target="_blank"
                 >상담신청</a
               >
             </div>
@@ -90,11 +129,16 @@
           </div>
           <article id="new_banner" class="new_banner">
             <div class="tac">
-              <h2>맞춤플랜이 궁금해요</h2>
+              <h2>맞춤플랜이 궁금해요!</h2>
+        <!--       <a
+              href="./CarContract.html"
+              class="btn btn_icar_green aCounselReq"
+              >특약 바로가기</a
+            > -->
             </div>
             <ul class="eco_point_box">
-              <li>
-                <section class="top">
+              <li id="one">
+                <section class="top" >
                   <p class="num_title">01</p>
                   <p class="main_title">
                     연간 주행거리를 약정하여<br /><span>미리 할인받는</span>
@@ -127,8 +171,8 @@
                   </dl>
                 </section>
               </li>
-              <li>
-                <section class="top">
+              <li id="two">
+                <section class="top" >
                   <p class="num_title">02</p>
                   <p class="main_title">
                     커넥티드카 서비스로 <span>매월 탄 만큼만</span><br />보험료
@@ -155,8 +199,8 @@
                   </dl>
                 </section>
               </li>
-              <li>
-                <section class="top">
+              <li id="thr">
+                <section class="top" >
                   <p class="num_title">03</p>
                   <p class="main_title">
                     실제 주행거리만큼<br /><span>1년 뒤 할인받는</span>
@@ -186,408 +230,324 @@
             <p>
               ※ 모든 플랜가입대상은 개인이 소유한 승용자동차에 한정<br />※ 모든
               플랜은 책임개시 22.10.15 이후 가입 가능합니다.
+            
             </p>
+            
           </article>
         </div>
 
-        <div id="contents" class="wide_area car">
-          <!-- 할인특약 -->
-          <div
-            class="sec_box_01_04 feature_102"
-            style="max-width: 1920px; margin: 0 auto"
-          >
-            <div class="base_area">
-              <div class="section_box100" id="go_p1">
-                <div class="quick_left_01_04 big_h2 product_icon100_w">
-                  <a href="#go_p1"><h2 class="c_cyan">할인특약</h2></a>
-                </div>
-                <div class="product_title">
-                  <h2 class="fc_fff f18">
-                    <strong class="fc_fff f44"
-                      >다양한 특약할인혜택으로<br />보험료는 더
-                      저렴하게!</strong
-                    ><br />
-                    ※ 일부 특약은 22.10.15 이후 가입 가능합니다.
-                  </h2>
-                </div>
-                <div class="product_feature">
-                  <div class="owl-carousel">
-                    <div class="item">
-                      <a
-                        href="/w/product/carDriver/educarCMmileage/secondCarSale"
-                      >
-                        <div class="img_btn">
-                          <div class="top">상세보기</div>
-                          <img
-                            src="../../images/prouductImg/car/img_product_102_8.png"
-                            alt=""
-                          />
-                        </div>
-                      </a>
-                      <div class="item_board h250">
-                        <h3>세컨카 추가 특약</h3>
-                        <a
-                          href="/w/product/carDriver/educarCMmileage/secondCarSale"
-                          class="sp_link"
-                          >상세보기<span>〉</span></a
-                        >
-                        <ul>
-                          <li>
-                            <font class="fc_red">차량보유대수 2대이상</font>&
-                            <font class="fc_red">연간 5천km이하</font>로
-                            <br />운행을 약정한 경우
-                          </li>
-                          <li>개인용 승용한정 가입 가능</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <a
-                        href="/w/product/carDriver/educarCMmileage/connectedSafeDrivingSale"
-                      >
-                        <div class="img_btn">
-                          <div class="top">상세보기</div>
-                          <img
-                            src="../../images/prouductImg/car/img_product_102_11.png"
-                            alt=""
-                          />
-                        </div>
-                      </a>
-                      <div class="item_board h250">
-                        <h3 style="letter-spacing: -0.12em">
-                          커넥티드카 안전운전할인 특약
-                        </h3>
-                        <a
-                          href="/w/product/carDriver/educarCMmileage/connectedSafeDrivingSale"
-                          class="sp_link"
-                          >상세보기<span>〉</span></a
-                        >
-                        <ul>
-                          <li>
-                            커넥티드카 할인 특약 가입 후, <br /><font
-                              class="fc_red"
-                              >커넥티드카 안전운전점수가 70점 이상인 경우 11%
-                              할인</font
-                            >
-                          </li>
-                          <li>개인용 승용한정 가입가능</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <a
-                        href="/w/product/carDriver/educarCMmileage/connectedCarSale"
-                      >
-                        <div class="img_btn">
-                          <div class="top">상세보기</div>
-                          <img
-                            src="../../images/prouductImg/car/img_product_102_10.png"
-                            alt=""
-                          />
-                        </div>
-                      </a>
-                      <div class="item_board h250">
-                        <h3>커넥티드카 할인 특약</h3>
-                        <a
-                          href="/w/product/carDriver/educarCMmileage/connectedCarSale"
-                          class="sp_link"
-                          >상세보기<span>〉</span></a
-                        >
-                        <ul>
-                          <li>
-                            제조사(현대차·기아) 커넥티드서비스에 가입하시고<br /><font
-                              class="fc_red"
-                              >당사에 정보조회를 동의하신 경우 보험료 3%
-                              할인</font
-                            >
-                          </li>
-                          <li>개인용 승용한정 가입가능</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <a
-                        href="/w/product/carDriver/educarCMmileage/ecoMileageSale"
-                      >
-                        <div class="img_btn">
-                          <div class="top">상세보기</div>
-                          <img
-                            src="../../images/prouductImg/car/img_product_102_9.png"
-                            alt=""
-                          />
-                        </div>
-                      </a>
-                      <div class="item_board h250">
-                        <h3>에코마일 특약(월정산형)</h3>
-                        <a
-                          href="/w/product/carDriver/educarCMmileage/ecoMileageSale"
-                          class="sp_link"
-                          >상세보기<span>〉</span></a
-                        >
-                        <ul>
-                          <li>
-                            커넥티드카 서비스를 이용하며 에코마일 특약 가입 시
-                            <font class="fc_red"
-                              >매월 차량운행 거리에 따라 보험료 납입</font
-                            >
-                          </li>
-                          <li>개인용 승용한정 가입가능</li>
-                        </ul>
-                      </div>
-                    </div>
 
-                    <div class="item">
-                      <a
-                        href="/w/product/carDriver/educarCMmileage/mileageSale"
-                      >
-                        <div class="img_btn">
-                          <div class="top">상세보기</div>
-                          <img
-                            src="../../images/prouductImg/car/img_product_102_1.jpg"
-                            alt=""
-                          />
-                        </div>
-                      </a>
-                      <div class="item_board h250">
-                        <h3>마일리지 주행할인</h3>
-                        <a
-                          href="/w/product/carDriver/educarCMmileage/mileageSale"
-                          class="sp_link"
-                          >상세보기<span>〉</span></a
-                        >
-                        <ul>
-                          <li>
-                            마일리지 특약(선할인) : 1천km 이하 운행 약정 시 44%
-                            미리 할인(개인소유 승용한정)
-                          </li>
-                          <li>
-                            마일리지 특약(후할인) : 연간주행거리 1천km이하 운행
-                            시 45% 할인(개인소유 승용한정)
-                          </li>
-                          <li>책임개시 22.10.15 이후 1천km 구간 신설</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <a
-                        href="/w/product/carDriver/educarCMmileage/tMapSafeDrivingSale"
-                      >
-                        <div class="img_btn">
-                          <div class="top">상세보기</div>
-                          <img
-                            src="../../images/prouductImg/car/img_product_102_7.jpg"
-                            alt=""
-                          />
-                        </div>
-                      </a>
-                      <div class="item_board h250">
-                        <h3>안전운전 할인특약</h3>
-                        <a
-                          href="/w/product/carDriver/educarCMmileage/tMapSafeDrivingSale"
-                          class="sp_link"
-                          >상세보기<span>〉</span></a
-                        >
-                        <p>
-                          평소에 안전 운전을 하시는 고객들에게<br />
-                          <span class="fc_red"
-                            >안전점수 61점이상:4%,<br />80점이상: 13% 추가
-                            할인</span
-                          >
-                          혜택 제공<br />(1인한정/부부,
-                          1인한정(지속형)/부부(지속형) 한정
-                        </p>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <a
-                        href="/w/product/carDriver/educarCMmileage/blackboxSale"
-                      >
-                        <div class="img_btn">
-                          <div class="top">상세보기</div>
-                          <img
-                            src="../../images/prouductImg/car/img_product_102_2.jpg"
-                            alt=""
-                          />
-                        </div>
-                      </a>
-                      <div class="item_board h250">
-                        <h3>블랙박스 할인특약</h3>
-                        <a
-                          href="/w/product/carDriver/educarCMmileage/blackboxSale"
-                          class="sp_link"
-                          >상세보기<span>〉</span></a
-                        >
-                        <p>
-                          차량에 블랙박스가 장착되어 있나요?<br />
-                          블랙박스 사진을 올리면 보험료 추가 할인<br />
-                          <span class="fc_red">(승용자동차 한정)</span><br />
-                          (9년 이하 차량 5%할인 / 10년 이상 차량 1%할인)
-                        </p>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <a
-                        href="/w/product/carDriver/educarCMmileage/childrenSale"
-                      >
-                        <div class="img_btn">
-                          <div class="top">상세보기</div>
-                          <img
-                            src="../../images/prouductImg/car/img_product_102_3.jpg"
-                            alt=""
-                          />
-                        </div>
-                      </a>
-                      <div class="item_board h250">
-                        <h3>자녀 할인특약</h3>
-                        <a
-                          href="/w/product/carDriver/educarCMmileage/childrenSale"
-                          class="sp_link"
-                          >상세보기<span>〉</span></a
-                        >
-                        <p>
-                          만7세 이하의 어린 자녀가 있다면!<br />
-                          자녀할인 특약으로 더 저렴하게 5% 추가할인<br />(지속형특약한정)
-                        </p>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <a
-                        href="/w/product/carDriver/educarCMmileage/advSafDeviceSale"
-                      >
-                        <div class="img_btn">
-                          <div class="top">상세보기</div>
-                          <img
-                            src="../../images/prouductImg/car/img_product_102_4.jpg"
-                            alt=""
-                          />
-                        </div>
-                      </a>
-                      <div class="item_board h250">
-                        <h3>첨단안전장치 할인특약</h3>
-                        <a
-                          href="/w/product/carDriver/educarCMmileage/advSafDeviceSale"
-                          class="sp_link"
-                          >상세보기<span>〉</span></a
-                        >
-                        <p>
-                          전방충돌, 차선이탈방지가 장착된 승용차는 <br />
-                          전방출동방지 장착시(4%), 차선이탈방지 장착시(8%)
-                          할인<br />(승용자동차한정/단, 1000cc미만 자동차 제외)
-                        </p>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <img
-                        src="../../images/prouductImg/car/img_product_102_6.jpg"
-                        alt=""
-                      />
-                      <div class="item_board h250">
-                        <h3>실버운전자 우대 할인특약</h3>
-                        <p>
-                          도로교통교육을 이수한 만 65세 이상의 운전자에게<br />
-                          적용되는 혜택. 가입 보험료에 추가 5% 할인
-                        </p>
-                      </div>
-                    </div>
+        <div
+        class="sec_box_01_04 feature_102"
+        style="max-width: 1920px; margin: 0 auto"
+      >
+        <div class="base_area">
+          <div class="section_box100" id="go_p1">
+            <div class="quick_left_01_04 big_h2 product_icon100_w">
+              
+            </div>
+            <div class="product_title">
+              <h2 class="fc_fff f18">
+                <strong class="fc_fff f44"
+                  >다양한 특약할인혜택으로<br />보험료는 더
+                  저렴하게!</strong
+                ><br />
+                ※ 일부 특약은 22.10.15 이후 가입 가능합니다.
+              </h2>
+            </div>
+            
+      <div class="product_feature">
+        <div class="owl-carousel">
+          <div class="item">
+            <a href="/w/product/carDriver/educarCMmileage/secondCarSale">							
+              <div class="img_btn">
+                <div class="top">상세보기</div>								
+                <img src="../../images/prouductImg/car/img_product_102_8.png" alt="">
+              </div>
+            </a>
+            <div class="item_board h250">
+              <h3>세컨카 추가 특약</h3>								
+               <a href="/w/product/carDriver/educarCMmileage/secondCarSale" class="sp_link">상세보기<span>〉</span></a>
+              <ul>
+                <li><font class="fc_red">차량보유대수 2대이상</font>& <font class="fc_red">연간 5천km이하</font>로 <br/>운행을 약정한 경우</li>
+                <li>개인용 승용한정 가입 가능</li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <a href="/w/product/carDriver/educarCMmileage/connectedSafeDrivingSale">							
+              <div class="img_btn">
+                <div class="top">상세보기</div>								
+                <img src="../../images/prouductImg/car/img_product_102_11.png" alt="">
+              </div>
+            </a>
+            <div class="item_board h250">
+              <h3 style="letter-spacing: -0.12em;">커넥티드카 안전운전할인 특약</h3>								
+               <a href="/w/product/carDriver/educarCMmileage/connectedSafeDrivingSale" class="sp_link">상세보기<span>〉</span></a>
+              <ul>
+                <li>커넥티드카 할인 특약 가입 후, <br><font class="fc_red">커넥티드카 안전운전점수가 70점 이상인 경우 11% 할인</font></li>
+                <li>개인용 승용한정 가입가능</li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <a href="/w/product/carDriver/educarCMmileage/connectedCarSale">							
+              <div class="img_btn">
+                <div class="top">상세보기</div>								
+                <img src="../../images/prouductImg/car/img_product_102_10.png" alt="">
+              </div>
+            </a>
+            <div class="item_board h250">
+              <h3>커넥티드카 할인 특약</h3>								
+               <a href="/w/product/carDriver/educarCMmileage/connectedCarSale" class="sp_link">상세보기<span>〉</span></a>
+              <ul>
+                <li>제조사(현대차·기아) 커넥티드서비스에 가입하시고<br><font class="fc_red">당사에 정보조회를 동의하신 경우 보험료 3% 할인</font> </li>
+                <li>개인용 승용한정 가입가능</li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <a href="/w/product/carDriver/educarCMmileage/ecoMileageSale">							
+              <div class="img_btn">
+                <div class="top">상세보기</div>								
+                <img src="../../images/prouductImg/car/img_product_102_9.png" alt="">
+              </div>
+            </a>
+            <div class="item_board h250">
+              <h3>에코마일 특약(월정산형)</h3>								
+              <a href="/w/product/carDriver/educarCMmileage/ecoMileageSale" class="sp_link">상세보기<span>〉</span></a>
+              <ul>
+                <li>커넥티드카 서비스를 이용하며 에코마일 특약 가입 시 <font class="fc_red">매월 차량운행 거리에 따라 보험료 납입</font></li>
+                <li>개인용 승용한정 가입가능</li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          
+          <div class="item">
+            <a href="/w/product/carDriver/educarCMmileage/mileageSale">							
+              <div class="img_btn">
+                <div class="top">상세보기</div>								
+                <img src="../../images/prouductImg/car/img_product_102_1.jpg" alt="">
+              </div>
+            </a>
+            <div class="item_board h250">
+              <h3>마일리지 주행할인</h3>								
+               <a href="/w/product/carDriver/educarCMmileage/mileageSale" class="sp_link">상세보기<span>〉</span></a>
+              <ul>
+                <li>마일리지 특약(선할인) : 1천km 이하 운행 약정 시 44% 미리 할인(개인소유 승용한정)</li>
+                <li>마일리지 특약(후할인) : 연간주행거리 1천km이하 운행 시 45% 할인(개인소유 승용한정)</li>
+                <li>책임개시 22.10.15 이후 1천km 구간 신설</li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <a href="/w/product/carDriver/educarCMmileage/tMapSafeDrivingSale">							
+              <div class="img_btn">
+                <div class="top">상세보기</div>								
+                <img src="../../images/prouductImg/car/img_product_102_7.jpg" alt="">
+              </div>
+            </a>												
+            <div class="item_board h250">
+              <h3>안전운전 할인특약</h3>
+              <a href="/w/product/carDriver/educarCMmileage/tMapSafeDrivingSale" class="sp_link">상세보기<span>〉</span></a>								
+              <p>
+                평소에 안전 운전을 하시는 고객들에게<br>
+                <span class="fc_red">안전점수 61점이상:4%,<br>80점이상: 13%  추가 할인</span> 혜택 제공<br>(1인한정/부부, 1인한정(지속형)/부부(지속형) 한정
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="/w/product/carDriver/educarCMmileage/blackboxSale">							
+              <div class="img_btn">
+                <div class="top">상세보기</div>								
+                <img src="../../images/prouductImg/car/img_product_102_2.jpg" alt="">
+              </div>
+            </a>												
+            <div class="item_board h250">
+              <h3>블랙박스 할인특약</h3>
+              <a href="/w/product/carDriver/educarCMmileage/blackboxSale" class="sp_link">상세보기<span>〉</span></a>								
+              <p>
+                차량에 블랙박스가 장착되어 있나요?<br/>
+                블랙박스 사진을 올리면 보험료 추가 할인<br/>
+                <span class="fc_red">(승용자동차 한정)</span><br/>
+                (9년 이하 차량 5%할인 / 10년 이상 차량 1%할인)
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="/w/product/carDriver/educarCMmileage/childrenSale">							
+              <div class="img_btn">
+                <div class="top">상세보기</div>								
+                <img src="../../images/prouductImg/car/img_product_102_3.jpg" alt="">
+              </div>
+            </a>
+            <div class="item_board h250">
+              <h3>자녀 할인특약</h3>
+              <a href="/w/product/carDriver/educarCMmileage/childrenSale" class="sp_link">상세보기<span>〉</span></a>
+              <p>
+                만7세 이하의 어린 자녀가 있다면!<br>
+                자녀할인 특약으로 더 저렴하게 5% 추가할인<br>(지속형특약한정)
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="/w/product/carDriver/educarCMmileage/advSafDeviceSale">							
+              <div class="img_btn">
+                <div class="top">상세보기</div>								
+                <img src="../../images/prouductImg/car/img_product_102_4.jpg" alt="">
+              </div>
+            </a>												
+            <div class="item_board h250">
+              <h3>첨단안전장치 할인특약</h3>
+              <a href="/w/product/carDriver/educarCMmileage/advSafDeviceSale" class="sp_link">상세보기<span>〉</span></a>
+              <p>
+                전방충돌, 차선이탈방지가 장착된 승용차는 <br>
+                전방출동방지 장착시(4%), 차선이탈방지 장착시(8%) 할인<br>(승용자동차한정/단, 1000cc미만 자동차 제외)
+              </p>
+            </div>
+          </div>
+                      <div class="item">
+            <img src="../../images/prouductImg/car/img_product_102_6.jpg" alt="">					
+            <div class="item_board h250">
+              <h3>실버운전자 우대 할인특약</h3>
+              <p>
+                도로교통교육을 이수한 만 65세 이상의 운전자에게<br>
+                적용되는 혜택. 가입 보험료에 추가 5% 할인
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+            <!-- <div class="slide_wrapper">
+              <ul class="slides">
+                <li class="slides_img">
+                  <div class="item">
+                    <a
+                    href="/w/product/carDriver/educarCMmileage/secondCarSale"
+                  >
+                  <div class="img_btn">
+                    
+                  <img src="../../images/prouductImg/car/img_product_102_8.png" width = "300px" alt="">
+                  
+                  </div>
+                </a>
+                  <div class="img_btn_detail">
+                    <h3>세컨카 추가 특약</h3>
+                  
+
                   </div>
                 </div>
-              </div>
+              </li>
+                <li><img src="../../images/prouductImg/car/img_product_102_11.png"   width = "300px" alt=""></li>
+                <li><img src="../../images/prouductImg/car/img_product_102_10.png"  width = "300px" alt=""></li>
+                <li><img src="../../images/prouductImg/car/img_product_102_9.png"  width = "300px" alt=""></li>
+                <li><img src="../../images/prouductImg/car/img_product_102_1.jpg"  width = "300px" alt=""></li>
+                <li><img src="../../images/prouductImg/car/img_product_102_7.jpg"  width = "300px" alt=""></li>
+                <li><img src="../../images/prouductImg/car/img_product_102_2.jpg"  width = "300px" alt=""></li>
+                <li><img src="../../images/prouductImg/car/img_product_102_3.jpg" width = "300px" alt=""></li>
+                <li><img src="../../images/prouductImg/car/img_product_102_4.jpg" width = "300px" alt=""></li>
+                <li><img src="../../images/prouductImg/car/img_product_102_6.jpg" width = "300px" alt=""></li>
+              </ul>
+              
             </div>
-          </div>
+            <p class="controls">
+                <span class="prev">prev</span>
+                <span class="next">next</span>
+              </p>-->
+      <div         
+        class="sec_box_02_04 feature_102"
+        style="max-width: 1920px; margin: 0 auto"
+      >
+        <div class="base_area">
+          <div class="section_box100" id="go_p2">
 
-          <div
-            class="sec_box_02_04 feature_102"
-            style="max-width: 1920px; margin: 0 auto"
-          >
-            <div class="base_area">
-              <div class="section_box100" id="go_p2">
-                <div class="quick_left_02_04 big_h2 product_icon200_w">
-                  <a href="#go_p2"><h2 class="c_cyan">기타특약</h2></a>
-                </div>
-                <div class="etc_list">
-                  <ul>
-                    <li>
-                      <dl>
-                        <dt>형사합의 지원금</dt>
-                        <dd>
-                          피보험자동차를 소유, 사용, 관리하는 동안에 생긴
-                          피보험자동차의 사고로 인하여 타인을 사망케 하거나
-                          다치게 하여 형사합의를 한 경우 약관에 따라 보험금을
-                          지급합니다.
-                        </dd>
-                      </dl>
-                      <dl>
-                        <dt>방어비용지원 특별약관</dt>
-                        <dd>
-                          피보험자동차를 소유, 사용, 관리하는 동안에 생긴
-                          피보험자동차의 사고로 인하여 피보험자가 구속 또는
-                          공소제기 (기소, 단 약식기소 제외)된 경우 약관에 따라
-                          보험금을 지급합니다.
-                        </dd>
-                      </dl>
-                      <dl>
-                        <dt>주말교통사고 위로금 특별약관</dt>
-                        <dd>
-                          피보험자동차를 소유, 사용, 관리하는 동안에 주말 및
-                          휴일에 발생한 피보험자동차의 사고로 인하여 피보험자가
-                          사망 또는 후유장애를 입어 자기신체사고 보험금이 지급된
-                          경우 약관에 따라 보험금을 지급합니다.
-                        </dd>
-                      </dl>
-                      <dl>
-                        <dt>대리운전위험담보 특별약관</dt>
-                        <dd>
-                          피보험자가 대리운전업자에게 일시적으로 운전대행을
-                          의뢰한 경우 대리운전자가 피보험자동차를 운전하던 중
-                          발생한 사고에 대하여 보상합니다.
-                        </dd>
-                      </dl>
-                    </li>
-                    <li>
-                      <dl>
-                        <dt>상해플러스 특별약관</dt>
-                        <dd>
-                          치아 및 성형비용을 포함한 고보장 가족상품
-                          (자기신체사고, '자동차상해 특약'에 가입 한 경우에
-                          한하여 가입가능)
-                        </dd>
-                      </dl>
-                      <dl>
-                        <dt>벌금비용담보 특별약관</dt>
-                        <dd>
-                          피보험자동차를 소유, 사용, 관리하는 동안에 생긴 피보험
-                          자동차의 사고로 인하여 확정 판결에 의하여 피보험자가
-                          부담하여야 하는 경우 약관에 따라 보험금을 지급합니다.
-                        </dd>
-                      </dl>
-                      <dl>
-                        <dt>렌트자동차 대여비용담보 특별약관</dt>
-                        <dd>
-                          자기차량손해에 의해 보험금이 지급된 경우로
-                          피보험자동차를 사용할 수 없게 된 기간 동안
-                          피보험자동차와 동급의 렌트자동차 중 최저요금의
-                          렌트자동차를 1사고에 대하여 1회에 한해 제공합니다.
-                        </dd>
-                      </dl>
-                      <dl>
-                        <dt>전기자동차 배터리 신가보상 특약</dt>
-                        <dd>
-                          전기자동차 배터리가 파손되어 새 배터리로 교체하는 경우
-                          감가상각 차액 보상
-                        </dd>
-                      </dl>
-                      <!-- <dl>
-								<dt>승용차요일제 특별약관</dt>
-								<dd>
-									운행정보 확인장치(OBD)를 장착한 개인소유 승용차로서 비운행 약정요일에 운행하지 않을 것을 약정하고 보험기간이 3개월 이상 남은 경우에 한하여 가입할 수 있습니다.
-								</dd>
-							</dl> -->
-                    </li>
-                  </ul>
-                </div>
-              </div>
+            <div class="etc_list">
+              <ul>
+                <li>
+                  <dl>
+                    <dt>형사합의 지원금</dt>
+                    <dd>
+                      피보험자동차를 소유, 사용, 관리하는 동안에 생긴
+                      피보험자동차의 사고로 인하여 타인을 사망케 하거나
+                      다치게 하여 형사합의를 한 경우 약관에 따라 보험금을
+                      지급합니다.
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>방어비용지원 특별약관</dt>
+                    <dd>
+                      피보험자동차를 소유, 사용, 관리하는 동안에 생긴
+                      피보험자동차의 사고로 인하여 피보험자가 구속 또는
+                      공소제기 (기소, 단 약식기소 제외)된 경우 약관에 따라
+                      보험금을 지급합니다.
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>주말교통사고 위로금 특별약관</dt>
+                    <dd>
+                      피보험자동차를 소유, 사용, 관리하는 동안에 주말 및
+                      휴일에 발생한 피보험자동차의 사고로 인하여 피보험자가
+                      사망 또는 후유장애를 입어 자기신체사고 보험금이 지급된
+                      경우 약관에 따라 보험금을 지급합니다.
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>대리운전위험담보 특별약관</dt>
+                    <dd>
+                      피보험자가 대리운전업자에게 일시적으로 운전대행을
+                      의뢰한 경우 대리운전자가 피보험자동차를 운전하던 중
+                      발생한 사고에 대하여 보상합니다.
+                    </dd>
+                  </dl>
+                </li>
+                <li>
+                  <dl>
+                    <dt>상해플러스 특별약관</dt>
+                    <dd>
+                      치아 및 성형비용을 포함한 고보장 가족상품
+                      (자기신체사고, '자동차상해 특약'에 가입 한 경우에
+                      한하여 가입가능)
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>벌금비용담보 특별약관</dt>
+                    <dd>
+                      피보험자동차를 소유, 사용, 관리하는 동안에 생긴 피보험
+                      자동차의 사고로 인하여 확정 판결에 의하여 피보험자가
+                      부담하여야 하는 경우 약관에 따라 보험금을 지급합니다.
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>렌트자동차 대여비용담보 특별약관</dt>
+                    <dd>
+                      자기차량손해에 의해 보험금이 지급된 경우로
+                      피보험자동차를 사용할 수 없게 된 기간 동안
+                      피보험자동차와 동급의 렌트자동차 중 최저요금의
+                      렌트자동차를 1사고에 대하여 1회에 한해 제공합니다.
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>전기자동차 배터리 신가보상 특약</dt>
+                    <dd>
+                      전기자동차 배터리가 파손되어 새 배터리로 교체하는 경우
+                      감가상각 차액 보상
+                    </dd>
+                  </dl>
+                </li>
+              </ul>
             </div>
           </div>
+        </div> 
+      </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+        
           <div class="sec_box_03_04 feature_102_sub">
             <div class="base_area">
               <div class="section_box100" id="go_p3">
@@ -653,18 +613,18 @@
                 <div class="tab1_group product_tab">
                   <ul class="tab_header tab2 active">
                     <li>
-                      <a href="javascript:void(0);" class="on"
+                      <a href="javascript:void(0);" class="on" id="link1"
                         >타인의 피해를 보상하는 담보</a
                       >
                     </li>
                     <li>
-                      <a href="javascript:void(0);"
+                      <a href="javascript:void(0);" id="link2"
                         >나의 피해를 보상하는 담보</a
                       >
                     </li>
                   </ul>
                   <div class="tab_content mb100">
-                    <div class="tab_cont open">
+                    <div class="tab_cont open" id="link1_content">
                       <div class="sure_list cf_all bg1">
                         <h3>대인배상Ⅰ(의무보험)</h3>
                         <div class="text_cont_box mt0">
@@ -713,7 +673,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="tab_cont">
+                    <div class="tab_cont" id="link2_content">
                       <div class="sure_list cf_all bg4">
                         <h3>자기신체사고</h3>
                         <div class="text_cont_box mt0">
@@ -779,19 +739,19 @@
                     </div>
                     <div class="btn_box mt20" id="divFileAttachDiv">
                       <a
-                        href="/download/prd?instype=71502&amp;type=agree&amp;spctype=0"
+                      href="https://www.hanainsure.co.kr/download/prd?instype=71502&type=agree&spctype=0"
                         class="btn btn_icon btn_arrow product_btn"
                         target="_blank"
                         >인터넷개인용약관</a
                       >
                       <a
-                        href="/download/prd?instype=72502&amp;type=agree&amp;spctype=0"
+                      href="https://www.hanainsure.co.kr/download/prd?instype=72502&type=agree&spctype=0"
                         class="btn btn_icon btn_arrow product_btn"
                         target="_blank"
                         >인터넷업무용약관</a
                       >
                       <a
-                        href="/download?a=acrobat"
+                      href="https://www.hanainsure.co.kr/download?a=acrobat"
                         target="_blank"
                         class="btn btn_icon btn_arrow acrobat_btn fr"
                         >아크로뱃 다운로드</a
@@ -804,9 +764,7 @@
           </div>
           <div class="sec_box_05_04 feature_102_sub base_area">
             <div class="section_box100" id="go_p5">
-              <div class="quick_left_05_04 big_h2 product_icon400">
-                <a href="#go_p5"><h2>알아두실사항</h2></a>
-              </div>
+              
               <div class="product_title">
                 <h2 class="f24">
                   하나 에코플러스(다이렉트) 자동차보험<br />
@@ -1083,6 +1041,10 @@
           }
         });
       });
+
+      /* $(window).load(function(){
+        $('#load').hide();
+      }); */
     </script>
   </body>
 </html>
