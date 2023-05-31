@@ -13,7 +13,7 @@ app.use(express.json());
 
 // 루트 엔드포인트 처리
 app.get('/', (req, res) => {
-  res.sendFile(path.join(publicPath, 'html/signupPage/signup.html'));
+  res.sendFile(path.join(publicPath, 'html/mainPage/mainPage.html'));
 });
   
 app.get('/info', (req, res) => {
@@ -51,8 +51,8 @@ function generateRandomCode(n) {
 function onLoggin(number,inputCode) 
   {
     const access_key=process.env.NEXT_PUBLIC_ACCESS_KEY;
-const secrete_key=process.env.NEXT_PUBLIC_SECRETE_KEY;
-const service_id=process.env.NEXT_PUBLIC_SERVICE_ID;
+    const secrete_key=process.env.NEXT_PUBLIC_SECRETE_KEY;
+    const service_id=process.env.NEXT_PUBLIC_SERVICE_ID;
     const phoneNum=number;
     const code=inputCode;
 
