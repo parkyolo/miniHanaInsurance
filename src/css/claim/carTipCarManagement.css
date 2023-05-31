@@ -30,7 +30,7 @@
 
   /* 최상위 탭 */
 .tab {
-    padding: 47px 0 70px;
+    padding: 47px 0 50px;
 }
 .tab > ul {
     display: flex; 
@@ -44,7 +44,7 @@
     border: 0.2px solid gray; 
     border-radius: 8px 0 0 0; 
     background: none; 
-    font-size: 13px; 
+    font-size: 15px; 
     color: black; 
     background-color: #F4F4F4; 
     color:#555555; 
@@ -72,10 +72,10 @@
     list-style: none;
 }
 .tab > ul > li ul button {
-    padding: 2px 8px; 
+    padding: 2px 15px; 
     position: relative; 
     background: none; 
-    font-size: 12px; 
+    font-size: 15px; 
     color: white;
 }
 .tab > ul > li ul .on button:after {
@@ -96,8 +96,8 @@
 }
 
 .tab_content {
-    display: none; 
-    color: #000;
+    display: none;
+    color:#555555; 
 }
 .tab_content.on {
     display: block;
@@ -115,6 +115,7 @@
     height: 130px; 
     background-color: #f9f9f9; 
     position:relative;
+    margin-top: 50px;
 }
 .tab_content .box .icon {
     position:absolute; 
@@ -130,21 +131,30 @@
 .tab_content .box .box_description { 
     width:80%; 
     height: 100%;
-    font-size: 15px; 
+    font-size: 14px; 
     position:absolute; 
     left:15%;
+    color: #555; 
+    display: flex;
+    align-items: center;
 }
 
-/* 설명 */
+/* box 하단 설명 */
 .tab_content .on .description h2{ 
     font-size: 24px;
     margin-top: 50px;
     color: #555;
     margin-bottom: 10px;
 }
+.tab_content .on .description > p {
+    padding-bottom: 7px;
+}
+.tab_content .on .description ul > li::before { 
+    content: "•";
+    margin-right: 5px;
+}
 .tab_content .on .description ul > li { 
-    list-style-type: disc;  
-    margin-bottom: 4px;
     color: #555;  
-    padding-bottom: 3px;
+    padding-bottom: 7px;
+    list-style: none;  
 }
