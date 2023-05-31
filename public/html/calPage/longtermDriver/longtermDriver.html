@@ -42,9 +42,9 @@
                             </dt>
                             <dd>
                                 <div class="set_box sz_full">
-                                    <input type="text" id="txtBirth" class="inputNum kwidget kwidget-btnCalcInsurance kwidget-btnCalcInurance-pri" placeholder="생년월일 6자리입력(예:900101)" maxlength="6">
+                                    <input type="text" id="txtBirth" placeholder="생년월일 6자리입력(예:900101)" maxlength="6" onKeyup="this.value=this.value.replace(/[^-0-9]/g,'');">
                                 </div>
-                                <p id="txtBirthError" class="msg_err fix_err"></p>
+                                <p id="txtBirthError" class="msg_err fix_err">생년월일을 입력하십시오.</p>
                                 <ul class="mbullet1 fl wPc100 mt15">
                                     <li class="lh24">
                                         19세 ~ 70세까지 가입 가능합니다
@@ -55,18 +55,19 @@
                                 <label for="rdoSex01">성별</label>
                             </dt>
                             <dd>
-                                <div class="set_box tel_set no_maxwidth reg_set">
-                                    <input type="radio" name="rdosSex" id="rdoSex01" class="btn_char_men kwidget kwidget-btnCalcInsurance kwidget-btnCalcInsurance-pri" value="01">
+                                <div class="set_box tel_set no_maxwidth reg_set radioGroup">
+                                    <input type="radio" name="rdosSex" id="rdoSex01" class="btn_char_men" value="01">
                                     <label class="mt0" for="rdoSex01">남성</label>
-                                    <input type="radio" name="rdosSex" id="rdoSex02" class="btn_char_women kwidget kwidget-btnCalcInsurance" value="02">
+                                    <input type="radio" name="rdosSex" id="rdoSex02" class="btn_char_women" value="02">
                                     <label class="mt0" for="rdoSex02">여성</label>
                                 </div>
+                                <p id="rdosSexError" class="msg_err fix_err">성별을 선택하십시오.</p>
                             </dd>
                             <dt>영업용자동차를 운전하시나요?</dt>
                             <dd>
                                 <div id="divJobDriverWrapper" class="set_box tel_set no_maxwidth reg_set">
                                 </div>
-                                <p id="rdoJobDriverError" class="msg_err fix_err">영업용 자동차를 운전하는 경우 보험가입이 어렵습니다.</p>
+                                <p id="rdoJobDriverError" class="msg_err">영업용 자동차를 운전하는 경우 보험가입이 어렵습니다.</p>
                                 <ul class="mbullet1 fl wPc100 mt15">
                                     <li class="lh24">일부 가입조건의 경우 가입이 제한될 수 있습니다.</li>
                                 </ul>
@@ -85,5 +86,7 @@
             </a>
         </div>
     </div>
+    <div class="alert_wrap"></div>
+    <script src="/src/script/longtermDriver/longtermDriver.js" charset="utf-8"></script>
 </body>
 </html>

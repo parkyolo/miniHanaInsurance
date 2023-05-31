@@ -1,8 +1,4 @@
-@import url('/public/css/reset.css');
-@import url('/public/css/common.css');
-@import url('/public/css/default.css');
-
-
+@import url('../../../css/reset.css');
 
 #header {
     width: 100%;
