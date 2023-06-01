@@ -4,9 +4,19 @@
 @import url("../reset.css");
 
 #contents{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 1140px;
+  padding: 40px 20px 100px 20px;
+  min-height: 600px;
+}
+/* #contents{
   width:75%;
   margin: 0 auto;
-}
+} */
 
 #contents h3 {
   font-size: 24px;
