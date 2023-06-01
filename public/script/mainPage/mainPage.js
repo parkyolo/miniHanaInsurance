@@ -117,6 +117,18 @@ function init() {
     }
   }
 
+  window.addEventListener(`resize`, () => {
+    if (window.innerWidth < 1200) {
+      document.querySelector('#tab-1 .right .insurance_title').innerHTML = "적게 탈수록 할인받고<br>환경도 생각하는";
+      document.querySelector('#tab-2 .right .insurance_title').innerHTML = "내 건강등급에 따른<br>Grade별 보험료 적용";
+      document.querySelector('#tab-3 .right .insurance_title').innerHTML = "우리 아이를 위한<br>현명한 선택";
+    } else {
+      document.querySelector('#tab-1 .right .insurance_title').innerHTML = "적게 탈수록 할인받고 환경도 생각하는";
+      document.querySelector('#tab-2 .right .insurance_title').innerHTML = "내 건강등급에 따른 Grade별 보험료 적용";
+      document.querySelector('#tab-3 .right .insurance_title').innerHTML = "우리 아이를 위한 현명한 선택";
+    }
+  })
+
   updateCarouselDisplay();
   startCarousel();
   renderArrowBtns();
