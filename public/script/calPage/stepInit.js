@@ -1,25 +1,6 @@
 const plnPrice = [8000, 11000, 16000];
 let priceIdx = 1;
 
-// function startCountdown(minutes) {
-//     let seconds = minutes * 60;
-
-//     const countdown = setInterval(() => {
-//         const minutesRemaining = Math.floor(seconds / 60);
-//         const secondsRemaining = seconds % 60;
-
-//         const logonTimer = document.getElementById('spnLogonTimer');
-//         logonTimer.innerHTML = `${minutesRemaining}분${secondsRemaining < 10 ? '0' : ''}${secondsRemaining}초`;
-
-//         if (seconds === 0) {
-//             clearInterval(countdown);
-//             // 로그인 유효 시간 초과 안내창
-//         } else {
-//             seconds--;
-//         }
-//     }, 1000);
-// }
-
 // 플랜 선택에 따라 select_area의 위치를 변경하는 함수
 function moveSelectArea() {
     const rdoPlnCod = document.querySelectorAll('input[name="rdoPlnCod"]');
