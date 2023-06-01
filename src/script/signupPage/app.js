@@ -70,8 +70,8 @@ app.use(
     console.log("서버로 넘어온 넘버 : ",number);
    
       const result = onLoggin(number,inputCode);
-      console.log(result);
-      // res.send(result.toString());
+      // console.log(result);
+      res.send(result.toString());
       
     
 });
