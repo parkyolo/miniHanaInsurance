@@ -2,7 +2,7 @@
 @import url("../../../css/reset.css");
 @import url("../../../css/default.css");
 
-input,select{
+input{
     border-radius: 5px;
     border: 1px solid rgb(212, 212, 212);
 }
@@ -95,8 +95,7 @@ input{
 }
 
 #selJoinMemberEmail2{
-    height: 44px;
-    padding-left:20px;
+    height: 34px;
 }
 .email-selct{
     display:flex;
@@ -141,4 +140,12 @@ button{
 .btn_box tac
 {
     padding:20px;
+}
+
+select{
+    border-radius: 5px;
+    border: 1px solid rgb(212, 212, 212);
+    width:80px;
+    height: 34px;
+    text-align: center;
 }

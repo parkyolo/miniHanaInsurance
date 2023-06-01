@@ -4,34 +4,88 @@ const path = require('path');
 const port = 3001;
 const axios = require('axios');
 const CryptoJS = require('crypto-js');
+const Sentry = require('@sentry/node');
 require("dotenv").config();
-
+const route = express.Router();
 const publicPath = path.join(__dirname, '../../../public');
+const AxiosError=require('axios');
+
+
+Sentry.init({
+  dsn: "https://425afebcea854774b19e9845cb17ff59@o4505282355331072.ingest.sentry.io/4505282362081280",
+  integrations: [
+    // enable HTTP calls tracing
+    // new Sentry.Integrations.Http({ tracing: true }),
+    // enable Express.js middleware tracing
+    new Sentry.Integrations.Express({ app }),
+    // Automatically instrument Node.js libraries and frameworks
+    // ...Sentry.autoDiscoverNodePerformanceMonitoringIntegrations(),
+  ],
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 0.2,
+});
+
+app.use(Sentry.Handlers.requestHandler());
 
 app.use(express.static(publicPath));
 app.use(express.json());
 
-// 루트 엔드포인트 처리
 app.get('/', (req, res) => {
   res.sendFile(path.join(publicPath, 'html/mainPage/mainPage.html'));
 });
   
-app.get('/info', (req, res) => {
-    res.sendFile(path.join(publicPath, 'html/signupPage/info.html'));
-  });
+app.use(
+  Sentry.Handlers.errorHandler({
+    shouldHandleError(error) {
+      // Capture all 404 and 500 errors
+      if (error.status === 401 || error.status === 500) {
+        return true;
+      }
+      return false;
+    },
+  })
+);
+
+// RequestHandler creates a separate execution context, so that all
+// transactions/spans/breadcrumbs are isolated across requests
+// app.use(Sentry.Handlers.requestHandler(
+//   {
+//     request:true,
+//     severName:true,
+  
+//   }
+
+// ));
+// TracingHandler creates a trace for every incoming request
+// app.use(Sentry.Handlers.tracingHandler());
+// 루트 엔드포인트 처리
 
 
   app.post('/increment', (req, res) => {
     const number = req.body.number;
     const inputCode=req.body.code;
     console.log("서버로 넘어온 넘버 : ",number);
-    if (isNaN(number)) {
-        res.status(400).send('Invalid number');
-    } else {
+   
       const result = onLoggin(number,inputCode);
+      // console.log(result);
       res.send(result.toString());
-    }
+      
+    
 });
+
+// axios.interceptors.response.use(
+//   (response: AxiosResponse) => response,
+//   (error: AxiosError) => {
+//     Sentry.captureException(error);
+//     return Promise.reject(error);
+//   },
+// );
+
+
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
@@ -109,14 +163,36 @@ function onLoggin(number,inputCode)
                  content:'하나손해보험 인증번호는 '+ code +'입니다.'
                 },],
         },
-    }).then(res => {
-        console.log(res.data);
+
+      }).then(res => {
+      
+        // console.log(res.data);
     })
         .catch(err => {
-            console.log(err);
+          // const a=JSON.parse(err.data);
+          // console.log("에러코드는"+a.code);
+  
+            console.log(err.response.status);
+            return err.response.status;
         })
-    return finErrCode;
+
+
   
-  
-  
+        // .then(async (response: AxiosResponse) => {
+        //   resolve(response.data);
+        // })
+        // .catch(async (error: AxiosError) => {
+        //   Sentry.captureException(error);
+        //   reject(error);
+        // });
   }
+// The error handler must be before any other error middleware and after all controllers
+app.use(Sentry.Handlers.errorHandler());
+
+// Optional fallthrough error handler
+// app.use(function onError(err, req, res, next) {
+  // The error id is attached to `res.sentry` to be returned
+  // and optionally displayed to the user for support.
+//   res.statusCode = 500;
+//   res.end(res.sentry + "\n");
+// });
