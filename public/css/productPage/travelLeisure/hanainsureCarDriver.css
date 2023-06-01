@@ -1,7 +1,8 @@
 @charset "utf-8";
-@import url("/public/css/common.css");
-@import url("/public/css/reset.css");
-@import url("/public/css/default.css");
+@import url("../../../css/common.css");
+@import url("../../../css/reset.css");
+@import url("../../../css/default.css");
+
 
 #visual_box[class^="visual_1"],
 #visual_box[class^="visual_2"],
@@ -13,7 +14,7 @@
 }
 #visual_box.visual_icar {
   height: 1280px;
-  background: url("/public/images/prouductImg/car/bg_visual_car.jpg") no-repeat
+  background: url("../../../images/prouductImg/car/bg_visual_car.jpg") no-repeat
     center top #2cb26a;
   overflow: hidden;
 }
@@ -187,11 +188,11 @@
   top: 13px;
 }
 #visual_box.visual_108 {
-  background: url("/public/images/prouductImg/carDriverDirect/bg_visual_108.png")
+  background: url("../../../images/prouductImg/carDriverDirect/bg_visual_108.png")
     no-repeat center top;
 }
 #visual_box.visual_106 {
-  background: url("/public/images/prouductImg/carDriver/bg_visual_106.jpg")
+  background: url("../../../images/prouductImg/carDriver/bg_visual_106.jpg")
     no-repeat center top;
 }
 
@@ -209,7 +210,7 @@
   display: table;
 }
 #visual_box.visual_counselInquiry {
-  background: url(/public/images/prouductImg/counselInquiry/visual_counselInquiry_bg.jpg)
+  background: url(../../../images/prouductImg/counselInquiry/visual_counselInquiry_bg.jpg)
     top right no-repeat;
 }
 #visual_box.visual_txt h2 {
@@ -515,7 +516,7 @@ user agent stylesheet h2 {
   left: -205px;
 }
 .feature_106 {
-  background: url("/public/images/prouductImg/carDriver/bg_feature_106.jpg")
+  background: url("../../../images/prouductImg/carDriver/bg_feature_106.jpg")
     no-repeat center top;
 }
 
@@ -1160,36 +1161,36 @@ user agent stylesheet h2 {
   color: #009591;
 }
 .sure_list.bg1 {
-  background: url("/public/images/prouductImg/car/bg_sure_01.png") no-repeat
+  background: url("../../../images/prouductImg/car/bg_sure_01.png") no-repeat
     96.4% center;
 }
 .sure_list.bg2 {
-  background: url("/public/images/prouductImg/car/bg_sure_02.png") no-repeat
+  background: url("../../../images/prouductImg/car/bg_sure_02.png") no-repeat
     96.4% center;
 }
 .sure_list.bg3 {
-  background: url("/public/images/prouductImg/car/bg_sure_03.png") no-repeat
+  background: url("../../../images/prouductImg/car/bg_sure_03.png") no-repeat
     96.4% center;
 }
 .sure_list.bg4 {
-  background: url("/public/images/prouductImg/car/bg_sure_04.png") no-repeat
+  background: url("../../../images/prouductImg/car/bg_sure_04.png") no-repeat
     96.4% center;
 }
 .sure_list.bg5 {
-  background: url("/public/images/prouductImg/car/bg_sure_05.png") no-repeat
+  background: url("../../../images/prouductImg/car/bg_sure_05.png") no-repeat
     96.4% center;
 }
 .sure_list.bg6 {
-  background: url("/public/images/prouductImg/car/bg_sure_06.png") no-repeat
+  background: url("../../../images/prouductImg/car/bg_sure_06.png") no-repeat
     96.4% center;
 }
 .sure_list.bg7 {
-  background: url("/public/images/prouductImg/car/bg_sure_07.png") no-repeat
+  background: url("../../../images/prouductImg/car/bg_sure_07.png") no-repeat
     96.4% center;
 }
 
 .product_icon400 {
-  background: url("/public/images/prouductImg/car/icon_product_400.png")
+  background: url("../../../images/prouductImg/car/icon_product_400.png")
     no-repeat;
 }
 .product_accordion.acc_group {
@@ -1358,7 +1359,7 @@ user agent stylesheet h2 {
 }
 .acc_group dt a {
   display: block;
-  background: url("/public/images/prouductImg/car/bg_acc_off.gif") no-repeat
+  background: url("../../../images/prouductImg/car/bg_acc_off.gif") no-repeat
     right center;
 }
 .acc_group dt a:after {
@@ -1367,7 +1368,7 @@ user agent stylesheet h2 {
   display: table;
 }
 .acc_group dt a.on {
-  background: url("/public/images/prouductImg/car/bg_acc_off.gif") no-repeat
+  background: url("../../../images/prouductImg/car/bg_acc_off.gif") no-repeat
     right center;
 }
 .acc_group dt a:hover span {
@@ -1444,7 +1445,7 @@ user agent stylesheet h2 {
   color: #333;
 }
 .acc_group dt a.on {
-  background: url("/public/images/prouductImg/car/bg_acc_off.gif") no-repeat
+  background: url("../../../images/prouductImg/car/bg_acc_off.gif") no-repeat
     right center;
 }
 .acc_group dt a:hover strong {
@@ -1469,7 +1470,7 @@ user agent stylesheet h2 {
 }
 .acc_group2 dt a {
   display: block;
-  background: url("/public/images/prouductImg/car/bg_acc_off.gif") no-repeat
+  background: url("../../../images/prouductImg/car/bg_acc_off.gif") no-repeat
     right center;
 }
 .acc_group2 dt a:after {
@@ -1478,7 +1479,7 @@ user agent stylesheet h2 {
   display: table;
 }
 .acc_group2 dt a.on {
-  background: url("/public/images/prouductImg/car/bg_acc_off.gif") no-repeat
+  background: url("../../../images/prouductImg/car/bg_acc_off.gif") no-repeat
     right center;
 }
 .acc_group2 dt a:hover span {
@@ -1560,7 +1561,7 @@ user agent stylesheet h2 {
   padding-left: 40px;
 }
 .acc_group2 dt a.on {
-  background: url("/public/images/prouductImg/car/bg_acc_off.gif") no-repeat
+  background: url("../../../images/prouductImg/car/bg_acc_off.gif") no-repeat
     right center;
 }
 .acc_group2 dt a:hover strong {
@@ -1655,7 +1656,7 @@ user agent stylesheet h2 {
 }
 
 .feature_108 {
-  background: url("/public/images/prouductImg/carDriverDirect/bg_feature_108.png")
+  background: url("../../../images/prouductImg/carDriverDirect/bg_feature_108.png")
     no-repeat center top;
 }
 
@@ -1854,14 +1855,14 @@ user agent stylesheet ul {
   margin-top: 40px;
 }
 .product_feature .owl-carousel .owl-nav button.owl-prev {
-  background: url(/public/images/prouductImg/car/btn_prev.png) no-repeat !important;
+  background: url(../../../images/prouductImg/car/btn_prev.png) no-repeat !important;
   color: transparent;
   position: absolute;
   top: 37%;
   left: -60px;
 }
 .product_feature .owl-carousel .owl-nav button.owl-next {
-  background: url(/public/images/prouductImg/car/btn_next.png) no-repeat !important;
+  background: url(../../../images/prouductImg/car/btn_next.png) no-repeat !important;
   color: transparent;
   position: absolute;
   top: 37%;
@@ -2002,7 +2003,7 @@ user agent stylesheet ul {
   min-height: 50px;
   margin-top: 0;
   padding-left: 76px;
-  background-image: url(/public/images/prouductImg/counselInquiry/ico_s_cst_new.png);
+  background-image: url(../../../images/prouductImg/counselInquiry/ico_s_cst_new.png);
   background-repeat: no-repeat;
   background-position: left top;
 }
@@ -2162,7 +2163,7 @@ caption {
   padding-right: calc((100% - 960px) / 2);
   padding-left: calc((100% - 960px) / 2);
   background: #f7f7f7
-    url(/public/images/prouductImg/car/img-prod-visual-00.png) no-repeat;
+    url(../../../images/prouductImg/car/img-prod-visual-00.png) no-repeat;
 }*/
 .inside {
   width: 100%;
@@ -2224,11 +2225,11 @@ caption {
 }
 
 #visual_box.visual_402 {
-  background: url("/public/images/prouductImg/travelLeisure/bg_visual_402.jpg")
+  background: url("../../../images/prouductImg/travelLeisure/bg_visual_402.jpg")
     no-repeat center top;
 }
 .feature_402 {
-  background: url("/public/images/prouductImg/travelLeisure/bg_feature_402.jpg")
+  background: url("../../../images/prouductImg/travelLeisure/bg_feature_402.jpg")
     no-repeat center top;
 }
 
@@ -2270,11 +2271,11 @@ caption {
 }
 
 #visual_box.visual_217 {
-  background: url("/public/images/prouductImg/upgrade/bg_visual_217.png")
+  background: url("../../../images/prouductImg/upgrade/bg_visual_217.png")
     no-repeat center top;
 }
 .feature_217 {
-  background: url("/public/images/prouductImg/upgrade/bg_feature_217.png")
+  background: url("../../../images/prouductImg/upgrade/bg_feature_217.png")
     no-repeat center top;
 }
 
@@ -2483,7 +2484,7 @@ caption {
   width: 25px;
   height: 20px;
   text-align: right;
-  background: url(/public/images/prouductImg/car/btn_acrobat.gif) no-repeat
+  background: url(../../../images/prouductImg/car/btn_acrobat.gif) no-repeat
     right center;
   vertical-align: -4px;
 }
@@ -2598,7 +2599,7 @@ select {
   -webkit-padding-end: 30px;
   -webkit-padding-start: 10px;
   -webkit-user-select: none;
-  background: url(/public/images/prouductImg/car/icon_selectBg.gif) right center
+  background: url(../../../images/prouductImg/car/icon_selectBg.gif) right center
     no-repeat #fff;
   background: none\0 / IE9;
   background-size: 22px auto;
@@ -2634,7 +2635,7 @@ select {
   position: absolute;
   top: 0px;
   left: 0px;
-  background: url(/public/images/prouductImg/car/bg_icon1.gif) no-repeat left
+  background: url(../../../images/prouductImg/car/bg_icon1.gif) no-repeat left
     center;
   padding-left: 44px;
   font-size: 22px;
@@ -2758,7 +2759,7 @@ select {
   content: "";
   width: 30px;
   height: 30px;
-  background: url(/public/images/prouductImg/car/icon_won.png) no-repeat;
+  background: url(../../../images/prouductImg/car/icon_won.png) no-repeat;
   position: absolute;
   top: 50%;
   left: 35px;
@@ -2908,7 +2909,7 @@ select {
   line-height: 24px;
 }
 #visual_box.visual_407 {
-  background: url(/public/images/prouductImg/car/bg_visual_407.png) no-repeat
+  background: url(../../../images/prouductImg/car/bg_visual_407.png) no-repeat
     center top;
 }
 
