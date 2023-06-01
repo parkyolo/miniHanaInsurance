@@ -197,8 +197,6 @@ function onLogginsample() {
 }
 
 
-
-
 function openModal(){
    
     const bday=document.getElementById('input-pid-front').value;
