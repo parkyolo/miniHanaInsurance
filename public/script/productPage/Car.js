@@ -31,41 +31,14 @@ $(document).ready(function () {
   });
 });
  */
-/* $(document).ready(function () {
+$(document).ready(function () {
   $(".owl-carousel").owlCarousel({
     items: 3,
     margin: 25,
     nav: true,
     loop: true,
   });
-}); */
-/* $(document).ready(function () {
-  var owl = $(".owl-carousel");
-
-  owl.owlCarousel({
-    items: 3, 
-    loop: true, 
-    margin: 35,
-    nav: true, 
-    autoplay: true, 
-    autoplayTimeout: 1800,
-    autoplayHoverPause: true, 
-  });
-}); */
-/* 
-$(function () {
-  $(".aCounselReq").on("click", function () {
-    var data = { sCallTaskID: "call20" }; // 개인용
-
-    pop
-      .open("popCounselRequest")
-      .params(fnCounselReqInit, data)
-      .callback("popCounselRequest", function () {
-        pop.open("popCounselComplete");
-      });
-  });
 });
- */
 
 //여행보험 행추가 버튼
 $(document).ready(function () {
