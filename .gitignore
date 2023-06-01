@@ -22,6 +22,7 @@
 
 
 application/
+src/script/signupPage/.env
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 
