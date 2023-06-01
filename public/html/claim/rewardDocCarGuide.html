@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../../css/claim/rewardDocCarGuide.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    
+    <title>보상서류안내 | 하나손해보험</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <header data-include-path="/src/html/layout/header.html"></header>
+			<div id="container">
+        	<!-- 페이지별 코드 -->
+
+                <div id="contents">                            
+                    <div class="title">
+                        <h2>보상서류안내</h2>
+                        <p>보상 접수시 구비 서류에 대해 안내해드립니다.</p>
+                    </div>               
+                    <div class="tab_container">
+                        <h3>보상시 구비서류</h3>
+
+                        <ul class="tabs">
+                            <li class="tab-link current" data-tab="tab-1">교통</li>
+                            <li class="tab-link" data-tab="tab-2">상해</li>
+                            <li class="tab-link" data-tab="tab-3">질병</li>
+                        </ul>
+                    
+                        <div id="tab-1" class="tab-content current">
+                            <div class="table">
+                                <div class="table_title">
+                                    
+                                    <ul>
+                                        <li>보험처리</li>
+                                        <li>손해내용</li>
+                                    </ul>
+                                </div>
+                                <div class="table_contents">
+                                    <div class = "processing">
+                                        <ul class="processing_contents">
+                                            <li>건강보험</li>
+                                            <li>일반</li>
+                                            <li>산재보험</li>
+                                            <li>공상</li>
+                                            <li>기타</li>
+                                        </ul>   
+                                    </div>
+                                    
+                                    <div class="demage_contents">
+                                        <label>
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id ='death' value="deathCheckbox" >사망
+                                        </label>
+                                        <label>
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id="aftereffect" value="aftereffectCheckbox"> 후유장해
+                                        </label>
+                                        <label>
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id="fracture" value='fractureCheckbox' >골절
+                                        </label>
+                                        <label>                                        
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id="operation" value='operationCheckbox'>수술
+                                        </label>
+                                        <label>                                        
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id="hospitalization" value='hospitalizationCheckbox' >입원
+                                        </label>
+                                    </div>                                    
+                                </div>
+                            </div>                            
+                        </div>
+                        
+                        <div id="tab-2" class="tab-content">
+                            <div class="table">
+                                <div class="table_title">
+                                    
+                                    <ul>
+                                        <li>보험처리</li>
+                                        <li>손해내용</li>
+                                    </ul>
+                                </div>
+                                <div class="table_contents">
+                                    <div class = "processing">
+                                        <ul class="processing_contents">
+                                            <li>건강보험</li>
+                                            <li>일반</li>
+                                            <li>산재보험</li>
+                                            <li>공상</li>
+                                            <li>기타</li>
+                                        </ul>   
+                                    </div>
+                                    
+                                    <div class="demage_contents">
+                                        <label>
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id ='death' value="deathCheckbox" >사망
+                                        </label>
+                                        <label>
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id="aftereffect" value="aftereffectCheckbox"> 후유장해
+                                        </label>
+                                        <label>
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id="fracture" value='fractureCheckbox' >골절
+                                        </label>
+                                        <label>                                        
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id="operation" value='operationCheckbox'>수술
+                                        </label>
+                                        <label>                                        
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id="hospitalization" value='hospitalizationCheckbox' >입원
+                                        </label>
+                                    </div>                                    
+                                </div>
+                            </div>                
+                        </div>
+
+                        <div id="tab-3" class="tab-content">
+                            <div class="table">
+                                <div class="table_title">
+                                    
+                                    <ul>
+                                        <li>보험처리</li>
+                                        <li>손해내용</li>
+                                    </ul>
+                                </div>
+                                <div class="table_contents">
+                                    <div class = "processing">
+                                        <ul class="processing_contents">
+                                            <li>건강보험</li>
+                                            <li>일반</li>
+                                            <li>산재보험</li>
+                                            <li>공상</li>
+                                            <li>기타</li>
+                                        </ul>   
+                                    </div>
+                                    
+                                    <div class="demage_contents">
+                                        <label>
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id ='death' value="deathCheckbox" >사망
+                                        </label>
+                                        <label>
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id="aftereffect" value="aftereffectCheckbox"> 후유장해
+                                        </label>
+                                        <label>
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id="fracture" value='fractureCheckbox' >골절
+                                        </label>
+                                        <label>                                        
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id="operation" value='operationCheckbox'>수술
+                                        </label>
+                                        <label>                                        
+                                            <img src="../../images/claimImg/form_checkOff.png" alt="Unchecked" class="checkboxImage">
+                                            <input type="checkbox" class="demageCheckbox" id="hospitalization" value='hospitalizationCheckbox' >입원
+                                        </label>
+                                    </div>                                    
+                                </div>
+                            </div>                
+                        </div>
+                    </div>
+
+                    <div class="document">
+                        <div class="commonDocument">
+                            <h3>공통 구비서류</h3>
+                            <table>
+                                <tr>
+                                    <th>서류명</th>
+                                    <th>비고</th>
+                                    <th>다운로드</th>
+                                </tr>
+                                <tr>
+                                    <td>보험금청구서</td>
+                                    <td>보험금청구서, 보험금 청구를 위한 필수 동의서, 보험금 지급절차 안내문</td>
+                                    <td class="download_button">
+                                        <a href="../../script/claim/insuranceClaim.pdf" target="_blank" class="download" role="link"> 
+                                            다운로드 </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>치과치료 진료확인서</td>
+                                    <td>[필수서류] 치아치료확인서 양식<br>
+                                        - 치과 병의원 작성용 양식</td>
+                                    <td class="download_button">
+                                        <a href="../../script/claim/insuranceClaim.pdf" target="_blank" class="download" role="link"> 
+                                            다운로드 </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">초진기록지</td>
+                                </tr>
+                            </table>
+                        </div>    
+                        <div class="selectDocument">
+                            <h3>선택한 손해내용에 대한 구비서류</h3>
+                            <table id="selectTable">
+                                <tr>
+                                    <th>보험처리</th>
+                                    <th>손해내용</th>
+                                    <th>서류명</th>
+                                    <th>발급처</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>        
+                    </div>
+			    </div>
+            </div>
+		<footer data-include-path="/src/html/layout/footer.html"></footer>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function(el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
+    
+    <script type="text/javascript" src="../../script/claim/rewardDocCarGuide.js"></script>
+</body>
+</html>
