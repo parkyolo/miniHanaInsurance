@@ -1,0 +1,24 @@
+/* warp, container 공통 css */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #f0fefe inset;
+}
+
+/*Layout*/
+#wrap {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 1024px;
+}
+#container {
+  position: relative;
+  width: 100%;
+  min-height: calc(100% - 240px);
+}
+

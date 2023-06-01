@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/accidentPage/accidentReport.css">
+
+    <script src="/public/script/accidentPage/accidentReport.js"></script>
+
+</head>
+
+<body onload="step4load()">
+    <div id="wrap">
+        <header data-include-path="/public/html/layout/header.html"></header>
+        <div id="container">
+            <div id="contents">
+
+                <div class="contents-title">
+                    <h3>사고접수 완료</h3>
+                    <p> <!-- class="wPc100 f16 tac mt30"-->
+                        사고접수가 정상적으로 처리되었습니다.<br>
+                        빠른 시일 내에 상담사가 남겨주신 연락처를 통해 도움을 드리겠습니다.
+                    </p>
+                </div>
+
+                <div class="content-title">
+                    <div class="final-title" id="accident-num">
+                        <h3>사고접수번호</h3>
+                    </div>
+                    <div class="final-content">
+                        <span id='accidentNum'></span>
+                    </div>
+                </div>
+                <div class="content-title">
+                    <div class="final-title" id="car-num">
+                        <h3>사고차량번호</h3>
+    
+                    </div>
+                    <div class="final-content">
+                        <span id='carNum'>></span>
+    
+                    </div>
+                </div>
+    
+                <div class="content-title">
+                    <div class="final-title" id="accident-date">
+                        <h3>사고 일시</h3>
+                    </div>
+                    <div class="final-content">
+                        <span id='date'></span>
+                    </div>
+                </div>
+    
+                <div class="content-title">
+                    <div class="final-title" id="accident-place">
+                        <h3>사고 발생 장소</h3>
+                    </div>
+                    <div class="final-content">
+                        <span id="location"></span>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="content-title">
+                    <div class="final-title" id="driver">
+                        <h3>운전자</h3>
+                    </div>
+                    <div class="final-content">
+                        <span id="name"></span>
+    
+                    </div>
+                </div>
+
+                <div class="content-title">
+                    <div class="final-title" id="driver">
+                        <h3>연락처</h3>
+                    </div>
+                    <div class="final-content">
+                        <span id="phonenum"></span>
+    
+                    </div>
+                </div>
+    
+                <div class="content-title">
+                    <div class="final-title" id="accident-content">
+                        <h3>접수내용</h3>
+                    </div>
+                    <div class="final-content">
+                        <span>피해자</span>
+                        <span id="people"></span>명
+
+                    </div>
+    
+    
+    
+    
+                </div>
+
+
+                <div class="buttons">
+                    <button type="button" id="toHome">메인화면으로</button>
+                    <button type="button" id="toList">접수내역보기</button>
+
+                </div>
+            </div>
+
+           
+            
+        </div>
+
+    </div>
+    </div>
+    <footer data-include-path="/public/html/layout/footer.html"></footer>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
