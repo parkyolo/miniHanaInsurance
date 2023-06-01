@@ -1,3 +1,16 @@
+var lis = document.querySelectorAll('ul.processing_contents li'); // 보험처리 목록
+var previousLi = lis[0];
+
+// text 가져오기
+var previousText = previousLi.textContent;
+var checkboxes;
+var checkboxImages;
+
+var selectTable = document.getElementById("selectTable");
+
+var idx = 0;
+
+
 /* 탭 선택*/
 $(document).ready(function(){   
 
@@ -14,73 +27,115 @@ $(document).ready(function(){
     $(this).addClass('current');
     $("#"+tab_id).addClass('current');
 
-    // 다른 li 클릭 시 '건강보험' li 클릭 상태 해제
-    if ($(this).index() !== 1) {
-      $('ul.processing_contents li:nth-child(2)').removeClass('clicked'); // '건강보험' li의 클릭 상태 해제
-    }
+    findFirstIndex(tab_id);
+    changeProcessing();
+    
   });
 });
 
-/* 보험처리 목록 선택 */
-var lis = document.querySelectorAll('ul.processing_contents li');
-var previousLi = lis[0];
 
-// text 가져오기
-var previousText = previousLi.textContent;
+changeProcessing();
 
-// 첫번째 click되어 있도록
-lis[0].classList.add('clicked');
+function findFirstIndex(tab_id) {
 
-// 각각 클릭하면 event 실행
-for(var i=0; i < lis.length; i++){
+  if (tab_id == "tab-1"){    
+    idx = 0;
+  }
+  else if (tab_id == "tab-2"){
+    idx = 5;
+  }
+  else {
+    idx = 10;
+  }
+}
 
-  lis[i].addEventListener('click', function(){
+/* 보험처리 클릭 변경 */
+function changeProcessing() {
 
-    if (this.classList.contains('clicked')) {
-      // 이미 선택된 항목은 선택 해제되지 않도록 종료
-      return; 
-    }
+  /* 보험처리 목록 선택 */
+  lis = document.querySelectorAll('ul.processing_contents li');
+  previousLi = lis[0];
+  
+  // text 가져오기
+  previousText = previousLi.textContent;
 
-    // 이전에 선택되었던 것 해제
-    if(previousLi !== null){
-      previousLi.classList.remove('clicked');
-    }
-        
-    // checkbox 전체 선택 해제
-    var checkboxes = document.querySelectorAll('label input.demageCheckbox');
-    var checkboxImages = document.querySelectorAll('label .checkboxImage');
-
-    checkboxes.forEach(function(checkbox) {
-      checkbox.checked = false;
-      checkboxImages.forEach(function (image) {
-        image.src = "../../images/claimImg/form_checkOff.png";
-        image.alt = "Unchecked";
-      });
-    })
-
-    // 기존 행 초기화
-    var selectTable = document.getElementById("selectTable");
-
-    while (selectTable.rows.length > 1) {
-      selectTable.deleteRow(1);
-    }  
+  // 첫번째 click되어 있도록
+  lis[idx].classList.add('clicked');
     
-    this.classList.add('clicked');
-    previousLi = this;
+  
+  deleteCheckbox();    
+  deleteTable();
+  
+  // 각각 클릭하면 event 실행
+  for(var i=0; i < lis.length; i++){
+  
+    // 클릭한 경우
+    lis[i].addEventListener('click', function(){
 
-    // 선택한 탭의 텍스트 가져오기
-    var currentText = this.textContent;
+      deleteCheckbox();       
+      deleteTable();
 
-    // 선택한 탭의 텍스트를 newCell에 설정
-    document.querySelector('#selectTable tr:first-child td:first-child').textContent = currentText;
+      if (this.classList.contains('clicked')) {
+        // 이미 선택된 항목은 선택 해제되지 않도록 종료
+        return; 
+      }
+  
+      // 이전에 선택되었던 것 해제
+      if(previousLi !== null){
+        previousLi.classList.remove('clicked');
+      }
+      
+      // 처음 선택했던 것 해제
+      if (i != idx){
+        lis[idx].classList.remove("clicked");
+      }
+      
+      this.classList.add('clicked');
+      previousLi = this;
+  
+      // 선택한 탭의 텍스트 가져오기
+      var currentText = this.textContent;
+  
+      // 선택한 탭의 텍스트를 newCell에 설정
+      document.querySelector('#selectTable tr:first-child td:first-child').textContent = currentText;
+    })
+  }
+}
+
+
+
+/* 기존 테이블 초기화*/
+function deleteTable() {
+  selectTable = document.getElementById("selectTable");
+
+  while (selectTable.rows.length > 1) {
+    selectTable.deleteRow(1);
+  }  
+}
+
+
+
+/* checkbox 초기화 */
+function deleteCheckbox() {
+  // checkbox 전체 선택 해제
+  checkboxes = document.querySelectorAll('label input.demageCheckbox');
+  checkboxImages = document.querySelectorAll('label .checkboxImage');
+
+  checkboxes.forEach(function(checkbox) {
+    checkbox.checked = false;
+    checkboxImages.forEach(function (image) {
+      image.src = "../../images/claimImg/form_checkOff.png";
+      image.alt = "Unchecked";
+    });
   })
 }
 
-/* checkbox */
+
+
+/* 체크박스 선택<->해제 */
 checkboxes = document.querySelectorAll('label input.demageCheckbox');
 checkboxImages = document.querySelectorAll('label .checkboxImage');
 
-/* 체크박스 선택<->해제 */
 checkboxes.forEach(function(checkbox, index) {
   checkbox.addEventListener('change', function() {
     
@@ -94,22 +149,26 @@ checkboxes.forEach(function(checkbox, index) {
       checkboxImages[index].src = "../../images/claimImg/form_checkOff.png"; // 체크되지 않은 상태 이미지 경로
       checkboxImages[index].alt = "Unchecked"; // 체크되지 않은 상태 이미지 대체 텍스트
     }
+
   })
 })
 
-/* 체크박스 선택 여부 */
-var checkboxData = {
-  deathCheckbox: '사망',
-  aftereffectCheckbox: '후유장해',
-  fractureCheckbox: '골절',
-  operationCheckbox: '수술',
-  hospitalizationCheckbox: '입원'
-}
 
+
+/* 체크박스 선택 여부에 따라 표 수정 */
 function handleCheckbox(checkbox){
+
   selectTable = document.getElementById("selectTable");
   var checkboxes = document.getElementsByClassName("demageCheckbox");
   var selectedCheckboxes = [];
+
+  var checkboxData = {
+    deathCheckbox: '사망',
+    aftereffectCheckbox: '후유장해',
+    fractureCheckbox: '골절',
+    operationCheckbox: '수술',
+    hospitalizationCheckbox: '입원'
+  }
   
   // 선택된 체크박스 찾기
   for (var i = 0; i < checkboxes.length; i++) {
@@ -118,11 +177,9 @@ function handleCheckbox(checkbox){
     }
   }
 
-  // 기존 행 초기화
-  while (selectTable.rows.length > 1) {
-    selectTable.deleteRow(1);
-  }  
+  deleteTable();  // 선택된 checkbox 다시 추가해주기 때문에 테이블은 delete
 
+  
   // 선택된 체크박스 없음
   if (selectedCheckboxes.length === 0) {    
     var newRow = selectTable.insertRow();
