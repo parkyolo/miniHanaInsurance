@@ -265,9 +265,9 @@ input.disabled,
 input[readonly],
 input[type="text"].readonly,
 input[type="password"].readonly {
-  color: #888 !important;
+  color: #888;
   border-color: #ddd;
-  background: #e6e6e6 !important;
+  background: #e6e6e6 ;
 }
 input.xclear::-ms-clear {
   display: none;

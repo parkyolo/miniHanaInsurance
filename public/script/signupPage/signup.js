@@ -273,15 +273,6 @@ function returnPinfo() {
 }
 
 
-function setTimer()
-{
- 
-
-
-
-
-}
-
 //로그인
 //똑같이 인증받고, 이름,생년월일,주민번호가 localstorage 정보와 일치하고 
 //폰인증도 성공했으면 성공 처리

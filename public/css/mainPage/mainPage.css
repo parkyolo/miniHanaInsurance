@@ -1,4 +1,4 @@
-@import url('../reset.css');
+@import url('../../../reset.css');
 
 html {line-height: 1.15;-webkit-text-size-adjust: 100%;/*모든 디바이스에서 동일한 텍스트 크기를 주기*/}
 button {text-rendering: auto; writing-mode: horizontal-tb !important; letter-spacing: normal; word-spacing: normal; line-height: normal; text-transform: none; text-indent: 0px; text-shadow: none; display: inline-block; text-align: center; cursor: default; box-sizing: border-box; margin: 0em; padding: 1px 6px; border: none; overflow: visible; -webkit-appearance: button; background-color: transparent;}

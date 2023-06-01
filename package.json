@@ -1,6 +1,7 @@
 {
   "type": "commonjs",
   "dependencies": {
+    "@sentry/node": "^7.53.1",
     "axios": "^1.4.0",
     "body-parser": "^1.20.2",
     "browserify": "^17.0.0",
