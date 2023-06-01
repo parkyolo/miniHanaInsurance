@@ -8,6 +8,8 @@ var checkboxImages;
 
 var selectTable = document.getElementById("selectTable");
 
+var idx = 0;
+
 
 /* 탭 선택*/
 $(document).ready(function(){   
@@ -24,10 +26,9 @@ $(document).ready(function(){
   
     $(this).addClass('current');
     $("#"+tab_id).addClass('current');
-    
+
+    findFirstIndex(tab_id);
     changeProcessing();
-    deleteCheckbox();  
-    deleteTable();
     
   });
 });
@@ -35,6 +36,18 @@ $(document).ready(function(){
 
 changeProcessing();
 
+function findFirstIndex(tab_id) {
+
+  if (tab_id == "tab-1"){    
+    idx = 0;
+  }
+  else if (tab_id == "tab-2"){
+    idx = 5;
+  }
+  else {
+    idx = 10;
+  }
+}
 
 /* 보험처리 클릭 변경 */
 function changeProcessing() {
@@ -45,16 +58,23 @@ function changeProcessing() {
   
   // text 가져오기
   previousText = previousLi.textContent;
-  
+
   // 첫번째 click되어 있도록
-  lis[0].classList.add('clicked');
+  lis[idx].classList.add('clicked');
+    
+  
+  deleteCheckbox();    
+  deleteTable();
   
   // 각각 클릭하면 event 실행
   for(var i=0; i < lis.length; i++){
   
     // 클릭한 경우
     lis[i].addEventListener('click', function(){
-  
+
+      deleteCheckbox();       
+      deleteTable();
+
       if (this.classList.contains('clicked')) {
         // 이미 선택된 항목은 선택 해제되지 않도록 종료
         return; 
@@ -64,9 +84,11 @@ function changeProcessing() {
       if(previousLi !== null){
         previousLi.classList.remove('clicked');
       }
-          
-      deleteCheckbox();    
-      deleteTable();
+      
+      // 처음 선택했던 것 해제
+      if (i != idx){
+        lis[idx].classList.remove("clicked");
+      }
       
       this.classList.add('clicked');
       previousLi = this;
@@ -208,12 +230,12 @@ function handleCheckbox(checkbox){
           break;
       }
 
-      var newCell2 = newRow.insertCell(0);
+      var newCell2 = newRow.insertCell();
       newCell2.innerHTML = content2;
-      var newCell3 = newRow.insertCell(1);
+      var newCell3 = newRow.insertCell();
       newCell3.innerHTML = content3;
       newCell3.style.textAlign = "left";
-      var newCell4 = newRow.insertCell(2);
+      var newCell4 = newRow.insertCell();
       newCell4.innerHTML = content4;
       newCell4.style.textAlign = "left";
       newCell4.style.borderRight = "none";
