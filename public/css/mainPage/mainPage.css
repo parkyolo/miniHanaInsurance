@@ -1,10 +1,9 @@
-@import url('../reset.css');
+@import url('../../../css/reset.css');
 
 html {line-height: 1.15;-webkit-text-size-adjust: 100%;/*모든 디바이스에서 동일한 텍스트 크기를 주기*/}
 button {text-rendering: auto; writing-mode: horizontal-tb !important; letter-spacing: normal; word-spacing: normal; line-height: normal; text-transform: none; text-indent: 0px; text-shadow: none; display: inline-block; text-align: center; cursor: default; box-sizing: border-box; margin: 0em; padding: 1px 6px; border: none; overflow: visible; -webkit-appearance: button; background-color: transparent;}
 ul {list-style: none; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; padding-inline-start: 40px; padding: 0;}
 li {display: list-item; text-align: -webkit-match-parent;}
-p {display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px;}
 img {border-style: none;}
 
 html, body{width: 100%; height: 100%;}
@@ -15,7 +14,7 @@ input:-webkit-autofill{-webkit-box-shadow: 0 0 0 1000px #f0fefe inset;}
 /* 메인 배너 영역 */
 .keyvisual-wrap {background-color: #e7fbe8; position: relative; margin: 0 auto; display: block; width: 100%; overflow: visible;}
 .keyvisual-wrap .el-carousel {position: relative; width: 100%; margin: 0 auto; overflow: hidden;}
-.keyvisual-wrap .el-carousel__container {position: relative; height: 820px!important; overflow: visible;}
+.keyvisual-wrap .el-carousel__container {position: relative; height: 840px!important; overflow: visible;}
 .el-carousel__layer {width: 100%; height: 100%;}
 .el-carousel__item {position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: inline-block; overflow: hidden; z-index: 0; text-align: center;}
 .el-carousel__item.is-animating {-webkit-transition: -webkit-transform .4s ease-in-out; transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;}
@@ -60,7 +59,7 @@ input:-webkit-autofill{-webkit-box-shadow: 0 0 0 1000px #f0fefe inset;}
 .slideinfo-list__link {-webkit-box-orient: vertical; -webkit-box-direction: normal; overflow: hidden; width: 100%; height: 100%; text-align: left; -webkit-transform: all .2s ease; transition: all .2s ease; outline: none; cursor: pointer; text-indent: -9999em; font-size: 14px; letter-spacing: -.4px; color: inherit; line-height: 100%; padding: 0; position: relative; display: inline-block; width: 12px; height: 12px;border-radius: 60%; background: rgba(0, 0, 0, .1);}
 .slideinfo-list__link.is-active {background: #009591;}
 .slideinfo-list__link::after {content: ""; display: inline-block; width: 12px; height: 12px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
-.control-wrap__btns {display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; position: static; margin: 6px;}
+.control-wrap__btns {display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; position: static; margin: 6px; justify-content: center;}
 .btn-control--toggle {position: relative; width: 18px; height: 18px; background-color: #575757; border-radius: 10px; vertical-align: middle;}
 .btn-control--toggle::before {content: ""; position: absolute; left: calc(50% - 1px); top: calc(50% - 4px); display: inline-block; width: 2px; height: 8px; border: 2px solid #fff; border-top: 0; border-bottom: 0;}
 .btn-control--toggle.pause::before {left: calc(50% - 2px); display: block; width: 0; height: 0; border: 0; border-left: 6px solid #fff; border-top: 4px solid transparent; border-bottom: 4px solid transparent;}
@@ -70,23 +69,24 @@ input:-webkit-autofill{-webkit-box-shadow: 0 0 0 1000px #f0fefe inset;}
 .section_wrap {padding: 140px 0 100px; margin: 0 auto; max-width: 1400px; text-align: center;}
 .section_wrap .title {display: block; font-size: 54px; font-weight: 500; line-height: 58px; letter-spacing: -.4px;}
 .main_mid_box {display: flex; justify-content: space-evenly; flex-wrap: wrap; letter-spacing: -0.08em; font-family: 'Roboto','Noto Sans KR'; text-align: left; margin: 50px 20px 0 20px;}
-.main_mid_box li {flex-basis: calc(33.33% - 10px); background: #fff; border-radius: 15px; box-shadow: 5px 3px 20px 5px #00000012; list-style: none; margin-bottom: 20px;}
+.main_mid_box li {flex-basis: calc(33.33% - 10px); background: #fff; border-radius: 15px; box-shadow: 5px 3px 20px 5px #00000012; border: 2px solid #fff; list-style: none; margin-bottom: 20px;}
+.main_mid_box li:hover{border-color: #2cb26a;}
+.main_mid_box li span {position:relative; cursor: pointer; text-decoration: none; padding-bottom: 5px;}
+.main_mid_box li span::after {background:none repeat scroll 0 0 transparent; bottom:7px; left: 50%; content: ""; display: block; width: 0; height: 5px;position: absolute;background:#2cb26a40;transition:width 0.3s ease 0s, left 0.3s ease 0s;}
+.main_mid_box li:hover span:after {width: 100%; left:0;}
 .main_mid_box li section.visual_box {position:relative;	padding: 30px;margin: 10px;	background: #f9f9fb;	border-radius: 10px 10px 0 0;}
 .main_mid_box li section.visual_box .visual_icon {content: "";display:block; width: 55%; margin: 0 auto 30px;}
-section.visual_box .title { font-size: 35px; color: #555; font-weight: 500; line-height: 48px; margin-top: 8px;}
-section.visual_box .title span {position:relative; cursor: pointer; text-decoration: none; padding-bottom: 5px;}
-section.visual_box .title span::after {background:none repeat scroll 0 0 transparent; bottom:5px; left: 50%; content: ""; display: block; width: 0; height: 5px;position: absolute;background:#2cb26a40;transition:width 0.3s ease 0s, left 0.3s ease 0s;}
-section.visual_box .title span:hover:after {width: 100%; left:0;}
-section.visual_box .title font { color: #ef794b; font-weight: 600;}
-section.visual_box .sub_title { font-size: 20px; color: #888888; letter-spacing: -0.08em;}
-section.recom_box { padding: 15px 40px 0;}
-section.recom_box p.label { padding: 3px 25px; display: inline-block; background: #fff; color: #ef794b; border: 2px solid #ef794b; border-radius: 5px; font-size: 16px; font-weight: 500;}
-section.recom_box .recom_detail { color: #555; font-size: 20px; font-weight: 500; margin-top: 20px;}
-section.sale_point { padding: 30px 40px;}
-section.sale_point p.label { padding: 3px 12px; display: inline-block; background: #fff; color: #2cb26a; border: 2px solid #2cb26a; border-radius: 5px; font-size: 16px; font-weight: 500;}
-section.sale_point dl { margin-top:15px;}
-section.sale_point dl dt { position:relative; padding-left:10px; color: #555; font-size: 20px; font-weight: 500; margin-top: 15px; display: flex; justify-content: space-between;}
-section.sale_point dl dt:before { content:""; display:block; position:absolute; left:0; top: 50%; width: 4px; height: 4px; border-radius:50%; background: #2cb26a; transform: translateY(-50%);}
+section.visual_box .title  {font-size: 35px; color: #555; font-weight: 500; line-height: 48px; margin-top: 8px;}
+section.visual_box .title font  {color: #ef794b; font-weight: 600;}
+section.visual_box .sub_title  {font-size: 20px; color: #888888; letter-spacing: -0.08em;}
+section.recom_box  {padding: 15px 40px 0;}
+section.recom_box p.label  {padding: 3px 25px; display: inline-block; background: #fff; color: #ef794b; border: 2px solid #ef794b; border-radius: 5px; font-size: 16px; font-weight: 500;}
+section.recom_box .recom_detail  {color: #555; font-size: 20px; font-weight: 500; margin-top: 20px;}
+section.sale_point  {padding: 30px 40px;}
+section.sale_point p.label  {padding: 3px 12px; display: inline-block; background: #fff; color: #2cb26a; border: 2px solid #2cb26a; border-radius: 5px; font-size: 16px; font-weight: 500;}
+section.sale_point dl  {margin-top:15px;}
+section.sale_point dl dt  {position:relative; padding-left:10px; color: #555; font-size: 20px; font-weight: 500; margin-top: 15px; display: flex; justify-content: space-between;}
+section.sale_point dl dt:before  {content:""; display:block; position:absolute; left:0; top: 50%; width: 4px; height: 4px; border-radius:50%; background: #2cb26a; transform: translateY(-50%);}
 section.sale_point dl dt span:first-child {position:relative; cursor: pointer; text-decoration: none; padding-bottom: 5px;}
 section.sale_point dl dt span:first-child:after {background:none repeat scroll 0 0 transparent; bottom:5px; left: 50%; content: ""; display: block; width: 0; height: 5px;position: absolute;background:#2cb26a40;transition:width 0.3s ease 0s, left 0.3s ease 0s;}
 section.sale_point dl dt span:first-child:hover:after {width: 100%; left:0;}
@@ -94,8 +94,8 @@ section.sale_point dl dt .point {color:#ef794b;}
 section.sale_point dl dd {padding-left: 10px; font-size: 16px; color: #888;}
 
 /* 보험상품 탭 */
-.tab_banner {}
-.tab_banner .section_wrap {width: 90%;}
+.tab_banner {background: #E7FBE8; transform: skewY(3deg);}
+.tab_banner .section_wrap {width: 90%; transform: skewY(-3deg); margin-top: 100px;}
 .main_bottom_box {margin: 50px 0;}
 /* 탭 메뉴 스타일 */
 ul.tabs {list-style-type: none; margin: 0; padding: 0; display: flex; justify-content: left;}
@@ -109,40 +109,69 @@ ul.tabs li.current::after {width: 100%;}
 .main_bottom_box img {width: 60%;}
 .content_wrap {display: flex; align-items: center; justify-content: center; margin: 80px 0;}
 .content_wrap .right {display: flex; flex-direction: column; align-items: flex-start; justify-content: center;width: 60vw;}
-.insurance_info {display: block; text-align: center;}
+.right {text-align: left;}
+.right > p {text-align: left;}
 .right .insurance_title {font-family: "Noto Sans KR"; font-weight: 700; font-size: 44px; line-height: 1.25; color: #222; margin: 15px 0 25px;}
 .right .insurance_name {font-family: "Noto Sans KR"; font-weight: 400; display: block; margin: 0 0 15px; font-size: 24px; color: #555555; line-height: 1.4; font-weight: 500;}
 .right .insurance_info {font-family: "Noto Sans KR"; font-weight: 400; margin: 0 0 30px; font-size: 20px; line-height: 1.4; color: #555555;}
-.right > p {text-align: left;}
+.right .more {display: inline-block; width: 118px; line-height: 40px; border-radius: 21px; font-size: 16px; text-align: center; color: #E7FBE8; background-color: #555555; border: 1px solid #555555;}
 
-@media screen and (min-width: 768px) {
+/* 유튜브 홍보영상 배너 영역 */
+.video_banner {background: #f5fbe7; padding-top: 180px; margin-top: -40px;}
+.video_banner .section_wrap .ad_video {margin: 50px 0; width: 50vw; height: 28.1vw;}
+
+/* 하단 정보 배너 영역 */
+.content .minfom {border: 1px solid #e5e5e5; margin: 100px auto 50px; padding: 30px; position: relative; letter-spacing: -0.05em; box-shadow: 5px 3px 20px 5px #00000012; width: 88%; border-radius: 10px;}
+.content .minfom:after {content: ""; clear: both; display: table;}
+.content .minfom .mbase {width: 100%; height: auto;}
+.content .minfom .mbase ul {display: flex; justify-content: space-between;}
+.content .minfom .mbase ul:after {content: ""; clear: both; display: table;}
+.content .minfom .mbase ul li:nth-child(1) {padding-right: 30px;}
+.content .minfom .mbase ul li {float: left; position: relative; width: 50%;}
+.content .minfom .mbase ul li:after {content: ""; width: 1px; height: 100%; background: #ddd; position: absolute; top: 0; right: 0; clear: both; display: table;}
+.content .minfom .mbase ul li:nth-child(2) {padding-left: 30px; padding-right: 15px; text-align: center;}
+.content .minfom .mbase ul li .mbase_btitle {display: flex; justify-content: space-between;}
+.content .minfom .mbase ul li .mbase_bphone {font-family: 'roboto'; font-weight: bold; font-size: 32px; line-height: 1; color: #009591; letter-spacing: 0; margin-top: 10px;}
+.content .minfom .mbase ul li .mbase_bpdate {font-weight: 400; font-size: 15px; color: #555; line-height: 21px; margin: 10px 0 25px;}
+.content .minfom .mbase ul li .mbase_bpdate:after {content: ""; clear: both; display: table;}
+.content .minfom .mbase_chatting {width: 95%; position: absolute; bottom: 0; background: #f9f9fb; border-radius: 10px;}
+.content .minfom .mbase_chatting:before {content: ""; width: 47px; height: 35px; background: url(../../../images/mainImg/icon_dots.png?20221027) no-repeat; position: absolute; top: 50%; left: 27px; transform: translateY(-50%);}
+.content .minfom .mbase ul li .mbase_bphone .mbase_blue {color: #009591;}
+.content .minfom .mbase ul li .mbase_bpdate span {margin-left: 6px; font-family: "roboto"; letter-spacing: 0;}
+.content .minfom .mbase_chatting a  {display: flex; font-weight: 400; font-size: 15px; color: #555; padding: 18px 0 17px 90px; position: relative; text-decoration: none; flex-direction: column;}
+.content .minfom .mbase_chatting a strong  {font-weight: 500; font-size: 18px; color: #009591; position: relative;}
+.content .minfom .mbase_chatting a:after {content: ""; width: 23px; height: 23px; background: url(../../../images/mainImg/img_golink.png?20221027) no-repeat; position: absolute; top: 50%; right: 5%; transform: translateY(-50%);}
+.content .minfom .mbase ul li:nth-child(2) .mbase_btitle  {justify-content: flex-start; align-items: baseline; font-weight: 400; font-size: 15px;}
+.content .minfom .mbase ul li .mbase_btitle>span.mbase_btitle  {font-weight: 500; font-size: 16px; line-height: 1; color: #333; width: 97px;}
+.content .minfom .mbase ul li .mbase_btitle>span  {color: #333; font-size: 15px; line-height: 1;}
+.content .minfom .mbase ul li .mbase_btitle>span>.ml5  {font-family: "roboto"; letter-spacing: 0; margin-left: 5px!important;}
+.content .minfom .mbase ul li dl  {width: 100%; display: flex; padding: 28px 30px 8px; margin-top: 28px; background: #f9f9fb; border-radius: 10px; flex-wrap: wrap; align-items: center; line-height: 1;}
+.content .minfom .mbase ul li dl dt  {width: 45%; text-align: left; font-size: 15px; line-height: 1; margin-bottom: 18px;}
+.content .minfom .mbase ul li dl dd  {color: #009591; font-size: 18px; font-weight: 500; text-align: left; width: 55%; line-height: 1; margin-bottom: 17px; font-family: "roboto"; letter-spacing: 0;}
+.content .minfom .mbase ul li dl dd > span  {display: inline-block; margin-left: 5px; color: #009591; font-size: 16px; letter-spacing: -0.05em; font-family: "Noto Sans KR";}
+.content .minfom .mbase ul li:nth-child(2):after  {background: none;}
+
+@media screen and (min-width: 768px)  {
   #container {width: 100%;}
   .btn, a.btn, a.btn::before, a.btn span {display: inline-block; vertical-align: middle;}
   .btn, a.btn {width: 180px; height: 50px; border: 0; background: #002c5f; font-size: 16px; font-weight: 500; letter-spacing: -.4px; color: #fff; cursor: pointer;}
-  a.btn {text-align: center;}
-  button {cursor: pointer; background-color: transparent; border: none;}
+  a.btn {text-align: center;} button {cursor: pointer; background-color: transparent; border: none;}
 }
 
-@media screen and (max-width: 1024px) {
-  .keyvisual-wrap .el-carousel.kv-main .el-carousel__container {height: 510px!important;}
+@media screen and (max-width: 1024px)  {.keyvisual-wrap .el-carousel.kv-main .el-carousel__container {height: 510px!important;}
   .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap {left: 5vw; top: 30px;}
   .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .car-name {line-height: 52px;}
   .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .car-name.title {font-size: 50px;}
   .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .car-name.long {font-size: 42px;}
   .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .sub-txt {margin-top: 0; font-size: 20px;}
-
   .keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow--right {right: 20px;}
   .keyvisual-wrap .control-wrap__indicator {bottom: 20px;}
+  .main_mid_box li {flex-basis: calc(50% - 40px);}}
 
-  .main_mid_box li {flex-basis: calc(50% - 40px);}
-}
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px)  {
   button {cursor: pointer; background-color: transparent; border: none;}
   .btn, a.btn {text-align: center; display: inline-block; vertical-align: middle; width: 280px; height: 40px; border: 0; background: #002c5f; font-size: 15px; font-weight: 500; letter-spacing: -.4px; color: #fff; cursor: pointer;}
-  .btn, a.btn, a.btn::before, a.btn span {display: inline-block; vertical-align: middle;}
-  a.btn::before {content: ""; height: 100%;}
-
+  .btn, a.btn, a.btn::before, a.btn span {display: inline-block; vertical-align: middle;} a.btn::before {content: ""; height: 100%;}
   .keyvisual-wrap .el-carousel {height: 120vw;}
   .keyvisual-wrap .el-carousel.kv-main .el-carousel__container {height: 120vw!important;}
   .keyvisual-wrap .el-carousel__groups .fluid-container {background-size: cover!important;}
@@ -155,31 +184,39 @@ ul.tabs li.current::after {width: 100%;}
   .keyvisual-wrap .el-carousel__groups .fluid-container .txt-wrap .link-txt .txt-inner .sub-txt {margin-top: 2.5vw; font-size: 5vw; letter-spacing: -.25px;}
   .keyvisual-wrap .el-carousel__unit img {width: 100%; margin: 0;}
   .keyvisual-wrap .el-carousel__groups .fluid-container .banner-img-wrap img {height: 50vw!important; width: auto;}
-  .keyvisual-wrap .el-carousel__groups .fluid-container .banner-img-wrap img,
-  .keyvisual-wrap .el-carousel__groups .fluid-container a img {}
   .keyvisual-wrap .el-carousel.kv-main .el-carousel__arrow {display: none;}
   .keyvisual-wrap .kv-main.el-carousel .el-carousel__arrow--right {display: none;}
-
   .control-wrap {position: relative; z-index: 99;}
   .control-wrap__indicator {position: absolute; top: auto; bottom: 10vw!important;}
   .control-wrap__indicator .slideinfo-list__item {padding: 4px;}
 
-  /* 아이템 배너 영역 */
-  .main_mid_box li {flex-basis: 100%; margin: 0 20px 20px 20px;}
+ /* 아이템 배너 영역 */
+ .main_mid_box li {flex-basis: 100%; margin: 0 20px 20px 20px;}
 
-  /* 보험상품 탭 */
-  ul.tabs {flex-direction: column;}
-  ul.tabs li {margin-bottom: 10px; border-bottom: none; text-align: center;}
-  .tab-content {border-radius: 5px;}
-  .tab_banner {height: 150vw;}
-  .main_bottom_box .img_wrap {width: 30vw;}
-}
+ /* 보험상품 탭 */
+ .tab_banner ul.tabs {flex-direction: column; align-items: center;}
+ .tab_banner ul.tabs li {margin-bottom: 30px; border-bottom: none; text-align: center; width: 36%;}
+ .tab_banner .tab-content {border-radius: 5px;}
+  .tab_banner .main_bottom_box .content_wrap {flex-direction: column; margin: 0 0 80px;}
+ .tab_banner .main_bottom_box .img_wrap {width: 80vw;}
+  .right .insurance_title {font-family: "Noto Sans KR"; font-weight: 600; font-size: 36px; line-height: 1.25; color: #222; margin: 15px 0 25px;}
+  .right .insurance_name {font-family: "Noto Sans KR"; font-weight: 400; display: block; margin: 0 0 15px; font-size: 24px; color: #555555; line-height: 1.4; font-weight: 500;}
+  .right .insurance_info {font-family: "Noto Sans KR"; font-weight: 400; margin: 0 0 30px; font-size: 20px; line-height: 1.4; color: #555555;}
 
-@media screen and (min-width: 768px) and (max-width:1200px) {
+ /* 유튜브 홍보영상 배너 영역 */
+ .video_banner .section_wrap .ad_video {margin: 50px 0; width: 85vw; height: 48vw;}
+ .content .minfom .mbase_chatting:before {content: none;}
+ .content .minfom .mbase_chatting a {padding: 18px!important;}}
+
+@media screen and (min-width: 768px) and (max-width:1200px)  {
   .keyvisual-wrap .el-carousel__groups .fluid-container .banner-img-wrap img {width: auto; height: 32vw!important;}
 }
 
-@media screen and (min-width: 768px) and (max-width:1024px) {
+@media screen and (max-width: 978px)  {
+  .content .minfom .mbase ul li dl dt {width: 100%;}
+}
+
+@media screen and (min-width: 768px) and (max-width:1024px)  {
   .control-wrap__btns {margin: 4px;}
   .btn-control--toggle {margin-top: 0;}
 }
