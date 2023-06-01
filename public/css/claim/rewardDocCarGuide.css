@@ -157,25 +157,28 @@ ul.tabs li.current {
 
 
 /* table 공통 속성 */
-.document .commonDocument table, .document .selectDocument table{
-  border-top: 1px solid #009591;
+.document table {
   border-bottom: 1px solid #ddd; 
   font-size: 14px;
   margin-top: 15px;
   margin-bottom: 70px;
+  vertical-align: middle;
 }
 
-.document .commonDocument th, .document .selectDocument th {
+.document th{
   border: 1px solid #e5e5e5;
+  border-top: 1px solid #009591;
   color: #333333;
   padding: 15px;
   background-color: #f9f9fb;
+  vertical-align: middle;
 }
 
-.document .commonDocument td, .document .selectDocument td{
+.document td{
   border: 1px solid #e5e5e5;
   color: #555555;
   padding: 15px;
+  vertical-align: middle;
 }
 
 
@@ -185,12 +188,6 @@ ul.tabs li.current {
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
-}
-
-.document .commonDocument th,
-.document .commonDocument td {
-  border: 1px solid #e5e5e5;
-  padding: 15px;
 }
 
 .document .commonDocument th:nth-child(1),
@@ -210,13 +207,19 @@ ul.tabs li.current {
   border-right: none;
 }
 
-.document .commonDocument td a.download {
+
+
+/* 다운로드 버튼 */
+.document td.download_button {
+  text-align: center;
+}
+
+.document td a.download { 
   border: #e5e5e5 1px solid;
   display: inline-block;
   padding: 5px 10px;
-  background-color: #f9f9fb;
+  background-color: #f9f9fb;  
 }
-
 
 
 
@@ -239,9 +242,6 @@ ul.tabs li.current {
   width: 15%;
   border-right: none;
 }
-.document .selectDocument #selectTable td {
-  vertical-align: middle;
-}
 .document .selectDocument #selectTable td:nth-child(1){
   text-align: center;
   border-left: none;
@@ -254,5 +254,33 @@ ul.tabs li.current {
 }
 .document .selectDocument #selectTable td:nth-child(4) {
   text-align: left; 
+  border-right: none;
+}
+
+
+/* 알아두실 사항 */
+
+.document .notice {
+  width: 100%;
+  table-layout: fixed;
+}
+.document .notice th:nth-child(1) {
+  width: 30%;
+  border-left: none;
+}
+.document .notice th:nth-child(2) {
+  width: 50%;
+}
+.document .notice th:nth-child(3) {
+  width: 20%;
+  border-right: none;
+}
+
+.document .notice td:nth-child(1){
+  text-align: center;
+  border-left: none;
+}
+.document .notice td:nth-child(3) {
+  text-align: center;
   border-right: none;
 }

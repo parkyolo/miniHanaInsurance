@@ -1,14 +1,14 @@
-@import url('/src/css/reset.css');
-@import url('/src/css/common.css');
-@import url('/src/css/default.css');
+@import url('../../../css/reset.css');
+@import url('../../../css/common.css');
+@import url('../../../css/default.css');
 
 /* ria_box layout */
 .ria_box {height:100%;width:100%;position:fixed;top:0;bottom:0;left:0;right:0;z-index:20000;font-family: 'Roboto','Noto Sans KR';}
-.ria_box:before {content:"";width:100%;height:100%;background:url("../img/bg_ria.jpg") no-repeat;background-size:cover;position:absolute;bottom:0;}
+.ria_box:before {content:"";width:100%;height:100%;background:url("../../../img/bg_ria.jpg") no-repeat;background-size:cover;position:absolute;bottom:0;}
 .ria_box:after {content:"";width:100%;height:132px;background:linear-gradient(90deg, #009591 56.5%, #009591 0);background-color:#009591;position:absolute;top:0;z-index:1;}
 
 /* main */
-.ria_box.ria_main {background:linear-gradient(45deg, #fff 35%, transparent 0), linear-gradient(-45deg, #cdf1ef 50%, #fff 0); background:url("../img/bg_main_ria.jpg") no-repeat\0\IE9; background-size:cover\0\IE9;}
+.ria_box.ria_main {background:linear-gradient(45deg, #fff 35%, transparent 0), linear-gradient(-45deg, #cdf1ef 50%, #fff 0); background:url("../../../img/bg_main_ria.jpg") no-repeat\0\IE9; background-size:cover\0\IE9;}
 .ria_box.ria_main:before,.ria_box.ria_main:after {display:none;}
 .ria_box.ria_main input[type=text]:disabled{background:#fafafa !important;}
 
@@ -65,9 +65,9 @@
 .ria_box .mbullet1 > li {padding-left: 9px;position:relative;}
 .ria_box .mbullet1 > li:before {content: "";display: block;background-color: #009591;position:absolute;width: 3px;height: 3px;border-radius: 50%;top: 9px;left: 1px;}
 .ria_box .msg_err {font-weight:400;font-size:14px;color:#ed1651;position:relative;padding:12px 0 12px 30px;}
-.ria_box .msg_err:before {content:"";width:17px;height:17px;background:url("/src/images/calImg/icon_msgerr2.png") no-repeat;position:absolute;top:14px;left:7px;}
+.ria_box .msg_err:before {content:"";width:17px;height:17px;background:url("../../../images/calImg/icon_msgerr2.png") no-repeat;position:absolute;top:14px;left:7px;}
 .ria_box dd:nth-of-type(3) .msg_err {padding:0 0 12px 30px;margin-top: -7px;}
-.ria_box dd:nth-of-type(3) .msg_err:before {content:"";width:17px;height:17px;background:url("/src/images/calImg/icon_msgerr2.png") no-repeat;position:absolute;top:4px;left:7px;}
+.ria_box dd:nth-of-type(3) .msg_err:before {content:"";width:17px;height:17px;background:url("../../../images/calImg/icon_msgerr2.png") no-repeat;position:absolute;top:4px;left:7px;}
 .ria_box .fix_err {display: none;}
 
 /*Form size %*/
@@ -105,20 +105,20 @@
 .ria_box input.ria_yesno[type=radio]+label{min-width:90px;border:1px solid #9d9d9d;background:#fff;padding:3px 0;font-weight:400;font-size:14px;color:#555;line-height:26px;text-align:center;margin-left:3px;margin-right:-1px;}
 .ria_box input.ria_yesno[type=radio]+label:before{content:"";display:inline-block;width:calc(100% - 2px);height:4px;background:#fff;position:absolute;top:auto;bottom:1px;left:1px;}
 .ria_box input.yes[type=radio]+label{position:relative;}
-.ria_box input.yes[type=radio]+label:after{display:inline-block;content:"";width:12px;height:9px;background:url("../img/icon_rcheck.png") no-repeat;vertical-align:1px;position:absolute;top:12px;right:9px;}
+.ria_box input.yes[type=radio]+label:after{display:inline-block;content:"";width:12px;height:9px;background:url("../../../img/icon_rcheck.png") no-repeat;vertical-align:1px;position:absolute;top:12px;right:9px;}
 .ria_box input.ria_yesno[type=radio]:checked+label{border:1px solid #007e7b;background:#009591;color:#fff;}
 .ria_box input.ria_yesno[type=radio]:checked+label:before{content:"";display:inline-block;width:100%;height:4px;background:#007e7b;position:absolute;top:auto;bottom:0;left:0;}
 .ria_box input.ria_yesno[type=radio]:checked:disabled+label:before{content:"";display:inline-block;width:20px;height:20px;position:absolute;left:0;}
 .ria_box input.ria_yesno[type=radio]:disabled+label:before{display:none;}
 .ria_box input.ria_yesno.style1[type=radio]+label {padding:8px 0;display:block;width:90px;float:left;margin-left:0px;}
 .ria_box input.btn_char_men[type=radio] + label{border:solid 1.5px #b2d7d4;border-radius:0;padding:9px 36px 9px 74px;margin-right:2px;font-size:16px;line-height:normal;text-align:center;color:#82bfb9;}
-.ria_box input.btn_char_men[type=radio] + label:before{width:25px;height:25px;position:absolute;left:60px;background:url("/src/images/calImg/bg_sexM.png") no-repeat;background-size:25px;}
+.ria_box input.btn_char_men[type=radio] + label:before{width:25px;height:25px;position:absolute;left:60px;background:url("../../../images/calImg/bg_sexM.png") no-repeat;background-size:25px;}
 .ria_box input.btn_char_men[type=radio]:checked + label{color:#28b2a5;border:1.5px solid #28b2a5;background:#fff;}
-.ria_box input.btn_char_men[type=radio]:checked + label:before{background:url("/src/images/calImg/bg_sexM_on.png") no-repeat;background-size:25px;}
+.ria_box input.btn_char_men[type=radio]:checked + label:before{background:url("../../../images/calImg/bg_sexM_on.png") no-repeat;background-size:25px;}
 .ria_box input.btn_char_women[type=radio] + label{border:solid 1.5px #b2d7d4;border-radius:0;padding:9px 36px 9px 74px;margin-right:0;font-size:16px;line-height:normal;text-align:center;color:#82bfb9;}
-.ria_box input.btn_char_women[type=radio] + label:before{width:25px;height:25px;position:absolute;left:60px;background:url("/src/images/calImg/bg_sexW.png") no-repeat;background-size:25px;}
+.ria_box input.btn_char_women[type=radio] + label:before{width:25px;height:25px;position:absolute;left:60px;background:url("../../../images/calImg/bg_sexW.png") no-repeat;background-size:25px;}
 .ria_box input.btn_char_women[type=radio]:checked + label{color:#28b2a5;border:1.5px solid #28b2a5;background:#fff;}
-.ria_box input.btn_char_women[type=radio]:checked + label:before{background:url("/src/images/calImg/bg_sexW_on.png") no-repeat;background-size:25px;}
+.ria_box input.btn_char_women[type=radio]:checked + label:before{background:url("../../../images/calImg/bg_sexW_on.png") no-repeat;background-size:25px;}
 
 .ria_box input.ria_yesno[type=radio]:checked+label {width:calc(50% - 5px);}
 .ria_box input.ria_yesno[type=radio]+label {width:calc(50% - 5px);}
@@ -128,15 +128,15 @@
 .alert_container {position:absolute;max-width:500px;min-width:400px;border-radius:10px;top:50%;left:50%;transform:translate(-50%, -50%);}
 .alert_header{width:100%;float:left;background:#28b2a5;border-top-left-radius:10px;border-top-right-radius:10px;}
 .alert_header h1 {color:#fff;padding:20px;padding-left:54px;font-size:18px;font-weight:400;line-height:18px;}
-.alert_header h1.warning{background:url("/src/images/calImg/icon_alert01.png") no-repeat center left;background-position-x:20px;background-size:20px auto;}
-.alert_header h1.notice{background:url("/src/images/calImg/icon_alert02.png") no-repeat center left;background-position-x:20px;}
+.alert_header h1.warning{background:url("../../../images/calImg/icon_alert01.png") no-repeat center left;background-position-x:20px;background-size:20px auto;}
+.alert_header h1.notice{background:url("../../../images/calImg/icon_alert02.png") no-repeat center left;background-position-x:20px;}
 .alert_body{width:100%;float:left;background:#fff;}
 .alert_body p {text-align:center;padding:50px 25px;color:#333;font-size:16px;max-height:250px;overflow-y:auto;white-space:pre-line;}
 .alert_foot{width:100%;float:left;}
 .alert_foot a{display:block;}
 .alert_btn{width:100%;float:left;text-align:center;padding:11.5px;background:#e8e8e8;border-top:1px solid #dcdcdc;font-size:16px;border-bottom-right-radius:10px;border-bottom-left-radius:10px;}
 .alert_btn:hover{color:#28b2a5;text-decoration:none}
-.alert_close_btn{position:absolute;width:30px;height:30px;background:url("/src/images/calImg/icon_alertClose.png") no-repeat center center;top:13px;right:15px;z-index:1000;padding:15px;}
+.alert_close_btn{position:absolute;width:30px;height:30px;background:url("../../../images/calImg/icon_alertClose.png") no-repeat center center;top:13px;right:15px;z-index:1000;padding:15px;}
 
 .fadeIn {display: block; animation: fadeIn .3s forwards;}
 .fadeOut {animation: fadeOut .3s forwards;}
