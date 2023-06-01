@@ -38,7 +38,7 @@ function moveCursor(pidFront) {
 }
 
 //주민번호 모두 입력했는지 확인
-function isPnoNull(e) {
+function isPnoNull() {
 
     const pnoFront = document
         .getElementById('input-pid-front')
@@ -47,14 +47,14 @@ function isPnoNull(e) {
         .getElementById('input-pid-back')
         .value;
 
-    if (e.keyCode == 13) {
-        console.log(pnoFront);
-        console.log(pnoBack);
+    
         if (pnoFront.length == 0 || pnoBack.length == 0) {
-            console.log('주민번호는 모두 입력해야합니다.');
+            alert('주민번호는 모두 입력해야합니다.');
+            return false;
         }
+        return true;
     }
-}
+
 
 //이름 유효성 검사-15자리
 function isName()
@@ -199,13 +199,18 @@ function onLogginsample() {
 
 function openModal(){
    
-    const bday=document.getElementById('input-pid-front').value;
-    localStorage.setItem('bday',bday);
-    console.log(bday);
-    document.getElementById('popIntegrateCert').style.display='block';
-    const bdayinput=document.getElementById('bday');
-    const realbday=localStorage.getItem('bday');
-    bdayinput.value=realbday;
+    if(isPnoNull()==true)
+    {
+        const bday=document.getElementById('input-pid-front').value;
+        localStorage.setItem('bday',bday);
+        console.log(bday);
+        document.getElementById('popIntegrateCert').style.display='block';
+        const bdayinput=document.getElementById('bday');
+        const realbday=localStorage.getItem('bday');
+        bdayinput.value=realbday;
+    }
+    else return;
+
 }
 
 

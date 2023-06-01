@@ -209,10 +209,7 @@ input[type=radio].btn_radio:disabled + label:before {    appearance: none;
     z-index:20000;
     transition:all 10s ease-out}
 
-.popup_box{
-    border:5px solid black;
 
-}
 .popup_container{
     position:relative;
     width:600px;
