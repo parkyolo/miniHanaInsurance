@@ -1,0 +1,34 @@
+/* 2019-03-13 */
+@charset "utf-8";
+/* default */
+
+.btn_trankey{color:#868c93;background-color:#868c93;border-color:#868c93;font-size:14px;height:34px;padding:0}
+.btn_trankey.on{background-color:#009591;border-color:#009591}
+.btn_trankey label{display:inline-block;color:#fff;position:relative;cursor:pointer;padding:5px 10px 7px 25px;}
+.btn_trankey label:before{content:"";display:inline-block;position:absolute;top:7px;left:5px;width:13px;height:18px;background:url("../img/icon_mouse.png") no-repeat center center;}
+
+.btn_gray.on {background-color:#009591;border-color:#009591;color:#fff;}
+
+
+.popup_body .ria_cf_head ul.test_auth_method_box li {width:calc((100% - 15px) / 4); margin-right:5px}
+.popup_body .ria_cf_head ul.test_auth_method_box li:nth-child(3n) {margin-right:5px;}
+.popup_body .ria_cf_head ul.test_auth_method_box li:last-child {margin-right:0}
+.popup_body .ria_cf_head ul.test_auth_method_box li .test_auth_method {color:#ff0000}
+.popup_body .ria_cf_body .test_input_jumin {width:calc((100% - 20px) /2)}
+
+/* 동의/미동의 */
+/*
+.agree_box_new .calc240 {width: calc(100% - 240px);}
+input[type=radio].agree_chk + label {display: inline-block; z-index: 1; position: relative; cursor: pointer; margin-right: 10px; color: #555; border-width: 1px; border-style: solid; border-color: #ddd; border-radius: 20px; line-height: 20px; padding: 7px 20px 8px 40px; background: #fff; }
+input[type=radio].agree_chk + label:before { display: inline-block; content: "\f00c"; margin-top: 0; font-family: "FontAwesome"; width: 20px; height: 20px; font-size: 20px; color: #555; position: absolute; left: 12px; top: 8px; background: none; }
+input[type=radio].agree_chk:checked + label {border-color:#1d56ab;background:#1d56ab;color:#fff;}
+input[type=radio].agree_chk:checked + label:before {color:#fff;}
+*/
+/* //동의/미동의 */
+
+
+
+.h44 {height:44px !important;}
+
+
+

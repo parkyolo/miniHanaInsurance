@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/signupPage/signupSuccess.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    
+    <style>
+        #wrap {
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            height: 100%;
+
+
+        }
+
+        body {
+            /* height: 1024px; */
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+
+        }
+
+        video {
+            top: 0;
+            left: 0;
+            min-width: 500px;
+            min-height: 500px;
+            width: 500px;
+            height: 500px;
+            z-index: -1;
+
+        }
+
+
+        .jb-box {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0px auto;
+            z-index: -1;
+
+            position: relative;
+            /* background: url('/public/sample/realrealfianl.mp4') center center fixzed no-repeat; */
+
+        }
+
+        .jb-text {
+            position: relative;
+            /* top: 50%;
+            width: 100%; */
+            /* display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; */
+            font-size: large;
+            color: white;
+        }
+
+
+
+
+        .item {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            padding-top: 75px;
+            background: #ccc;
+            text-align: center;
+            color: #FFF;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="jb-box">
+            <video muted autoplay loop>
+                <source src="/public/sample/realrealfianl.mp4" type="video/mp4">
+                <strong>Your browser does not support the video tag.</strong>
+            </video>
+            <div class="jb-text">
+
+                <div class="item" data-aos="fade-up">더 넓은 세상으로</div>
+                <div class="item" data-aos="fade-down">더 자유로운 길로</div>
+                <div class="item" data-aos="fade-right">더 깊은 사랑으로</div>
+                <div class="item" data-aos="fade-left">하나손해보험이 당신을 지키겠습니다.</div>
+
+                <div class="item" data-aos="zoom-in">5</div>
+                <div class="item" data-aos="zoom-out">6</div>
+                <!-- <div class="jb-text-contents"> -->
+
+                <!-- </div>
+                <div class="jb-text-contents">
+                    
+                </div>
+                <div class="jb-text-contents">
+                    
+                </div>
+                <div class="jb-text-contents">
+                    
+                </div>
+                <p>Lorem Ipsum Dolor</p> -->
+            </div>
+            <!-- <div class="jb-text">
+                <p>하나은행</p>
+            </div> -->
+        </div>
+
+
+
+        <div id="container">
+
+        </div>
+
+        <script>
+            AOS.init({
+                duration: 1200,
+            })
+
+
+        </script>
+    </div>
+    <footer data-include-path="/public/html/layout/footer.html"></footer>
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
