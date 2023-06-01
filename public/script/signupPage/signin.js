@@ -1,11 +1,3 @@
-// const express = require('express');
-// const app = express();
-// const path = require('path');
-// const port = 3000;
-// const axios = require('axios');
-// const CryptoJS = require('crypto-js');
-// require("dotenv").config();
-
 
 const express = require('express');
 const app = express();

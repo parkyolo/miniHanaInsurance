@@ -1,8 +1,9 @@
 
-
-window.onload=function infoPage()
+// 
+function infoPage()
 {
-    var obj=JSON.parse(localStorage.getItem('userInfo'));
+    
+    var obj=JSON.parse(window.localStorage.getItem('userInfo'));
    
     const name = obj.name;
     console.log(name);
@@ -18,14 +19,14 @@ window.onload=function infoPage()
     const bmonth=birthday.substring(2,4);
     const bd=birthday.substring(4,6);
 
-    document.getElementById("selJoinMemberTel1").selectedIndex(localstorage.getItem('selectedIndex'));
+    // document.getElementById("selJoinMemberTel1").selectedIndex(localstorage.getItem('selectedIndex'));
 
     // console.log(pnoFront.text); //현재 undefined로 출력됨
 
     const infoname = document.getElementById('txtJoinMemberName');
     infoname.value=name; //이름
     const infopno1 = document.getElementById('selJoinMemberTel1');
-    infopno1.innerHTML=pnoFront; //휴대폰 앞번호
+    infopno1.value=pnoFront; //휴대폰 앞번호
 
     const infopno2 = document.getElementById('txtJoinMemberTel2');
     infopno2.value=back1; //휴대폰 중간번호
