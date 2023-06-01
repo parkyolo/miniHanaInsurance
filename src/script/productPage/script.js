@@ -1,8 +1,11 @@
+//실행바?
+
 var currentPage = 1;
 var totalPages = 5;
 
 updateProgressBar();
 
+//페이지 이동
 function goToPage(pageNumber) {
   var currentPageElement = document.getElementById("page" + currentPage);
   currentPageElement.style.display = "none";
@@ -13,6 +16,7 @@ function goToPage(pageNumber) {
   updateProgressBar();
 }
 
+//실행바 업데이트
 function updateProgressBar() {
   var progress = (currentPage / totalPages) * 100;
   var progressBar = document.getElementById("progressBar");
@@ -32,13 +36,7 @@ function nextPage() {
   }
 }
 
-function updateProgressBar() {
-  var progress = (currentPage / totalPages) * 100;
-  var progressBar = document.getElementById("progressBar");
-  progressBar.style.width = progress + "%";
-}
-
-// Enter 키 이벤트 핸들러
+// Enter치면 넘어가게
 function handleEnterKey(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
@@ -73,22 +71,27 @@ function validateBirthdate() {
   var birthdateError = document.getElementById("birthdateError");
   var userName = document.getElementById("userName").value;
   var userNameError = document.getElementById("userNameError");
+  var agreeCheckbox = document.getElementById("rdoPrivacyY");
 
   var regex = /^\d{4}-\d{2}-\d{2}$/;
   var regex2 = /^[가-힣]{2,4}$/;
 
-  if (regex.test(birthdate) && regex2.test(userName)) {
-    birthdateError.innerHTML = "";
-    /* userNameError.innerHTML = ""; */
-    nextPage();
-    if (regex2.test(userName)) {
-      userNameError.innerHTML = "";
+  if (agreeCheckbox.checked) {
+    if (regex.test(birthdate) && regex2.test(userName)) {
+      birthdateError.innerHTML = "";
+      /* userNameError.innerHTML = ""; */
       nextPage();
+      if (regex2.test(userName)) {
+        userNameError.innerHTML = "";
+        nextPage();
+      } else {
+        userNameError.innerHTML = "올바른 이름 형식(홍길동)으로 입력해주세요.";
+      }
     } else {
-      userNameError.innerHTML = "올바른 이름 형식(홍길동)으로 입력해주세요.";
+      birthdateError.innerHTML = "올바른 형식으로 입력해주세요.";
     }
   } else {
-    birthdateError.innerHTML = "올바른 형식으로 입력해주세요.";
+    alert("개인정보 수집/이용에 미동의하셨습니다");
   }
 }
 //이름
@@ -284,3 +287,22 @@ function sample6_execDaumPostcode() {
     },
   }).open();
 }
+
+//mail?
+/* function goEmail() {
+  var name = document.getElementById("userName").value;
+  var email = document.getElementById("emailInput").value;
+  var templateParams = {
+    name: "${name}",
+    notes: "안녕하세요!",
+  };
+
+  emailjs.send("service_lc6gd9f", "template_aike4hi", templateParams).then(
+    function (response) {
+      console.log("SUCCESS!", response.status, response.text);
+    },
+    function (error) {
+      console.log("FAILED...", error);
+    }
+  );
+} */
