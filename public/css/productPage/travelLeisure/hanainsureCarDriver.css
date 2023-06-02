@@ -3,7 +3,6 @@
 @import url("../../../css/reset.css");
 @import url("../../../css/default.css");
 
-
 #visual_box[class^="visual_1"],
 #visual_box[class^="visual_2"],
 #visual_box[class^="visual_3"],
@@ -1374,7 +1373,7 @@ user agent stylesheet h2 {
 .acc_group dt a:hover span {
   color: #28b2a5;
   text-decoration: none;
-} /*2019-02-15 underline 고객요구사항반영*/
+}
 .acc_group dt a span:nth-child(1) {
   display: block;
   float: left;
@@ -1451,7 +1450,7 @@ user agent stylesheet h2 {
 .acc_group dt a:hover strong {
   color: #28b2a5;
   text-decoration: none;
-} /*2019-02-15 underline 고객요구사항반영*/
+}
 .acc_group dt a:hover strong,
 .acc_group dt a strong.on {
   color: #009591;
@@ -1485,7 +1484,7 @@ user agent stylesheet h2 {
 .acc_group2 dt a:hover span {
   color: #28b2a5;
   text-decoration: none;
-} /*2019-02-15 underline 고객요구사항반영*/
+}
 .acc_group2 dt a span:nth-child(1) {
   display: block;
   float: left;
@@ -1567,7 +1566,7 @@ user agent stylesheet h2 {
 .acc_group2 dt a:hover strong {
   color: #28b2a5;
   text-decoration: none;
-} /*2019-02-15 underline 고객요구사항반영*/
+}
 .acc_group2 dt a:hover strong,
 .acc_group2 dt a strong.on {
   color: #28b2a5;
@@ -2049,7 +2048,7 @@ user agent stylesheet ul {
   position: relative;
   background: #f9f9f9;
   border-top: 1px solid #ddd;
-} /* 황금돼지 2019-03-05 디자인고도화 수정 background:#e7f3fd; */
+}
 .table_width_list li:first-child {
   border-top: none;
 }
@@ -2100,7 +2099,7 @@ user agent stylesheet ul {
 }
 .table_width_list li.half_l > .data {
   border-right: 1px solid #e5e5e5;
-} /* 황금돼지 2019-03-05 디자인고도화 수정 */
+}
 .table_width_list li:nth-child(2).half_r {
   border-top: none;
 }
@@ -2156,15 +2155,7 @@ caption {
   font-family: "Roboto", "Noto Sans KR";
   margin-top: 40px;
 }
-/* .product_visual_wrap {
-  position: relative; 
-  width: 100%;
-  height: 480px;
-  padding-right: calc((100% - 960px) / 2);
-  padding-left: calc((100% - 960px) / 2);
-  background: #f7f7f7
-    url(../../../images/prouductImg/car/img-prod-visual-00.png) no-repeat;
-}*/
+
 .inside {
   width: 100%;
   max-width: 1250px;
@@ -2360,10 +2351,6 @@ caption {
   margin-top: 10px;
 }
 
-/* #addressInput {
-  display: hidden;
-} */
-
 .bg_graybox {
   width: 100%;
   float: left;
@@ -2547,6 +2534,7 @@ caption {
   font-size: 16px;
   line-height: 34px;
   color: #333;
+  margin-right: 10px;
 }
 
 .field_set .cal_set div {
@@ -2599,8 +2587,8 @@ select {
   -webkit-padding-end: 30px;
   -webkit-padding-start: 10px;
   -webkit-user-select: none;
-  background: url(../../../images/prouductImg/car/icon_selectBg.gif) right center
-    no-repeat #fff;
+  background: url(../../../images/prouductImg/car/icon_selectBg.gif) right
+    center no-repeat #fff;
   background: none\0 / IE9;
   background-size: 22px auto;
   cursor: pointer;
@@ -2927,4 +2915,26 @@ select {
   max-height: 250px;
   overflow-y: auto;
   white-space: pre-line;
+}
+
+input[type="date"] {
+  border: 1px solid #ddd;
+  height: 34px;
+  font-family: "Noto Sans KR";
+  font-size: 14px;
+  color: #555;
+  padding: 0 10px;
+  max-width: 100%;
+}
+
+input[type="date"]:focus,
+select:focus {
+  border: 1px solid #009591;
+  outline: none;
+}
+
+input[type="date"].readonly {
+  color: #888;
+  border-color: #ddd;
+  background: #e6e6e6;
 }

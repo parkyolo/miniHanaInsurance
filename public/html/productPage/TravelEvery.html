@@ -25,15 +25,7 @@
 	rel="stylesheet"
 	href="../../css/productPage/travelLeisure/hanainsureCarDriver.css">
 
-<!-- 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script
-	type="text/javascript"
-	src="../../script/productPage/jquery.js"
-	charset="utf-8"
-  ></script> -->
+
   <script
 	type="text/javascript"
 	src="../../script/productPage/Car.js"
@@ -42,11 +34,7 @@
 	
 	<title>하나 국내여행보험(단체형) | 하나손해보험</title>
 	
-	<script>
-		$(document).ready(function () {
-		  $(".cal_btn").datepicker();
-		});
-		</script>
+
 	
 </head>
 <body>  
@@ -62,8 +50,8 @@
 <div id="visual_box" class="visual_402">
 	<div class="base_area">
 		<div class="visual_sns">
-			<a class="btnShareTwitter" href="javascript:void(0);"><img src="../../images/prouductImg/travelLeisure/btn_twitter.png" alt="트위터"></a>
-			<a class="btnShareFacebook" href="javascript:void(0);"><img src="../../images/prouductImg/travelLeisure/btn_facebook.png" alt="페이스북"></a>
+			<a class="btnShareTwitter" href="javascript:void(0);"></a>
+			<a class="btnShareFacebook" href="javascript:void(0);"></a>
 		</div>
 		<p class="visual_mtitle">5인 이상 단체ㆍ365일 · 24시간</p>
 		<h2 class="visual_btitle">하나 국내여행보험(단체형)</h2>
@@ -417,14 +405,14 @@
                         <fieldset class="field_set btn_set">						
                             <div class="set_box cal_set">
                                 <label for="inp02">여행기간</label>
-                                <div style="width:calc(40% - 55px);">
-                                    <input type="text" placeholder="YYYY.MM.DD" title="시작일" name="sActive1Fmdt" id="sActive1Fmdt" class="inputDate"/>
-                                    <a class="cal_btn" ><img src="../../images/prouductImg/travelLeisure/icon_calBtn.jpg" alt="달력"></a>
+                                <div style="width:calc(33% - 55px);">
+                                    <input type="date" placeholder="YYYY.MM.DD" title="시작일" name="sActive1Fmdt" id="sActive1Fmdt" class="inputDate"/>
+                                    
                                 </div>
                                 <span class="dash">~</span>
                                 <div style="width:calc(40% - 55px);">
-                                    <input type="text" placeholder="YYYY.MM.DD" title="종료일" name="sActive1Todt" id="sActive1Todt" class="inputDate"/>
-                                    <a class="cal_btn2"><img src="../../images/prouductImg/travelLeisure/icon_calBtn.jpg" alt="달력"></a>
+                                    <input type="date" placeholder="YYYY.MM.DD" title="종료일" name="sActive1Todt" id="sActive1Todt" class="inputDate"/>
+                                    
                                 </div>
                                 <select title="" class="" id="sJoinTarget" name="sJoinTarget" onchange="sDomesticTravelFunc.changeTarget(this.value, <@=i@>)" style="width:21%;margin-left: 10px;">
 
@@ -497,32 +485,7 @@
 							
         
                     </div> 
-                    <!--
-
-
-					<div class="blue_box3" style="display: none;">
-						<div>
-						  <p class="last_txt">여행기간<span id="totTravelPeriod"><strong></strong>일</span></p>
-						  <p class="last_txt">총 인원수<span id="totPerson"><strong></strong>명</span></p>					
-						<p class="mon_txt">총 보험료<span id="totPrem"><strong></strong>원</span></p>
-						</div>
-						<div class="fl wPc100 tac mt60">
-							<button type="reset" class="btn btn_big_blueover mr6" id="btnReset">초기화</button>
-							<button type="button" class="btn btn_big_redover mr6" id="btnReCalc">재계산</button>
-							<button type="button" class="btn btn_big_joinover" onclick="pop.open('popGetReadydomesticTravel')">보험가입 신청</button>
-						</div> 
-					</div>
-					 
-					  
-					  <div class="firstCalc" style="display: block;">
-						<p class="fl wPc100 blue_box lh42 mt30">간단하게 <strong>총 보험료</strong>를 확인해 보세요.</p>
-						<div class="fl wPc100 tac mt60">
-						  <button type="button" class="btn btn_big_redover" id="btnInsCalc" style="width:170px;">보험료계산하기</button>
-						</div>
-						
-					  </div>
-					</div>
-				-->
+            
                      <div id="divCalc"> 
 						<div class="Calccc" style="display: none";>
 						              <div class="blue_box3" >
@@ -536,7 +499,6 @@
 							</div>
 							<div class="fl wPc100 tac mt60">
 								<button type="reset" class="btn btn_big_blueover mr6" id="btnReset">초기화</button>
-								<!-- <button type="button" class="btn btn_big_redover mr6" id="btnReCalc">재계산</button> -->
 								<button type="button" class="btn btn_big_joinover alert_box" id="bohumhelp">보험가입 신청</button>
 							</div> 
 							</div>
