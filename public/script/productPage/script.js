@@ -232,7 +232,7 @@ function submitt() {
 }
 
 function gomainPage() {
-  window.location.href = "https://www.hanainsure.co.kr/";
+  window.location.href = "../html/mainPage/mainPage.html";
 }
 
 //카카오 api
