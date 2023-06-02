@@ -10,7 +10,10 @@
 </head>
 
 <body>
+    <div data-include-path="../../../html/layout/quickmenu.html"></div>
+
     <div id="wrap">
+        
         <header data-include-path="../../../html/layout/header.html"></header>
         <div id="container">
 
@@ -37,7 +40,7 @@
                                     onkeyup="moveCursor(this)">
                                 &nbsp&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp&nbsp
                                 <input type="password" id="input-pid-back" placeholder="주민번호 뒷자리" maxlength="7" required
-                                    onkeypress="isPnoNull()">
+                                    >
 
                             </div>
 
@@ -73,8 +76,8 @@
                                         <input type="hidden" name="sSendCount" id="sSendCount" title="재전송 순번" value="">
                                         <label for="txtMobileCertName" class="ria_cf_tit">이름</label>
                                         <div class="set_box pholder">
-                                            <input type="text" name="CertName" id="name" title="이름 입력"
-                                                placeholder="성명을 입력" class="long w214" role="textbox"
+                                            <input type="text" name="CertName" id="name" 
+                                                class="long w214" role="textbox"
                                                 tk_security="true">
                                             <div class="w143 fr">
                                                 <input style="display: none;" type="radio" name="isforeigner"
@@ -203,7 +206,7 @@
                                             role="form">
                                             <fieldset>
                                                 <label for="txtSMSVldNo" class="lh44">인증번호</label>
-                                                <div class="set_box">
+                                                <div class="set_box" id="validnum">
                                                     <div class="long po_r w240">
                                                         <input type="text" id="no" title="인증번호 입력" class="wPc100 h44"
                                                             maxlength="6" role="textbox" tk_security="true">
@@ -213,7 +216,7 @@
                                                     <div id="timer"></div>
 
                                                     <button type="button" class="btn btn_darkgray fr w122 h44"
-                                                        id="btnMobileCertNumRequestResend" role="button">재전송</button>
+                                                        id="btnMobileCertNumRequestResend" role="button" onclick="sendNumber()">재전송</button>
                                                 </div>
                                             </fieldset>
                                             <input type="hidden" name="hid_key_data" id="hid_key_data" value=""><input
@@ -246,30 +249,10 @@
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
-        var time = 180;
-        var min = "";
-        var sec = "";
-
-        //특정 부분을 주기적으로 업데이트해줘야 하거나
-        // 어떤 API로 부터 변경된 데이터를 주기적으로 받아와야 하는 경우
-        var x = setInterval(function () {
-            min = parseInt(time / 60);
-            sec = time % 60;
-
-            document.getElementById('timer').innerHTML = min + ":" + sec;
-            time--;
-
-            if (time < 0) {
-                clearInterval(x);
-                alert("시간초과");
-            }
-        }, 1000);
+      
+        
     </script>
     <script>
-
-
-
-
         $(document).ready(function () {
             // text로 시작하는 모든 id를 숨김
             $(".input-no").hide();
@@ -287,7 +270,6 @@
     </script>
 
     <script src="../../../script/signupPage/signup.js"></script>
-    <!-- <script src="/public/script/signup.js"></script> -->
 
     </div>
     <footer data-include-path="../../../html/layout/footer.html"></footer>
