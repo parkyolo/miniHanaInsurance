@@ -6,19 +6,14 @@ const axios = require('axios');
 const CryptoJS = require('crypto-js');
 const Sentry = require('@sentry/node');
 require("dotenv").config();
-const route = express.Router();
-const publicPath = path.join(__dirname, '../../../public');
-const AxiosError=require('axios');
 
+const publicPath = path.join(__dirname, '../../../public');
 
 Sentry.init({
-  dsn: "https://425afebcea854774b19e9845cb17ff59@o4505282355331072.ingest.sentry.io/4505282362081280",
+  dsn: process.env.DNS_KEY,
   integrations: [
-
     new Sentry.Integrations.Express({ app }),
-
   ],
-
   tracesSampleRate: 0.2,
 });
 
@@ -27,14 +22,15 @@ app.use(Sentry.Handlers.requestHandler());
 app.use(express.static(publicPath));
 app.use(express.json());
 
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(publicPath, 'html/mainPage/mainPage.html'));
 });
   
+
 app.use(
   Sentry.Handlers.errorHandler({
     shouldHandleError(error) {
-      // Capture all 404 and 500 errors
       if (error.status === 401 || error.status === 500) {
         return true;
       }
@@ -45,13 +41,10 @@ app.use(
 
 
 
-  app.post('/increment', (req, res) => {
+app.post('/increment', (req, res) => {
     const number = req.body.number;
-    const inputCode=req.body.code;
-    console.log("서버로 넘어온 넘버 : ",number);
-   
+    const inputCode=req.body.code;   
       const result = onLoggin(number,inputCode);
-      // console.log(result);
       res.send(result.toString());
       
     
@@ -61,6 +54,7 @@ app.use(
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
 console.log('hello');
 
 
@@ -124,10 +118,8 @@ function onLoggin(number,inputCode)
             type: "SMS",
             countryCode: "82",
             from: "01063685605",
-            // 원하는 메세지 내용
             content: `하나손해보험 인증번호입니다.`,
             messages: [
-            // 신청자의 전화번호
                 { to:  `${phoneNum}`,
   
                  content:'하나손해보험 인증번호는 '+ code +'입니다.'
@@ -139,7 +131,10 @@ function onLoggin(number,inputCode)
         console.log(res.data);
     })
     .catch(err => {
-      if (err.response && err.response.status === 401) {
+      if (err.response && err.response.status === 400||
+        err.response.status === 401||
+        err.response.status === 403||
+        err.response.status === 404) {
         Sentry.captureException(err);
       }
 

@@ -8,161 +8,6 @@
     font-size: 50px;
 }
 
-/* .popup_box{
-    height:100%;width:100%;position:fixed;top:0;bottom:0;left:0;right:0;z-index:20000;transition:all 10s ease-out}
-.dimmed{background:rgba(0,0,0,0.6);}
-.popup_box .popup_confirm{
-    width:534px !important;
-    min-width:auto !important
-}
-
-.popup_box .popup_container{
-    position:relative;
-    width:80%;min-width:600px;max-width:800px;
-
-    top:50%;left:50%;
-    transform:translate(-50%,-50%);
-    background:#fff;
-    border-radius:15px;}
-.popup_box .popup_container .text_cont_box {
-    padding:10px 20px 20px 20px; 
-    background:#eeeeee;}
-
-
-.popup_box .popup_header h1 {
-    float:left;
-    width:calc(100% - 80px);
-    color:#333;font-weight:500;font-size:20px;color:#fff;
-    line-height:60px;height:60px;
-    padding-left:40px;
-    letter-spacing:-0.5px;}
-
-.popup_box .popup_body{
-    float:left;
-    width:100%;
-    background:#fff;
-    padding: 0 40px 0px 40px;
-    max-height:500px;overflow-y:auto;}
-.popup_box .popup_footer{
-    float:left;
-    width:100%;
-    background:#fff;
-    padding-top:30px;padding-bottom:40px;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;}
-.popup_box .popup_footer a {position:absolute;top:0;right:0;width:80px;height:80px;}
-.popup_large{max-width:1000px}
-
-.popup_box .popup_body{float:left;width:100%;background:#fff;padding:25px 40px 0px 40px;max-height:505px;overflow-y:auto;}
-.popup_box .popup_body .txt_group{position:relative;}
-
-.popup_box .popup_confirm .popup_body{background:#f2f2f2 !important; padding:1px !important;
-    max-height:none}
-.confirm_box{float:left;width:100%;background:#fff;border:1px solid #e5e5e5;padding: 10px 20px;margin-top:6px;}
-.confirm_box form{float:left;width:100%;padding:10px 0;}
-.confirm_box fieldset{margin-top:10px;float:left;width:100%;}
-.confirm_box fieldset:first-child{margin-top:0px;}
-.confirm_box fieldset label{width:85px;line-height:32px;padding-right:10px;color:#333;font-weight:500;}
-fieldset .label_name {display:block;width:85px;float:left;line-height:32px;padding-right:10px;color:#333;font-weight:500;}
-.confirm_box fieldset button{/*height:34px;line-height:32px;padding:0;font-size:14px;font-weight:400;background:#64696f;border-radius:0;color:#fff;line-height:35px;height:35px;padding:0;}
-
-.confirm_box fieldset .set_box{width:calc(100% - 85px);float:right; }
-.confirm_box fieldset .long{width: calc(100% - 115px);}
-.confirm_box fieldset .short{width: 110px;float:right;}  
-.confirm_box .fieldset, .confirm_box  fieldset{margin-top:10px;float:left;width:100%;}
-.confirm_box  fieldset:first-child, .confirm_box .fieldset:first-child{margin-top:0px;}
-.confirm_box  fieldset label, .confirm_box  .fieldset label{width:85px;float:left;line-height:32px;padding-right:10px;color:#333;font-weight:500;}
-.confirm_box .fieldset .label_name {display:block;width:85px;float:left;line-height:32px;padding-right:10px;color:#333;font-weight:500;}
-.confirm_box .fieldset button{height:34px;line-height:32px;padding:0;font-size:14px;font-weight:400}
-.confirm_box .fieldset .set_box{width:calc(100% - 85px);float:right;}
-.confirm_box .fieldset .long{width: calc(100% - 115px);}
-.confirm_box .fieldset .short{width: 110px;float:right;}
-
-.confirm_box .msg.fc_red{right:10px;width:auto;}
-
-
-.ria_cf_s1 input, .ria_cf_s1 select {border:1px solid #b9b9b9;height:44px;font-size:15px;color:#555; padding:0 10px; max-width:100%;}
-.ria_cf_s1 button {}
-.confirm_box fieldset .long input {border:1px solid #b9b9b9;height:44px; font-size:15px;color:#555;padding:0 60px 0 10px;max-width:100%;}
-
-fieldset{margin: 10px;}
-
-.popup_body .icon_clock {padding-left:20px; background:url('../img/icon_clock.gif') 0px 15px no-repeat}
-
-
-.popup_body .bg_f2f2f2 {background:#f2f2f2 !important;}
-
-.popup_body {background:#f2f2f2;}
-.popup_body .ria_cf_s1 form {border:1px solid #e5e5e5;padding: 10px 20px;background:#fff;}
-.popup_body .ria_cf_s1 form:after {content:"";clear:both;display:table;}
-.popup_body .ria_cf_s1 form fieldset {float:left;width:100%;}
-.popup_body .ria_cf_s1 form fieldset .ria_cf_tit {float:left;width:100px;font-weight:400;font-size:15px;color:#000;line-height:44px;}
-.popup_body .ria_cf_s1 form fieldset .set_box {float:left;width:calc(100% - 100px);}
-.popup_body .ria_cf_s1 form fieldset .set_box .w143 label {border-radius:0;width:50%;float:left;height:44px;line-height:44px;border-color:#b9b9b9;}
-.popup_body .ria_cf_s1 form fieldset .set_box .w143 .btn_radio[type=radio]:checked + label{border-color:#28b2a5;}
-.popup_body .ria_cf_s1 form fieldset .set_box .w214 label {border-radius:0;width:calc(100% / 3);float:left;height:44px;line-height:44px;border-color:#b9b9b9;}
-.popup_body .ria_cf_s1 form fieldset .set_box .w214 .btn_radio[type=radio]:checked + label{border-color:#28b2a5;}
-
-.popup_body .ria_cf_s2 {background:#fff;}
-.popup_body .ria_cf_s2 .ria_ag_box {border:1px solid #e5e5e5;padding: 10px 20px;background:#fff;}
-.popup_body .ria_cf_s2 .ria_ag_box .ag_btn {}
-.popup_body .ria_cf_s2 .ria_ag_box .ag_btn:after {content:"";clear:both;display:table;}
-.popup_body .ria_cf_s2 .ria_ag_box .ag_btn .potit {font-weight:400;font-size:16px;color:#000;line-height:34px;}
-.popup_body .ria_cf_s2 .ria_ag_box .ag_list {}
-.popup_body .ria_cf_s2 .ria_ag_box .ag_list:after {content:"";clear:both;display:table;}
-.popup_body .ria_cf_s2 .ria_ag_box .ag_list li {float:left;width:50%;}
-.popup_body .ria_cf_s2 .ria_ag_box .ag_list li label {margin-right:0;}
-.popup_body .ria_cf_s2 .ria_ag_box .ag_list li a img {vertical-align:-2px;}
-
-.btn_radio[type=radio] + label{    appearance: none;
-    content: "";font-size:14px;font-weight:400;background:#fff;text-align:center;border:1px solid #e5e5e5;padding:0;margin:0;width:50%;}
-.btn_radio.btr_f[type=radio] + label{    appearance: none;
-    content: "";border-top-left-radius: 4px;border-bottom-left-radius: 4px;}
-.btn_radio.btr_l[type=radio] + label{    appearance: none;
-    content: "";border-top-right-radius: 4px;border-bottom-right-radius: 4px;}
-.btn_radio.btr_c[type=radio] + label{    appearance: none;
-    content: "";border-right:none;border-left:none;}
-.btn_radio[type=radio] + label:before{    appearance: none;
-    content: "";background:none;}
-.btn_radio[type=radio]:checked + label:before{    appearance: none;
-    content: "";background:none;}
-.btn_radio[type=radio]:checked + label{    appearance: none;
-    content: "";color:#fff;border-color:#28b2a5;background:#28b2a5;box-shadow: inset 3px 2px 7px -2px #134296;}
-.btn_radio[type=radio] + label.btr3{    appearance: none;
-    content: "";width:33.33%;}
-.btn_radio.btr_l[type=radio] + label.btr3{    appearance: none;
-    content: "";width:33.34%;}
-input[type=radio].btn_radio:disabled + label:before {    appearance: none;
-    content: "";display:none;}
-
-.agree_btn{margin-bottom:15px;}
-.agree_btn label, .agree_btn span.potit{font-weight:500;color:#333;line-height:34px;font-size:14px;}
-.agree_btn button{    appearance: none;
-    content: "";width:auto;padding:0 6px;line-height:32px;float:right;color:#555;}
-.agree_list{margin-bottom:6px;float:left;width:100%;}
-.agree_list li{position:relative;width:50%;font-size:13px;float:left;letter-spacing:-0.5px;}
-.agree_list li input[type=checkbox] + label{padding: 0px 6px 0px 24px;font-weight: 500;}
-.agree_list li input[type=checkbox] + label:before{top: 3px;}
-.agree_list li a{position:absolute;width:auto;line-height:15px;padding:1px 7px;font-size: 13px;right: 10px;top:3px;color:#555;}
-.popup_confirm .text_cont_box .tcb_list1{padding-left:0;margin-top:5px;}
-.popup_confirm .text_cont_box .tcb_list1 li{font-size:13px;margin-top:0;}
-.popup_confirm .modal_off{position: absolute;top: 0;right: 0;width: 80px;height: 80px;}
-.popup_confirm .modal_off img {padding:20px 0 0 15px }
-
-
-.box_type_list{float:left;width:100%;border:1px solid #e5e5e5;border-bottom: none;margin-top: 20px;}
-.box_type_list li{position:relative;float:left;width:100%;border-bottom:1px solid #e5e5e5;padding: 15px;padding-right: 100px;height:75px}
-.box_type_list li p{float:left;width: 100%;}
-.box_type_list li span{display:block;float:left;width: 100%;font-size: 14px;font-weight: 500;color: #333;margin-top: 4px;}
-.box_type_list li strong{position:absolute;right: 20px;top: 50%;margin-top: -12px;font-size: 16px;font-weight: 500;font-family: "roboto","Noto Sans KR";z-index: 10;color: #009591;}
-
-
-.box_type_list1{float:left;width:100%;border:1px solid #e5e5e5;border-bottom: none;margin-top:20px;}
-.box_type_list1 li{position:relative;float:left;width:100%;border-bottom:1px solid #e5e5e5;padding: 15px;padding-right: 100px;font-family: "roboto","Noto Sans KR";}
-.box_type_list1 li .bt_dt{float:left;width: 100%;font-size: 15px;color: #555;margin-bottom: 2px;}
-.box_type_list1 li p{float:left;width: 100%;margin-top: 2px;}
-.box_type_list1 li span{display:block;position:absolute;right: 20px;top: 50%;margin-top: -22px;z-index: 10;text-align: right;font-size: 15px;}
- */
 
 #contents {
     position: relative;
@@ -280,24 +125,28 @@ input[type=radio].btn_radio:disabled + label:before {    appearance: none;
 /*휴대폰 인증 버튼 섹션*/
 #phone-auth-title{
     font-size:25px;
-    padding-top:10px;
+    padding-top:20px;
 }
+
 #phone-auth-img
 {
+    padding-top:20px;
+    padding-bottom:20px;
 
-    padding:20px;
 }
+
 #phone-auth{
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     vertical-align:middle;
+    margin-top:20px;
 }
 
 #phone-auth-background{
     width: 200px;
-    height: 200px;
+    height: 220px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -312,9 +161,9 @@ input[type=radio].btn_radio:disabled + label:before {    appearance: none;
     background-color: #28b2a5;
     border: #555;
     width: 100%;
-    height: 30px;
+    height: 20%;
     border-radius:0 0 5px 5px;
-
+    font-size:15px;
 }
 
 
@@ -551,5 +400,15 @@ input.radio_chk[type=radio]:checked+label {
 input.radio_chk[type=radio]:checked+label:before {
     appearance: none;
 
-    /* background: url("/src/images/radio_distanceOn.png?20211012") no-repeat; */
+}
+
+
+
+#timer{
+    font-size:larger;
+    padding:10px;
+}
+
+#validnum{
+    display: flex;
 }

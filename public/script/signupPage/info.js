@@ -1,5 +1,4 @@
 
-// 
 function infoPage()
 {
     
@@ -19,9 +18,6 @@ function infoPage()
     const bmonth=birthday.substring(2,4);
     const bd=birthday.substring(4,6);
 
-    // document.getElementById("selJoinMemberTel1").selectedIndex(localstorage.getItem('selectedIndex'));
-
-    // console.log(pnoFront.text); //현재 undefined로 출력됨
 
     const infoname = document.getElementById('txtJoinMemberName');
     infoname.value=name; //이름
