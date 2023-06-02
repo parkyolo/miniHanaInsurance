@@ -1,14 +1,14 @@
-let carouselItems = document.querySelectorAll(".el-carousel__item");
-let slideListLinks = document.querySelectorAll(".slideinfo-list__link");
+let carouselItems = document.querySelectorAll(".el_carousel__item");      // carousel에 들어가는 각 슬라이드
+let slideListLinks = document.querySelectorAll(".slideinfo_list__link");  // 
 let itemWidth;
 let carouselInterval;
 
-let activeIdx = 0;  // 현재 active 상태인 카로셀의 index
+let activeIdx = 0;  // 현재 active 상태인 carousel의 index
 let carouselCnt = 3;
 
 
-// 카로셀 업데이트하는 함수
-function updateCarouselDisplay() {
+// carousel 업데이트 함수
+function updateCarousel() {
   itemWidth = carouselItems[0].offsetWidth;
   let translateValue = [0, itemWidth, -itemWidth];
   for (let i=0; i<carouselCnt; i++) {
@@ -18,49 +18,56 @@ function updateCarouselDisplay() {
 
   for (let i=0; i<carouselCnt; i++) {
     if (i === activeIdx) {
-      if (!slideListLinks[i].classList.contains('is-active')) {
-        slideListLinks[i].classList.add('is-active');
+      if (!slideListLinks[i].classList.contains('active')) {
+        slideListLinks[i].classList.add('active');
       }
     } else {
-      if (slideListLinks[i].classList.contains('is-active')) {
-        slideListLinks[i].classList.remove('is-active');
+      if (slideListLinks[i].classList.contains('active')) {
+        slideListLinks[i].classList.remove('active');
       }
     }
   }
 }
 
+
+// carousel 실행 함수
 function startCarousel() {
   carouselInterval = setInterval(function() {
     nextIdx = (activeIdx + 1) % carouselCnt;
-    carouselItems[activeIdx].classList.remove("is-active");
-    carouselItems[nextIdx].classList.add("is-active");
+    carouselItems[activeIdx].classList.remove("active");
+    carouselItems[nextIdx].classList.add("active");
     activeIdx = nextIdx;
 
-    updateCarouselDisplay();
+    updateCarousel();
   }, 5000);
 }
 
-// 화살표 버튼 클릭이벤트 렌더 함수
+
+// 화살표 버튼 click event render 함수
 function renderArrowBtns() {
-  let arrowRight = document.querySelector(".el-carousel__arrow--right");
+  let arrowRight = document.querySelector(".el_carousel__arrow__right");
   arrowRight.addEventListener('click', () => {
       activeIdx = (activeIdx + 1) % carouselCnt;
-      updateCarouselDisplay();
+      updateCarousel();
   });
 
-  let arrowLeft = document.querySelector(".el-carousel__arrow--left");
+  let arrowLeft = document.querySelector(".el_carousel__arrow__left");
   arrowLeft.addEventListener('click', () => {
       activeIdx = (activeIdx - 1 + carouselCnt) % carouselCnt;
-      updateCarouselDisplay();
+      updateCarousel();
   });
 }
 
+
+// carousel을 멈추는 함수
 function pauseCarousel() {
   clearInterval(carouselInterval);
 }
 
+
+// pause toggle 버튼을 render하는 함수
 function renderToggleButton () {
-  let toggleButton = document.querySelector('.btn-control--toggle');
+  let toggleButton = document.querySelector('.btn_control__toggle');
   toggleButton.addEventListener('click', function() {
     if (toggleButton.classList.contains('pause')) {
       toggleButton.classList.remove('pause');
@@ -72,16 +79,20 @@ function renderToggleButton () {
   });
 }
 
+
+// slide link render 함수
 function renderSlideLink() {
   slideListLinks.forEach((slideLink) => {
     slideLink.addEventListener('click', () => {
       let curIdx = Array.from(slideListLinks).indexOf(slideLink);
       activeIdx = curIdx;
-      updateCarouselDisplay();
+      updateCarousel();
     })
   });
 }
 
+
+// Tab에 click event render 함수
 function renderTab() {
   document.addEventListener('DOMContentLoaded', function() {
     let tabs = document.querySelectorAll('ul.tabs li');
@@ -89,7 +100,7 @@ function renderTab() {
     tabs.forEach((tab) => {
         tab.addEventListener('click', function() {
             let tab_id = this.getAttribute('data-tab');
-            let tabContents = document.querySelectorAll('.tab-content');
+            let tabContents = document.querySelectorAll('.tab_content');
 
             tabs.forEach((tab) => {
                 tab.classList.remove('current');
@@ -111,7 +122,7 @@ function init() {
 
   for (let i = 0; i < carouselCnt; i++) {
     let item = carouselItems[i];
-    if (item.classList.contains("is-active")) {
+    if (item.classList.contains("active")) {
       activeIdx = i;
       break;
     }
@@ -129,7 +140,7 @@ function init() {
     }
   })
 
-  updateCarouselDisplay();
+  updateCarousel();
   startCarousel();
   renderArrowBtns();
   renderToggleButton();

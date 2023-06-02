@@ -1,12 +1,3 @@
-// const express = require('express');
-// const app = express();
-// const path = require('path');
-// const port = 3000;
-// const axios = require('axios');
-// const CryptoJS = require('crypto-js');
-// require("dotenv").config();
-
-
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -38,7 +29,7 @@ function moveCursor(pidFront) {
 }
 
 //주민번호 모두 입력했는지 확인
-function isPnoNull(e) {
+function isPnoNull() {
 
     const pnoFront = document
         .getElementById('input-pid-front')
@@ -47,25 +38,30 @@ function isPnoNull(e) {
         .getElementById('input-pid-back')
         .value;
 
-    if (e.keyCode == 13) {
-        console.log(pnoFront);
-        console.log(pnoBack);
+    
         if (pnoFront.length == 0 || pnoBack.length == 0) {
-            console.log('주민번호는 모두 입력해야합니다.');
+            alert('주민번호는 모두 입력해야합니다.');
+            return false;
         }
+        return true;
     }
-}
+
 
 //이름 유효성 검사-15자리
 function isName()
 {
-    const naemLength=document.getElementById('name').length;
-   
-        if(naemLength>15)
-        {
-            return false;
-        }
-        else return true;
+    const naemLength=document.getElementById('name').value.length;
+    console.log(naemLength);
+    if(naemLength==0)
+    {
+        return 0;
+    }
+    if(naemLength>15)
+    {
+        return 1;
+    }
+    else 
+        return 2;
     
 }
 
@@ -121,9 +117,8 @@ function isGenderSelected(){
 function ChangeValue() {
     let value_str = document.getElementById('pnofront');
 
-    let frontNo = value_str
-        .options[value_str.selectedIndex]
-        .text;
+    let index=value_str.options[value_str.selectedIndex];
+    let frontNo = index.text;
     localStorage.setItem('selectNumber',value_str.selectedIndex);
     return frontNo;
 }
@@ -134,14 +129,29 @@ function pNoToString() {
     let pno = frontno + document
         .getElementById('pNo-back')
         .value;
-    alert(pno);
     return pno;
 }
 
+
 function sendNumber() {
-    if(isName()==false)
+    if(isName()==0)
     {
-        alert("이름은 15글자 이하로 입력해주세요");
+        alert("이름은 필수 입력 사항입니다.");
+        return;
+    }
+    if(ChangeValue=='선택')
+    {
+        alert("휴대폰 앞 번호를 선택해주세요.");
+        return;
+    }
+    if(document.getElementById('pNo-back').value.length==0)
+    {
+        alert("휴대폰 뒷 번호를 입력해주세요.");
+        return;
+    }
+    if(isName()==1)
+    {
+        alert("이름은 15글자 이내로 입력해주세요.");
         return;
     }
     if(isForeigner()==false)
@@ -157,8 +167,8 @@ function sendNumber() {
     if (isAllChecked() == false) 
     {
         alert("휴대폰 인증약관 전체동의 해주세요.");
-    }
 
+    }
 
     document.getElementById('input_validation').style.display='block';
 
@@ -181,33 +191,24 @@ function sendNumber() {
         .catch(error => {
             console.error('Error:', error);
         });
+        setTimer();
 }
-
-
-function onLogginsample() {
-
-   if (isAllChecked() == false) 
-        return; 
-    
-    const code = generateRandomCode(6);
-    console.log(code);
-    localStorage.setItem('code', code);
-
-    document.getElementById('fdSMSVldNo').style.display='block';
-}
-
-
 
 
 function openModal(){
    
-    const bday=document.getElementById('input-pid-front').value;
-    localStorage.setItem('bday',bday);
-    console.log(bday);
-    document.getElementById('popIntegrateCert').style.display='block';
-    const bdayinput=document.getElementById('bday');
-    const realbday=localStorage.getItem('bday');
-    bdayinput.value=realbday;
+    if(isPnoNull()==true)
+    {
+        const bday=document.getElementById('input-pid-front').value;
+        localStorage.setItem('bday',bday);
+        console.log(bday);
+        document.getElementById('popIntegrateCert').style.display='block';
+        const bdayinput=document.getElementById('bday');
+        const realbday=localStorage.getItem('bday');
+        bdayinput.value=realbday;
+    }
+    else return;
+
 }
 
 
@@ -272,6 +273,27 @@ function returnPinfo() {
 
 }
 
+
+function setTimer(){
+    var time = 180;
+var min = "";
+var sec = "";
+
+//특정 부분을 주기적으로 업데이트해줘야 하거나
+// 어떤 API로 부터 변경된 데이터를 주기적으로 받아와야 하는 경우
+var x = setInterval(function () {
+    min = parseInt(time / 60);
+    sec = time % 60;
+
+    document.getElementById('timer').innerHTML = min + ":" + sec;
+    time--;
+
+    if (time < 0) {
+        clearInterval(x);
+        alert("시간초과");
+    }
+}, 1000);
+}
 
 //로그인
 //똑같이 인증받고, 이름,생년월일,주민번호가 localstorage 정보와 일치하고 
