@@ -20,12 +20,12 @@
 .ria_main .ria_mcontainer .rm_content:after {content:"";clear:both;display:table;}
 .ria_main .ria_mcontainer .rm_content .rm_adv {float:left;width: 715px;}
 .ria_main .ria_mcontainer .rm_content .rm_adv.w775{width: 775px;height:744px;}
-.ria_main .ria_mcontainer .rm_content .rm_adv .rmadv-owl .owl-dots {counter-reset:dots;text-align:initial;position:absolute;top:10px;right:27px;}
-.ria_main .ria_mcontainer .rm_content .rm_adv .rmadv-owl .owl-dots button span {width:24px;height:24px;border-radius:50%;font-family:'roboto';font-weight:500;font-size:13px;color:#fff;line-height:24px;background:#ccc;margin:0 2.5px;}
-.ria_main .ria_mcontainer .rm_content .rm_adv .rmadv-owl .owl-dots button span:before {content:"";}
-.ria_main .ria_mcontainer .rm_content .rm_adv .rmadv-owl .owl-dots button span:after {counter-increment:dots;content:counter(dots);}
-.ria_main .ria_mcontainer .rm_content .rm_adv .rmadv-owl .owl-dots .owl-dot.active span {background:#ffffff;width:30px;height:30px;line-height:30px;color:#222;}
-.ria_main .ria_mcontainer .rm_content .rm_adv .rmadv-owl .owl-dots .owl-dot:hover span {text-decoration:underline;}
+.ria_main .ria_mcontainer .rm_content .rm_adv .rmadv_owl .owl-dots {counter-reset:dots;text-align:initial;position:absolute;top:10px;right:27px;}
+.ria_main .ria_mcontainer .rm_content .rm_adv .rmadv_owl .owl-dots button span {width:24px;height:24px;border-radius:50%;font-family:'roboto';font-weight:500;font-size:13px;color:#fff;line-height:24px;background:#ccc;margin:0 2.5px;}
+.ria_main .ria_mcontainer .rm_content .rm_adv .rmadv_owl .owl-dots button span:before {content:"";}
+.ria_main .ria_mcontainer .rm_content .rm_adv .rmadv_owl .owl-dots button span:after {counter-increment:dots;content:counter(dots);}
+.ria_main .ria_mcontainer .rm_content .rm_adv .rmadv_owl .owl-dots .owl-dot.active span {background:#ffffff;width:30px;height:30px;line-height:30px;color:#222;}
+.ria_main .ria_mcontainer .rm_content .rm_adv .rmadv_owl .owl-dots .owl-dot:hover span {text-decoration:underline;}
 
 /* 황금돼지 이유섭 2019-03-06 수정시작 */
 .ria_main .ria_mcontainer .rm_content .rm_info {float:left;width:485px;padding:0 50px;position:relative;height:744px;}
