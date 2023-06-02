@@ -1,6 +1,6 @@
-@import url('/src/css/reset.css');
-@import url('/src/css/common.css');
-@import url('/src/css/default.css');
+@import url('../../../css/reset.css');
+@import url('../../../css/common.css');
+@import url('../../../css/default.css');
 
 #contents{
     position: relative;
@@ -57,7 +57,7 @@
     position: relative;
 }
 #visual_box.visual_counsel_inquiry  {
-    background: url("/src/images/customerImg/visual_counselInquiry_bg.jpg") top right no-repeat;
+    background: url("../../../images/customerImg/visual_counselInquiry_bg.jpg") top right no-repeat;
 }
 #contents > .section_box1:first-child {
     margin-top: 0 !important;
@@ -175,7 +175,7 @@
 .fna_search_box .search_field .input_box:focus {outline:none;}
 .search_field .input_box{border:none;border-bottom:2px solid #28b2a5; width:100%;font-size:20px;padding:15px 57px 15px 15px;height:65px}
 
-.search_field a{display:block;position:absolute;right:5px;bottom:10px;width:45px;height:45px;border-radius:50%;background:url('/src/images/customerImg/bg_search.png') no-repeat center center #28b2a5;}
+.search_field a{display:block;position:absolute;right:5px;bottom:10px;width:45px;height:45px;border-radius:50%;background:url('../../../images/customerImg/bg_search.png') no-repeat center center #28b2a5;}
 .search_field .input_box::-webkit-input-placeholder{font-weight:300}
 .search_field .input_box::-moz-placeholder{font-weight:300}
 .search_field .input_box:-ms-input-placeholder{font-weight:300}

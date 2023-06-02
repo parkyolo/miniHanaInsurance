@@ -1,20 +1,20 @@
-@import url('/src/css/reset.css');
-@import url('/src/css/common.css');
-@import url('/src/css/default.css');
+@import url('../../../css/reset.css');
+@import url('../../../css/common.css');
+@import url('../../../css/default.css');
 
 /*** ria_box ***/
 .ria_box .flipster {overflow:hidden;}
 /* ria_box layout */
 .ria_box {height:100%;width:100%;position:fixed;top:0;bottom:0;left:0;right:0;z-index:20000;font-family: 'Roboto','Noto Sans KR';}
 .blur {filter:blur(3px);}
-.ria_box:before {content:"";width:100%;height:100%;background:url("/src/images/calImg/bg_ria.jpg") no-repeat;background-size:cover;position:absolute;bottom:0;}
-.ria_box.ria_car:before {background:url("/src/images/calImg/bg_ria_car.jpg") no-repeat;background-size:cover;}
+.ria_box:before {content:"";width:100%;height:100%;background:url("../../../images/calImg/bg_ria.jpg") no-repeat;background-size:cover;position:absolute;bottom:0;}
+.ria_box.ria_car:before {background:url("../../../images/calImg/bg_ria_car.jpg") no-repeat;background-size:cover;}
 
 .ria_box:after {content:"";width:100%;height:132px;background:linear-gradient(90deg, #009591 56.5%, #009591 0);background-color:#009591;position:absolute;top:0;z-index:1;}
 .ria_box.ria_change:after {content:"";width:100%;height:132px;background:linear-gradient(90deg, #3f4656 56.5%, #2b3349 0);background-color:#009591;position:absolute;top:0;z-index:1;}
 .ria_box .ria_container {width:1200px;position:absolute;top:0;left:50%;transform:translate(-50%,0);background:#fff;z-index:2;}
 .ria_box .ria_header {height:50px;background-color:#009591;}
-.ria_box.ria_change .ria_header {height:50px;background-color:#3f4656;background-image:url("../img/bg_header_change.jpg"), linear-gradient(90deg, #3f4656 60%, #2b3349 0);background-position:60% top;background-repeat:no-repeat;}
+.ria_box.ria_change .ria_header {height:50px;background-color:#3f4656;background-image:url("../../../img/bg_header_change.jpg"), linear-gradient(90deg, #3f4656 60%, #2b3349 0);background-position:60% top;background-repeat:no-repeat;}
 .ria_box .ria_header:after {content:"";clear:both;display:table;}
 .ria_box .ria_header .ria_logo {float:left;}
 .ria_box .ria_header .ria_logo:after {content:"";clear:both;display:table;}
@@ -25,11 +25,11 @@
 .ria_box .ria_header .ria_info .ria_login {float:left;}
 .ria_box .ria_header .ria_info .ria_login span {font-weight:500;font-size:14px;color:#fff;line-height:50px;}
 .ria_box .ria_header .ria_info .ria_login .ria_ltime {position:relative;padding-left:29px;}
-.ria_box .ria_header .ria_info .ria_login .ria_ltime:before {content:"";width:18px;height:16px;background:url("/src/images/calImg/icon_clock.png") no-repeat;position:absolute;top:2px;left:7px;}
+.ria_box .ria_header .ria_info .ria_login .ria_ltime:before {content:"";width:18px;height:16px;background:url("../../../images/calImg/icon_clock.png") no-repeat;position:absolute;top:2px;left:7px;}
 .ria_box .ria_header .ria_info .ria_bgroup {float:left;padding-top:10px;margin-left:15px;}
 .ria_box .ria_header .ria_info .ria_bgroup .btn_ria1 {float:left;display:block;padding:4px 10px 5px;border:1px solid #b9e2e1;font-weight:400;font-size:13px;color:#fff;margin-left:5px;text-decoration:none;} /*2019-02-15 underline 고객요구사항반영*/
 .ria_box .ria_header .ria_info .ria_bgroup .btn_ria1.icon_door {position:relative;padding-right:32px;}
-.ria_box .ria_header .ria_info .ria_bgroup .btn_ria1.icon_door:after {content:"";width:11px;height:13px;background:url("/src/images/calImg/icon_door.png") no-repeat;position:absolute;top:8px;right:10px;}
+.ria_box .ria_header .ria_info .ria_bgroup .btn_ria1.icon_door:after {content:"";width:11px;height:13px;background:url("../../../images/calImg/icon_door.png") no-repeat;position:absolute;top:8px;right:10px;}
 .ria_box .ria_body {background:#fff;padding:0 50px 60px;max-height:800px;border-bottom:10px solid #009591;}
 
 .ria_box .ria_body .ria_title {}
@@ -49,7 +49,7 @@
 .ria_box .result_box .result_sum_box .result_sum_title h3 .r_box {display:block;}
 .ria_box .result_box .result_sum_box .result_sum_title h3 strong {font-family:'roboto';font-weight:bold;font-size:36px;color:#ed1651;text-align:right;margin-top:13px; font-weight:normal}
 .ria_box .result_box .result_sum_box .result_sum_title .msg_result {background:#2d303a;padding:10px 0;border-top:1px solid #474c59;text-align:center;font-weight:400;font-size:13px;color:#a2c4e1;}
-.ria_box .result_box .result_sum_box .result_sum_title .msg_result:before {content:"";width:18px;height:18px;background:url("../img/icon_msgresult.png") no-repeat;display:inline-block;vertical-align:-3px;margin-right:5px;}
+.ria_box .result_box .result_sum_box .result_sum_title .msg_result:before {content:"";width:18px;height:18px;background:url("../../../img/icon_msgresult.png") no-repeat;display:inline-block;vertical-align:-3px;margin-right:5px;}
 .ria_box .result_box .result_sum_box .result_sum_title .msg_price {background:#2d303a;padding:10px 20px;border-top:1px solid #474c59;text-align:left;font-weight:400;font-size:16px;color:#f0f9f8;}
 
 .ria_box .result_box .result_layer_type {position:relative;padding:20px 20px 73px 20px;border-top:1px solid #474c59;border-bottom:1px solid #474c59;background-color:#2d303a;color:#fff;}
@@ -94,7 +94,7 @@
 .p_price{font-size:20px;color:#666;font-family: 'Roboto';}
 .p_txt{font-size:15px;color:#666}
 
-.ria_box .ria_qmark {display:inline-block;width:18px;height:18px;background:url("/src/images/calImg/icon_qmark.png") no-repeat;margin-left:3px;vertical-align:-3px;cursor:pointer;position:relative;border:0;}
+.ria_box .ria_qmark {display:inline-block;width:18px;height:18px;background:url("../../../images/calImg/icon_qmark.png") no-repeat;margin-left:3px;vertical-align:-3px;cursor:pointer;position:relative;border:0;}
 .ria_box .ria_qmark:hover .ria_tooltip {display:block;}
 .ria_box .ria_qmark.alink {cursor:pointer;}
 
@@ -213,5 +213,5 @@ max-width: 100%;
 .ria_box input[type=radio].ria_base1 + label.on{z-index:1;background:#009591;color:#fff;border-left: 3px solid #009591;border-right: 3px solid #009591;}
 .ria_box input[type=radio].ria_base1 + label.on .p_price{font-size:24px;color: #d1f5f3;}
 .ria_box input[type=radio].ria_base1 + label.on .p_txt{font-size:15px;color: #d1f5f3;} 
-.ria_box input[type=radio].ria_base1 + label:before {content:"";display:inline-block;width:24px;height:24px;position:absolute;left:0;top:6px;background:url("/src/images/calImg/icon_radio_off.png") 0px 0px no-repeat;background-size:24px auto;position: absolute !important;top: 30px;left: 20px;}
-.ria_box input[type=radio].ria_base1:checked + label:before {text-align:center;line-height:24px;background:url("/src/images/calImg/icon_radio_on_w.png") 0px 0px no-repeat;background-size:24px auto;position: absolute !important;top: 30px;left: 20px;}
+.ria_box input[type=radio].ria_base1 + label:before {content:"";display:inline-block;width:24px;height:24px;position:absolute;left:0;top:6px;background:url("../../../images/calImg/icon_radio_off.png") 0px 0px no-repeat;background-size:24px auto;position: absolute !important;top: 30px;left: 20px;}
+.ria_box input[type=radio].ria_base1:checked + label:before {text-align:center;line-height:24px;background:url("../../../images/calImg/icon_radio_on_w.png") 0px 0px no-repeat;background-size:24px auto;position: absolute !important;top: 30px;left: 20px;}

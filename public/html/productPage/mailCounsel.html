@@ -16,6 +16,20 @@
     referrerpolicy="no-referrer" 
     /> 
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("Dc1jHnhXV0cuZsT44");
+})();
+</script>
+
+    
+
     <style>
 
       
@@ -107,7 +121,7 @@
         transition: border 0.1s ease-in;
         word-break: normal;
         word-wrap: normal;
-        width: 200px;
+        width: 100%;
         height: 50px;
     }
     #mailCoun #page4 input{
@@ -252,7 +266,7 @@
             <h2>
               안녕하세요! 상담 신청을 해볼까요?    먼저, 이름과 생년월일을 입력해주세요.
             </h2>
-            <input type="text" id="userName" placeholder="홍길동" />
+            <input type="text" id="userName" placeholder="홍길동" name="username"/>
             <input type="text" id="birthdateInput" placeholder="YYYY-MM-DD" />
           </div>
             <p id="birthdateError" class="error"></p> 
@@ -296,14 +310,15 @@
           <div id="page3" class="page">
             <h2>감사합니다! 이번에는 사시는 지역과 집 주소를 입력해 주세요.</h2>
             <div class="userHome">        
-            
-            <input type="text" id="sample6_postcode" placeholder="우편번호" />
-            <input
+             <input
               type="button"
               id="woonum"
               onclick="sample6_execDaumPostcode()"
               value="우편번호 찾기"
-            /><br />
+            />
+
+            <input type="text" id="sample6_postcode" placeholder="우편번호" />
+           <br />
             
               <input type="text" id="sample6_address" placeholder="주소" /><br />
             
@@ -344,26 +359,11 @@
             <h2>감사합니다. 모든 입력이 완료되었습니다!</h2>
             <div id="summary"></div>
             <button onclick="gomainPage()" id="goMainpage" type="button" class="btn btn_blue btnRegister">메인페이지로</button>
-            <button onclick="submitt()" id="nextButton" type="button" class="btn btn_blue btnRegister">상담 신청</button>
+            <button onclick="sendMail()" id="nextButton submit" type="button" class="btn btn_blue btnRegister">상담 신청</button>
             
           </div>
           <div id="progressBar"></div>
 
-<!--         <div class="section_box1">
-            <div class="bg_graybox bd2top">
-                <h4 class="txt_title">개인(신용)정보 수집 · 이용 동의(필수)<br>개인(신용)정보보호에 관한 전문은 개인정보처리방침을 확인하여 주시기 바랍니다.</h4>
-                <div class="txt_detail"><a href="/w/terms/personalInfProcess" class="h_color" role="link">개인정보 처리방침</a></div>
-            </div>
-        </div>
-
-                
-        <div class="section_box1">
-            <div class="bg_graybox bd2top">
-                <h4 class="txt_title">소비자 권익보호에 관한 사항</h4>
-                <div class="txt_detail">본 동의를 거부하시는 경우에는 접수 및 처리가 불가능 할 수 있으며, 본 동의서에 의한 개인(신용)정보 조회는 귀하의 신용등급에 영향을 주지 않습니다.</div>
-            </div>
-        </div>
-         -->
           
         </div>
     </div>
@@ -388,6 +388,20 @@
         });
       </script>
     
+
+
     <script src="../../script/productPage/script.js"></script>
+    <script>
+      function sendMail(){
+          var params = {
+              from_name : document.getElementById("userName").value,
+              email_id: document.getElementById("emailInput").value, 
+          };
+  
+          emailjs.send("service_lc6gd9f", "template_aike4hi", params).then(function (res) {
+              alert("신청되었습니다! ");
+          })
+      }
+  </script>
   </body>
 </html>

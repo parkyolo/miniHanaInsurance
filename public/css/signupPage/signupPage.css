@@ -283,6 +283,7 @@ input[type=radio].btn_radio:disabled + label:before {    appearance: none;
 /*휴대폰 인증 버튼 섹션*/
 #phone-auth-title{
     font-size:25px;
+    padding-top:10px;
 }
 #phone-auth-img
 {
@@ -432,7 +433,7 @@ input[type="checkbox"]:checked {
     outline: none;
     appearance: none;
     content: "";
-    display: inline-block;
+    display: none;
     width: 20px;
     height: 20px;
     position: relative;

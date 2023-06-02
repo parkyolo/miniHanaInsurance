@@ -69,12 +69,13 @@
 }
 
 .foot_area .foot_info .foot_sns {
-    float: left;
-    width: 320px;
+    float: right;
+    width: auto;
     height: 89px;
     text-align: right;
     padding-top: 30px;
 }
+
 .foot_area .foot_info .foot_sns a {
     margin: 0 2.5px;
 }
@@ -128,12 +129,9 @@
     padding-left: 0;
 }
 .foot_area .foot_info .foot_addr{
-    width: calc(100% - 503px);
+    width: auto;
 }
-.foot_area .foot_info .foot_sns {
-    float: right;
-    width: 319px;
-    height: 89px;
-    text-align: right;
-    padding-top: 30px;
+
+@media screen and (max-width: 767px) {
+    .foot_sns {display: none;}
 }
