@@ -71,13 +71,13 @@ input:-webkit-autofill{-webkit-box-shadow: 0 0 0 1000px #f0fefe inset;}
 .main_mid_box {display: flex; justify-content: space-evenly; flex-wrap: wrap; letter-spacing: -0.08em; font-family: 'Roboto','Noto Sans KR'; text-align: left; margin: 50px 20px 0 20px;}
 .main_mid_box li {flex-basis: calc(33.33% - 10px); background: #fff; border-radius: 15px; box-shadow: 5px 3px 20px 5px #00000012; border: 2px solid #fff; list-style: none; margin-bottom: 20px;}
 .main_mid_box li:hover{border-color: #2cb26a;}
-.main_mid_box li span {position:relative; cursor: pointer; text-decoration: none; padding-bottom: 5px;}
+.main_mid_box li span {position:relative; cursor:default; text-decoration: none; padding-bottom: 5px;}
 .main_mid_box li span::after {background:none repeat scroll 0 0 transparent; bottom:7px; left: 50%; content: ""; display: block; width: 0; height: 5px;position: absolute;background:#2cb26a40;transition:width 0.3s ease 0s, left 0.3s ease 0s;}
 .main_mid_box li:hover span:after {width: 100%; left:0;}
 .main_mid_box li section.visual_box {position:relative;	padding: 30px;margin: 10px;	background: #f9f9fb;	border-radius: 10px 10px 0 0;}
 .main_mid_box li section.visual_box .visual_icon {content: "";display:block; width: 55%; margin: 0 auto 30px;}
 section.visual_box .title  {font-size: 35px; color: #555; font-weight: 500; line-height: 48px; margin-top: 8px;}
-section.visual_box .title font  {color: #ef794b; font-weight: 600;}
+section.visual_box .title font  {color: #ef794b; font-weight: 600; cursor: default;}
 section.visual_box .sub_title  {font-size: 20px; color: #888888; letter-spacing: -0.08em;}
 section.recom_box  {padding: 15px 40px 0;}
 section.recom_box p.label  {padding: 3px 25px; display: inline-block; background: #fff; color: #ef794b; border: 2px solid #ef794b; border-radius: 5px; font-size: 16px; font-weight: 500;}
@@ -117,7 +117,7 @@ ul.tabs li.current::after {width: 100%;}
 .right .more {display: inline-block; width: 118px; line-height: 40px; border-radius: 21px; font-size: 16px; text-align: center; color: #E7FBE8; background-color: #555555; border: 1px solid #555555;}
 
 /* 유튜브 홍보영상 배너 영역 */
-.video_banner {background: #f5fbe7; padding-top: 180px; margin-top: -40px;}
+.video_banner {background: #f5fbe7; padding-top: 200px; margin-top: -60px;}
 .video_banner .section_wrap .ad_video {margin: 50px 0; width: 50vw; height: 28.1vw;}
 
 /* 하단 정보 배너 영역 */
