@@ -1,51 +1,32 @@
 const plnPrice = [8000, 11000, 16000];
 let priceIdx = 1;
 
-// function startCountdown(minutes) {
-//     let seconds = minutes * 60;
-
-//     const countdown = setInterval(() => {
-//         const minutesRemaining = Math.floor(seconds / 60);
-//         const secondsRemaining = seconds % 60;
-
-//         const logonTimer = document.getElementById('spnLogonTimer');
-//         logonTimer.innerHTML = `${minutesRemaining}분${secondsRemaining < 10 ? '0' : ''}${secondsRemaining}초`;
-
-//         if (seconds === 0) {
-//             clearInterval(countdown);
-//             // 로그인 유효 시간 초과 안내창
-//         } else {
-//             seconds--;
-//         }
-//     }, 1000);
-// }
-
 // 플랜 선택에 따라 select_area의 위치를 변경하는 함수
 function moveSelectArea() {
     const rdoPlnCod = document.querySelectorAll('input[name="rdoPlnCod"]');
     const select_area = document.querySelector('.select_area');
 
-    rdoPlnCod.forEach((radio) => {
-        radio.addEventListener('click', () => {
-            if (radio.checked) {
-                const value = radio.value;
+    rdoPlnCod.forEach((plan) => {
+        plan.addEventListener('click', () => {
+            if (plan.checked) {
+                const priceValue = plan.value;
 
                 // 모든 라디오 버튼의 레이블에서 'on' 클래스 제거
-                const labels = document.querySelectorAll('label');
-                labels.forEach((label) => {
+                const rdoPlnLabels = document.querySelectorAll('label');
+                rdoPlnLabels.forEach((label) => {
                     label.classList.remove('on');
                 });
 
                 // 선택된 라디오 버튼과 연결된 레이블에 'on' 클래스 추가
-                const connectedLabel = document.querySelector(`label[for="${radio.id}"]`);
+                const connectedLabel = document.querySelector(`label[for="${plan.id}"]`);
                 connectedLabel.classList.add('on');
 
                 // 선택된 버튼 위치로 select_area 이동
-                if (value === "E") {
+                if (priceValue === "E") {
                     select_area.style.left = "560px";
-                } else if (value === "C") {
+                } else if (priceValue === "C") {
                     select_area.style.left = "740px";
-                } else if (value === "D") {
+                } else if (priceValue === "D") {
                     select_area.style.left = "920px";
                 }
 
@@ -63,7 +44,7 @@ function numberCounter(target_frame, target_number) {
     this.target_frame = document.getElementById(target_frame);
     this.timer = null;
     this.counter();
-};
+}
 
 numberCounter.prototype.counter = function() {
     var self = this;
@@ -80,21 +61,21 @@ numberCounter.prototype.counter = function() {
     } else {
         clearTimeout(this.timer);
     }
-};
+}
 
 // 선택한 플랜에 맞는 가격을 보여주는 함수
 function showPrice() {
     const rdoPlnCod = document.querySelectorAll('input[name="rdoPlnCod"]');
     rdoPlnCod.forEach((plnCod) => {
         if (plnCod.checked) {
-            const value = plnCod.value;
+            const priceValue = plnCod.value;
 
             // 플랜에 따라 priceIdx 변경
-            if (value === "E") {
+            if (priceValue === "E") {
                 priceIdx = 0;
-            } else if (value === "C") {
+            } else if (priceValue === "C") {
                 priceIdx = 1;
-            } else if (value === "D") {
+            } else if (priceValue === "D") {
                 priceIdx = 2;
             }
 
@@ -119,7 +100,6 @@ function renderPeriodClickEvent() {
 }
 
 function init() {
-    // startCountdown(30);
     renderPeriodClickEvent()
     moveSelectArea();
     showPrice();

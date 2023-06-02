@@ -325,14 +325,9 @@ function renderPage(page) {
 
 // 페이지네이션 링크를 생성하는 함수
 function renderPagination() {
-    // 전체 페이지 수 계산
-    const totalPages = Math.ceil(cur_data.length / itemsPerPage);
-
-    // 페이지네이션 요소를 담을 컨테이너
-    const paginationContainer = document.getElementById('pagination_container');
-
-    // 페이지네이션 컨테이너 초기화
-    paginationContainer.innerHTML = '';
+    const totalPages = Math.ceil(cur_data.length / itemsPerPage);                   // 전체 페이지 수 계산
+    const paginationContainer = document.getElementById('pagination_container');    // 페이지네이션 요소를 담을 컨테이너
+    paginationContainer.innerHTML = '';                                             // 페이지네이션 컨테이너 초기화
 
     // 처음 페이지 링크 생성
     const firstLink = document.createElement('li');

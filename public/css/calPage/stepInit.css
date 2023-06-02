@@ -64,7 +64,7 @@
 .ria_box .result_box .msg_list {background:#2d303a;padding:15px 20px;color:#fff;}
 
 .ria_box .result_box.type3 {position: absolute;  left: 0;  right: 0;  top: 0px;  bottom: 0;}
-.ria_box .result_left.mCustomScrollbar {position:absolute;  left:0;  right:316px;  top:0;  bottom:0;}
+.ria_box .result_left.custom_scrollbar {position:absolute;  left:0;  right:316px;  top:0;  bottom:0;}
 .ria_box .result_pos_right {position:absolute;  right:0;  top:4px;  bottom:4px;  width:296px;}
 .ria_box .result_box .result_pos_right .result_sum_box {margin-top:0;}
 
