@@ -7,7 +7,6 @@ const CryptoJS = require('crypto-js');
 const Sentry = require('@sentry/node');
 require("dotenv").config();
 
-const publicPath = path.join(__dirname, '../../../public');
 
 Sentry.init({
   dsn: process.env.DNS_KEY,
@@ -18,6 +17,10 @@ Sentry.init({
 });
 
 app.use(Sentry.Handlers.requestHandler());
+
+
+
+const publicPath = path.join(__dirname, '../../../public');
 
 app.use(express.static(publicPath));
 app.use(express.json());
@@ -101,9 +104,6 @@ function onLoggin(number,inputCode)
       hmac.update(access_key);
       const hash = hmac.finalize();
       const signature = hash.toString(CryptoJS.enc.Base64);
-  
-  
-  
       axios({
         method: method,
         url: url,

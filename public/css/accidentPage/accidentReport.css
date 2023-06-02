@@ -66,6 +66,21 @@ ul>img {
     width: 200px;
     height: 200px;
 }
+input[type="radio"] {
+   
+
+}
+
+input[type="radio"]:checked+label:before {
+    text-align: center;
+    line-height: 20px;
+    background: url("../../../images/form_radioOn.png") 0px 0px no-repeat;
+    background-size: 20px auto;
+    appearance: none;
+    content: "";
+
+
+}
 
 .real-upload {
     display: none;
@@ -104,10 +119,23 @@ ul>img {
     background-color: tomato;
 }
 
+#accidentcontent
+{
+    width:500px;
+    height: 200px;
+    padding:20px;
+    border:1px solid rgb(212, 212, 212);
+    border-radius: 2px;
+
+}
+
+#accidentcontent:focus{
+    outline:2px solid #009591;
+}
 
 .map_wrap {
     position: relative;
-    width: 100%;
+    width: 500px;
     height: 350px;
 }
 
@@ -244,7 +272,7 @@ ul>img {
 
 input:not(.phonenum)
 {
-    height: 40px;
+    height: 50px;
     width:500px;
     padding:10px;
 
@@ -294,8 +322,35 @@ input:focus{
 
   
   #accidenttype-input-contents input[type="radio"] {
-    width: 50px; /* 너비 조정 */
+    width: 100px; /* 너비 조정 */
     height: 30px; /* 높이 조정 */
+    margin-right: 5px;
+    position:relative;
+    appearance: none;
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    border:none;
+    background: url("../../../images/form_radioOff.png") 0px 0px no-repeat;
+    background-size: 20px auto;
+  }
+
+  #accidenttype-input-contents input[type="radio"]:checked {
+    width: 100px; /* 너비 조정 */
+    height: 30px; /* 높이 조정 */
+    margin-right: 5px;
+    position:relative;
+    appearance: none;
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    border:none;
+    background: url("../../../images/form_radioOn.png") 0px 0px no-repeat;
+    background-size: 20px auto;
   }
 
 
