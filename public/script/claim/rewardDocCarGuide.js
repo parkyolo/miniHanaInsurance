@@ -59,6 +59,11 @@ function changeProcessing() {
   // text 가져오기
   previousText = previousLi.textContent;
 
+  // 이전에 선택되어 있던 것 전부 삭제
+  for(var i=0;i<lis.length; i++){
+    lis[i].classList.remove('clicked');
+  }
+
   // 첫번째 click되어 있도록
   lis[idx].classList.add('clicked');
     
