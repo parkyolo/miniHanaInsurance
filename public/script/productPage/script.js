@@ -232,7 +232,11 @@ function submitt() {
 }
 
 function gomainPage() {
-  window.location.href = "../html/mainPage/mainPage.html";
+  window.location.href = "../../html/mainPage/mainPage.html";
+}
+
+function goConselpage() {
+  window.location.href = "../../html/productPage/mailCounsel.html";
 }
 
 //카카오 api

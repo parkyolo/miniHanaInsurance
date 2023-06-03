@@ -210,12 +210,4 @@ $(document).ready(function () {
     $("#popProductInfo3").hide();
   });
 });
-$(document).ready(function () {
-  $("#bohumhelp").click(function () {
-    $("#popProductInfo4").css("display", "block");
-  });
 
-  $(".modal_off.modalProductInfo").click(function () {
-    $("#popProductInfo4").hide();
-  });
-});
