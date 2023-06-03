@@ -7,22 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signupMainPage</title>
     <link rel="stylesheet" href="../../../css/signupPage/signupPage.css">
-
-
-
 </head>
 
 <body>
     <div data-include-path="../../../html/layout/quickmenu.html"></div>
 
     <div id="wrap">
+
         <header data-include-path="../../../html/layout/header.html"></header>
         <div id="container">
 
             <div id="contents">
                 <div id="head-contents" class="head-contents">
                     <div class="head-title">
-                        <h3 id="contents-title" class="contents-title">로그인</h3>
+                        <h3 id="contents-title" class="contents-title">본인인증</h3>
                         <p class="contents-title-description" style="font-size: 15px;">
                             하나손해보험은 개인정보보호와 관련하여 전자금융거래 회원제만을 운영하고 있습니다.<br>
                             고객님의 소중한 정보를 안전하게 보호하고 익명 사용자의 부정가입으로 인한 피해를 방지하기 위해 본인인증이 필요합니다.
@@ -35,13 +33,14 @@
 
                             <div class="pid-title-name">
                                 <label class="pid-input" for="input-pid-front">주민등록번호</label>
+                                <!--label 선택해도 주민번호에 커서 입력가능-->
                             </div>
                             <div class="pid-form-content" id="pid-form-content">
                                 <input type="text" id="input-pid-front" placeholder="주민번호 앞자리" maxlength="6" required
                                     onkeyup="moveCursor(this)">
                                 &nbsp&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp&nbsp
-                                <input type="password" id="input-pid-back" placeholder="주민번호 뒷자리" maxlength="7" required
-                                    onkeypress="isPnoNull(event)">
+                                <input type="password" id="input-pid-back" placeholder="주민번호 뒷자리" maxlength="7"
+                                    required>
 
                             </div>
 
@@ -77,17 +76,16 @@
                                         <input type="hidden" name="sSendCount" id="sSendCount" title="재전송 순번" value="">
                                         <label for="txtMobileCertName" class="ria_cf_tit">이름</label>
                                         <div class="set_box pholder">
-                                            <input type="text" name="CertName" id="name" title="이름 입력"
-                                                placeholder="성명을 입력" class="long w214" role="textbox"
-                                                tk_security="true">
-                                                <div class="w143 fr">
-                                                    <input style="display: none;" type="radio" name="isforeigner"
-                                                        id="korean" value="1" class="btn_radio btr_f"
-                                                        role="radio"><label for="korean">내국인</label>
-                                                    <input style="display: none;" type="radio" name="isforeigner"
-                                                        id="foreigner" value="2" class="btn_radio btr_l"
-                                                        role="radio"><label for="foreigner">외국인</label>
-                                                </div>
+                                            <input type="text" name="CertName" id="pname" class="long w214"
+                                                role="textbox" tk_security="true">
+                                            <div class="w143 fr">
+                                                <input style="display: none;" type="radio" name="isforeigner"
+                                                    id="korean" value="1" class="btn_radio btr_f" role="radio"><label
+                                                    for="korean">내국인</label>
+                                                <input style="display: none;" type="radio" name="isforeigner"
+                                                    id="foreigner" value="2" class="btn_radio btr_l" role="radio"><label
+                                                    for="foreigner">외국인</label>
+                                            </div>
                                         </div>
                                     </fieldset>
                                     <fieldset class="mt10">
@@ -207,15 +205,18 @@
                                             role="form">
                                             <fieldset>
                                                 <label for="txtSMSVldNo" class="lh44">인증번호</label>
-                                                <div class="set_box">
+                                                <div class="set_box" id="validnum">
                                                     <div class="long po_r w240">
                                                         <input type="text" id="no" title="인증번호 입력" class="wPc100 h44"
                                                             maxlength="6" role="textbox" tk_security="true">
-                                                        <strong class="msg fc_red lh44 icon_clock"
-                                                            id="spnTimer"></strong>
                                                     </div>
+
+
+                                                    <div id="timer"></div>
+
                                                     <button type="button" class="btn btn_darkgray fr w122 h44"
-                                                        id="btnMobileCertNumRequestResend" role="button">재전송</button>
+                                                        id="btnMobileCertNumRequestResend" role="button"
+                                                        onclick="sendNumber()">재전송</button>
                                                 </div>
                                             </fieldset>
                                             <input type="hidden" name="hid_key_data" id="hid_key_data" value=""><input
@@ -248,6 +249,10 @@
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
+
+
+    </script>
+    <script>
         $(document).ready(function () {
             // text로 시작하는 모든 id를 숨김
             $(".input-no").hide();
@@ -265,7 +270,6 @@
     </script>
 
     <script src="../../../script/signupPage/signin.js"></script>
-    <!-- <script src="/public/script/signup.js"></script> -->
 
     </div>
     <footer data-include-path="../../../html/layout/footer.html"></footer>

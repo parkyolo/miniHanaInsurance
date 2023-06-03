@@ -13,7 +13,7 @@
     <div data-include-path="../../../html/layout/quickmenu.html"></div>
 
     <div id="wrap">
-        
+
         <header data-include-path="../../../html/layout/header.html"></header>
         <div id="container">
 
@@ -39,8 +39,8 @@
                                 <input type="text" id="input-pid-front" placeholder="주민번호 앞자리" maxlength="6" required
                                     onkeyup="moveCursor(this)">
                                 &nbsp&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsp&nbsp
-                                <input type="password" id="input-pid-back" placeholder="주민번호 뒷자리" maxlength="7" required
-                                    >
+                                <input type="password" id="input-pid-back" placeholder="주민번호 뒷자리" maxlength="7"
+                                    required>
 
                             </div>
 
@@ -65,7 +65,7 @@
                     <div class="popup_container popup_confirm">
                         <div class="popup_header">
                             <h1 role="heaiing" aria-level="1">본인인증</h1>
-                            <input id="closebtn" type="button" value="X" onclick="closeModal()" >
+                            <input id="closebtn" type="button" value="X" onclick="closeModal()">
                         </div>
                         <div class="popup_body noscroll bg_f2f2f2" style="border-bottom: 1px solid rgb(255, 255, 255);">
 
@@ -76,9 +76,8 @@
                                         <input type="hidden" name="sSendCount" id="sSendCount" title="재전송 순번" value="">
                                         <label for="txtMobileCertName" class="ria_cf_tit">이름</label>
                                         <div class="set_box pholder">
-                                            <input type="text" name="CertName" id="name" 
-                                                class="long w214" role="textbox"
-                                                tk_security="true">
+                                            <input type="text" name="CertName" id="pname" class="long w214"
+                                                role="textbox" tk_security="true">
                                             <div class="w143 fr">
                                                 <input style="display: none;" type="radio" name="isforeigner"
                                                     id="korean" value="1" class="btn_radio btr_f" role="radio"><label
@@ -216,7 +215,8 @@
                                                     <div id="timer"></div>
 
                                                     <button type="button" class="btn btn_darkgray fr w122 h44"
-                                                        id="btnMobileCertNumRequestResend" role="button" onclick="sendNumber()">재전송</button>
+                                                        id="btnMobileCertNumRequestResend" role="button"
+                                                        onclick="sendNumber()">재전송</button>
                                                 </div>
                                             </fieldset>
                                             <input type="hidden" name="hid_key_data" id="hid_key_data" value=""><input
@@ -249,8 +249,8 @@
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
-      
-        
+
+
     </script>
     <script>
         $(document).ready(function () {

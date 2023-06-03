@@ -146,7 +146,8 @@
                                     <h3>사고 발생 위치</h3>
                                 </div>
                                 <div class="contents" id="accidentplace-input-contents">
-                                    <input type="button" value="지도에서 찾기" onclick="showmap()" style="width:500px;" id="findmap">
+                                    <input type="button" value="지도에서 찾기" onclick="showmap()" style="width:500px;"
+                                        id="findmap">
                                     <input type="text" id="mapAddr"></input>
 
 
@@ -214,7 +215,7 @@
                                 <div class="contents" id="injuredpeople-input-contents">
                                     <div class="injuredpeople" id="injuredpeople">
                                         <input type=text id="injuredpoepl-num" placeholder="다친사람의 수를 입력해주세요">
-                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -306,8 +307,8 @@
     <script>
         var mapContainer = document.getElementById('map'),
             mapOption = {
-                center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표 -> 현재 내 위치로 가져오기
-                level: 1 
+                center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+                level: 1
             };
 
         // 지도 생성 

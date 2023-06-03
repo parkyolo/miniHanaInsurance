@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,22 @@
     <title>Header</title>
     <link rel="stylesheet" type="text/css" href="../../../css/layout/header.css">
 
+    <script src="../../../script/mainPage/layout.js"></script>
+
+
 </head>
-<body>
+
+<body onload="isSignin()">
     <header id="header">
         <div class="head_box">
             <div>
                 <ul class="sub_nav">
                     <li id="li_header_logout">
                         <span class="nick_time_sec">
-                            <a href="" calss="nick"></a>
-                            님 환영합니다.
-                            <span id="spnLogonTimer" class="time_sec">9분 59초</span>
-                        </span>
-                        <a href='/'>로그아웃</a>
+                            <span id="name"></a>
+                                님 환영합니다.
+                            </span>
+                            <a href='../../../html/mainPage/mainPage.html'>로그아웃</a>
                     </li>
                     <li id="li_header_login"><a href='../../../html/signupPage/signin.html'>로그인</a></li>
                     <li id="li_header_join" class="sb_last"><a href='../../../html/signupPage/signup.html'>회원가입</a></li>
@@ -61,10 +65,12 @@
                                                         <a href="../../../html/productPage/Car.html">하나 에코플러스 자동차보험</a>
                                                     </li>
                                                     <li class="menu_item">
-                                                        <a href="../../../html/productPage/carDriverDirect.html">하나 가득담은 운전자보험(다이렉트)</a>
+                                                        <a href="../../../html/productPage/carDriverDirect.html">하나 가득담은
+                                                            운전자보험(다이렉트)</a>
                                                     </li>
                                                     <li class="menu_item">
-                                                        <a href="../../../html/productPage/carDriver.html">하나 가득담은 운전자보험</a>
+                                                        <a href="../../../html/productPage/carDriver.html">하나 가득담은
+                                                            운전자보험</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -72,7 +78,8 @@
                                                 <a href="/">건강보험</a>
                                                 <ul>
                                                     <li class="menu_item">
-                                                        <a href="../../../html/productPage/gradeHealth.html">하나 Grade 건강보험(다이렉트)</a>
+                                                        <a href="../../../html/productPage/gradeHealth.html">하나 Grade
+                                                            건강보험(다이렉트)</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -80,7 +87,8 @@
                                                 <a href="/">생활보험</a>
                                                 <ul>
                                                     <li class="menu_item">
-                                                        <a href="../../../html/productPage/accidentHealth.html">하나 슬기로운 자녀생활보험</a>
+                                                        <a href="../../../html/productPage/accidentHealth.html">하나 슬기로운
+                                                            자녀생활보험</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -88,7 +96,8 @@
                                                 <a href="/">기타·기업보험</a>
                                                 <ul>
                                                     <li class="menu_item">
-                                                        <a href="../../../html/productPage/TravelEvery.html">하나 국내여행보험(단체형)</a>
+                                                        <a href="../../../html/productPage/TravelEvery.html">하나
+                                                            국내여행보험(단체형)</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -113,7 +122,8 @@
                                                 <a href="/">보상서비스</a>
                                                 <ul>
                                                     <li class="menu_item">
-                                                        <a href="../../../html/claim/carTipCarManagement.html">차량등록/관리팁</a>
+                                                        <a
+                                                            href="../../../html/claim/carTipCarManagement.html">차량등록/관리팁</a>
                                                     </li>
                                                     <li class="menu_item">
                                                         <a href="../../../html/claim/rewardProcedure.html">보상처리절차</a>
@@ -161,4 +171,5 @@
 
 
 </body>
+
 </html>
