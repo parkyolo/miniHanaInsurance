@@ -45,24 +45,24 @@ function checkBirthInputValid(strBirthDate) {
     intBirthDate = convertDateFormat(strBirthDate);
     birthValid = false;
     birthErrMsg = "";
-    
+
     // 입력값이 없을 때
-    if (strBirthDate.length === 0) { 
+    if (strBirthDate.length === 0) {
         birthErrMsg = "생년월일을 입력하십시오.";
     }
-    
+
     // 생년월일 형식이 알맞지 않을 때
-    else if (!validTxtBirth(strBirthDate)) { 
+    else if (!validTxtBirth(strBirthDate)) {
         birthErrMsg = "생년월일을 정확히 입력하십시오.";
     }
-    
+
     // 나이가 알맞지 않을 때
-    else if (!getAge(intBirthDate)) { 
+    else if (!getAge(intBirthDate)) {
         birthErrMsg = "보험가입할 수 없는 나이입니다. 보험나이 만 19 ~ 70세 고객에 한해 보험료 확인이 가능합니다.";
     }
 
     // 생년월일이 정상적으로 입력되었을 때
-    if (birthErrMsg.length === 0) { 
+    if (birthErrMsg.length === 0) {
         document.getElementById('txtBirthError').style.display = 'none';
         birthValid = true;
         return true;
@@ -75,13 +75,13 @@ function checkBirthInputValid(strBirthDate) {
 }
 
 // 성별이 선택되었는지 확인하는 함수
-function checkSexClick() {
-    // 모든 라디오 버튼을 반복하면서 선택된 값이 있는지 찾는다.
+function checkSexClicked() {
+    // 성별 라디오 버튼을 반복하면서 선택된 값이 있는지 찾는다.
     for (var i = 0; i < rdoSex.length; i++) {
         if (rdoSex[i].checked) {
-        sexClicked = true;
-        document.getElementById('rdosSexError').style.display = "none";
-        return true;
+            sexClicked = true;
+            document.getElementById('rdosSexError').style.display = "none";
+            return true;
         }
     }
     return false;
@@ -118,7 +118,7 @@ function init(){
 
     // 성별을 클릭하면 sexClicked 변수를 true로 변경
     for (var i = 0; i < rdoSex.length; i++) {
-        rdoSex[i].addEventListener("click", checkSexClick);
+        rdoSex[i].addEventListener("click", checkSexClicked);
     }
 
     // '보험료 계산하기' 버튼을 클릭하면 생년월일과 성별이 잘 입력되었는지 확인 후 모달창 띄우기

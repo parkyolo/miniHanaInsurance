@@ -17,20 +17,6 @@ $(document).ready(function () {
   });
 });
 
-/* $(document).ready(function () {
-  // 간편 산출 버튼 클릭 시 해당 내용 표시
-  $("#btnSimpleCalcView").click(function () {
-    $("#divCalcContainer").show();
-    $("#contents").hide();
-  });
-
-  // 상품특징 버튼 클릭 시 해당 내용 표시
-  $("#btnContentView").click(function () {
-    $("#divCalcContainer").hide();
-    $("#contents").show();
-  });
-});
- */
 $(document).ready(function () {
   $(".owl-carousel").owlCarousel({
     items: 3,
@@ -224,12 +210,4 @@ $(document).ready(function () {
     $("#popProductInfo3").hide();
   });
 });
-$(document).ready(function () {
-  $("#bohumhelp").click(function () {
-    $("#popProductInfo4").css("display", "block");
-  });
 
-  $(".modal_off.modalProductInfo").click(function () {
-    $("#popProductInfo4").hide();
-  });
-});

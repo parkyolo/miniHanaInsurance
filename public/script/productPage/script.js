@@ -167,8 +167,6 @@ var emailInput = document.getElementById("emailInput");
 emailInput.addEventListener("keydown", handleEnterKey);
 var nameInput = document.getElementById("userName");
 nameInput.addEventListener("keydown", handleEnterKey);
-/* var agreeInput = document.getElementById(".agree_chk");
-agreeInput.addEventListener("keydown", handleEnterKey); */
 
 // 첫 번째 페이지가 안보임
 var firstPage = document.getElementById("page1");
@@ -234,7 +232,11 @@ function submitt() {
 }
 
 function gomainPage() {
-  window.location.href = "https://www.hanainsure.co.kr/";
+  window.location.href = "../../html/mainPage/mainPage.html";
+}
+
+function goConselpage() {
+  window.location.href = "../../html/productPage/mailCounsel.html";
 }
 
 //카카오 api
@@ -287,22 +289,3 @@ function sample6_execDaumPostcode() {
     },
   }).open();
 }
-
-//mail?
-/* function goEmail() {
-  var name = document.getElementById("userName").value;
-  var email = document.getElementById("emailInput").value;
-  var templateParams = {
-    name: "${name}",
-    notes: "안녕하세요!",
-  };
-
-  emailjs.send("service_lc6gd9f", "template_aike4hi", templateParams).then(
-    function (response) {
-      console.log("SUCCESS!", response.status, response.text);
-    },
-    function (error) {
-      console.log("FAILED...", error);
-    }
-  );
-} */

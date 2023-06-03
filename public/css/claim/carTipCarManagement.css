@@ -3,11 +3,19 @@
 @import url("../common.css");
 @import url("../reset.css");
 
-#contents{
-    width:75%;
+body{
+    overflow-y: scroll;
+}
+  #contents{
+    position: relative;
+    width: 100%;
     margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 1140px;
+    padding: 40px 20px 100px 20px;
+    min-height: 600px;
   }
-  
   .title {
     padding: 40px 0 15px;
     background-image: url(../../images/claimImg/visual_healthReward_bg.jpg);

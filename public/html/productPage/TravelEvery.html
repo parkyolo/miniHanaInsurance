@@ -13,7 +13,7 @@
 
 	<meta property="og:url" content="https://www.hanainsure.co.kr/w/product/travelLeisure/domesticTravelIntro">
 
-	
+	<link href="../../../images/img_hana_symbol.png" rel="shortcut icon" type="image/x-icon">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
 
 
@@ -25,28 +25,22 @@
 	rel="stylesheet"
 	href="../../css/productPage/travelLeisure/hanainsureCarDriver.css">
 
-<!-- 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script
-	type="text/javascript"
-	src="../../script/productPage/jquery.js"
-	charset="utf-8"
-  ></script> -->
+
   <script
 	type="text/javascript"
 	src="../../script/productPage/Car.js"
 	charset="utf-8"
   ></script>
+
+  <script
+  type="text/javascript"
+  src="../../script/productPage/script.js"
+  charset="utf-8"
+></script>
 	
 	<title>하나 국내여행보험(단체형) | 하나손해보험</title>
 	
-	<script>
-		$(document).ready(function () {
-		  $(".cal_btn").datepicker();
-		});
-		</script>
+
 	
 </head>
 <body>  
@@ -62,8 +56,8 @@
 <div id="visual_box" class="visual_402">
 	<div class="base_area">
 		<div class="visual_sns">
-			<a class="btnShareTwitter" href="javascript:void(0);"><img src="../../images/prouductImg/travelLeisure/btn_twitter.png" alt="트위터"></a>
-			<a class="btnShareFacebook" href="javascript:void(0);"><img src="../../images/prouductImg/travelLeisure/btn_facebook.png" alt="페이스북"></a>
+			<a class="btnShareTwitter" href="javascript:void(0);"></a>
+			<a class="btnShareFacebook" href="javascript:void(0);"></a>
 		</div>
 		<p class="visual_mtitle">5인 이상 단체ㆍ365일 · 24시간</p>
 		<h2 class="visual_btitle">하나 국내여행보험(단체형)</h2>
@@ -73,7 +67,7 @@
 			<span>(☎ 상담 및 가입문의 : 1533-5013)</span>
 		</p>
 		<div class="visual_btn_group">
-			<a href="https://imet.kr/hanatravel" target="_blank" class="btn btn_bgblue">보험가입 신청</a>
+			<a href="./mailCounsel.html" target="_blank" class="btn btn_bgblue">보험가입 신청</a>
 			<a href="javascript:void(0);" class="btn btn_radio aLnk on" id="btnContentView">상품특징</a>
 			<a href="javascript:void(0);" class="btn btn_radio aLnk" id="btnSimpleCalcView">간편산출</a>		
 			
@@ -417,14 +411,14 @@
                         <fieldset class="field_set btn_set">						
                             <div class="set_box cal_set">
                                 <label for="inp02">여행기간</label>
-                                <div style="width:calc(40% - 55px);">
-                                    <input type="text" placeholder="YYYY.MM.DD" title="시작일" name="sActive1Fmdt" id="sActive1Fmdt" class="inputDate"/>
-                                    <a class="cal_btn" ><img src="../../images/prouductImg/travelLeisure/icon_calBtn.jpg" alt="달력"></a>
+                                <div style="width:calc(33% - 55px);">
+                                    <input type="date" placeholder="YYYY.MM.DD" title="시작일" name="sActive1Fmdt" id="sActive1Fmdt" class="inputDate"/>
+                                    
                                 </div>
                                 <span class="dash">~</span>
                                 <div style="width:calc(40% - 55px);">
-                                    <input type="text" placeholder="YYYY.MM.DD" title="종료일" name="sActive1Todt" id="sActive1Todt" class="inputDate"/>
-                                    <a class="cal_btn2"><img src="../../images/prouductImg/travelLeisure/icon_calBtn.jpg" alt="달력"></a>
+                                    <input type="date" placeholder="YYYY.MM.DD" title="종료일" name="sActive1Todt" id="sActive1Todt" class="inputDate"/>
+                                    
                                 </div>
                                 <select title="" class="" id="sJoinTarget" name="sJoinTarget" onchange="sDomesticTravelFunc.changeTarget(this.value, <@=i@>)" style="width:21%;margin-left: 10px;">
 
@@ -497,32 +491,7 @@
 							
         
                     </div> 
-                    <!--
-
-
-					<div class="blue_box3" style="display: none;">
-						<div>
-						  <p class="last_txt">여행기간<span id="totTravelPeriod"><strong></strong>일</span></p>
-						  <p class="last_txt">총 인원수<span id="totPerson"><strong></strong>명</span></p>					
-						<p class="mon_txt">총 보험료<span id="totPrem"><strong></strong>원</span></p>
-						</div>
-						<div class="fl wPc100 tac mt60">
-							<button type="reset" class="btn btn_big_blueover mr6" id="btnReset">초기화</button>
-							<button type="button" class="btn btn_big_redover mr6" id="btnReCalc">재계산</button>
-							<button type="button" class="btn btn_big_joinover" onclick="pop.open('popGetReadydomesticTravel')">보험가입 신청</button>
-						</div> 
-					</div>
-					 
-					  
-					  <div class="firstCalc" style="display: block;">
-						<p class="fl wPc100 blue_box lh42 mt30">간단하게 <strong>총 보험료</strong>를 확인해 보세요.</p>
-						<div class="fl wPc100 tac mt60">
-						  <button type="button" class="btn btn_big_redover" id="btnInsCalc" style="width:170px;">보험료계산하기</button>
-						</div>
-						
-					  </div>
-					</div>
-				-->
+            
                      <div id="divCalc"> 
 						<div class="Calccc" style="display: none";>
 						              <div class="blue_box3" >
@@ -536,8 +505,7 @@
 							</div>
 							<div class="fl wPc100 tac mt60">
 								<button type="reset" class="btn btn_big_blueover mr6" id="btnReset">초기화</button>
-								<!-- <button type="button" class="btn btn_big_redover mr6" id="btnReCalc">재계산</button> -->
-								<button type="button" class="btn btn_big_joinover alert_box" id="bohumhelp">보험가입 신청</button>
+								<button type="button" class="btn btn_big_joinover alert_box" id="bohumhelp" onclick="goConselpage()">보험가입 신청</button>
 							</div> 
 							</div>
 						 	<div class="firstCalc" display="block">
@@ -642,31 +610,7 @@
 		$(".cal_btn").datepicker();
 	  });
 	  
-</script>
-  
-<div class="popup_box dimmed" id="popProductInfo4" style="display: none">
-	<div class="popup_container" style="max-width:600px">
-	  <div class="popup_header">
-		<h1 style="font-size: 20px">알려드립니다</h1>
-	  </div>
-	  <div class="alert_body">
-		<p class="f18 pb25 pt25" style="line-height: 30px;max-height: 350px">
-			<font class="f20 disib mb20" style="background: linear-gradient(to top, #daf0f4 35%, transparent 35%);">하나 국내여행보험(단체) 보험가입 신청</font><br>
-			<a href="https://imet.kr/hanatravel" target="_blank" class="fc_blue f48 fw_6 " style="text-decoration: underline;">imet.kr/hanatravel</a><br>
-			<font class="f16 disb mt10">(5인 이상의 학교, 법인등 단체가입 가능)</font>
-		</p>
-		<p class="pt0 tal" style="line-height: 13px">※ 불편을 드려 죄송합니다. 더 나은 서비스를 위해 준비중이며,<br>
-			<a href="https://imet.kr/hanatravel" target="_blank" class="fc_blue ml20">이투엘보험대리점</a>을 통해 가입 및 계약관리를 받아보실 수 있습니다. </p>
-	</div>
-	  <div class="popup_footer">
-		<a href="javascript:void(0);" class="modal_off modalProductInfo">
-		  <img
-			src="../../images/prouductImg/car/bg_popup_close.png"
-			alt="닫기"
-		  />
-		</a>
-	  </div>
-	</div>
-  </div>
+</script>  
+
 </body>
 </html>      

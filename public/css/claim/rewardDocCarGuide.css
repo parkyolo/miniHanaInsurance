@@ -4,8 +4,14 @@
 @import url("../reset.css");
 
 #contents{
-  width:75%;
+  position: relative;
+  width: 100%;
   margin: 0 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 1140px;
+  padding: 40px 20px 100px 20px;
+  min-height: 600px;
 }
 
 #contents h3 {
