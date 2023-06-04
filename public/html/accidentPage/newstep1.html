@@ -147,7 +147,8 @@
                                     <h3>사고 발생 위치</h3>
                                 </div>
                                 <div class="contents" id="accidentplace-input-contents">
-                                    <input type="button" value="지도에서 찾기" onclick="showmap()" style="width:500px;" id="findmap">
+                                    <input type="button" value="지도에서 찾기" onclick="showmap()" style="width:500px;"
+                                        id="findmap">
                                     <input type="text" id="mapAddr"></input>
 
 
@@ -215,7 +216,7 @@
                                 <div class="contents" id="injuredpeople-input-contents">
                                     <div class="injuredpeople" id="injuredpeople">
                                         <input type=text id="injuredpoepl-num" placeholder="다친사람의 수를 입력해주세요">
-                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -237,20 +238,15 @@
 
     </div>
     <script>
-        // "step-title" 클래스를 가진 모든 요소를 가져옵니다.
         var stepTitles = document.getElementsByClassName("step-title");
 
-        // 각 step title에 클릭 이벤트 리스너를 추가합니다.
         for (var i = 0; i < stepTitles.length; i++) {
             stepTitles[i].addEventListener("click", toggleStepContents);
         }
 
-        // 스텝 콘텐츠를 토글하는 함수입니다.
         function toggleStepContents() {
-            // 관련된 스텝 콘텐츠 요소를 찾습니다.
             var stepContents = this.nextElementSibling;
 
-            // "open" 클래스와 "close" 클래스를 토글합니다.
             if (stepContents.classList.contains("open")) {
                 stepContents.classList.remove("open");
                 stepContents.classList.add("close");
@@ -307,8 +303,8 @@
     <script>
         var mapContainer = document.getElementById('map'),
             mapOption = {
-                center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표 -> 현재 내 위치로 가져오기
-                level: 1 
+                center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+                level: 1
             };
 
         // 지도 생성 
