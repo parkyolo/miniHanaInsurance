@@ -163,8 +163,8 @@ var phoneNumberInput = document.getElementById("phoneNumberInput");
 phoneNumberInput.addEventListener("keydown", handleEnterKey);
 var sample6_detailAddress = document.getElementById("sample6_detailAddress");
 sample6_detailAddress.addEventListener("keydown", handleEnterKey);
-var emailInput = document.getElementById("emailInput");
-emailInput.addEventListener("keydown", handleEnterKey);
+/* var emailInput = document.getElementById("emailInput");
+emailInput.addEventListener("keydown", handleEnterKey); */
 var nameInput = document.getElementById("userName");
 nameInput.addEventListener("keydown", handleEnterKey);
 
