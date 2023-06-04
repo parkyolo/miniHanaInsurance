@@ -113,14 +113,14 @@ function onLoggin(number, inputCode) {
       console.log(res.data);
     })
     .catch((err) => {
-      if (
-        (err.response && err.response.status === 400) ||
-        err.response.status === 401 ||
-        err.response.status === 403 ||
-        err.response.status === 404
-      ) {
-        Sentry.captureException(err);
-      }
+      // if (
+      //   (err.response && err.response.status === 400) ||
+      //   err.response.status === 401 ||
+      //   err.response.status === 403 ||
+      //   err.response.status === 404
+      // ) {
+      //   Sentry.captureException(err);
+      // }
 
       console.log(err.response.status);
       return err.response.status;

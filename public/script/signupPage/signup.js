@@ -194,7 +194,7 @@ function isSuccess() {
 //입력받은 개인정보 localStorage에 저장
 function returnPinfo() {
   const name = document.getElementById("pname").value;
-
+  const gender = document.querySelector('input[name="gender"]:checked').value;
   const phoneNum_front = ChangeValue();
   const phoneNum_back = document.getElementById("pNo-back").value;
   const pidFront = document.getElementById("input-pid-front").value;
@@ -205,6 +205,7 @@ function returnPinfo() {
     pnoBack: phoneNum_back,
     pidFront: pidFront,
     pidBack: pidBack,
+    gender: gender,
   };
   localStorage.setItem("userInfo", JSON.stringify(userInfo));
 }
