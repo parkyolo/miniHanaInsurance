@@ -132,7 +132,7 @@ function sendNumber() {
     .catch((error) => {
       console.error("Error:", error);
     });
-  setTimer();
+  // setTimer();
 }
 
 function openModal() {
