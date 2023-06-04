@@ -39,7 +39,7 @@ app.post("/increment", (req, res) => {
   const number = req.body.number;
   const inputCode = req.body.code;
   const result = onLoggin(number, inputCode);
-  res.send(result.toString());
+  // res.send(result.toString());
 });
 
 app.listen(port, () => {
@@ -113,12 +113,14 @@ function onLoggin(number, inputCode) {
       console.log(res.data);
     })
     .catch((err) => {
-      // if (err.response && err.response.status === 400||
-      //   err.response.status === 401||
-      //   err.response.status === 403||
-      //   err.response.status === 404) {
-      //   Sentry.captureException(err);
-      // }
+      if (
+        (err.response && err.response.status === 400) ||
+        err.response.status === 401 ||
+        err.response.status === 403 ||
+        err.response.status === 404
+      ) {
+        Sentry.captureException(err);
+      }
 
       console.log(err.response.status);
       return err.response.status;
