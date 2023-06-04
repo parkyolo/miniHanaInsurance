@@ -10,7 +10,7 @@ function generateRandomCode(n) {
 
 //step1 사용자 정보 저장하기
 function submitAll() {
-  const name = document.getElementById("name").value;
+  const name = document.getElementById("pname").value;
 
   console.log(name);
 
@@ -84,7 +84,7 @@ function step4load() {
   const accidentnum = document.getElementById("accidentNum");
   accidentnum.innerHTML = accident_num;
   console.log(accident_num);
-  const drivername = document.getElementById("name");
+  const drivername = document.getElementById("pname");
   drivername.innerHTML = name;
   const pno = document.getElementById("phonenum");
   pno.innerHTML = phoneNum;

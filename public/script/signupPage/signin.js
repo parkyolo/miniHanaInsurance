@@ -17,6 +17,14 @@ function generateRandomCode(n) {
 
 console.log("hellop");
 
+//주민번호 앞자리 6자리 채우면 자동 커서 이동
+function moveCursor(pidFront) {
+  if (pidFront.value.length == 6) {
+    console.log("move cursor");
+    document.getElementById("input-pid-back").focus();
+  }
+}
+
 //이름 유효성 검사-15자리
 function isName() {
   const naemLength = document.getElementById("pname").value.length;
