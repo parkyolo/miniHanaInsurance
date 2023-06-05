@@ -50,8 +50,8 @@
 # 시작 가이드
 ### Requirements
 For building and running the application you need:
-- Node js
-- Npm
+- Node.js 18.6.0
+- Npm 9.5.1
 ### Installation
 ```
 $ npm install dotenv
