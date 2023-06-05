@@ -10,14 +10,14 @@
 > 
 <br>
 
-# 배포 주소
+## 💻 배포 주소
 
 > <p style="color:gray; font-weight:bold;">mini하나손해보험: http://54.210.252.20/</p>
 > <p style="color:gray; font-weight:bold;">시현 영상: https://drive.google.com/file/d/1YuLNCuqYCO_uGSSH0hh2a7hq7HXKoGiN/view?usp=sharing</p>
 
 <br>
 
-# 팀원 소개
+## 🙋🏻‍♀️ 팀원 소개
 <table>
     <tr>
         <td align="center">박지영</td>
@@ -47,7 +47,7 @@
 
 <br>
 
-# 프로젝트 소개
+## 💡 프로젝트 소개
 ‘미니하나손해보험’은 보험 상품과 서비스를 안내하고 사고 접수 및 상담, 보험료 산정의 과정을 체험할 수 있도록 하는 보험 웹페이지입니다.
 - UI를 간편하게 개편하여 사용자의 이용성과 접근성을 높일 수 있습니다.
 - 페이지의 로드를 최소화하여 로딩 시간을 줄이고 퀵메뉴를 통해 쉽게 서비스를 이용할 수 있게 하여 사용자 편의성을 극대화합니다.
@@ -55,7 +55,7 @@
 
 <br>
 
-# 시작 가이드
+## 📚 시작 가이드
 ### Requirements
 For building and running the application you need:
 - Node.js 18.6.0
@@ -72,7 +72,7 @@ $ npm install axios
 
 <hr style="border:0; height:2px; background:gray;">
 
-# Stacks :frog:
+## :frog: Stacks 
 
 ### Enviornment
 <img src="https://img.shields.io/badge/VISUAL STUDIO CODE-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white"> <img src="https://img.shields.io/badge/GIT-F05032?style=flat-square&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/GITHUB-181717?style=flat-square&logo=github&logoColor=white">
@@ -90,7 +90,7 @@ $ npm install axios
 
 <br>
 
-# 주요 기능
+## 📖 주요 기능
 ### 메인페이지<br>
 ### 회원가입, 로그인<br>
 
@@ -123,7 +123,7 @@ $ npm install axios
 
 <br>
 
-# 주요 화면 :tv:
+## 🖥️ 주요 화면 :tv:
 <table>
     <tr>
         <td align="center">메인페이지</td>
@@ -145,5 +145,5 @@ $ npm install axios
 
 <br>
 
-# 시스템 아키텍처 :office:
+# 🛠️ 시스템 아키텍처 :office:
 <p align="center"><img width="500px" src="https://github.com/parkyolo/miniHanaInsurance/assets/39394642/1083de16-8918-4943-8046-370c2c75d5c5"></p>
