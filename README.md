@@ -88,8 +88,6 @@ $ npm install axios
 
 <hr style="border:0; height:2px; background:gray;">
 
-<br>
-
 ## 📖 주요 기능
 ### 메인페이지<br>
 ### 회원가입, 로그인<br>
@@ -123,7 +121,7 @@ $ npm install axios
 
 <br>
 
-## 🖥️ 주요 화면 :tv:
+## 🖥️ 주요 화면
 <table>
     <tr>
         <td align="center">메인페이지</td>
@@ -145,5 +143,5 @@ $ npm install axios
 
 <br>
 
-# 🛠️ 시스템 아키텍처 :office:
+## 🛠️ 시스템 아키텍처
 <p align="center"><img width="500px" src="https://github.com/parkyolo/miniHanaInsurance/assets/39394642/1083de16-8918-4943-8046-370c2c75d5c5"></p>
