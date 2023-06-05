@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,11 @@
 
     <link href="../../../images/img_hana_symbol.png" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../../../css/customerPage/faqPage.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div data-include-path="../../../html/layout/quickmenu.html"></div>
     <div id="wrap">
@@ -71,10 +75,11 @@
         <footer data-include-path="../../../html/layout/footer.html"></footer>
     </div>
     <script src="../../../script/customerPage/faqPage.js" charset="utf-8"></script>
+
     <script>
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             var allElements = document.getElementsByTagName('*');
-            Array.prototype.forEach.call(allElements, function(el) {
+            Array.prototype.forEach.call(allElements, function (el) {
                 var includePath = el.dataset.includePath;
                 if (includePath) {
                     var xhttp = new XMLHttpRequest();
@@ -90,4 +95,5 @@
         });
     </script>
 </body>
+
 </html>
