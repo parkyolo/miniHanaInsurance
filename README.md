@@ -7,11 +7,15 @@
 
 > <p style="color:gray; font-weight:bold;">디지털 하나로 서비스개발 과정 3조</p>
 > <p style="color:gray; font-weight:bold;">개발기간: 2023.05.03 ~ 2023.06.07</p>
+> 
+<br>
 
 # 배포 주소
 
 > <p style="color:gray; font-weight:bold;">mini하나손해보험: http://54.210.252.20/</p>
 > <p style="color:gray; font-weight:bold;">시현 영상: https://drive.google.com/file/d/1YuLNCuqYCO_uGSSH0hh2a7hq7HXKoGiN/view?usp=sharing</p>
+
+<br>
 
 # 팀원 소개
 <table>
@@ -41,11 +45,15 @@
     </tr>
 </table>
 
+<br>
+
 # 프로젝트 소개
 ‘미니하나손해보험’은 보험 상품과 서비스를 안내하고 사고 접수 및 상담, 보험료 산정의 과정을 체험할 수 있도록 하는 보험 웹페이지입니다.
 - UI를 간편하게 개편하여 사용자의 이용성과 접근성을 높일 수 있습니다.
 - 페이지의 로드를 최소화하여 로딩 시간을 줄이고 퀵메뉴를 통해 쉽게 서비스를 이용할 수 있게 하여 사용자 편의성을 극대화합니다.
 - 사고 접수 시 사고 지점을 직접 지도에서 선택함으로써 효율적으로 사고를 처리할 수 있습니다.
+
+<br>
 
 # 시작 가이드
 ### Requirements
@@ -80,10 +88,11 @@ $ npm install axios
 
 <hr style="border:0; height:2px; background:gray;">
 
+<br>
 
 # 주요 기능
-### 메인페이지
-### 회원가입, 로그인
+### 메인페이지<br>
+### 회원가입, 로그인<br>
 
 ### 보험상품
 ```
@@ -112,6 +121,8 @@ $ npm install axios
 ✔️ 자주묻는질문
 ```
 
+<br>
+
 # 주요 화면 :tv:
 <table>
     <tr>
@@ -131,6 +142,8 @@ $ npm install axios
         <td align="center"><span><img width="300px" src="https://github.com/parkyolo/miniHanaInsurance/assets/39394642/dd9d1ab3-6c3c-4350-937c-dfbf5de63380" alt="보상서비스"></span></td>
     </tr>
 </table>
+
+<br>
 
 # 시스템 아키텍처 :office:
 <p align="center"><img width="500px" src="https://github.com/parkyolo/miniHanaInsurance/assets/39394642/1083de16-8918-4943-8046-370c2c75d5c5"></p>
