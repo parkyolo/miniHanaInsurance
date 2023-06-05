@@ -10,10 +10,11 @@
     <link href="../../../images/img_hana_symbol.png" rel="shortcut icon" type="image/x-icon">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
-        body{
+        body {
             background-color: grey;
 
         }
+
         #wrap {
             /* overflow: hidden; */
             width: 100%;
@@ -36,7 +37,7 @@
             background-color: #000;
             opacity: 0.5;
             /* -webkit-transform: translate(-50%, -50%); */
-            
+
         }
 
         #container {
@@ -103,7 +104,7 @@
             font-size: 80px;
             color: #FFF;
             font-weight: 900;
-            margin:30px;
+            margin: 30px;
 
 
         }
@@ -112,19 +113,18 @@
             border: 20px solid #009591;
         }
 
-        input[type="button"]
-        {
+        input[type="button"] {
             width: 200px;
             height: 80px;
-            border:10px outset #009591;
+            border: 10px outset #009591;
             border-radius: 15px;
             background-color: #009591;
-            color:white;
-            font-size:30px;
+            color: white;
+            font-size: 30px;
             font-weight: 900;
-            margin-top:100px;
+            margin-top: 100px;
 
-            
+
 
         }
     </style>
@@ -150,7 +150,8 @@
                     <div class="item" id="image" data-aos="fade-up"><img src="../../../html/signupPage/그림1.png"
                             style="width:400px; height: 200px; margin:20px"></div>
                     <div class="item" data-aos="fade-up">
-                        <input type="button" value="메인으로" onclick="location.href='../../../html/mainPage/mainPage.html'">
+                        <input type="button" value="메인으로"
+                            onclick="location.href='../../../html/mainPage/mainPage.html'">
                     </div>
 
                 </div>
@@ -168,7 +169,7 @@
                 var items = document.querySelectorAll('.contents .item');
                 var delay = 3000; // 등장 딜레이 시간(ms)
                 var delayIncrement = 3000; // 딜레이 증가 시간(ms)
-    
+
                 for (var i = 0; i < items.length; i++) {
                     var item = items[i];
                     var animationDelay = delay + i * delayIncrement;
@@ -176,11 +177,10 @@
                 }
             });
         </script>
-    
+
     </div>
 
 
-   
 
     <script>
         window.addEventListener('load', function () {
