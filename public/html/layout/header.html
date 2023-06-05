@@ -8,8 +8,24 @@
     <title>Header</title>
     <link rel="stylesheet" type="text/css" href="../../../css/layout/header.css">
 
-    <script src="../../../script/mainPage/layout.js"></script>
+    <!-- <script src="../../../script/mainPage/layout.js"></script> -->
+    <script>
+        function isSignin() {
+            var isSignedIn = localStorage.getItem("isSignin");
 
+            if (isSignedIn === "1") {
+                document.getElementById("li_header_logout").style.display = "block";
+                document.getElementById("li_header_login").style.display = "none";
+                document.getElementById("li_header_join").style.display = "none";
+
+            } else {
+                document.getElementById("li_header_logout").style.display = "none";
+                document.getElementB3yId("li_header_login").style.display = "block";
+                document.getElementById("li_header_join").style.display = "block";
+
+            }
+        }
+    </script>
 
 </head>
 

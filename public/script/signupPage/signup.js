@@ -226,7 +226,8 @@ function setTimer() {
 
     if (time < 0) {
       clearInterval(x);
-      alert("시간초과");
+      alert("시간초과! 코드를 재전송해서 시도하세요");
+      localStorage.remove("code");
     }
   }, 1000);
 }
