@@ -4,7 +4,7 @@
 @import url("../reset.css");
 
 body{
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
   #contents{
     position: relative;
