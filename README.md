@@ -34,7 +34,7 @@
     <tr>
         <td align="center"><a href="github.com/parkyolo">@parkyolo</a></td>
         <td align="center"><a href="github.com/PARKYUNJU">@PARKYUNJU</a></td>
-        <td align="center"><a href="github.com/ykpark3">@ykpark</a></td>
+        <td align="center"><a href="github.com/ykpark3">@ykpark3</a></td>
         <td align="center"><a href="github.com/Cfctor9">@Cfctor9</a></td>
     </tr>
     <tr>
