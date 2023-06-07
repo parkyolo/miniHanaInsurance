@@ -32,10 +32,10 @@
         <td align="center"><span> <img width="160px" src="https://github.com/parkyolo/miniHanaInsurance/assets/39394642/30cee2ee-b793-43c7-badb-83fceef74383" alt="박민재_프로필"></span></td>
     </tr>
     <tr>
-        <td align="center"><a href="github.com/parkyolo">@parkyolo</a></td>
-        <td align="center"><a href="github.com/PARKYUNJU">@PARKYUNJU</a></td>
-        <td align="center"><a href="github.com/ykpark3">@ykpark3</a></td>
-        <td align="center"><a href="github.com/Cfctor9">@Cfctor9</a></td>
+        <td align="center"><a href="https://github.com/parkyolo">@parkyolo</a></td>
+        <td align="center"><a href="https://github.com/PARKYUNJU">@PARKYUNJU</a></td>
+        <td align="center"><a href="https://github.com/ykpark3">@ykpark3</a></td>
+        <td align="center"><a href="https://github.com/Cfctor9">@Cfctor9</a></td>
     </tr>
     <tr>
         <td>&middot; 메인 페이지<br>&middot; 고객센터: 자주묻는질문<br>&middot; 헤더/푸터/GNB<br>&middot; 보험료 계산</td>
