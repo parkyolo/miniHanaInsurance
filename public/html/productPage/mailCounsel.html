@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>사용자 정보 입력</title>
+  <link href="../../../images/img_hana_symbol.png" rel="shortcut icon" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../../css/productPage/travelLeisure/hanainsureCarDriver.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("Dc1jHnhXV0cuZsT44");
+    })();
+  </script>
+
+
+
+  <style>
+    #contents {
+      position: relative;
+      width: 75%;
+      margin: 0 auto;
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-width: 1140px;
+      padding: 20px 20px 20px 20px;
+      min-height: 250px;
+    }
+
+    #mailCoun {
+      text-align: center;
+      margin: 0 16rem;
+    }
+
+    #mailCoun h2 {
+      font-size: 20px;
+      padding-bottom: 2.5rem;
+    }
+
+    #mailCoun #page1>input {
+      background-color: #fff;
+      border-radius: 0.8rem;
+      border: 0.1rem solid #ededed;
+      display: inline-block;
+      padding-left: 1.4rem;
+      margin-bottom: 8rem;
+      padding-right: 1.4rem;
+      font-size: 1.2rem;
+      height: 5rem;
+      color: #141414;
+      box-shadow: none;
+      transition: border 0.1s ease-in;
+      word-break: normal;
+      word-wrap: normal;
+      width: 200px;
+      height: 50px;
+    }
+
+    #mailCoun #page2>input {
+      background-color: #fff;
+      border-radius: 0.8rem;
+      border: 0.1rem solid #ededed;
+      display: inline-block;
+      padding-left: 1.4rem;
+      margin-bottom: 6rem;
+      padding-right: 1.4rem;
+      font-size: 1.2rem;
+      height: 5rem;
+      color: #141414;
+      box-shadow: none;
+      transition: border 0.1s ease-in;
+      word-break: normal;
+      word-wrap: normal;
+      width: 200px;
+      height: 50px;
+    }
+
+    #mailCoun #page1 input {
+      background-color: #fff;
+      border-radius: 0.8rem;
+      border: 0.1rem solid #ededed;
+      display: inline-block;
+      padding-left: 1.4rem;
+      margin-bottom: 3.5rem;
+      padding-right: 1.4rem;
+      font-size: 1.2rem;
+      height: 5rem;
+      color: #141414;
+      box-shadow: none;
+      transition: border 0.1s ease-in;
+      word-break: normal;
+      word-wrap: normal;
+      width: 200px;
+      height: 50px;
+    }
+
+    #mailCoun #page3 input {
+      background-color: #fff;
+      border-radius: 0.8rem;
+      border: 0.1rem solid #ededed;
+      display: inline-block;
+      padding-left: 1.4rem;
+      margin-bottom: 3.5rem;
+      padding-right: 1.4rem;
+      font-size: 1.2rem;
+      height: 5rem;
+      color: #141414;
+      box-shadow: none;
+      transition: border 0.1s ease-in;
+      word-break: normal;
+      word-wrap: normal;
+      width: 100%;
+      height: 50px;
+    }
+
+    #mailCoun #page4 input {
+      background-color: #fff;
+      border-radius: 0.8rem;
+      border: 0.1rem solid #ededed;
+      display: inline-block;
+      padding-left: 1.4rem;
+      margin-bottom: 3.5rem;
+      padding-right: 1.4rem;
+      font-size: 1.2rem;
+      height: 5rem;
+      color: #141414;
+      box-shadow: none;
+      transition: border 0.1s ease-in;
+      word-break: normal;
+      word-wrap: normal;
+      width: 300px;
+      height: 50px;
+    }
+
+    #mailCoun #page3 input #sample6_address {
+      width: 400px;
+
+    }
+
+    #hello {
+      animation: fadeIn 1s;
+      margin-bottom: 90px;
+    }
+
+    #mailCoun #page1 input:hover {
+      text-decoration: none;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #007e7b;
+    }
+
+    #mailCoun #page2 input:hover {
+      text-decoration: none;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #007e7b;
+    }
+
+    #mailCoun #page3 input:hover {
+      text-decoration: none;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #007e7b;
+    }
+
+    #mailCoun #page4 input:hover {
+      text-decoration: none;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #007e7b;
+    }
+
+    #progressBar {
+      margin-bottom: 90px;
+    }
+
+    #page3 {
+      text-align: center;
+    }
+
+    .userHome {
+      padding: 50px 50px;
+
+    }
+
+    #woonum {
+      position: relative;
+      background: #00a9a1;
+      font-weight: 400;
+      font-size: 16px;
+      color: #fff;
+      border: 0;
+      margin-right: 0;
+      padding: 14px 30px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #container {
+      text-align: center;
+    }
+
+    #phoneNumberInput,
+    #emailInput {
+      margin: 30px;
+    }
+
+    #goMainpage {
+      background: #00a9a1;
+      color: #fff;
+    }
+
+    .agree_chk {
+      margin: 0 20px;
+    }
+
+    .BarPass {
+      width: 100%;
+      background: lightgray;
+      margin-bottom: 150px;
+
+    }
+
+    .product_tb.base_tb {
+      margin-bottom: 30px;
+    }
+
+    .base_tb.sel_tb td:last-child {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <body>
+    <div data-include-path="../../../html/layout/quickmenu.html"></div>
+
+    <div id="wrap">
+      <header data-include-path="../../../html/layout/header.html"></header>
+      <div id="container">
+        <div id="visual_box" class="visual_txt visual_counselInquiry">
+          <h2>상담 신청</h2>
+          <p>궁금하신 사항이 있으시다구요? 상담을 신청해보세요.</p>
+        </div>
+
+        <div id="divFirst">
+          <div id="contents">
+            <div class="section_box0">
+              <div class="top_gray_box">
+                <ul class="txt_list_01" role="list">
+                  <li class="lh50">궁금한 사항을 남겨주시면 친절히 상담해 드리겠습니다.</li>
+                </ul>
+                <ul class="apply_list">
+
+                  <li><button type="button" class="btn btn_apply btn_arrow btnFaq" role="button"><a
+                        href="../customerPage/faqPage.html">자주하는 질문</a></button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="mailCoun">
+          <div class="BarPass">
+            <div id="progressBar"></div>
+          </div>
+
+
+
+          <div id="page1" class="page">
+            <div id="hello">
+              <h2>
+                안녕하세요! 상담 신청을 해볼까요? 먼저, 이름과 생년월일을 입력해주세요.
+              </h2>
+              <input type="text" id="userName" placeholder="홍길동" name="username" />
+              <input type="text" id="birthdateInput" placeholder="YYYY-MM-DD" />
+            </div>
+            <p id="birthdateError" class="error"></p>
+            <p class="base_box_top top10 mb0">개인(신용)정보 수집/이용에 대한 동의</p>
+            <div class="gray_box_new overbox">
+              귀하는 개인(신용)정보의 수집 &middot; 이용에 관한 동의를 거부하실 수 있으며, 개인의 신용도 등을 평가하기 위한 목적 이외에 개인(신용)정보 제공 동의는 철회할 수
+              있습니다.<br />
+              다만, 본 동의는 상담접수 &middot; 신고접수를 위한 필수 적인 사항이므로 동의를 거부하시는 경우 관련 업무수행이 불가능합니다.<br />
+              <br />
+              [개인(신용)정보 수집 &middot; 이용에 대한 동의]<br />
+              <br />
+              개인정보의 수집 &middot; 이용 목적 :&nbsp; 상담 &middot; 신청접수 내용&nbsp;&nbsp;확인 &middot; 처리 후 결과 회신<br />
+              개인정보의 수집 항목 : 성명, 휴대폰번호, 생년월일, 성별, 이메일<br />
+              개인정보의 보유 및 이용기간 : 동의일로부터 제공받은 이용목적을 달성시까지(최대 거래종료 후 5년까지)<br />
+              &nbsp;<br />
+              * 보험계약모집 수탁자 : 당사 홈페이지 개인정보처리방침 참조
+            </div>
+            <div class="agree_box_new">
+              <p class="calc240 tar">위 내용에 동의합니다.</p>
+              <div class="agree_chk">
+                <input type="radio" class="agree_chk" name="rdoPrivacy" id="rdoPrivacyY" value="Y"><label
+                  for="rdoPrivacyY">동의</label>
+                <input type="radio" class="agree_chk" name="rdoPrivacy" id="rdoPrivacyN" value="N"><label
+                  for="rdoPrivacyN">미동의</label>
+              </div>
+            </div>
+            <button onclick="validateBirthdate()" id="nextButton" type="button"
+              class="btn btn_blue btnRegister">다음</button>
+
+          </div>
+
+          <div id="page2" class="page">
+            <h2>감사합니다! 이번에는 핸드폰 번호를 입력해주세요.</h2>
+            <input type="text" id="phoneNumberInput" placeholder="010-1234-5678" />
+            <p id="phoneNumberError" class="error"></p>
+            <button id="previousButton" type="button" class="btn btn_blue btnRegister">이전</button>
+            <button onclick="validatePhoneNumber()" id="nextButton" type="button"
+              class="btn btn_blue btnRegister">다음</button>
+
+          </div>
+
+          <div id="page3" class="page">
+            <h2>감사합니다! 이번에는 사시는 지역과 집 주소를 입력해 주세요.</h2>
+            <div class="userHome">
+              <input type="button" id="woonum" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" />
+
+              <input type="text" id="sample6_postcode" placeholder="우편번호" />
+              <br />
+
+              <input type="text" id="sample6_address" placeholder="주소" /><br />
+
+
+              <input type="text" id="sample6_detailAddress" placeholder="상세주소" />
+
+              <input type="text" id="sample6_extraAddress" placeholder="참고항목" />
+            </div>
+
+            <p id="addressError" class="error"></p>
+
+            <button id="previousButton2" type="button" class="btn btn_blue btnRegister">이전</button>
+            <button onclick="validateAddress()" id="nextButton" type="button"
+              class="btn btn_blue btnRegister">다음</button>
+
+          </div>
+
+          <div id="page4" class="page">
+            <h2>마지막이에요! 연락받으실 이메일을 입력해주세요.</h2>
+            <input type="text" id="emailInput" placeholder="example@example.com" />
+            <p id="emailError" class="error"></p>
+            <button id="previousButton3" type="button" class="btn btn_blue btnRegister">이전</button>
+            <button onclick="validateEmail()" id="nextButton" type="button" class="btn btn_blue btnRegister">다음</button>
+          </div>
+
+          <div id="page5" class="page">
+            <h2>감사합니다. 모든 입력이 완료되었습니다!</h2>
+            <div id="summary"></div>
+            <button onclick="gomainPage()" id="goMainpage" type="button"
+              class="btn btn_blue btnRegister">메인페이지로</button>
+            <button onclick="sendMail()" id="nextButton submit" type="button" class="btn btn_blue btnRegister">상담
+              신청</button>
+
+          </div>
+          <div id="progressBar"></div>
+
+
+        </div>
+      </div>
+      <footer data-include-path="../../../html/layout/footer.html"></footer>
+    </div>
+
+    <script>
+      window.addEventListener("load", function () {
+        var allElements = document.getElementsByTagName("*");
+        Array.prototype.forEach.call(allElements, function (el) {
+          var includePath = el.dataset.includePath;
+          if (includePath) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+              if (this.readyState == 4 && this.status == 200) {
+                el.outerHTML = this.responseText;
+              }
+            };
+            xhttp.open("GET", includePath, true);
+            xhttp.send();
+          }
+        });
+      });
+    </script>
+
+
+
+    <script src="../../script/productPage/script.js"></script>
+    <script>
+      function sendMail() {
+        var params = {
+          from_name: document.getElementById("userName").value,
+          email_id: document.getElementById("emailInput").value,
+        };
+
+        emailjs.send("service_lc6gd9f", "template_aike4hi", params).then(function (res) {
+          alert("신청되었습니다! ");
+        })
+      }
+    </script>
+  </body>
+
+</html>

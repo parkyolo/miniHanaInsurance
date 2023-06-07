@@ -1,0 +1,494 @@
+@import url("/public/css/common.css");
+@import url("/public/css/reset.css");
+@import url("/public/css/default.css");
+/* 화면 내 글자 줄바꿈 방지 CSS 코드 */
+body {
+  /* white-space: nowrap; */
+}
+
+/*------------------토글 애니메이션 CSS----------------*/
+
+@keyframes slideToggle {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  100% {
+    max-height: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes slideCollapse {
+  0% {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.step-contents {
+  overflow: hidden;
+  /* 콘텐츠를 숨김 */
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  /* 트랜지션 효과를 추가 */
+}
+
+.step-contents.open {
+  animation: slideToggle 0.3s ease forwards;
+  /* 열릴 때 애니메이션 효과 적용 */
+}
+
+.step-contents.close {
+  animation: slideCollapse 0.3s ease forwards;
+  /* 닫힐 때 애니메이션 효과 적용 */
+}
+
+/*------------------기본 CSS----------------*/
+header {
+  /* display: none; */
+}
+
+.title {
+}
+ul > img {
+  width: 200px;
+  height: 200px;
+}
+input[type="radio"] {
+}
+
+input[type="radio"]:checked + label:before {
+  text-align: center;
+  line-height: 20px;
+  background: url("../../../images/form_radioOn.png") 0px 0px no-repeat;
+  background-size: 20px auto;
+  appearance: none;
+  content: "";
+}
+
+.real-upload {
+  display: none;
+}
+
+.upload {
+  width: 200px;
+  height: 200px;
+  background-color: antiquewhite;
+}
+
+.image-preview {
+  width: 1300px;
+  height: 200px;
+  background-color: aquamarine;
+  display: flex;
+  gap: 20px;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
+  background-color: #f2f2f2;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  /* margin-right: 10px; */
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+#chooseimg {
+  width: 100px;
+  height: 100px;
+  background-color: tomato;
+}
+
+#accidentcontent {
+  width: 500px;
+  height: 200px;
+  padding: 20px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 2px;
+}
+
+#accidentcontent:focus {
+  outline: 2px solid #009591;
+}
+
+.map_wrap {
+  position: relative;
+  width: 500px;
+  height: 350px;
+}
+
+.title {
+  font-weight: bold;
+  display: block;
+  /* white-space: nowrap; */
+  padding-right: 20px;
+  font-size: 17px;
+  width: 150px;
+}
+
+#findmap {
+  width: 522px;
+  margin-bottom: 10px;
+}
+
+.hAddr {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  border-radius: 2px;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+  padding: 5px;
+}
+
+#centerAddr {
+  display: block;
+  margin-top: 2px;
+  font-weight: normal;
+}
+
+.bAddr {
+  padding: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#contents {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 1140px;
+  padding: 40px 20px 100px 20px;
+  /* min-height: 600px; */
+}
+.contents-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.contents-title h3 {
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.contents-title p {
+  font-weight: 40px;
+
+  font-size: 15px;
+  border-bottom: 1px solid rgb(212, 212, 212);
+  padding: 40px;
+  text-align: center;
+  justify-content: center;
+}
+
+.step {
+  margin: 40px;
+}
+
+#header-title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.step-title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 40px;
+}
+
+.step1-name {
+  padding-right: 20px;
+  font-size: 30px;
+  color: #009591;
+  font-weight: 1000;
+}
+
+.step1-contents {
+  font-size: 30px;
+}
+
+.contents-input {
+  margin-left: 40px;
+  margin-top: 20px;
+  padding-left: 20px;
+  border-left: 4px solid #009591;
+}
+.step-contents {
+  padding-left: 40px;
+
+  /* border:5px solid black; */
+}
+
+.input {
+  padding: 20px;
+  /* border:1px solid blue; */
+  display: flex;
+  align-items: center;
+}
+.contents {
+  /* border:1px solid orange; */
+  /* width:500px; */
+  width: 100%;
+}
+
+input:not(.phonenum) {
+  height: 50px;
+  width: 500px;
+  padding: 10px;
+}
+
+.phonenum {
+  height: 40px;
+  width: 21%;
+}
+
+select {
+  height: 40px;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid rgb(212, 212, 212);
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid rgb(212, 212, 212);
+}
+
+input:focus {
+  outline: 2px solid #009591;
+}
+
+.carnum-example {
+  font-size: 12px;
+  color: brown;
+}
+
+.type-of-accident {
+  display: flex;
+  flex-direction: row; /* 가로로 배치 */
+  align-items: center;
+  width: 500px;
+}
+
+#accidenttype-input-contents input[type="radio"] {
+  width: 100px; /* 너비 조정 */
+  height: 30px; /* 높이 조정 */
+  margin-right: 5px;
+  position: relative;
+  appearance: none;
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  left: 0;
+  border: none;
+  background: url("../../../images/form_radioOff.png") 0px 0px no-repeat;
+  background-size: 20px auto;
+}
+
+#accidenttype-input-contents input[type="radio"]:checked {
+  width: 100px; /* 너비 조정 */
+  height: 30px; /* 높이 조정 */
+  margin-right: 5px;
+  position: relative;
+  appearance: none;
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  left: 0;
+  border: none;
+  background: url("../../../images/form_radioOn.png") 0px 0px no-repeat;
+  background-size: 20px auto;
+}
+
+#accidentplace-input-contents input {
+  margin-bottom: 10px;
+}
+
+input[type="file"]::file-selector-button {
+  font-size: 15px;
+  color: white;
+  width: 150px;
+  height: 30px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #009591;
+}
+
+#accidentplace-input-contents #chooseimg {
+  width: 100px;
+  background-color: #009591;
+}
+
+#accidentplace-input-contents #findmap {
+  width: 522px;
+}
+
+.step.active .step-contents {
+  display: block;
+}
+
+.step-title {
+  cursor: pointer;
+}
+
+.step-contents {
+  display: none;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+}
+
+#submitbtn {
+  margin-top: 20px;
+  height: 60px;
+  background-color: #009591;
+  color: white;
+  font-weight: 900;
+}
+
+.content-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.final-title {
+  padding: 20px;
+  width: 200px;
+  font-size: 20px;
+  margin-left: 20px;
+  border-right: 1px solid rgb(212, 212, 212);
+}
+
+.final-content {
+  font-size: 15px;
+  padding: 20px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.buttons button {
+  width: 200px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  border: 1px solid rgb(212, 212, 212);
+}
+
+/* html {
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.image-upload {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#chooseFile {
+    visibility: hidden;
+}
+
+.fileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fileInput {
+    display: flex;
+    align-items: center;
+    border-bottom: solid 2px black;
+    width: 60%;
+    height: 30px;
+}
+
+#fileName {
+    margin-left: 5px;
+}
+
+.buttonContainer {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 0.8em;
+
+    cursor: pointer;
+}
+
+.image-show {
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.img {
+    position: absolute;
+}
+
+
+
+ */

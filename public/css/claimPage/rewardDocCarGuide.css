@@ -1,0 +1,292 @@
+@charset "utf-8";
+
+@import url("../common.css");
+@import url("../reset.css");
+
+#contents{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 1140px;
+  padding: 40px 20px 100px 20px;
+  min-height: 600px;
+}
+
+#contents h3 {
+  font-size: 24px;
+}
+
+.title {
+  padding: 40px 0 15px;
+  background-image: url(../../images/claimImg/visual_healthReward_bg.jpg);
+  margin-bottom: 25px;
+}
+
+.title h2 {
+  font-size: 32px;
+  color: #000;
+}
+
+.title > p {
+  font-size: 14px;
+}
+
+.tab_container {
+  margin: 0 auto;
+}
+
+.tab_container > h3{
+  color: #000;
+}
+
+/* tabs */
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 40px;
+  display: flex;
+}
+
+ul.tabs li {
+  background: none;
+  color: #555;
+  background-color: #f2f2f2;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 15px;
+  flex-grow: 1;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+ul.tabs li.current {
+  background: #009591;
+  color: #fff;
+}
+
+
+
+/* 전체 contents */
+.tab-content {
+  display: none;
+  padding-top: 15px;
+  margin-bottom: 70px;
+}
+
+.tab-content.current {
+  display: inherit;
+}
+
+.tab_container .table .table_title ul {
+  list-style: none;
+  display: flex;
+  background: #f0f0f0;
+  padding: 15px 0;
+  border-top: #555 2px solid;
+}
+
+.tab_container .table .table_title li {
+  float: left;
+  flex-grow: 1;
+  text-align: center;
+  color:#333;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.table .table_contents {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
+}
+
+
+
+/* 보험 처리 */
+.table .table_contents .processing{
+  width: 50%;
+  margin-top: 8px;
+}
+
+.processing_contents li {
+  padding: 2px 12px;
+  cursor:pointer;
+  color: #555;
+  font-size: 14px;
+  height: auto;
+  line-height: 30px;
+  display: block;
+  overflow: hidden;
+}
+
+.processing_contents li.clicked{
+  background-color: #28B2A5;
+  color: #fff;
+}
+
+
+
+/* 손해 내용 */
+.table .demage_contents {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 12px;
+  margin-top: 8px;
+}
+
+.table .demage_contents label {
+  padding: 4px 6px 4px 0;
+  cursor:pointer;
+  color: #555;
+  font-size: 14px;
+  height: auto;
+  line-height: 26px;
+  display: block;
+  overflow: hidden;
+}
+
+.table .demage_contents .checkboxImage {
+  width: auto; 
+  height: auto;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+.document h3 {
+  color: #333;
+}
+
+
+
+/* table 공통 속성 */
+.document table {
+  border-bottom: 1px solid #ddd; 
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 70px;
+  vertical-align: middle;
+}
+
+.document th{
+  border: 1px solid #e5e5e5;
+  border-top: 1px solid #009591;
+  color: #333333;
+  padding: 15px;
+  background-color: #f9f9fb;
+  vertical-align: middle;
+}
+
+.document td{
+  border: 1px solid #e5e5e5;
+  color: #555555;
+  padding: 15px;
+  vertical-align: middle;
+}
+
+
+
+/* 공통 서류 table */
+.document .commonDocument table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.document .commonDocument th:nth-child(1),
+.document .commonDocument td:nth-child(1) {
+  width: 30%;
+  border-left: none;
+}
+
+.document .commonDocument th:nth-child(2),
+.document .commonDocument td:nth-child(2) {
+  width: 50%;
+}
+
+.document .commonDocument th:nth-child(3),
+.document .commonDocument td:nth-child(3) {
+  width: 20%;
+  border-right: none;
+}
+
+
+
+/* 다운로드 버튼 */
+.document td.download_button {
+  text-align: center;
+}
+
+.document td a.download { 
+  border: #e5e5e5 1px solid;
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #f9f9fb;  
+}
+
+
+
+/* 선택한 손해내용 table */
+.document .selectDocument #selectTable {
+  width: 100%;
+  table-layout: fixed;
+}
+.document .selectDocument #selectTable th:nth-child(1) {
+  width: 15%;
+  border-left: none;
+}
+.document .selectDocument #selectTable th:nth-child(2) {
+  width: 25%;
+}
+.document .selectDocument #selectTable th:nth-child(3) {
+  width: 45%;
+}
+.document .selectDocument #selectTable th:nth-child(4) {
+  width: 15%;
+  border-right: none;
+}
+.document .selectDocument #selectTable td:nth-child(1){
+  text-align: center;
+  border-left: none;
+}
+.document .selectDocument #selectTable td:nth-child(2) {
+  text-align: center;
+}
+.document .selectDocument #selectTable td:nth-child(3){
+  text-align: left; 
+}
+.document .selectDocument #selectTable td:nth-child(4) {
+  text-align: left; 
+  border-right: none;
+}
+
+
+/* 알아두실 사항 */
+
+.document .notice {
+  width: 100%;
+  table-layout: fixed;
+}
+.document .notice th:nth-child(1) {
+  width: 30%;
+  border-left: none;
+}
+.document .notice th:nth-child(2) {
+  width: 50%;
+}
+.document .notice th:nth-child(3) {
+  width: 20%;
+  border-right: none;
+}
+
+.document .notice td:nth-child(1){
+  text-align: center;
+  border-left: none;
+}
+.document .notice td:nth-child(3) {
+  text-align: center;
+  border-right: none;
+}

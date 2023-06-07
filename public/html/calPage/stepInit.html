@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장기 운전자보험 | 하나손해보험</title>
+    <link href="../../../images/img_hana_symbol.png" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="../../../css/calPage/stepInit.css">
+</head>
+<body>
+    <div class="ria_box ria_car dimmed" id="ria_box">
+        <div class="ria_container">
+            <div class="ria_header">
+                <div class="ria_logo">
+                    <h1>하나 가득담은 운전자보험(다이렉트)</h1>
+                </div>
+                <div class="ria_info">
+                    <div class="ria_bgroup">
+                        <a href="javascript:void(0);" class="btn_ria1">콜센터 1566-3000</a>
+                        <a href="../../../html/mainPage/mainPage.html" class="btn_ria1 icon_door">종료</a>
+                    </div>
+                </div>
+            </div>
+            <div id="" class="">
+                <div class="ria_body w1200">
+                    <div class="ria_title">
+                        <div class="w200">
+                            <h2 class="h85">보험료 확인</h2>
+                            <div class="ria_sub">상품유형과 가입조건을 선택하십시오.</div>
+                        </div>
+                    </div>
+                    <div class="ria_content fixed">
+                        <!--보험료계산-->
+                        <div id="ria_main_content" class="result_box type3">
+                            <div class="result_pos_right fixed">
+                                <div class="result_box">
+                                    <div class="result_sum_box">
+                                        <div class="result_layer_type fixed">
+                                            <div id="rdo_period_wrapper" class="result_layer disb pb0">
+                                                <dl class="pl24 pr0">
+                                                    <dt>보험기간 및 납입기간</dt>
+                                                    <dd class="ml0">
+                                                        <input type="radio" name="rdoGigan" id="rdoGigan01" class="ria_years" data-sinsurtermpaymtermname="5년만기/5년납" value="5" data-insprd="5" data-pyprd="5">
+                                                        <label for="rdoGigan01">5년</label>
+                                                        <input type="radio" name="rdoGigan" id="rdoGigan02" class="ria_years" data-sinsurtermpaymtermname="10년만기/10년납" value="10" data-insprd="10" data-pyprd="10" checked="">
+                                                        <label for="rdoGigan02">10년</label>
+                                                        <input type="radio" name="rdoGigan" id="rdoGigan03" class="ria_years" data-sinsurtermpaymtermname="15년만기/15년납" value="15" data-insprd="15" data-pyprd="15">
+                                                        <label for="rdoGigan03">15년</label>
+                                                        <input type="radio" name="rdoGigan" id="rdoGigan04" class="ria_years" data-sinsurtermpaymtermname="20년만기/20년납" value="20" data-insprd="20" data-pyprd="20">
+                                                        <label for="rdoGigan04">20년</label>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="msg_list fixed">
+                                            해당 보험료는 고객님의 직업에 따라<br>담보 및 보험료가 변경될 수 있습니다.
+                                        </div>
+                                        <div class="result_sum_title fixed">
+                                            <h3>
+                                                <span class="r_box tal">월 보험료</span>
+                                                <span class="r_box tar" style="margin-top:-35px;">
+                                                    <strong id="strSumPrm" class="count_number"></strong> 원
+                                                </span>
+                                            </h3>
+                                            <p id="" class="msg_price fixed">예상환급률
+                                                <a href="javascript:void(0)" class="ria_qmark ml10">
+                                                    <span class=""></span>
+                                                </a>
+                                                <span class="fr">%</span>
+                                                <span class="fr mr5">-</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result_left fixed">
+                                <div class="select_board fixed custom_scrollbar">
+                                    <div class="custom_scrollbox">
+                                        <div class="csb_container">
+                                            <label class="new_tit">보장내용</label>
+                                            <ul class="select_plan size_change3">
+                                                <li class="item">
+                                                    <input type="radio" name="rdoPlnCod" id="rdoPlnCodA" class="ria_base1" value="E">
+                                                    <label for="rdoPlnCodA" class="pr10">
+                                                        <span class="plan_title">실속플랜</span>
+                                                        <br>
+                                                        <span id="spnPlnCo0price" class="p_price"></span>
+                                                        <span class="p_txt">원</span>
+                                                    </label>
+                                                </li>
+                                                <li class="item">
+                                                    <input type="radio" name="rdoPlnCod" id="rdoPlnCodB" class="ria_base1" value="C" checked>
+                                                    <label for="rdoPlnCodB" class="pr10 on">
+                                                        <span class="plan_title">표준플랜</span>
+                                                        <br>
+                                                        <span id="spnPlnCo1price" class="p_price"></span>
+                                                        <span class="p_txt">원</span>
+                                                    </label>
+                                                </li>
+                                                <li class="item">
+                                                    <input type="radio" name="rdoPlnCod" id="rdoPlnCodC" class="ria_base1" value="D">
+                                                    <label for="rdoPlnCodC" class="pr10">
+                                                        <span class="plan_title">고급플랜</span>
+                                                        <br>
+                                                        <span id="spnPlnCo2price" class="p_price"></span>
+                                                        <span class="p_txt">원</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                            <div class="board_area1 size_change">
+                                                <div class="select_area"></div>
+                                                <table>
+                                                    <colgroup>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                    </colgroup>
+                                                    <tbody id="tbdGuaranteeList">
+                                                        <tr id="610108">
+                                                            <th>
+                                                                <span>중증자동차사고부상치료비</span>
+                                                            </th>
+                                                            <td class="plan0">
+                                                                <span>100만원</span>
+                                                            </td>
+                                                            <td class="plan1">
+                                                                <span>300만원</span>
+                                                            </td>
+                                                            <td calss="plan2">
+                                                                <span>300만원</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="620067">
+                                                            <th>
+                                                                <label for="chkPlanTrty1">교통사고처리지원금(Ⅲ)</label>
+                                                            </th>
+                                                            <td class="plan0">
+                                                                <span>1억원</span>
+                                                            </td>
+                                                            <td class="plan1">
+                                                                <span>1억원</span>
+                                                            </td>
+                                                            <td calss="plan2">
+                                                                <span>1억원</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="620054">
+                                                            <th>
+                                                                <label for="chkPlanTrty2">교통사고처리지원금(중대법규위반,6주미만)</label>
+                                                            </th>
+                                                            <td class="plan0">
+                                                                <span>500만원</span>
+                                                            </td>
+                                                            <td class="plan1">
+                                                                <span>500만원</span>
+                                                            </td>
+                                                            <td calss="plan2">
+                                                                <span>500만원</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="620033">
+                                                            <th>
+                                                                <label for="chkPlanTrty3">자동차사고벌금Ⅱ(대인, 3천만원한도)</label>
+                                                            </th>
+                                                            <td class="plan0">
+                                                                <span>3,000만원</span>
+                                                            </td>
+                                                            <td class="plan1">
+                                                                <span>3,000만원</span>
+                                                            </td>
+                                                            <td calss="plan2">
+                                                                <span>3,000만원</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="620032">
+                                                            <th>
+                                                                <label for="chkPlanTrty4">자동차사고벌금(대물)</label>
+                                                            </th>
+                                                            <td class="plan0">
+                                                                <span>500만원</span>
+                                                            </td>
+                                                            <td class="plan1">
+                                                                <span>500만원</span>
+                                                            </td>
+                                                            <td calss="plan2">
+                                                                <span>500만원</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="620052">
+                                                            <th>
+                                                                <label for="chkPlanTrty5">자동차사고변호사선임비용(Ⅱ)</label>
+                                                            </th>
+                                                            <td class="plan0">
+                                                                <span>2,000만원</span>
+                                                            </td>
+                                                            <td class="plan1">
+                                                                <span>2,000만원</span>
+                                                            </td>
+                                                            <td calss="plan2">
+                                                                <span>2,000만원</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="610105">
+                                                            <th>
+                                                                <label for="chkPlanTrty7">자동차사고부상치료비</label>
+                                                            </th>
+                                                            <td class="plan0">
+                                                                <span>900만원</span>
+                                                            </td>
+                                                            <td class="plan1">
+                                                                <span>900만원</span>
+                                                            </td>
+                                                            <td calss="plan2">
+                                                                <span>900만원</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="620020">
+                                                            <th>
+                                                                <label for="chkPlanTrty8">자동차사고성형치료비</label>
+                                                            </th>
+                                                            <td class="plan0">
+                                                                <span>100만원</span>
+                                                            </td>
+                                                            <td class="plan1">
+                                                                <span>100만원</span>
+                                                            </td>
+                                                            <td calss="plan2">
+                                                                <span>100만원</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="620009">
+                                                            <th>
+                                                                <label for="chkPlanTrty9">교통상해사망후유장해(3~100%)</label>
+                                                            </th>
+                                                            <td class="plan0">
+                                                                <span>1,000만원</span>
+                                                            </td>
+                                                            <td class="plan1">
+                                                                <span>1,000만원</span>
+                                                            </td>
+                                                            <td calss="plan2">
+                                                                <span>1,000만원</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="620005">
+                                                            <th><label for="chkPlanTrty10">신주말교통상해사망후유장해</label></th>
+                                                            <td class="plan0"><span>1,000만원</span></td>
+                                                            <td class="plan1"><span>1,000만원</span></td>
+                                                            <td calss="plan2"><span>1,000만원</span></td>
+                                                        </tr>
+                                                        <tr id="610049">
+                                                            <th><label for="chkPlanTrty16">화상진단비</label></th>
+                                                            <td class="plan0"><span>20만원</span></td>
+                                                            <td class="plan1"><span>20만원</span></td>
+                                                            <td calss="plan2"><span>20만원</span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../script/calPage/stepInit.js" charset="utf-8"></script>
+</body>

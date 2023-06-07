@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자주묻는질문</title>
+
+    <link href="../../../images/img_hana_symbol.png" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../../../css/customerPage/faqPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div data-include-path="../../../html/layout/quickmenu.html"></div>
+    <div id="wrap">
+        <header data-include-path="../../../html/layout/header.html"></header>
+        <!--container-->
+        <div id="container">
+            <div id="visual_box" class="visual_txt visual_counsel_inquiry">
+                <h2 role="heading" aria-level="2">자주묻는 질문</h2>
+                <p>하나손해보험에게 궁금하신 사항들을 모아 상세히 답변드립니다.</p>
+            </div>
+            <div id="contents">
+                <div class="headline_box">
+                    <p class="txt_lg">궁금한 점을 입력해주세요</p>
+                </div>
+                <div class="section_box1">
+                    <div class="fna_search_box">
+                        <div class="sort_field">
+                            <div class="faq_select_list">
+                                <div>
+                                    <a id="link_main_cate" role="link">전체</a>
+                                    <ul id="main_cate_list" role="list">
+                                        <li><a>전체</a></li>
+                                        <li><a>상품안내</a></li>
+                                        <li><a>홈페이지</a></li>
+                                        <li><a>보상서비스</a></li>
+                                        <li><a>대출</a></li>
+                                        <li><a>보험료계산/가입</a></li>
+                                        <li><a>마이페이지</a></li>
+                                        <li><a>제휴/할인서비스</a></li>
+                                        <li><a>생활보험(원데이)</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a id="link_sub_cate" role="link">전체</a>
+                                    <ul id="sub_cate_list" role="list">
+                                        <li><a role="link">전체</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_box1">
+                    <div class="result_num">
+                        검색결과
+                        <strong id="total_row_cnt"></strong>
+                        건
+                    </div>
+                    <ul class="accodion_box" id="targetFaqList" role="list">
+                    </ul>
+                    <!-- paging -->
+                    <div class="page_list_box paging_box">
+                        <ul class="page_list" id="pagination_container">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer data-include-path="../../../html/layout/footer.html"></footer>
+    </div>
+    <script src="../../../script/customerPage/faqPage.js" charset="utf-8"></script>
+
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 | 하나손해보험</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link href="../../../images/img_hana_symbol.png" rel="shortcut icon" type="image/x-icon">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        body {
+            background-color: grey;
+
+        }
+
+        #wrap {
+            /* overflow: hidden; */
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            height: 5000px;
+
+        }
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            background-color: #000;
+            opacity: 0.5;
+            /* -webkit-transform: translate(-50%, -50%); */
+
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            position: relative;
+            /* padding: 0; */
+            height: 100%;
+            /* z-index: 50; */
+        }
+
+        .video-area {
+            height: 2000px;
+            width: 100%;
+            position: relative;
+            background: url('../../../html/signupPage/realrealfianl.mp4');
+
+            overflow: hidden;
+
+            /* position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0px auto;
+            z-index: -1; */
+
+        }
+
+        #contents {
+            text-align: center;
+            color: #fff;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            /* margin-top: -40px; */
+            /* transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%); */
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* overflow: hidden; */
+        }
+
+        .item {
+
+            width: 100%;
+            height: 100px;
+            margin: 100px auto;
+            padding-top: 75px;
+            text-align: center;
+
+            color: #FFF;
+            font-size: 50px;
+            font-weight: 900;
+        }
+
+        #center {
+            font-size: 80px;
+            color: #FFF;
+            font-weight: 900;
+            margin: 30px;
+
+
+        }
+
+        #hanasonbo {
+            border: 20px solid #009591;
+        }
+
+        input[type="button"] {
+            width: 200px;
+            height: 80px;
+            border: 10px outset #009591;
+            border-radius: 15px;
+            background-color: #009591;
+            color: white;
+            font-size: 30px;
+            font-weight: 900;
+            margin-top: 100px;
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="video-area">
+
+            <video muted autoplay loop>
+                <source src="../../../html/signupPage/realrealfianl.mp4" type="video/mp4">
+                <strong>Your browser does not support the video tag.</strong>
+            </video>
+            <div id="container">
+                <div class="contents">
+                    <div class="item" data-aos="fade-up" style="font-size:30px;">회원가입을 축하드립니다</div>
+
+                    <div class="item" data-aos="fade-up">더 넓은 세상으로</div>
+                    <div class="item" data-aos="fade-down">더 자유로운 길로</div>
+                    <div class="item" data-aos="fade-right">더 깊은 사랑으로</div>
+                    <div class="item" id="center" data-aos="fade-up"><span id="hanasonbo">하나손해보험</span>이 당신을 지키겠습니다.
+                    </div>
+                    <div class="item" id="image" data-aos="fade-up"><img src="../../../html/signupPage/그림1.png"
+                            style="width:400px; height: 200px; margin:20px"></div>
+                    <div class="item" data-aos="fade-up">
+                        <input type="button" value="메인으로"
+                            onclick="location.href='../../../html/mainPage/mainPage.html'">
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <script>
+            AOS.init({
+                duration: 1200,
+            })
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var items = document.querySelectorAll('.contents .item');
+                var delay = 3000; // 등장 딜레이 시간(ms)
+                var delayIncrement = 3000; // 딜레이 증가 시간(ms)
+
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    var animationDelay = delay + i * delayIncrement;
+                    item.style.animationDelay = animationDelay + 'ms';
+                }
+            });
+        </script>
+
+    </div>
+
+
+
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

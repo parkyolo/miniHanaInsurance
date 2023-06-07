@@ -22,7 +22,9 @@
 
 
 application/
+src/script/signupPage/.env
+src/script/signupPage/minihana.pem
+node_modules/
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
-
 

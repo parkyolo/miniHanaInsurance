@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 | 하나손해보험</title>
+    <link rel="stylesheet" href="../../../css/signupPage/info.css">
+    <link href="../../../images/img_hana_symbol.png" rel="shortcut icon" type="image/x-icon">
+    <script src="../../../script/signupPage/info.js"></script>
+
+
+</head>
+
+<body onload="infoPage()">
+    <div data-include-path="../../../html/layout/quickmenu.html"></div>
+
+    <div id="wrap">
+        <header data-include-path="../../../html/layout/header.html"></header>
+        <div class="container">
+            <div id="contents">
+
+
+                <div class="section_box3 divJoinStep" id="divJoinStep03">
+                    <!--class="tcb_h0 tac" -->
+                    <div class="contents-title">
+                        <h3 role="heading" aria-level="3">정보입력</h3>
+                        <p class="wPc100 f16 tac mt30">
+                            하나손해보험은 회원의 개인정보를 신중히 취급합니다.<br>
+                            가입하신 정보는 회원님의 동의 없이 공개되지 않으며, 개인정보 보호정책에 의해 보호를 받습니다.<br>
+                            편리한 서비스와 보다 유용한 정보제공을 위해 고객님의 정확한 정보를 입력하여 주시기 바랍니다.
+                        </p>
+                    </div>
+
+                    <div class="input-section">
+
+
+                        <div class="list">
+                            <div class="list-title">
+                                <h4 id="list-title-name" role="heading">정보입력<span id="star">*</span>는 필수입력 사항입니다.</h4>
+                            </div>
+                            <ul class="table_width_list" role="list">
+                                <li style="border-top: 1px solid black;">
+                                    <div class="title">
+                                        <label for="txtJoinMemberName">이름&nbsp&nbsp</label>
+                                        <span class="pilsu">*</span>
+                                    </div>
+                                    <div class="data">
+                                        <div class="set_box sz_full">
+                                            <input type="text" title="이름 입력" id="txtJoinMemberName" role="textbox"
+                                                disabled="">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="half_l">
+                                    <div class="title">
+                                        <label for="txtJoinMemberBirth">생년월일&nbsp&nbsp</label>
+                                        <span class="pilsu">*</span>
+                                    </div>
+                                    <div class="data">
+                                        <div class="set_box cal_set">
+                                            <div class="wPc100">
+                                                <input type="text" class="inputDate" placeholder="YYYY.MM.DD"
+                                                    title="생년월일" name="txtJoinMemberBirth" id="txtJoinMemberBirth"
+                                                    maxlength="8" role="textbox" disabled="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="half_r">
+                                    <div class="title">
+                                        <label for="spnJoinMemberGender">성별&nbsp&nbsp</label>
+                                        <span class="pilsu">*</span>
+                                    </div>
+                                    <div class="data">
+                                        <span class="read_txt" id="spnJoinMemberGender"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <label for="divInputCellPhone">휴대폰 번호&nbsp&nbsp</label>
+                                        <span class="pilsu">*</span>
+                                    </div>
+                                    <div class="data" id="phoneNum">
+
+                                        <div class="fl wPc100" id="divInputCellPhoneMCert">
+                                            <span class="read_txt">고객님은 휴대폰 본인인증 방식으로 회원가입을 하셨습니다.</span>
+                                        </div>
+                                        <div class="fl wPc100 mt5" id="phoneNum">
+                                            <div class="set_box tel_set mr10">
+                                                <select id="selJoinMemberTel1" title="휴대폰번호 첫번째 번호" class="inputFocus"
+                                                    role="listbox" disabled="">
+                                                    <option value="" selected="" role="option" aria-label="option0">선택
+                                                    </option>
+                                                    <option value="010" role="option" aria-label="option1">010</option>
+                                                    <option value="011" role="option" aria-label="option2">011</option>
+                                                    <option value="016" role="option" aria-label="option3">016</option>
+                                                    <option value="017" role="option" aria-label="option4">017</option>
+                                                    <option value="018" role="option" aria-label="option5">018</option>
+                                                    <option value="019" role="option" aria-label="option6">019</option>
+                                                </select>
+                                                <span class="dash">-</span>
+                                                <input type="text" title="휴대폰번호 두번째 번호" maxlength="4"
+                                                    class="inputNum inputFocus" id="txtJoinMemberTel2" value=""
+                                                    role="textbox" disabled="">
+                                                <span class="dash">-</span>
+                                                <input type="text" title="휴대폰번호 마지막 번호" maxlength="4"
+                                                    class="inputNum inputFocus" id="txtJoinMemberTel3" value=""
+                                                    role="textbox" disabled="">
+                                            </div>
+                                            <div class="auth-success">인증완료<img
+                                                    src="../../../images/calImg/icon_radio_on_w.png"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="email-selct">
+                                    <div class="title">
+                                        <label for="txtJoinMemberEmail1">이메일 주소&nbsp&nbsp</label>
+                                        <span class="pilsu">*</span>
+                                    </div>
+                                    <div class="data" id="email-input">
+                                        <div class="set_box mail_set no_maxwidth">
+                                            <input id="txtJoinMemberEmail1" type="text" title="이메일 계정"
+                                                style="ime-mode:inactive;" value="" role="textbox">
+                                            <span class="dash">@</span>
+                                            <input id="txtJoinMemberEmail2" type="text" title="이메일 번지" value=""
+                                                role="textbox">
+
+
+                                        </div>
+                                        <div class="selectone">
+                                            <select id="selJoinMemberEmail2" title="이메일 선택" role="listbox"
+                                                onchange="emailReturn(this.value)">
+                                                <option value="" selected="" role="option" aria-label="option0">직접입력
+                                                </option>
+                                                <option value="naver.com" role="option" aria-label="option1">naver.com
+                                                </option>
+                                                <option value="hanafn.com" role="option" aria-label="option2">hanafn.com
+                                                </option>
+                                                <option value="hanmail.net" role="option" aria-label="option3">
+                                                    hanmail.net
+                                                </option>
+                                                <option value="gmail.com" role="option" aria-label="option4">gmail.com
+                                                </option>
+                                                <option value="nate.com" role="option" aria-label="option5">nate.com
+                                                </option>
+                                                <option value="hotmail.com" role="option" aria-label="option6">
+                                                    hotmail.com
+                                                </option>
+                                                <option value="dreamwiz.com" role="option" aria-label="option7">
+                                                    dreamwiz.com
+                                                </option>
+                                                <option value="yahoo.com" role="option" aria-label="option8">yahoo.com
+                                                </option>
+                                                <option value="korea.kr" role="option" aria-label="option9">korea.kr
+                                                </option>
+                                                <option value="korea.com" role="option" aria-label="option10">korea.com
+                                                </option>
+                                                <option value="ktcu.or.kr" role="option" aria-label="option11">
+                                                    ktcu.or.kr
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="btn_box tac">
+                            <button type="button" class="btn" id="btnStep3Prev" role="button"
+                                onclick="document.location.href='signup.html'">이전</button>
+                            <button type="button" class="btn btn_blue" id="btnStep3Next" role="button"
+                                onclick="document.location.href='../../../html/signupPage/signupSuccess_3.html'">다음</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <footer data-include-path="../../../html/layout/footer.html"></footer>
+    </div>
+
+
+    <script>
+        window.addEventListener('load', function () {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function (el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
+</body>
+
+
+</html>
